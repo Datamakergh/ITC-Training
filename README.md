@@ -53,8 +53,8 @@ Videos print as a still frame.
 - **Guide slides** are the original PowerPoint slides shown as images: step-by-step
   screenshots, examples, and the already-designed Generative AI, Prompt Engineering and
   Vibe Coding decks. To change one of these, change the PowerPoint and re-export it.
-- The Vibe Coding deck had em dashes; they were replaced in a copy of the PPTX before
-  export. The original file in OneDrive is unchanged.
+- Day 5 uses the updated Vibe Coding deck (`[02112026]`). Its slides have no em dashes;
+  the few in its speaker notes are rewritten at build time.
 
 ## Editing
 

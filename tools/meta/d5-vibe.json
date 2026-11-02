@@ -3,9 +3,9 @@
   "n": 1,
   "hidden": false,
   "text": [
-   "DATAMAKER TRAINING CENTER",
-   "Vibe Coding: Build Websites by Describing Them",
-   "A hands-on workshop, with no IT background required. Learn to write great prompts, then build a portfolio, an expense tracker and a photo album with AI."
+   "VIBE CODING",
+   "Build Websites by Describing Them",
+   "A hands-on workshop. No IT background required. Learn to write great prompts, then build a portfolio, an expense tracker and a photo album with AI."
   ],
   "notes": "Welcome everyone. By the end of this session every one of you will have built three real projects — without writing code by hand. You type what you want in plain English; the AI builds it.",
   "img": "assets/day5/vibe/s01.jpg"
@@ -14,25 +14,33 @@
   "n": 2,
   "hidden": false,
   "text": [
-   "WELCOME",
-   "Today's Plan",
+   "Today’s Plan",
    "Learn the skills first, then build three real projects.",
    "1",
-   "Getting started\nVibe coding, rules, tools",
+   "Getting started",
+   "Vibe coding, rules, tools",
    "2",
-   "Writing great prompts\nThe CLEAR rule",
+   "Writing great prompts",
+   "The CLEAR rule",
    "3",
-   "Project 1: Portfolio\nYour personal website",
+   "Project 1: Portfolio",
+   "Your personal website",
    "4",
-   "Make it better\nRefine, fix, level up",
+   "Make it better",
+   "Refine, fix, level up",
    "5",
-   "Project 2: Expense Tracker\nAn app that adds and saves",
+   "Project 2: Expense Tracker",
+   "An app that adds and saves",
    "6",
-   "Project 3: Photo Album\nGallery, lightbox, search",
+   "Project 3: Photo Album",
+   "Gallery, lightbox, search",
    "WHAT YOU WILL BUILD TODAY",
-   "Portfolio\nA personal website that shows who you are",
-   "Expense Tracker\nAdds up your spending and remembers it",
-   "Photo Album\nA gallery with search and full-screen view"
+   "Portfolio",
+   "A personal website that shows who you are",
+   "Expense Tracker",
+   "Adds up your spending and remembers it",
+   "Photo Album",
+   "A gallery with search and full-screen view"
   ],
   "notes": "Show the plan: first the skills (Parts 1, 2 and 4), then three projects. Everyone leaves with a portfolio, an expense tracker and a photo album on their laptop.",
   "img": "assets/day5/vibe/s02.jpg"
@@ -41,8 +49,9 @@
   "n": 3,
   "hidden": false,
   "text": [
-   "PART 1  ·  GETTING STARTED",
-   "What vibe coding is  ·  The rules  ·  Your AI tool"
+   "PART 1",
+   "Getting Started",
+   "What vibe coding is · The rules · Your AI tool"
   ],
   "notes": "Part 1 explains the idea and gets everyone signed in, ready to prompt.",
   "img": "assets/day5/vibe/s03.jpg"
@@ -51,15 +60,19 @@
   "n": 4,
   "hidden": false,
   "text": [
-   "PART 1 · GETTING STARTED",
-   "What Is Vibe Coding? In Plain English",
-   "Building websites without years of study.",
-   "You describe what you want in everyday English. The AI writes the code.  You are the thinker; the AI is the builder.",
-   "REAL-LIFE STORY  ·  Teaching a new apprentice\nImagine hiring a skilled apprentice who knows every building technique. You don't teach them HOW to lay bricks; you tell them WHAT you want: “A three-bedroom house with a blue door.” They work out the steps. That is Vibe Coding.",
-   "The old way\nStudy for years before building anything. One typo and everything crashes.",
-   "The Vibe Coding way\nDescribe your idea in English. The AI writes the code. You test it and improve it.",
-   "What you need\nAn internet connection, a free account, and the ability to describe what you want.",
-   "THINK ABOUT IT   Have you ever told someone exactly what you wanted, and they did it for you? That is Vibe Coding."
+   "What Is Vibe Coding?",
+   "Building websites, without years of study.",
+   "You describe what you want in everyday English. The AI writes the code.\nYou are the thinker. The AI is the builder.",
+   "The old way",
+   "Study for years before building anything. One typo and everything crashes.",
+   "The Vibe Coding way",
+   "Describe your idea in English. The AI writes the code. You test it and improve it.",
+   "What you need",
+   "An internet connection, a free account, and the ability to describe what you want.",
+   "REAL-LIFE STORY · TEACHING A NEW APPRENTICE",
+   "You don’t teach a skilled apprentice HOW to lay bricks. You tell them WHAT you want: “A three-bedroom house with a blue door.” They work out the steps. That is Vibe Coding.",
+   "THINK ABOUT IT",
+   "Have you ever told someone exactly what you wanted, and they did it for you? That is Vibe Coding."
   ],
   "notes": "Read the definition aloud, then tell the apprentice story. Ask the think-about-it question and take two or three answers before moving on.",
   "img": "assets/day5/vibe/s04.jpg"
@@ -68,13 +81,16 @@
   "n": 5,
   "hidden": false,
   "text": [
-   "PART 1 · GETTING STARTED",
    "Why It Matters",
    "What vibe coding can do for you.",
-   "It's for everyone\nYou don't need to be good at maths or have a computer science background. You just need to describe an idea clearly.",
-   "It can grow your income\nBusinesses, churches and schools need websites. Once you can build one, you can offer it as a service.",
-   "It's fast\nThings that used to take months of study, you'll start doing today, because the AI does the typing.",
-   "You'll build 3 things today\nNot theory. A portfolio, an expense tracker and a photo album, all working in your browser."
+   "It’s for everyone",
+   "You don’t need to be good at maths or have a computer science background. You just need to describe an idea clearly.",
+   "It can grow your income",
+   "Businesses, churches and schools need websites. Once you can build one, you can offer it as a service.",
+   "It’s fast",
+   "Things that used to take months of study, you’ll start doing today, because the AI does the typing.",
+   "You’ll build 3 things today",
+   "Not theory. A portfolio, an expense tracker and a photo album, all working in your browser."
   ],
   "notes": "Go through each card. If you have a personal story about technology changing your life or work, tell it here.",
   "img": "assets/day5/vibe/s05.jpg"
@@ -83,15 +99,26 @@
   "n": 6,
   "hidden": false,
   "text": [
-   "PART 1 · GETTING STARTED",
    "Ground Rules for Working With AI",
    "Six rules that will save you a lot of trouble.",
-   "You are the boss\nThe AI is a helper. You decide what is good enough.",
-   "Test everything\nAlways open it in the browser. Never trust code you haven't seen working.",
-   "Never share secrets\nNo passwords, ID numbers, bank details or other people's private information in prompts.",
-   "One change at a time\nSmall requests mean fewer mistakes and easier fixes.",
-   "Save every working version\nmypage-v1.html, mypage-v2.html… so you can always go back.",
-   "Two tries, then ask\nIf the AI fails twice, raise your hand. A classmate or trainer will help."
+   "1",
+   "You are the boss",
+   "The AI is a helper. You decide what is good enough.",
+   "2",
+   "Test everything",
+   "Always open it in the browser. Never trust code you haven’t seen working.",
+   "3",
+   "Never share secrets",
+   "No passwords, ID numbers, bank details or other people’s private information in prompts.",
+   "4",
+   "One change at a time",
+   "Small requests mean fewer mistakes and easier fixes.",
+   "5",
+   "Save every working version",
+   "mypage-v1.html, mypage-v2.html… so you can always go back.",
+   "6",
+   "Two tries, then ask",
+   "If the AI fails twice, raise your hand. A classmate or trainer will help."
   ],
   "notes": "Spend extra time on 'Never share secrets': never paste real passwords or other people's personal details into an AI tool.",
   "img": "assets/day5/vibe/s06.jpg"
@@ -100,12 +127,15 @@
   "n": 7,
   "hidden": false,
   "text": [
-   "PART 1 · GETTING STARTED",
    "Your AI Tools",
    "Two very smart friends who can write code for you.",
-   "Claude  claude.ai\nWhat we use today",
+   "Claude",
+   "WHAT WE USE TODAY",
+   "claude.ai",
    "Writes HTML, CSS and JavaScript you copy into a file\nExplains code in simple words\nFinds and fixes errors you paste in\nHelps you plan your ideas",
-   "Lovable  lovable.dev\nFor bigger apps later",
+   "Lovable",
+   "FOR BIGGER APPS LATER",
+   "lovable.dev",
    "Builds a whole app from one description\nShows a live preview as it builds\nAuto-fixes errors when you describe the bug\nOne-click Publish gives you a live link",
    "Today: Claude + Notepad, so you see and save the code yourself, and learn how a webpage file works. Both tools have free plans with daily limits, so plan your prompts before you send them."
   ],
@@ -116,20 +146,25 @@
   "n": 8,
   "hidden": false,
   "text": [
-   "PART 1 · GETTING STARTED",
    "Get Set Up",
    "Do these now, step by step.",
    "1",
-   "Open Google Chrome\nor any up-to-date browser",
+   "Open Google Chrome",
+   "or any up-to-date browser",
    "2",
-   "Sign in to Claude\nclaude.ai: create a free account with your email",
+   "Sign in to Claude",
+   "claude.ai: create a free account with your email",
    "3",
-   "Make a folder on the Desktop called vibe-coding\nyour files go here",
+   "Make a folder on the Desktop called vibe-coding",
+   "your files go here",
    "4",
-   "Find Notepad\nWindows: Start → type “Notepad”  ·  Mac: TextEdit",
-   "You're ready when you…\nare signed in to Claude\ncan find your vibe-coding folder\nhave Notepad open",
-   "Using a Mac?\nIn TextEdit choose Format → Make Plain Text before saving.",
-   "STUCK?   Ask your neighbour first, then your trainer."
+   "Find Notepad",
+   "Windows: Start → type “Notepad” · Mac: TextEdit",
+   "You’re ready when you…",
+   "✓ are signed in to Claude\n✓ can find your vibe-coding folder\n✓ have Notepad open",
+   "Using a Mac?",
+   "In TextEdit choose Format → Make Plain Text before saving.",
+   "STUCK? Ask your neighbour first, then your trainer."
   ],
   "notes": "Do setup together on the projector. Don't move on until everyone is signed in to Claude and has Notepad open.",
   "img": "assets/day5/vibe/s08.jpg"
@@ -138,8 +173,9 @@
   "n": 9,
   "hidden": false,
   "text": [
-   "PART 2  ·  WRITING GREAT PROMPTS",
-   "What a prompt is  ·  The CLEAR rule  ·  Good vs bad prompts"
+   "PART 2",
+   "Writing Great Prompts",
+   "What a prompt is · The CLEAR rule · Good vs bad prompts"
   ],
   "notes": "Part 2 teaches the single most important skill: describing clearly what you want.",
   "img": "assets/day5/vibe/s09.jpg"
@@ -148,21 +184,26 @@
   "n": 10,
   "hidden": false,
   "text": [
-   "PART 2 · WRITING GREAT PROMPTS",
    "What Is a Prompt? The Most Important Skill",
    "A prompt is the message you type to the AI. The better your prompt, the better your result.",
-   "REAL-LIFE STORY  ·  Ordering at a restaurant\n“Give me food” confuses the waiter. “Jollof rice with chicken, extra spicy, no onions please” gets you exactly what you want. The AI is that waiter: the clearer your order, the better your result.",
+   "REAL-LIFE STORY · ORDERING AT A RESTAURANT",
+   "“Give me food” confuses the waiter. “Jollof rice with chicken, extra spicy, no onions please” gets you exactly what you want. The AI is that waiter: the clearer your order, the better your result.",
    "THE CLEAR RULE FOR WRITING PROMPTS",
    "C",
-   "Context\nWhat is the project? Who is it for?",
+   "Context",
+   "What is the project? Who is it for?",
    "L",
-   "Language\nHTML? CSS? JavaScript? One file?",
+   "Language",
+   "HTML? CSS? JavaScript? One file?",
    "E",
-   "Elements\nWhich sections and features?",
+   "Elements",
+   "Which sections and features?",
    "A",
-   "Appearance\nColours, style, mood?",
+   "Appearance",
+   "Colours, style, mood?",
    "R",
-   "Result\nWhat should the finished thing do?"
+   "Result",
+   "What should the finished thing do?"
   ],
   "notes": "Tell the restaurant story, then introduce CLEAR one letter at a time. Ask trainees to write C-L-E-A-R in their notebook.",
   "img": "assets/day5/vibe/s10.jpg"
@@ -171,11 +212,10 @@
   "n": 11,
   "hidden": false,
   "text": [
-   "PART 2 · WRITING GREAT PROMPTS",
-   "CLEAR in Action: Step by Step",
+   "CLEAR in Action, Step by Step",
    "Watch a prompt come together, one letter at a time.",
    "C",
-   "I run a small hair salon called Ama's Styles.",
+   "I run a small hair salon called Ama’s Styles.",
    "L",
    "Use HTML and CSS in one single file.",
    "E",
@@ -185,7 +225,7 @@
    "R",
    "It must look good on a phone so customers can check prices quickly.",
    "THE FINISHED PROMPT",
-   "I run a small hair salon called Ama's Styles. Create a one-page website using HTML and CSS in one single file.\nInclude a heading, a list of services with prices, our opening hours and a phone number.\nUse purple and white. Make it friendly and modern, with big easy-to-read text.\nIt must look good on a phone so customers can check prices quickly."
+   "I run a small hair salon called Ama’s Styles. Create a one-page website using HTML and CSS in one single file.\n\nInclude a heading, a list of services with prices, our opening hours and a phone number.\n\nUse purple and white. Make it friendly and modern, with big easy-to-read text.\n\nIt must look good on a phone so customers can check prices quickly."
   ],
   "notes": "Build the prompt with the class: ask for each letter in turn, then join the pieces. Run it live in Claude and open the result.",
   "img": "assets/day5/vibe/s11.jpg"
@@ -194,15 +234,16 @@
   "n": 12,
   "hidden": false,
   "text": [
-   "PART 2 · WRITING GREAT PROMPTS",
    "Bad Prompt vs Good Prompt",
    "Same AI, two prompts, very different results.",
    "Bad prompt",
-   "“Make me a website.”\nWhy it fails: the AI doesn't know what KIND of website, what goes in it, or how it should look. You get something random.",
+   "“Make me a website.”",
+   "Why it fails: the AI doesn’t know what KIND of website, what goes in it, or how it should look. You get something random.",
    "Good prompt",
-   "“Create a portfolio webpage for me using HTML and CSS. Include a header with my name ‘Ama’, an About Me section, and a Contact section with my email. Use navy and white colours.”\nWhy it works: the AI knows exactly what to build.",
-   "The rule:  if your prompt could get 10 different answers, it needs more detail.",
-   "YOUR TURN   Turn “Make me a website” into a CLEAR prompt for something you care about: a church, a shop, a football club. Write it on paper. Then compare with your neighbour: who gave more detail?"
+   "“Create a portfolio webpage for me using HTML and CSS. Include a header with my name ‘Ama’, an About Me section, and a Contact section with my email. Use navy and white colours.”",
+   "Why it works: the AI knows exactly what to build.",
+   "The rule: if your prompt could get 10 different answers, it needs more detail.",
+   "YOUR TURN Turn “Make me a website” into a CLEAR prompt for something you care about: a church, a shop, a football club. Write it on paper, then compare with your neighbour. Who gave more detail?"
   ],
   "notes": "Run both prompts live and compare the results. Then give trainees 3–4 minutes for the 'your turn' exercise on paper.",
   "img": "assets/day5/vibe/s12.jpg"
@@ -211,8 +252,9 @@
   "n": 13,
   "hidden": false,
   "text": [
-   "PART 3  ·  YOUR PORTFOLIO WEBSITE",
-   "How a webpage works  ·  Build it  ·  Copy, save, open  ·  Style it"
+   "PART 3 · PROJECT 1",
+   "Your Portfolio Website",
+   "How a webpage works · Build it · Copy, save, open · Style it"
   ],
   "notes": "Part 3 is the first build: every trainee creates their own portfolio website and opens it in the browser.",
   "img": "assets/day5/vibe/s13.jpg"
@@ -221,14 +263,16 @@
   "n": 14,
   "hidden": false,
   "text": [
-   "PART 3 · PROJECT 1: PORTFOLIO",
    "A Webpage Is Like a House",
-   "You won't write these yourself, but knowing who does what helps you ask for the right change.",
-   "HTML\nThe walls and rooms",
+   "You won’t write these yourself, but knowing who does what helps you ask for the right change.",
+   "HTML",
+   "The walls and rooms",
    "The structure: headings, paragraphs, pictures, buttons. What is ON the page.",
-   "CSS\nThe paint and decoration",
+   "CSS",
+   "The paint and decoration",
    "The look: colours, sizes, spacing, layout. How the page LOOKS.",
-   "JavaScript\nThe electricity",
+   "JavaScript",
+   "The electricity",
    "The action: clicks, calculations, saving. What the page DOES.",
    "WHICH PART DO I ASK THE AI TO CHANGE?"
   ],
@@ -239,16 +283,21 @@
   "n": 15,
   "hidden": false,
   "text": [
-   "PART 3 · PROJECT 1: PORTFOLIO",
    "What Is the Portfolio?",
    "Project 1: a personal website that tells the world who you are.",
-   "REAL-LIFE STORY  ·  A business card that never runs out\nAt an event you hand someone a business card. A portfolio is that card on the internet: it shows who you are, what you can do and how to reach you, and it works 24 hours a day.",
+   "REAL-LIFE STORY · A BUSINESS CARD THAT NEVER RUNS OUT",
+   "At an event you hand someone a business card. A portfolio is that card on the internet: it shows who you are, what you can do and how to reach you, and it works 24 hours a day.",
    "SECTIONS YOU WILL BUILD",
-   "Header & menu\nYour name and links to each section",
-   "About me\nThree sentences about you",
-   "Skills\nFour skill cards",
-   "Projects\nYour work, like the apps you build today",
-   "Contact\nA public email address"
+   "Header and menu",
+   "Your name and links to each section",
+   "About me",
+   "Three sentences about you",
+   "Skills",
+   "Four skill cards",
+   "Projects",
+   "Your work, like the apps you build today",
+   "Contact",
+   "A public email address"
   ],
   "notes": "Explain the portfolio as an online business card. Point out the Projects section: later today they can list their expense tracker and photo album there.",
   "img": "assets/day5/vibe/s15.jpg"
@@ -257,14 +306,13 @@
   "n": 16,
   "hidden": false,
   "text": [
-   "PART 3 · PROJECT 1: PORTFOLIO",
    "Build It: Your Portfolio",
    "Fill in the [brackets] on paper first. Then type it into Claude.",
    "YOUR PROMPT",
-   "Create a personal portfolio website in one single HTML file, with the CSS inside the same file. My name is [YOUR NAME] and I am learning to build websites.\nInclude these sections, in order:\n1. A header with my name and a menu linking to each section\n2. About Me: [3 FACTS ABOUT YOU]\n3. Skills: 4 cards with [SKILL 1], [SKILL 2], [SKILL 3], [SKILL 4]\n4. Projects: 3 cards, each with a title, a short description and a View button\n5. Contact: my email [PUBLIC EMAIL]\n6. A footer that says “Built with Vibe Coding”\nUse [YOUR FAVOURITE COLOURS]. Make it modern and friendly, and make it look good on a phone. Give me the complete code to copy.",
+   "Create a personal portfolio website in one single HTML file, with the CSS inside the same file. My name is [YOUR NAME] and I am learning to build websites.\nInclude these sections, in order:\n1. A header with my name and a menu linking to each section\n2. About Me: [3 FACTS ABOUT YOU]\n3. Skills: 4 cards: [SKILL 1] … [SKILL 4]\n4. Projects: 3 cards, each with a title, a short description and a View button\n5. Contact: my email [PUBLIC EMAIL]\n6. A footer that says “Built with Vibe Coding”\nUse [YOUR FAVOURITE COLOURS]. Make it modern and friendly, and make it look good on a phone. Give me the complete code to copy.",
    "Check your prompt",
    "C: a portfolio for you\nL: one HTML file\nE: the 6 sections\nA: your colours\nR: works on a phone",
-   "SAFETY   Use a public email only. No phone numbers or home address."
+   "SAFETY Use a public email only. No phone numbers or home address."
   ],
   "notes": "Give trainees time to fill in the brackets on paper. Check a few prompts against CLEAR before they type them. Then everyone sends their prompt to Claude.",
   "img": "assets/day5/vibe/s16.jpg"
@@ -273,18 +321,21 @@
   "n": 17,
   "hidden": false,
   "text": [
-   "PART 3 · PROJECT 1: PORTFOLIO",
    "Copy, Save, Open",
    "Follow these four steps for every project: portfolio.html, expenses.html, album.html.",
    "1",
-   "Read it first\nBefore copying, read what the AI wrote. Does it match what you asked for?",
+   "Read it first",
+   "Before copying, read what the AI wrote. Does it match what you asked for?",
    "2",
-   "Copy the code\nClick the Copy button on the code box (top-right corner), or select all the code and press Ctrl+C.",
+   "Copy the code",
+   "Click the Copy button on the code box (top-right corner), or select all the code and press Ctrl+C.",
    "3",
-   "Paste & save\nPaste into Notepad (Ctrl+V). File → Save As → type: All Files, encoding: UTF-8 → name it portfolio.html in your vibe-coding folder.",
+   "Paste and save",
+   "Paste into Notepad (Ctrl+V). File → Save As → type: All Files, encoding: UTF-8 → name it portfolio.html in your vibe-coding folder.",
    "4",
-   "Open it!\nDouble-click portfolio.html. It opens in your browser. That's your website!",
-   "WATCH OUT   Saved it as portfolio.html.txt by mistake? Save again and choose “All Files” in the Save as type box. When your page opens, celebrate. You just built a website!"
+   "Open it!",
+   "Double-click portfolio.html. It opens in your browser. That’s your website!",
+   "WATCH OUT Saved it as portfolio.html.txt by mistake? Save again and choose “All Files” in the Save as type box. When your page opens, celebrate. You just built a website!"
   ],
   "notes": "Demonstrate all four steps slowly on the projector. The most common problem is saving as portfolio.html.txt — show the 'All Files' option clearly.",
   "img": "assets/day5/vibe/s17.jpg"
@@ -293,12 +344,11 @@
   "n": 18,
   "hidden": false,
   "text": [
-   "PART 3 · PROJECT 1: PORTFOLIO",
    "Style Your Portfolio",
    "Describe the look in plain English. The AI writes all the CSS. Stay in the same chat.",
-   "PROMPT: STYLE MY PORTFOLIO",
+   "PROMPT · STYLE MY PORTFOLIO",
    "Improve the styling of my portfolio. Keep everything in the same single HTML file.\n- Header: dark navy background (#1A2B5F), white text, centred, big and bold\n- Menu: links side by side, white, no underline, turn teal when I hover over them\n- Every section: plenty of space above and below (80 pixels)\n- Skill cards: light blue background, rounded corners, a soft shadow\n- Project cards: white background, thin grey border, rounded corners, a shadow\n- Footer: dark grey background, white text, centred\nMake it clean and modern, professional but friendly. Give me the complete updated code.",
-   "TRY THIS   Pick your own colours and style. The skill is describing a look in words, not copying this one."
+   "TRY THIS Pick your own colours and style. The skill is describing a look in words, not copying this one."
   ],
   "notes": "Run this prompt live, then let trainees write their own version with their own colours. They paste the new code over the old in Notepad, save, and refresh the browser.",
   "img": "assets/day5/vibe/s18.jpg"
@@ -307,8 +357,9 @@
   "n": 19,
   "hidden": false,
   "text": [
-   "PART 4  ·  MAKE IT BETTER",
-   "Refine  ·  Speak human  ·  Fix problems  ·  Level up"
+   "PART 4",
+   "Make It Better",
+   "Refine · Speak human · Fix problems · Level up"
   ],
   "notes": "Part 4 turns a first draft into something trainees are proud of, and teaches them how to fix problems on their own.",
   "img": "assets/day5/vibe/s19.jpg"
@@ -317,17 +368,20 @@
   "n": 20,
   "hidden": false,
   "text": [
-   "PART 4 · MAKE IT BETTER",
    "The Refine Loop",
    "Nobody gets it perfect first time. Good builders go round this loop many times.",
+   "1 →",
    "Ask",
-   "Test",
-   "Describe",
-   "Save",
    "Send one clear request",
+   "2 ↓",
+   "Test",
    "Open it in the browser",
-   "Say what you SEE is wrong",
+   "4 ↑",
+   "Save",
    "Keep each working version",
+   "3 ←",
+   "Describe",
+   "Say what you SEE is wrong",
    "Rules for a good refine",
    "One change per message\nSay WHERE on the page: “the heading”, “the second card”\nDescribe what you see, not what you think the code is\nPaste the new code over the old, save, then refresh the browser (F5)\nIf it gets worse, go back to your last saved version"
   ],
@@ -338,10 +392,9 @@
   "n": 21,
   "hidden": false,
   "text": [
-   "PART 4 · MAKE IT BETTER",
    "Speak Human, Not Tech",
-   "Describe problems in everyday words; the AI understands them perfectly.",
-   "PRACTICE   In pairs: one is the client and says “I don't like this.” The designer asks: “What exactly don't you like?” Be specific!"
+   "Describe problems in everyday words. The AI understands them perfectly.",
+   "PRACTICE In pairs: one is the client and says “I don’t like this.” The designer asks: “What exactly don’t you like?” Be specific!"
   ],
   "notes": "The left column is what experienced coders say; the right column is all trainees need. Do the pair practice for two minutes.",
   "img": "assets/day5/vibe/s21.jpg"
@@ -350,14 +403,16 @@
   "n": 22,
   "hidden": false,
   "text": [
-   "PART 4 · MAKE IT BETTER",
    "Level Up: Try These Challenges",
    "Pick one, send it, test it. Finished? Try the next one.",
-   "CHALLENGE 1: A BUTTON THAT DOES SOMETHING",
+   "CHALLENGE 1",
+   "A button that does something",
    "Add a button under my heading that says “Change colour”. When I click it, the page background changes to a random soft colour.",
-   "CHALLENGE 2: MAKE IT MOVE",
+   "CHALLENGE 2",
+   "Make it move",
    "When I hover over a skill card, make it lift up gently with a bigger shadow. When the page loads, fade everything in smoothly.",
-   "CHALLENGE 3: MAKE IT SMART",
+   "CHALLENGE 3",
+   "Make it smart",
    "Show a greeting under my name that changes with the time of day: “Good morning”, “Good afternoon” or “Good evening”."
   ],
   "notes": "These three challenges add JavaScript and animation. Fast trainees can do all three; everyone should try at least one. Remind them: save a copy of the working portfolio before each challenge.",
@@ -367,10 +422,9 @@
   "n": 23,
   "hidden": false,
   "text": [
-   "PART 4 · MAKE IT BETTER",
-   "When the AI Gets It Wrong: What to Do",
-   "Wrong answers happen to everyone. Here's how to fix them.",
-   "Ask yourself:  “What information was missing from my prompt?” Then add it and try again."
+   "When the AI Gets It Wrong",
+   "Wrong answers happen to everyone. Here’s how to fix them.",
+   "Ask yourself: “What information was missing from my prompt?” Then add it and try again."
   ],
   "notes": "When a trainee hits a problem, ask the room what was missing from the prompt instead of fixing it for them.",
   "img": "assets/day5/vibe/s23.jpg"
@@ -379,8 +433,9 @@
   "n": 24,
   "hidden": false,
   "text": [
-   "PART 5  ·  THE EXPENSE TRACKER",
-   "Forms  ·  Lists  ·  Totals  ·  Saving  ·  Charts"
+   "PART 5 · PROJECT 2",
+   "The Expense Tracker",
+   "Forms · Lists · Totals · Saving · Charts"
   ],
   "notes": "The first real app: it doesn't just show information, it does things — adds, deletes, calculates and remembers.",
   "img": "assets/day5/vibe/s24.jpg"
@@ -389,16 +444,22 @@
   "n": 25,
   "hidden": false,
   "text": [
-   "PART 5 · PROJECT 2: EXPENSE TRACKER",
    "What Is the Expense Tracker App?",
    "Project 2: your first app that DOES things, not just shows things.",
-   "REAL-LIFE STORY  ·  A paper budget book, but better\nMany families keep a book of money in and money out. The Expense Tracker is that same book on a computer: it adds up by itself, sorts by category, saves by itself, and opens any time.",
-   "Add entries\nA form: name, amount and category (Food, Transport, Bills…)",
-   "Delete entries\nRemove any entry with one click",
-   "Running total\nUpdates automatically on every add or delete",
-   "Category filter\nPress ‘Food’ to see only food spending",
-   "Spending chart\nA picture of where the money goes",
-   "Auto-save\nStill there after closing the browser"
+   "REAL-LIFE STORY · A PAPER BUDGET BOOK, BUT BETTER",
+   "Many families keep a book of money in and money out. The Expense Tracker is that same book on a computer: it adds up by itself, sorts by category, saves by itself, and opens any time.",
+   "Add entries",
+   "A form: name, amount and category (Food, Transport, Bills…)",
+   "Delete entries",
+   "Remove any entry with one click",
+   "Running total",
+   "Updates automatically on every add or delete",
+   "Category filter",
+   "Press ‘Food’ to see only food spending",
+   "Spending chart",
+   "A picture of where the money goes",
+   "Auto-save",
+   "Still there after closing the browser"
   ],
   "notes": "Ask: who keeps track of their spending? How? Then show the six features. The first prompt builds add, delete and total; the next prompts add filters, saving and a chart.",
   "img": "assets/day5/vibe/s25.jpg"
@@ -407,13 +468,12 @@
   "n": 26,
   "hidden": false,
   "text": [
-   "PART 5 · PROJECT 2: EXPENSE TRACKER",
    "Build the Expense Tracker",
    "Start a NEW chat for this project. Save the code as expenses.html.",
-   "PROMPT 1: THE FULL APP",
-   "Build me a complete expense tracker app in one single HTML file (put the CSS and JavaScript inside the same file).\nIt should have a form where I type the expense name and the amount, and pick a category: Food, Transport, Bills, Entertainment, Other.\nWhen I click Add, the expense appears in a list below. Each entry shows the name, amount and a red Delete button.\nAt the bottom, show the total of all amounts, updated automatically. Show amounts in [YOUR CURRENCY, e.g. GH₵].\nMake it clean and modern with a teal and white colour scheme.",
+   "PROMPT 1 · THE FULL APP",
+   "Build me a complete expense tracker app in one single HTML file (put the CSS and JavaScript inside the same file).\n\nIt should have a form where I type the expense name and the amount, and pick a category: Food, Transport, Bills, Entertainment, Other.\n\nWhen I click Add, the expense appears in a list below. Each entry shows the name, amount and a red Delete button.\n\nAt the bottom, show the total of all amounts, updated automatically. Show amounts in [YOUR CURRENCY, e.g. GH₵].\n\nMake it clean and modern with a teal and white colour scheme.",
    "Test it like this",
-   "Add 3 expenses\nIs the total correct? Check with a calculator\nDelete one: does the total go down?\nClick Add with an empty form: what happens?\nRefresh the page: where did everything go?"
+   "Add 3 expenses\nIs the total correct? Check with a calculator\nDelete one: does the total go down?\nClick Add with an empty form. What happens?\nRefresh the page. Where did everything go?"
   ],
   "notes": "Run the prompt live. The test list teaches trainees to check an app like a user would. The refresh test shows the data disappearing, which sets up the saving prompt on the next slide.",
   "img": "assets/day5/vibe/s26.jpg"
@@ -422,14 +482,16 @@
   "n": 27,
   "hidden": false,
   "text": [
-   "PART 5 · PROJECT 2: EXPENSE TRACKER",
    "Make It Smarter: Filters, Saving, Chart",
    "One prompt at a time. Test after each one.",
-   "PROMPT 2: CATEGORY FILTER",
+   "PROMPT 2",
+   "Category filter",
    "Add filter buttons above the list: All, Food, Transport, Bills, Entertainment, Other. Clicking one shows only that category and its total. Highlight the active button.",
-   "PROMPT 3: SAVE THE DATA",
+   "PROMPT 3",
+   "Save the data",
    "Save all expenses with localStorage whenever I add or delete one. When I open or refresh the page, show the saved expenses. If there are none, start empty.",
-   "PROMPT 4: SPENDING CHART",
+   "PROMPT 4",
+   "Spending chart",
    "Add a doughnut chart above the list showing how much I spent in each category. Use Chart.js. Update it every time I add or delete an expense."
   ],
   "notes": "localStorage is like a notepad next to your computer: close the browser, come back tomorrow, and your notes are still there. Show it: add expenses, refresh, still there. Note that it saves only on that one device and browser. The chart needs an internet connection because Chart.js loads from the web.",
@@ -439,8 +501,9 @@
   "n": 28,
   "hidden": false,
   "text": [
-   "PART 6  ·  THE PHOTO ALBUM",
-   "Gallery  ·  Lightbox  ·  Upload  ·  Search  ·  Animations"
+   "PART 6 · PROJECT 3",
+   "The Photo Album",
+   "Gallery · Lightbox · Upload · Search · Animations"
   ],
   "notes": "A visual, satisfying project. Trainees build one feature at a time and finish with animations that make it feel professional.",
   "img": "assets/day5/vibe/s28.jpg"
@@ -449,16 +512,22 @@
   "n": 29,
   "hidden": false,
   "text": [
-   "PART 6 · PROJECT 3: PHOTO ALBUM",
    "What Is the Photo Album App?",
    "Project 3: a gallery you build yourself.",
-   "REAL-LIFE STORY  ·  A digital photo album\nRemember photo albums with plastic sleeves, passed around at family gatherings? This is that, on the internet. Upload photos, add captions, sort them into albums, search, and click any photo to see it big.",
-   "Upload photos\nChoose images from your phone or computer",
-   "Photo grid\nA neat grid that fits every screen size",
-   "Captions\nA short description under each photo",
-   "Albums\nNamed groups: Family, Work, Travel",
-   "Search\nType a word to find matching captions",
-   "Lightbox\nClick a photo to see it big, full-screen"
+   "REAL-LIFE STORY · A DIGITAL PHOTO ALBUM",
+   "Remember photo albums with plastic sleeves, passed around at family gatherings? This is that, on the internet. Upload photos, add captions, sort them into albums, search, and click any photo to see it big.",
+   "Upload photos",
+   "Choose images from your phone or computer",
+   "Photo grid",
+   "A neat grid that fits every screen size",
+   "Captions",
+   "A short description under each photo",
+   "Albums",
+   "Named groups: Family, Work, Travel",
+   "Search",
+   "Type a word to find matching captions",
+   "Lightbox",
+   "Click a photo to see it big, full-screen"
   ],
   "notes": "Show the six features. Rule for this project: one feature at a time — never ask for everything at once.",
   "img": "assets/day5/vibe/s29.jpg"
@@ -467,12 +536,11 @@
   "n": 30,
   "hidden": false,
   "text": [
-   "PART 6 · PROJECT 3: PHOTO ALBUM",
    "Build the Gallery and the Lightbox",
    "New chat, new file: album.html. One feature at a time.",
-   "PROMPT 1: THE GALLERY GRID",
+   "PROMPT 1 · THE GALLERY GRID",
    "Create a photo gallery web app in one HTML file. Show photos in a grid of 3 columns. Use placeholder photos from picsum.photos/300/200 for now. Each photo card shows the image, a caption below and a small album badge. Make the grid responsive: 2 columns on tablets, 1 column on phones.",
-   "PROMPT 2: LIGHTBOX, CLICK TO ENLARGE",
+   "PROMPT 2 · LIGHTBOX, CLICK TO ENLARGE",
    "Add a lightbox. When I click any photo, it opens big and centred on a dark background, with the caption below in white text. A large × button at the top right closes it, and clicking the dark background also closes it. Also let me close it with the Escape key."
   ],
   "notes": "Run prompt 1 and check the grid. Then run prompt 2. Placeholder photos load from the internet, so trainees need to be online.",
@@ -482,14 +550,16 @@
   "n": 31,
   "hidden": false,
   "text": [
-   "PART 6 · PROJECT 3: PHOTO ALBUM",
    "Upload, Search and Animations",
-   "Uploaded photos may vanish on refresh; browser storage is small. That's fine for practice.",
-   "PROMPT 3: UPLOAD REAL PHOTOS",
+   "Uploaded photos may vanish on refresh, because browser storage is small. That’s fine for practice.",
+   "PROMPT 3",
+   "Upload real photos",
    "Add a photo upload button. When I choose images from my computer or phone, they appear in the grid. Let me type a caption for each, and choose several photos at once.",
-   "PROMPT 4: SEARCH AND ALBUMS",
+   "PROMPT 4",
+   "Search and albums",
    "Add a search box: as I type, show only photos whose caption contains those words. Add album buttons (All, Family, Work, Travel) and let me pick an album when I upload.",
-   "PROMPT 5: ANIMATIONS",
+   "PROMPT 5",
+   "Animations",
    "Hovering a photo card lifts it gently with a bigger shadow. On page load, cards fade in one after another. The lightbox fades in smoothly. Use CSS only."
   ],
   "notes": "Remind trainees to use photos they are happy to share — not other people's private pictures. Browser storage holds only about 5 MB, so uploaded photos may not survive a refresh; real apps store photos on a server. Animations: like a shop window display — they make the app feel professional, but too many become distracting.",
@@ -499,10 +569,11 @@
   "n": 32,
   "hidden": false,
   "text": [
-   "PART 7  ·Your Own App: Your Idea, Your Build",
-   "Gallery  ·  Lightbox  ·  Upload  ·  Search  ·  Animations"
+   "PART 7",
+   "Your Own App",
+   "Your idea, your build · Find an idea · Plan the MVP · Build and showcase"
   ],
-  "notes": "A visual, satisfying project. Trainees build one feature at a time and finish with animations that make it feel professional.",
+  "notes": "Part 7 is where trainees put everything together: they choose their own idea, plan it as a small MVP, build it over four days and present it at a showcase.",
   "img": "assets/day5/vibe/s32.jpg"
  },
  {
@@ -511,19 +582,23 @@
   "text": [
    "The Own Project: Freedom and Responsibility",
    "Everything you have learned comes together in something YOU choose to build.",
-   "The goal\nBuild a real, live, useful web app, something that solves a real problem or that you genuinely want to exist, using everything from this course.",
+   "The goal: build a real, live, useful web app, something that solves a real problem or that you genuinely want to exist, using everything from this course.",
    "THE 5-DAY PLAN",
-   "DAY\n16",
-   "Idea & plan\nPick the idea. Write the plan. No code yet.",
-   "DAY\n17",
-   "Build the MVP\nOnly the must-have features.",
-   "DAY\n18",
-   "Add features\nShould-haves, one at a time.",
-   "DAY\n19",
-   "Polish & publish\nQuality checklist, then go live.",
-   "DAY\n20",
-   "Showcase\nPresent to the class.",
-   "33"
+   "DAY 16",
+   "Idea and plan",
+   "Pick the idea. Write the plan. No code yet.",
+   "DAY 17",
+   "Build the MVP",
+   "Only the must-have features.",
+   "DAY 18",
+   "Add features",
+   "Should-haves, one at a time.",
+   "DAY 19",
+   "Polish and publish",
+   "Quality checklist, then go live.",
+   "DAY 20",
+   "Showcase",
+   "Present to the class."
   ],
   "notes": "Explain the freedom — and the responsibility. They choose the idea, but they must finish and publish it in five days. Show the 5-day plan and stress Day 16: planning only, no code. Trainees who skip planning usually run out of time.",
   "img": "assets/day5/vibe/s33.jpg"
@@ -534,12 +609,17 @@
   "text": [
    "Finding Your Idea",
    "Three questions to unlock your idea. Think local.",
-   "What do you do with paper or a notebook that could be done better on a computer?\nKeeping a list, writing notes, tracking something, planning events.",
-   "What website or app do you wish existed for YOUR community, business or family?\nPrayer schedules, market price lists, school timetables, community announcements.",
-   "Who do you know who has a problem a simple webpage could solve?\nA trader who needs a catalogue, a church events page, a school resources page.",
-   "▶  BRAINSTORMING PROMPT",
-   "I want to build a web app as my final project. I am interested in [YOUR INTEREST]. The problem I want to solve is [DESCRIBE A PROBLEM]. My users are [WHO WILL USE IT]. I have 4 days to build it. Suggest 5 simple ideas I could realistically build. For each: a name, what it does, and the 3 must-have features.",
-   "34"
+   "?",
+   "What do you do with paper or a notebook that could be done better on a computer?",
+   "Keeping a list, writing notes, tracking something, planning events.",
+   "?",
+   "What website or app do you wish existed for YOUR community, business or family?",
+   "Prayer schedules, market price lists, school timetables, community announcements.",
+   "?",
+   "Who do you know who has a problem a simple webpage could solve?",
+   "A trader who needs a catalogue, a church events page, a school resources page.",
+   "BRAINSTORMING PROMPT",
+   "I want to build a web app as my final project. I am interested in [YOUR INTEREST]. The problem I want to solve is [DESCRIBE A PROBLEM]. My users are [WHO WILL USE IT]. I have 4 days to build it. Suggest 5 simple ideas I could realistically build. For each: a name, what it does, and the 3 must-have features."
   ],
   "notes": "Give trainees five minutes to answer the three questions on paper before they touch the computer. Then they use the brainstorming prompt. Encourage local, practical ideas — they are easier to explain at the showcase and more useful afterwards.",
   "img": "assets/day5/vibe/s34.jpg"
@@ -550,18 +630,21 @@
   "text": [
    "Plan Small: The MVP",
    "MVP = Minimum Viable Product: the smallest version that actually does the job.",
-   "REAL-LIFE STORY  ·  A skateboard before a car\nSomeone needs to get from A to B. A car would be better, but takes too long to build. A skateboard gets them moving today. Build the skateboard FIRST, then add to it. Your MVP is the skateboard.",
+   "REAL-LIFE STORY · A SKATEBOARD BEFORE A CAR",
+   "Someone needs to get from A to B. A car would be better, but takes too long to build. A skateboard gets them moving today. Build the skateboard FIRST, then add to it. Your MVP is the skateboard.",
    "EXAMPLE: A CHURCH EVENTS PAGE",
    "1",
-   "Must have\nWithout it, the app is useless",
+   "Must have",
+   "Without it, the app is useless",
    "A list of events with date, time and place",
    "2",
-   "Should have\nImportant, but can wait a day",
+   "Should have",
+   "Important, but can wait a day",
    "Filter events by month",
    "3",
-   "Nice to have\nOnly if there's time left",
-   "An “Add to my calendar” button",
-   "35"
+   "Nice to have",
+   "Only if there’s time left",
+   "An “Add to my calendar” button"
   ],
   "notes": "Tell the skateboard story. Then walk through the church example and ask trainees to sort their own features into the three columns. Rule: Day 17 builds only the must-haves. If a must-have list has more than three items, it's too big.",
   "img": "assets/day5/vibe/s35.jpg"
@@ -571,12 +654,12 @@
   "hidden": false,
   "text": [
    "The Planning Prompt: Before Any Code",
-   "Don't jump straight into building. Plan first: it saves time.",
-   "▶  PLANNING PROMPT",
-   "I want to build a web app called [NAME]. It will [ONE-SENTENCE DESCRIPTION]. The people who will use it are [WHO].\nBefore we write any code, please:\n1. List the 3 must-have features\n2. List 2 nice-to-have features\n3. Suggest what to build on Day 1, Day 2, Day 3 and Day 4\n4. Tell me if anything I'm imagining is too complex for 4 days\nBe honest about what is realistic.",
+   "Don’t jump straight into building. Plan first. It saves time.",
+   "PLANNING PROMPT",
+   "I want to build a web app called [NAME]. It will [ONE-SENTENCE DESCRIPTION]. The people who will use it are [WHO].\n\nBefore we write any code, please:\n1. List the 3 must-have features\n2. List 2 nice-to-have features\n3. Suggest what to build on Day 1, Day 2, Day 3 and Day 4\n4. Tell me if anything I’m imagining is too complex for 4 days\n\nBe honest about what is realistic.",
    "Check your plan",
-   "Can it be built in 4 days?\n3 or fewer must-haves?\nNo private data collected?\nCan you explain it in one sentence?\nShow your plan to your trainer before Day 17",
-   "36"
+   "Can it be built in 4 days?\n3 or fewer must-haves?\nNo private data collected?\nCan you explain it in one sentence?",
+   "Show your plan to your trainer before Day 17"
   ],
   "notes": "Every trainee runs the planning prompt and writes the plan in their notebook. Then they bring the plan to you for sign-off before any code. Check the four questions on the right. Pay attention to private data: an app that collects names and phone numbers needs much more care — steer them away from that for this project.",
   "img": "assets/day5/vibe/s36.jpg"
@@ -585,10 +668,9 @@
   "n": 37,
   "hidden": false,
   "text": [
-   "When the AI Gets It Wrong: What to Do",
+   "When the AI Gets It Wrong: A Reminder",
    "Wrong answers happen to everyone. Here is what to do.",
-   "Ask yourself:  “What information was missing from my prompt?” Then add it and try again.",
-   "37"
+   "Ask yourself: “What information was missing from my prompt?” Then add it and try again."
   ],
   "notes": "Use this any day — it fits especially well on Days 17 and 18, when trainees work on their own. When a trainee hits a problem, don't fix it for them: ask the class what was missing from the prompt. The last row is a lifesaver: a long, messy chat often confuses the AI, and a fresh start fixes it.",
   "img": "assets/day5/vibe/s37.jpg"
@@ -598,12 +680,15 @@
   "hidden": false,
   "text": [
    "WRAP-UP",
-   "Show & Tell",
-   "Swap seats, look at each other's projects, and share what you built.",
-   "Swap laptops\nCan your neighbour use your apps without you explaining them?",
-   "Two stars\nTell them two things you really like about their projects.",
-   "One wish\nSuggest one change, and the prompt they could use to make it.",
-   "Want a link you can share on WhatsApp?\nYour projects are only on your laptop right now. To put it online for free, open Lovable, paste in your prompt and press Publish, or ask your trainer about GitHub + Vercel."
+   "Show and Tell",
+   "Swap seats, look at each other’s projects, and share what you built.",
+   "Swap laptops",
+   "Can your neighbour use your apps without you explaining them?",
+   "Two stars",
+   "Tell them two things you really like about their projects.",
+   "One wish",
+   "Suggest one change, and the prompt they could use to make it.",
+   "Want a link you can share on WhatsApp? Your projects are only on your laptop right now. To put one online for free, open Lovable, paste in your prompt and press Publish, or ask your trainer about GitHub + Vercel."
   ],
   "notes": "Give pairs five minutes. Then invite two or three trainees to show their page on the projector. Mention the publishing options for those who want a shareable link after the session.",
   "img": "assets/day5/vibe/s38.jpg"
@@ -612,11 +697,16 @@
   "n": 39,
   "hidden": false,
   "text": [
+   "WELL DONE",
    "You built 3 projects today. Keep going!",
-   "Practise\n30 minutes a day. Rebuild a project with a new idea.",
-   "Your own idea\nUse CLEAR to build an app you wish existed.",
-   "Build for someone\nA simple page for a local shop, church or school.",
-   "Teach a friend\nExplaining CLEAR to someone else makes you better at it.",
+   "Practise",
+   "30 minutes a day. Rebuild a project with a new idea.",
+   "Your own idea",
+   "Use CLEAR to build an app you wish existed.",
+   "Build for someone",
+   "A simple page for a local shop, church or school.",
+   "Teach a friend",
+   "Explaining CLEAR to someone else makes you better at it.",
    "Questions?"
   ],
   "notes": "Congratulate the class — everyone built a portfolio, an expense tracker and a photo album today. Share next steps and take questions.",
@@ -625,7 +715,11 @@
  {
   "n": 40,
   "hidden": false,
-  "text": [],
+  "text": [
+   "DATAMAKER TRAINING CENTER",
+   "Thank you",
+   "Keep describing. Keep building."
+  ],
   "notes": "Thank you.",
   "img": "assets/day5/vibe/s40.jpg"
  }
