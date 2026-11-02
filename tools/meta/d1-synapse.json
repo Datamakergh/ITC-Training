@@ -1,0 +1,352 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "2024",
+   "Synapse Dashboard Training"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Table of Content",
+   "03",
+   "Platform Intro\nUser Environment\nMain Dashboard\nProject Page\nLabeling Tools\nTop Bar\nTool Bar\nShortcuts/settings\nPreferences\nShortcuts\nTips and Tricks "
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "SYNAPSE INTRO"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "SYNAPSE ENVIROMENT",
+   "03",
+   "To use synapse platform for data labelling, one must log into the web app at\nhttp://platform.datamaker.io\nThe required browser for using the synapse web application is the Chrome Browser "
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "WEB-APP (https://platform.datamaker.io/auth/login) ",
+   "04"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "LANGUAGE SETTINGS",
+   "05",
+   "Default Language is in Korean. If you prefer English, you change the settings to switch to English."
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling) ",
+   "06",
+   "The labeling dashboard is a user interface or platform designed for the purpose of managing data labeling projects.",
+   "Choose from a selected list of projects to start labeling"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling > Project page) ",
+   "07",
+   "1",
+   "2",
+   "3",
+   "Start or continue labeling tasks by clicking this button.",
+   "1",
+   "5",
+   "4"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling > Project page) ",
+   "08",
+   "1",
+   "2",
+   "3",
+   "Use the search bar here find specific                      to modify.",
+   "2",
+   "5",
+   "4"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling > Project page) ",
+   "09",
+   "1",
+   "2",
+   "3",
+   "Increase or decrease the number of number of tasks per page.\n10, 20, 30, 50, 100, 500 or 1000.",
+   "3",
+   "5",
+   "4"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling > Project page) ",
+   "10",
+   "1",
+   "2",
+   "3",
+   "This filter allows you to view a range of tasks by providing a specific range of criteria.\nThese criteria include\nWork status\nName of image group if available.\nBy Last labeled date ",
+   "4",
+   "5",
+   "4"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "DASHBOARD(Labelling > Project page) ",
+   "12",
+   "Frequently check this page for updated guidelines on project",
+   "5",
+   "5"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "DASHBOARD (Review dashboard) ",
+   "13",
+   "The Review dashboard is a user interface or platform designed for the purpose of Inspecting data labeled projects.",
+   "Choose from a selected list of projects to start Data Review"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "DASHBOARD (Review dashboard > project page) ",
+   "13",
+   "A name of the Worker you are inspecting.",
+   "1",
+   "1"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "DASHBOARD (Review dashboard > project page) ",
+   "13",
+   "You will see the work status and your status of the task.",
+   "2",
+   "2"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "DASHBOARD (Review dashboard > project page) ",
+   "13",
+   "You can filter\nWorker\nReview status\nLast Reviewed",
+   "3",
+   "3"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "LABELING TOOLS"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "BOUNDING -BOX"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "POLYGON SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "POLYLINE SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "KEYPOINTS"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "3D- BOUNDING BOX"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "3D- SEMANTIC SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "CLASSIFICATION"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "SHORTCUTS"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "Create/Delete"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "Select/Move"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "Cancel/Revert"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "Image Size"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "Show/Lock"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "Display Mode"
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "Etc."
+  ],
+  "notes": "",
+  "img": "assets/day1/synapse/s32.jpg"
+ }
+]

@@ -1,0 +1,911 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "INTRODUCTION TO GENERATIVE AI",
+   "From artificial intelligence and machine learning to deep learning, transformers and hallucinations"
+  ],
+  "notes": "Welcome learners. This module takes them from the basics of artificial intelligence all the way to how today’s generative AI tools like ChatGPT, Claude and Gemini work, and why they sometimes get things wrong. The guide combines the original “Introduction to Generative AI” module and the “Introduction to Machine Learning, Deep Learning and Generative AI Basics” deck, reorganised into one story with practical activities. Before the session make sure every learner (or pair) has a laptop or phone with internet, a free chatbot account (ChatGPT, Claude, Gemini or Copilot) and access to Google Teachable Machine (teachablemachine.withgoogle.com). Ask learners to bring about 20 photos each of two everyday objects for the lab (for example a Bible and a hymn book). Icebreaker (3 minutes): “Name one AI tool you used this week, even without realising it.” Expect phone autocorrect, Google Maps, TikTok or YouTube recommendations, spam filters, face unlock and chatbots. Write the answers on the board; you will refer back to them during the module.",
+  "img": "assets/day4/genai/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Overview",
+   "After completing this module, you will be able to:",
+   "01",
+   "Explain what artificial intelligence is and how it differs from simple automation.",
+   "02",
+   "Describe how machines learn from data, and why good, accurate labels matter.",
+   "03",
+   "Tell apart supervised, unsupervised, reinforcement and semi-supervised learning.",
+   "04",
+   "Explain how neural networks and deep learning work, in plain words.",
+   "05",
+   "Distinguish discriminative models (that classify and predict) from generative models (that create).",
+   "06",
+   "Explain how transformers and attention give generative AI its power.",
+   "07",
+   "Recognise hallucinations, explain why they happen and how to reduce them.",
+   "08",
+   "Follow the steps to train an AI model, and train one yourself without code."
+  ],
+  "notes": "Read the outcomes aloud. Tell learners that the module is built around these eight outcomes and that the exit quiz at the end checks them. The original module also listed “the role of AI in recommendation systems”, “challenges in early research of AI” and “predictive capability”. These are now covered inside the relevant sections: recommendations under “Why we need machine learning”, the history of AI under the AI section, and prediction under discriminative models. Ask: “Which of these eight do you already feel confident about?” Most learners will pick 01. Use this to calibrate how fast you move through the AI section.",
+  "img": "assets/day4/genai/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "PART 1",
+   "Artificial Intelligence"
+  ],
+  "notes": "Section 1 of 6: Artificial Intelligence (about 45 minutes including Practical 1). In this section learners find out what AI is, where it came from, how it differs from ordinary automation, its core branches and how an AI system works step by step. Transition line: “Before we can understand generative AI, we need to know what AI is in the first place, and what it is not.”",
+  "img": "assets/day4/genai/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "What Is Artificial Intelligence?",
+   "Artificial Intelligence (AI) is the simulation of human intelligence by computer systems. It is a discipline, a field of study, in the same way biology or economics is.\nIt is a branch of computer science that builds intelligent agents: systems that can reason, learn and act on their own.\nIn other words, AI gives machines abilities we normally link to people: understanding language, recognising images, solving problems and making decisions.\nYou already use it every day: in healthcare (disease detection systems), finance (spotting fraud), online shopping (recommendations) and transport (maps and self-driving cars).",
+   "In simple terms: ordinary software follows rules a person wrote. AI learns patterns from examples and uses them to decide what to do."
+  ],
+  "notes": "Key message: AI is the broad field of making machines do things that normally need human intelligence. Explain the diagram on the right: AI is the whole discipline. Machine learning (ML) is a subfield inside it. Deep learning sits inside machine learning. Later in the module we add generative AI inside deep learning. Analogy: think of AI like “medicine”. Medicine is the whole discipline; surgery is a specialism within it; heart surgery is a specialism within surgery. In the same way, AI contains ML, which contains deep learning. Check question: “Is a calculator AI?” No. It follows fixed rules and never learns or adapts. This leads into the next slides on automation versus autonomy. Ask learners to look at the icebreaker list on the board and say which of their examples really learn from data.",
+  "img": "assets/day4/genai/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "A Short History of AI",
+   "Early challenges: too little data, slow computers and big promises led to “AI winters”, years when funding and interest dried up."
+  ],
+  "notes": "Key message: AI is not new. The idea is over 70 years old, but it only took off recently because three things finally came together: huge amounts of data, cheap and powerful computers (GPUs), and better algorithms such as deep learning and transformers. This slide covers the original objective “state the challenges in early research of AI”. Early AI struggled because: - there was not enough digital data to learn from; - computers were far too slow and expensive; - researchers promised more than they could deliver, so governments and companies cut funding. These periods (mid-1970s and late 1980s) are called “AI winters”. Expert systems (1980s) worked only in narrow areas and broke when a situation was not covered by their rules, which is why learning from data became so important. Small correction to the image: ChatGPT launched in November 2022, and GPT-4 followed in March 2023. Discussion (2 minutes): “Why do you think AI suddenly became everyday technology in the last few years?” Steer towards data, computing power and the internet.",
+  "img": "assets/day4/genai/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Is a Plane’s Autopilot AI?",
+   "Answer: basic autopilot is automation, not AI. It follows pre-set flight instructions and pilots always supervise it.",
+   "Basic autopilot (automation)",
+   "Holds a set speed, height and direction\nCannot handle new situations\nA pilot must always supervise\nNo learning: it does the same thing every flight",
+   "Like riding a bicycle with training wheels while someone holds the back: it stays steady, but you still steer.",
+   "AI autopilot (autonomy)",
+   "Makes real-time decisions as conditions change\nPredicts weather, avoids obstacles, plans routes\nNeeds little or no supervision\nLearns from data and sensor feedback",
+   "Like a bicycle that rides itself: it balances, steers, changes speed and avoids obstacles on its own."
+  ],
+  "notes": "Ask the question on the title before revealing the answer. Let learners vote by raising hands: “AI” or “not AI”. Many will say AI because planes feel high-tech. Reveal: standard autopilot in commercial planes is automation. It keeps the plane at a set altitude, speed and heading, and can follow a programmed route, but it does not learn or make its own judgement. Pilots monitor it all the time and take over for anything unexpected. Fully AI-driven autopilots that adapt to changing conditions on their own are still experimental or in development. Use the bicycle analogy from the original deck to make the difference memorable. Ask: “Which other things around you are ‘training-wheel’ machines, and which are ‘self-riding’ ones?” Lesson to draw out: complex is not the same as intelligent. What makes something AI is learning and adapting, not how impressive it looks.",
+  "img": "assets/day4/genai/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "Automated vs Autonomous",
+   "Not every “smart” machine is AI. The key question is: does it follow fixed rules, or does it decide and learn on its own?"
+  ],
+  "notes": "Key message: automation means “doing the same thing without a person”. Autonomy means “deciding what to do without a person”. Only autonomy needs AI. Walk through one row at a time using the washing machine. It runs a fixed programme: fill, wash, rinse, spin. If you put in a muddy football boot, it does exactly the same cycle. It never learns that boots need a different wash. That is automation. A self-driving car meets situations no one programmed in advance, for example a goat crossing the road or a pothole after rain. It uses cameras, sensors and machine learning to decide whether to brake, swerve or slow down. That is autonomy. Quick check: “Is a traffic light that changes every 60 seconds automated or autonomous?” (Automated.) “What about a traffic system that watches the queues and changes the timing itself?” (Autonomous, because it decides based on data.)",
+  "img": "assets/day4/genai/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "Core Concepts of AI (1 of 2)",
+   "1. Machine Learning (ML)",
+   "A part of AI that builds systems which learn from data and make decisions or predictions.",
+   "Instead of being programmed step by step, an ML model uses algorithms to find patterns in data, and gets better as it sees more examples.",
+   "Example: your email learns which messages are spam from millions of emails people marked as spam.",
+   "2. Generative AI",
+   "AI designed to create new content: text, images, music, video or computer code.",
+   "Traditional AI mostly analyses and sorts data. Generative AI goes a step further: it uses patterns learned from huge datasets to produce something new. It creates rather than just recognises.",
+   "Example: ChatGPT writing a birthday message, or an app drawing a poster from a description."
+  ],
+  "notes": "Key message: AI has several branches. This slide and the next introduce four that learners will hear about most often. Machine learning and generative AI are the focus of this whole module. Machine learning: emphasise “learns from data instead of being told the rules”. A spam filter is not given a list of every spam word. It is shown many examples of spam and not-spam and works out the patterns itself. Generative AI: emphasise “creates versus recognises”. A face-unlock system recognises your face. An image generator can create a face that has never existed. Ask learners to think of one example of each from their own phone. Typical answers: ML = photo app grouping pictures of the same person; GenAI = AI keyboard that writes a reply for you.",
+  "img": "assets/day4/genai/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Core Concepts of AI (2 of 2)",
+   "3. Natural Language Processing",
+   "NLP lets machines understand, interpret and produce human language, spoken or written, in a way that feels natural.",
+   "It combines linguistics (the study of language) with computer science. It powers translation, sentiment analysis and real-time conversation.",
+   "Example: Siri or Alexa understanding “What’s the weather in Accra?” and answering out loud.",
+   "4. Expert Systems",
+   "Systems that copy the decision-making of a human expert using a set of “if-then” rules written with specialists.",
+   "They are useful where expert knowledge is important but hard to reach. They do not learn: they only know the rules they were given.",
+   "Example: “IF fever AND rash AND recent travel THEN test for measles”, like a doctor’s checklist."
+  ],
+  "notes": "Key message: NLP is about language; expert systems are about rules from experts. NLP: it is the reason chatbots, voice assistants, translation apps and auto-captions work. Generative AI chatbots are a modern, very powerful form of NLP. Ask: “Who has used Google Translate or voice typing?” Everyone has used NLP. Expert systems: these were the main form of AI in the 1980s (from the history slide). They are AI but not machine learning, because they do not learn from data. A person has to write every rule. If a case is not covered, the system fails. That limitation is the reason machine learning became so important. Contrast question: “What is the difference between an expert system for diagnosing malaria and a machine learning model for diagnosing malaria?” Answer: the expert system follows rules a doctor wrote; the ML model learns the patterns from thousands of labelled patient records. That is where data labelers come in.",
+  "img": "assets/day4/genai/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "How Artificial Intelligence Works",
+   "AI copies the way people learn. Follow one example through all five steps: teaching an AI to recognise cats.",
+   "1",
+   "Data collection",
+   "Gather lots of examples. We collect thousands of photos, each labelled “cat” or “not cat”.",
+   "2",
+   "Processing and learning",
+   "Algorithms look for patterns: the shape of the ears, whiskers, fur and eyes.",
+   "3",
+   "Model training",
+   "The model adjusts its internal settings again and again to make better guesses. More data, better accuracy.",
+   "4",
+   "Decision making",
+   "Shown a new photo it has never seen, it decides whether there is a cat in it.",
+   "5",
+   "Feedback and improvement",
+   "When told it was right or wrong, it refines itself and makes better decisions over time."
+  ],
+  "notes": "Key message: every AI system follows the same basic cycle: collect data, learn patterns, train, decide, improve. Walk through the cat example step by step: 1. Data collection: the AI is only as good as its examples. Point out that someone has to label each photo “cat” or “not cat”. That someone is a data labeler. 2. Processing and learning: the algorithm finds features that separate cats from other things. No one tells it “look for whiskers”; it discovers that whiskers help. 3. Model training: the model makes guesses, checks them against the labels and adjusts. This repeats thousands of times. 4. Decision making: the trained model is used on new photos. This is when the AI is actually useful. 5. Feedback and improvement: in reinforcement learning the AI gets rewards or penalties; in other systems, people correct its mistakes and it is retrained. Analogy: a child learning what a cat is. They see many cats, notice what cats have in common, guess (“cat!” at a dog), get corrected, and improve.",
+  "img": "assets/day4/genai/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 1 · 10 MIN · PAIRS",
+   "AI or Not AI?",
+   "For each item, decide: is it AI (learns and decides) or just automation (follows fixed rules)? Be ready to explain why.",
+   "1",
+   "A calculator",
+   "2",
+   "Google Maps finding a faster route around traffic",
+   "3",
+   "A microwave timer",
+   "4",
+   "Face unlock on your phone",
+   "5",
+   "A vending machine giving change",
+   "6",
+   "YouTube choosing your next video",
+   "7",
+   "A fan that switches on at 30°C",
+   "8",
+   "Mobile money flagging an unusual transfer"
+  ],
+  "notes": "1. Automation. A calculator follows fixed mathematical rules and never learns. \u000b2. AI. It learns traffic patterns from millions of phones and predicts the fastest route. \u000b3. Automation. It counts down a fixed time. \u000b4. AI. It learned to recognise your face and adapts as your appearance changes (glasses, beard). \u000b5. Automation. Fixed rules: price in, item and change out. \u000b6. AI. It learns your preferences from what you watch and predicts what you will like. This is a recommendation system. \u000b7. Automation. A simple if-then rule: if temperature is above 30°C, switch on. \u000b8. AI. It learns what your normal transactions look like and flags anything unusual. \u000b\u000bGood discussion point: number 7 could become AI if the fan learned your preferences and the times you are home and adjusted itself. The test is always: does it learn and adapt?",
+  "img": "assets/day4/genai/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "PART 2",
+   "Machine Learning"
+  ],
+  "notes": "Section 2 of 6: Machine Learning (about 90 minutes including Practical 2). This is the longest section and the most important one for data labelers, because it explains exactly why labelled data matters. Learners will cover what machine learning is, how it differs from traditional programming, why we need it, how a machine learns, the role of data, and the four main types of learning. Transition line: “We said AI learns from examples. Machine learning is the part of AI that does that learning. Let’s look inside.”",
+  "img": "assets/day4/genai/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "What Is Machine Learning?",
+   "Machine learning (ML) is the part of AI that builds models and algorithms which let computers learn from data, without being programmed by hand for every task.\nIt works much like people learn from experience: the more examples a system sees, the better its decisions become.\nAn ML system trains a model on input data. The trained model can then make useful predictions on new, never-seen data, as long as that data is similar to what it learned from.",
+   "Key idea: machine learning gives the computer the ability to learn without explicit programming.",
+   "Data → training the machine → build a model → predict outcomes"
+  ],
+  "notes": "Key message: machine learning is learning from examples instead of following hand-written rules. Walk through the image left to right: data goes in, the machine is trained on it, the result of training is a “model”, and the model is what makes predictions. Define “model” clearly because learners will hear the word all day: a model is the thing that has learned the patterns. It is like a student’s knowledge after studying. Important caution in the third bullet: a model only works well on data similar to its training data. A model trained on photos of Ghanaian bank notes will not recognise Kenyan ones. This is why the variety of training data matters. Analogy: a child learning to recognise ripe mangoes. No one gives them a written rule. They see many mangoes, taste some, and learn that a certain colour and softness means ripe. Next time they see a mango they have never seen before, they can judge it.",
+  "img": "assets/day4/genai/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "Traditional Programming vs Machine Learning",
+   "Traditional programming",
+   "Rules",
+   "+",
+   "Data",
+   "Program",
+   "Answers",
+   "A person writes every rule.",
+   "Machine learning",
+   "Data",
+   "+",
+   "Answers",
+   "Learning",
+   "Rules (model)",
+   "The machine works out the rules.",
+   "Spam example: a programmer could write “if the subject says FREE MONEY, it is spam”, but spammers just change the words. An ML filter studies thousands of emails people labelled as spam and learns the patterns itself, and keeps adapting."
+  ],
+  "notes": "Key message: this is the single most important shift to understand. In traditional programming, people give the computer the rules. In machine learning, people give the computer examples with answers, and the computer finds the rules. Notice that in the ML row the “Answers” are the labels. Ask learners: “In the spam example, who provides the answers?” (People who click “report spam”, or data labelers.) This is the moment to tell them: “Your job as a data labeler is to provide the answers that machines learn the rules from.” Why traditional programming struggles (from the original deck): - it needs exact instructions, and cannot handle complex tasks like understanding images or language well; - it cannot efficiently process huge amounts of data. Machine learning solves these by learning from examples and making predictions without fixed rules. Quick check: “To build an app that recognises 100 different plant diseases from photos, would you rather write the rules by hand or use ML?” Discuss why writing rules for every leaf colour and spot pattern is impossible.",
+  "img": "assets/day4/genai/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "Why Do We Need Machine Learning? (1 of 2)",
+   "Traditional programs need exact instructions. They struggle with images and language, and cannot keep up with the amount of data produced every day.",
+   "1",
+   "Solving complex problems",
+   "Some tasks are too complicated to write rules for, such as understanding speech or spotting disease in an X-ray. ML learns these patterns from examples and makes predictions.",
+   "Examples: image and speech recognition in healthcare, language translation, sentiment analysis.",
+   "2",
+   "Handling large volumes of data",
+   "The internet produces enormous amounts of data every second. ML can process and analyse it quickly, finding insights and making real-time predictions no team of people could.",
+   "Examples: fraud detection in bank and mobile money transfers; personalised feeds on Facebook and Instagram."
+  ],
+  "notes": "Key message: we need machine learning because some problems are too complex for hand-written rules and some data is too big for people to handle. Reason 1, complex problems: ask learners to try writing rules to recognise a friend’s voice on the phone. It is impossible to describe in rules, yet a person learns it easily from experience. ML learns the same way. Reason 2, large volumes of data: a bank or mobile money operator handles millions of transactions a day. No human team could check each one for fraud in real time. An ML model can, flagging only the suspicious few for a person to look at. Link to their work: both examples depend on labelled data. A fraud model learns from past transactions labelled “fraud” or “genuine”.",
+  "img": "assets/day4/genai/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "Why Do We Need Machine Learning? (2 of 2)",
+   "3",
+   "Automating repetitive tasks",
+   "ML takes over time-consuming, repetitive work with high accuracy, reducing manual effort and human error.",
+   "Examples: Gmail filtering spam; chatbots handling order tracking and password resets; reading thousands of invoices.",
+   "4",
+   "Personalised experiences",
+   "ML studies each user’s behaviour and tailors what they see to their preferences. This is how recommendation systems work.",
+   "Examples: Netflix suggesting shows from your viewing history; online shops recommending products.",
+   "5",
+   "Improving over time",
+   "ML models get smarter as they receive more data. They adapt to users and their performance keeps rising.",
+   "Examples: voice assistants learning your accent; search engines refining results; self-driving cars learning from millions of kilometres."
+  ],
+  "notes": "Key message: beyond complex problems and big data, ML saves time, personalises experiences and keeps improving. Recommendation systems (an original module objective): when Netflix, YouTube, TikTok or Jumia recommend something, an ML model has learned from your past behaviour (what you watched, clicked, bought or skipped) and from people with similar tastes. It predicts what you are most likely to want next. Ask: “Has a recommendation ever been surprisingly accurate, or completely wrong? Why do you think that happened?” Wrong recommendations often come from limited or unusual data, for example when a friend used your account. Improving over time: the more you use a voice assistant, the better it understands your accent, because each interaction is more training data.",
+  "img": "assets/day4/genai/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "What Makes a Machine “Learn”?",
+   "A machine learns by finding patterns in data and getting better at a task, without being programmed for every situation.",
+   "1. Data input",
+   "Text, images or numbers to study. Both quality and quantity matter.",
+   "2. Algorithms",
+   "Mathematical methods that find patterns. Different tasks need different algorithms.",
+   "3. Model training",
+   "The machine adjusts its internal settings to shrink the gap between its predictions and the real answers.",
+   "4. Feedback loop",
+   "It compares predictions with true outcomes and corrects its errors (for example with gradient descent).",
+   "5. Experience and iteration",
+   "Training repeats many times. Each pass refines the predictions.",
+   "6. Evaluation",
+   "The model is tested on unseen data to prove it works in the real world. With more training predictions becomes more accurate."
+  ],
+  "notes": "Key message: “learning” for a machine means guessing, checking the guess against the right answer, and adjusting, many thousands of times. Analogy that works well: a student preparing for an exam with past questions. 1. Data input = the past questions and the marking scheme. 2. Algorithm = the study method the student uses. 3. Training = practising the questions. 4. Feedback loop = checking answers against the marking scheme and seeing mistakes. 5. Iteration = practising again and again. 6. Evaluation = sitting a new exam with questions they have never seen. Gradient descent (mentioned in step 4) is simply the mathematical method for making small adjustments in the direction that reduces the error. Learners do not need the maths. Important: step 6 checks for “overfitting”, which is when a model memorises its training examples but fails on new ones, like a student who memorised last year’s answers but does not understand the subject.",
+  "img": "assets/day4/genai/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "The Machine Learning Workflow",
+   "1. Data processing",
+   "Collect the data, clean it (remove errors and duplicates), explore it, then prepare and label it for training.",
+   "2. Modelling",
+   "Choose an algorithm, train the model on the prepared data, then validate and evaluate how well it performs.",
+   "3. Deployment",
+   "Put the model to work in a real product, then keep monitoring it and update the model and data as the world changes.",
+   "It is a cycle, not a straight line: new data keeps flowing back in."
+  ],
+  "notes": "Key message: building an ML system is a repeating cycle with three phases: data processing, modelling and deployment. Point out where the learners fit. Data processing (phase 1) usually takes most of the time on a real ML project, often quoted as around 80 percent. Data labeling is part of the “prepare / transform” step. Without it, there is nothing for the modelling phase to learn from. Why it is a cycle: once a model is in use, the world changes. New phone models, new slang, new kinds of fraud. Performance drops over time (this is called “model drift”), so teams collect fresh data, label it, and retrain. Ask: “Which step do you think is most often rushed, and what happens when it is?” Answer: data cleaning and labelling. A rushed dataset produces a model that looks fine in testing and fails in real life.",
+  "img": "assets/day4/genai/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "Why Data Is the Foundation",
+   "Without quality data, ML models cannot learn, perform or predict accurately.\nData gives the examples from which models learn patterns and relationships.\nHigh-quality, diverse data helps models work well in new situations.\nIt helps models understand real-world scenarios and adapt to practical uses.\nData drives continuous improvement through feedback loops.",
+   "Garbage in, garbage out",
+   "If the labels are wrong, the model learns the wrong thing, and does it confidently.",
+   "Separate datasets measure how well the model works on unseen data:",
+   "70% Training set",
+   "What the model learns from",
+   "15% Validation",
+   "Checks while learning",
+   "15% Test",
+   "The final exam"
+  ],
+  "notes": "Key message: data is the foundation of machine learning, and the labels are the lesson. This is the slide that connects the module most directly to the learners’ work. Say it plainly: “The labels you create are the answer key the model learns from.” Ask: “What would happen if half the cat photos were accidentally labelled ‘dog’?” (The model gets confused and accuracy drops. It may even learn the mistake confidently.) Ask: “What if all our cat photos were of white cats indoors?” (It may fail on black cats or cats outside. This is how bias gets into AI.) The data split: - Training set (about 70%): the examples the model studies. - Validation set (about 15%): used during training to check progress and tune settings, like mock exams. - Test set (about 15%): kept completely hidden until the end, like the real exam. If the model has seen the test data, the score is meaningless. The 70/15/15 split is a common default, not a law. Learners will use this idea in the lab.",
+  "img": "assets/day4/genai/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "Types of Machine Learning",
+   "Machine learning is grouped by how the model learns:",
+   "Supervised: learns from labelled examples, with the right answer given.",
+   "Unsupervised: finds hidden groups in data that has no labels.",
+   "Semi-supervised: mixes a few labelled examples with many unlabelled ones.",
+   "Reinforcement: learns by trial and error, through rewards and penalties.",
+   "Also: self-supervised learning creates its own labels from raw data. This is how large language models are first trained."
+  ],
+  "notes": "Key message: there are four main ways a machine can learn. The difference is what kind of data and feedback it gets. Use one simple question to tell them apart: “Is there an answer key?” - Yes, for every example → supervised. - No answer key at all → unsupervised. - A small answer key plus lots of unmarked data → semi-supervised. - No answer key, but points for good actions and penalties for bad ones → reinforcement. The image shows typical uses: supervised for spam detection, speech recognition and image classification; unsupervised for clustering, anomaly detection and pattern detection; semi-supervised for fraud detection and image labelling; reinforcement for robotics, video games and resource management. Self-supervised learning: the model hides part of the data from itself and learns to predict it, for example hiding the next word in a sentence. This is how GPT-style models are pre-trained on huge amounts of text without anyone labelling it. We will come back to this in the generative AI section. The next slides go through each type in detail.",
+  "img": "assets/day4/genai/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Supervised Learning: What It Is",
+   "The model trains on labelled data: data that comes with a tag such as a name, number or type (“apple”, “spam”, “GH₵ 250”).\nEach input is paired with its correct output. The model compares its prediction with the right answer and adjusts itself to reduce mistakes.\nIt works like a teacher guiding a student with a marking scheme, which is why it is called “supervised”.\nThe goal is to make accurate predictions on new, unseen data, for example reading handwritten digits it has never seen before.",
+   "Learning a class from examples: show the model many labelled photos of cats and dogs, and it learns to sort new photos into the right class."
+  ],
+  "notes": "Key message: supervised learning means learning with an answer key. It is the most common type of machine learning in industry, and it is the type that depends most on data labelers. Use the image: in the top half, the input photos of apples come with the annotation “These are apples”. The model learns, and when it sees a new apple it predicts “It’s an apple!”. The bottom half shows the contrast with unsupervised learning, which we cover shortly: no annotations, so the model can only group similar fruit together. Analogy: learning to identify cedi notes. A teacher shows you notes and says “this is 5 cedis, this is 10 cedis”. After enough examples you can identify a note on your own. The teacher’s labels are what make it supervised. Ask: “In supervised learning, what happens if the teacher’s answers are wrong?” This reinforces the importance of accurate labels.",
+  "img": "assets/day4/genai/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Supervised Learning: How the Model Learns"
+  ],
+  "notes": "Key message: supervised learning is a loop of predict, compare, measure the error and update. Walk through the diagram from top to bottom. Use a concrete example, such as predicting the price of a used phone: 1. Input x: phone brand, age, storage, condition. 2. Prediction ŷ: the model guesses GH₵ 1,200. 3. Expected y: the real selling price from the label was GH₵ 1,500. 4. Error: the model was GH₵ 300 too low. 5. Update: it adjusts its internal settings so next time similar phones get a higher estimate. This repeats over thousands of phones until the predictions are close to the real prices. The symbols: x = input, y = true answer (label), ŷ (“y-hat”) = the model’s prediction. “Optimisation problem” just means finding the settings that make the error as small as possible.",
+  "img": "assets/day4/genai/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Two Kinds of Supervised Learning",
+   "Classification",
+   "Predicts a category or label",
+   "The answer is one of a fixed set of groups. The question it answers is “which one?”",
+   "Spam or not spam\nCat, dog or bird\nMaize leaf healthy or diseased\nLoan approved or declined",
+   "Regression",
+   "Predicts a number",
+   "The answer is a value on a scale. The question it answers is “how much?” or “how many?”",
+   "The price of a house\nTomorrow’s temperature\nNext month’s sales\nThe tip a customer will leave",
+   "Quick test: if the answer is a word or group, it is classification. If it is a number, it is regression."
+  ],
+  "notes": "Key message: supervised learning comes in two forms. Classification predicts a category; regression predicts a number. Both need labelled data. Quick-fire check with the class (call out “classification” or “regression”): - Will this customer cancel their subscription? (Classification: yes or no.) - How many litres of fuel will this car use? (Regression.) - Which language is this sentence written in? (Classification.) - How long will this delivery take? (Regression.) - Is this X-ray normal or abnormal? (Classification.) Labelling link: for classification, labelers choose a category for each item (for example “healthy” or “diseased”). For regression, the label is a measured number (for example the actual sale price). Both types will come up again later: discriminative models do exactly these two jobs.",
+  "img": "assets/day4/genai/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Supervised Learning Examples",
+   "Animal Detection System",
+   "House Pricing System"
+  ],
+  "notes": "Key message: in supervised learning, the model learns from past examples to predict future values. Read the chart: each dot is one past order. Across is the total bill; up is the tip. Red dots are pick-up orders; green are deliveries. The pattern: bigger bills usually mean bigger tips, and delivery orders tend to tip a bit more. The model learns this pattern from the labelled dots. Note on the original slide: its problem statement asked “what type of meal to serve?”, which did not match the solution. The problem here is restated to match the data: predicting the tip. Ask learners to name the inputs (features) and the label in this example. Then ask: “What other inputs could improve the prediction?” (Time of day, day of the week, number of people, the server’s name.) Labelling link: someone had to record the correct tip for every past order. Missing or wrong tip amounts would weaken the model.",
+  "img": "assets/day4/genai/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Unsupervised Learning: What It Is",
+   "The model gets unlabelled data: no tags and no correct answers. Nobody tells it what to look for.\nIt studies the inputs on its own to find hidden patterns and groups, by measuring how similar data points are and looking at the structure of the data.\nUnlabelled data is easy and cheap to collect, but it is often messy: noisy values, gaps and unknowns.",
+   "In simple terms: pour a bag of mixed beans on a table and sort them into piles by size and colour, without knowing their names."
+  ],
+  "notes": "Key message: unsupervised learning finds structure in data without any labels. It is about discovery, not prediction. Walk through the image from left to right: - Input raw data: a mix of elephants, camels and cows with no labels. - Interpretation: the algorithm has no predefined categories; it must work out how to organise the data. - Algorithm: techniques such as clustering, dimensionality reduction or anomaly detection. - Processing: the algorithm compares the animals’ features. - Output: the animals end up in three groups. Note the model does not know the words “elephant” or “camel”; it only knows these animals are similar to each other. A person names the groups afterwards. Contrast with supervised learning: there is no teacher and no answer key. That is why evaluating unsupervised models needs human judgement: does this grouping make sense? Real uses: grouping customers by shopping behaviour, spotting unusual transactions, organising news articles by topic.",
+  "img": "assets/day4/genai/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "Unsupervised Learning"
+  ],
+  "notes": "Key message: unsupervised learning has the same overall steps as supervised learning, but evaluation depends heavily on human judgement because there is no answer key. Step 3 explained: the elbow method helps choose how many clusters to make (for example 3 customer groups or 5). But only a person can say whether the groups are meaningful: “big spenders”, “weekend shoppers”, “bargain hunters”. Step 4 is a useful link to labelling: unsupervised clusters can be used to create labels quickly. For example, group 10,000 support messages automatically, then a labeler only needs to name each group and fix mistakes. Correction to the original deck: the employee example’s “solution” text was copied from the restaurant tips slide. The correct solution is clustering staff by tenure and income to discover groups such as the fast-trackers. Dimensionality reduction (from the original) means simplifying data with many columns into fewer, more useful ones. Mention it only if learners ask.",
+  "img": "assets/day4/genai/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "Reinforcement Learning: Learning by Trial and Error",
+   "An agent learns by acting in an environment and receiving rewards for good actions and penalties for bad ones. No one gives it the correct answers; over time it works out a strategy that earns the most reward.",
+   "Agent",
+   "The learner and decision-maker: a robot, game AI or trading bot.",
+   "Environment",
+   "The world it acts in: a video game, a warehouse, the stock market.",
+   "Action",
+   "What the agent does: move left, press a button, buy a share.",
+   "Reward",
+   "A score after each action: +1 for a goal, −10 for losing a life."
+  ],
+  "notes": "Key message: reinforcement learning is learning from consequences, like training a pet with treats. Key characteristics (from the original deck): - Interaction-based learning: the agent learns by doing and getting feedback. - No labelled data: it learns by trial and error. - Common algorithms: Q-learning, SARSA, Deep Q-Networks (DQN). Learners only need the names. Two kinds: model-based reinforcement learning, where the agent builds a picture of how the environment works and plans ahead; and model-free, where it learns directly from experience. Analogy: a child learning to ride a bicycle. Nobody can give them the “correct answer”. They try, wobble, fall (penalty), stay up a bit longer (reward), and gradually find what works. Good uses: robotics, games, self-driving systems, managing resources such as electricity grids. Reinforcement learning from human feedback (RLHF) is also used to make chatbots more helpful, so it connects to generative AI too.",
+  "img": "assets/day4/genai/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "Reinforcement Learning: How the Loop Works",
+   "The agent observes the environment.\nBased on its strategy, it takes an action.\nThe environment changes and shows a new state.\nThe agent receives a reward or penalty.\nIt uses this feedback to improve its next decisions.",
+   "Example: a self-driving car",
+   "Agent: the AI driving system\nEnvironment: roads, traffic, pedestrians\nActions: steer, brake, accelerate\nReward: arriving safely and on time, avoiding accidents",
+   "Fruit example: shown an apple, the system first says “mango”. It is told “Wrong! It’s an apple” and updates itself. With practice it answers correctly every time."
+  ],
+  "notes": "Key message: reinforcement learning is a loop of observe, act, get feedback, improve, repeated thousands or millions of times. Walk through the five steps with the self-driving car, then with something familiar: learning to play a mobile game. You tap (action), the game changes (new state), you gain or lose points (reward), and you slowly learn the best moves (strategy, which experts call a “policy”). The fruit example (bottom image): the system guesses “mango” for an apple, gets corrected, and improves. Note for accuracy: because it is told the correct answer, this example is really closer to supervised learning with feedback. Use it to show the idea of learning from correction, and use the car or a game as the clearer reinforcement learning example. Key idea to repeat: the agent is trying to maximise its total reward over the long term, not just the next step. A chess program may sacrifice a piece now to win later.",
+  "img": "assets/day4/genai/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "Semi-Supervised Learning",
+   "Uses a small amount of labelled data plus a large amount of unlabelled data. Ideal when labelling is slow, costly or limited."
+  ],
+  "notes": "Key message: semi-supervised learning sits between supervised and unsupervised learning. It gets most of the benefit of labels while needing far fewer of them. Real example: a hospital has 100,000 chest X-rays but radiologists only have time to label 1,000. A model trained on the 1,000 labels pseudo-labels the rest, then is retrained on all of them. Why step 4 matters: if the labelled X-rays come from one hospital’s machine and the unlabelled ones from a very different machine, the pseudo-labels will be poor. Both sets must come from the same kind of source (the same “distribution”). Labelling link: in semi-supervised projects, human labelers often check and correct a sample of the pseudo-labels. That human check is what keeps the model from learning its own mistakes. Neural networks often use this approach: the labelled data teaches the basic concepts of the task, and the unlabelled data helps the network generalise to new examples.",
+  "img": "assets/day4/genai/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 2 · 15 MIN · PAIRS",
+   "Which Type of Learning Is It?",
+   "Write S (supervised), U (unsupervised), R (reinforcement) or SS (semi-supervised) for each scenario. Ask yourself: is there an answer key?",
+   "1",
+   "A spam filter trained on 50,000 emails marked spam or not spam",
+   "5",
+   "200 maize-leaf photos labelled healthy or diseased, 20,000 not labelled",
+   "2",
+   "Grouping supermarket shoppers by habits, with no categories given",
+   "6",
+   "Finding unusual mobile money transfers, with no fraud labels",
+   "3",
+   "A robot learning to walk by falling and trying again",
+   "7",
+   "A chess program playing millions of games against itself",
+   "4",
+   "Predicting house prices from records of past sales",
+   "8",
+   "Reading handwritten digits, trained on labelled samples"
+  ],
+  "notes": "Pairs discuss for 8 minutes, then review together for 7 minutes. Ask one pair to defend each answer before you reveal it. Answer key: 1. S, supervised. Every email already has its answer (spam or not spam). This is classification. 2. U, unsupervised. No categories are given; the model finds the groups (clustering). 3. R, reinforcement. Trial and error, with falling as the penalty and staying upright as the reward. 4. S, supervised. Past sales come with the real price (the label). This is regression because the answer is a number. 5. SS, semi-supervised. A small labelled set plus a large unlabelled one. 6. U, unsupervised. This is anomaly detection: the model flags what looks unusual. Discussion point: once a person confirms which transfers really were fraud, those labels can be used to train a supervised model. 7. R, reinforcement. Winning is the reward. 8. S, supervised. Each sample comes with the correct digit. Numbers 5 and 6 usually spark the best debate. Praise good reasoning even when the final label is wrong.",
+  "img": "assets/day4/genai/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "Where Machine Learning Is Used",
+   "Healthcare",
+   "Diagnosing disease from X-rays and MRIs, predicting patient outcomes, personalising treatment.",
+   "Finance",
+   "Detecting fraud in real time, algorithmic trading, assessing credit risk to make lending safer and faster.",
+   "Retail and e-commerce",
+   "Product recommendations, forecasting demand to manage stock, analysing customer reviews.",
+   "Transport",
+   "Self-driving cars, optimising delivery routes, predicting when vehicles need maintenance.",
+   "Social media and entertainment",
+   "Netflix and YouTube recommendations, image and speech recognition for better interaction.",
+   "Manufacturing",
+   "Spotting defective products automatically, predicting machine failures before they happen."
+  ],
+  "notes": "Key message: machine learning is already working behind the scenes in almost every industry. Make it local: ask learners for an example from Ghana or their own experience for each card. Some prompts: - Healthcare: apps that help health workers read malaria test results. - Finance: mobile money operators flagging suspicious transfers; credit scoring for small loans based on phone usage. - Retail: online shops recommending products. - Transport: ride-hailing apps estimating arrival times and prices. - Agriculture (not on the slide): apps that identify crop disease from a photo of a leaf. Labelling link: every one of these needs labelled data. X-rays labelled by doctors, transactions labelled fraud or genuine, products labelled defective or fine. Data labelers make all of these systems possible.",
+  "img": "assets/day4/genai/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "Benefits and Challenges of Machine Learning",
+   "Benefits",
+   "Efficiency: automates repetitive work, freeing people for harder tasks.",
+   "Insights: finds patterns in huge data that people would miss.",
+   "Personalisation: tailors recommendations and services to each user.",
+   "Advanced automation: helps robots do complex tasks accurately.",
+   "Challenges and ethical considerations",
+   "Data quality: poor or biased data, and high data costs",
+   "Complexity: choosing models, overfitting, scaling up",
+   "Interpretability: hard to explain why a model decided",
+   "Deployment: models drift and are hard to integrate",
+   "Ethics: bias, privacy and security risks",
+   "Resources: skills shortages, costly infrastructure",
+   "Solving these needs careful planning and teamwork across data, engineering and business."
+  ],
+  "notes": "Key message: machine learning brings big benefits, but it also has real challenges, many of which start with the data. This slide covers the original objective “outline the challenges and ethical considerations in ML”. Explain the challenges in plain terms: - Data quality and availability: biased or poor data gives biased or poor models. Good labelled data is expensive. - Technical complexity: choosing the right model, avoiding overfitting (memorising instead of learning), and making it work at scale. - Interpretability: many models are “black boxes”; it is hard to explain why a loan was refused, which matters for fairness. - Production deployment: “model drift” is when a model gets worse over time as the world changes; connecting models to real systems is hard. - Ethical considerations: bias against groups of people, privacy of personal data, and security risks. - Resource constraints: there are not enough trained people, and computing infrastructure is costly. Ask: “Which of these challenges can good data labelling help with?” Expected answers: data quality, bias and, indirectly, interpretability.",
+  "img": "assets/day4/genai/s32.jpg"
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "text": [
+   "PART 3",
+   "Deep Learning"
+  ],
+  "notes": "Section 3 of 6: Deep Learning (about 50 minutes including Practical 3). Learners will see what makes deep learning different from ordinary machine learning, how artificial neurons and neural networks work, and the crucial split between discriminative models (which classify and predict) and generative models (which create). That split is the doorway into generative AI. Transition line: “Machine learning is powerful, but for messy data like photos, voice and language we need something deeper: neural networks with many layers.”",
+  "img": "assets/day4/genai/s33.jpg"
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "text": [
+   "What Is Deep Learning?",
+   "Deep learning is a type of machine learning that uses artificial neural networks with many layers. “Deep” simply means many layers.\nEach layer learns something a little more complex than the one before, so the network builds up an understanding step by step.\nIt learns directly from raw data. In ordinary ML, people often have to pick out the important features by hand; deep learning finds them itself.\nIt handles unstructured data, such as images, audio and text, and powers speech recognition, image recognition and language tools.",
+   "Top: in machine learning a person picks the features. Bottom: deep learning extracts features and classifies in one network."
+  ],
+  "notes": "Key message: deep learning is machine learning with many-layered neural networks, and its superpower is learning features straight from raw data. Explain “features”: features are the useful details a model looks at. To recognise a car in traditional ML, an engineer might hand-code features like “has four wheels” and “has windows”. In deep learning, the network discovers those features on its own from thousands of car photos. Walk through the image: in the top row (machine learning), a person extracts features, then the model classifies “car” or “not car”. In the bottom row (deep learning), the neural network does both steps itself. The image’s captions say it well: ML may need human intervention to correct errors; deep learning adapts with little or no human intervention. Why it matters for generative AI: every modern generative AI tool (chatbots, image generators) is built on deep learning. Trade-off to mention: deep learning needs much more data and computing power than traditional ML.",
+  "img": "assets/day4/genai/s34.jpg"
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "text": [],
+  "notes": "Key message: a neural network turns a picture into numbers, passes them through layers of weighted connections, and the strongest output signal is its answer. Walk through slowly with a real photo of a dog on your phone if possible. Step 1: a small photo of 100 × 100 pixels already gives 10,000 numbers (30,000 for colour). The network never “sees” a dog; it sees numbers. Step 2: weights are importance values. At the start of training, the weights are random, so the network’s guesses are random too. Step 3: the output is a probability. “Dog 92%, cat 8%” means the network is fairly confident. Learning: when the network says “cat” but the label says “dog”, the error is sent backwards through the layers (this is called “backpropagation”) and each weight is nudged in the direction that would have given the right answer. After thousands of labelled photos, the weights are tuned well enough to recognise new dogs. Labelling link: the label “dog” on each training photo is what makes this correction possible.",
+  "img": "assets/day4/genai/s35.jpg"
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "text": [
+   "Two Kinds of Deep Learning Model",
+   "Discriminative",
+   "Used to classify or predict. It learns the relationship between the data and its label, such as “this photo shows a dog”.",
+   "Generative",
+   "Used to create new data like the data it was trained on. It learns the patterns in the content itself, for example to predict the next word.",
+   "Key difference: if the model creates text, images or audio, it is generative. If it classifies or predicts, it is not.",
+   "Top: traditional (predictive) model outputs a label. Bottom: generative model outputs new content."
+  ],
+  "notes": "Key message: this is one of the most important distinctions in the module. Deep learning models are either discriminative (they tell things apart) or generative (they create new things). Walk through the image: - Top row: a traditional ML model is given data and labels, learns the relationship between them, and outputs a label. - Bottom row: a generative AI model is given unstructured content (text, images), learns the patterns in that content, and outputs new content. Analogy: a discriminative model is like a food critic. It can taste a dish and tell you whether it is jollof or fried rice. A generative model is like a chef. It has learned what jollof is like so well that it can cook a new pot of it. Deep learning architectures can be used for both. CNNs, RNNs and transformers used for classification are discriminative. GANs, VAEs, diffusion models and GPT-style transformers are generative. Many modern systems combine both.",
+  "img": "assets/day4/genai/s36.jpg"
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "text": [
+   "Discriminative Models: Telling Things Apart",
+   "They learn the boundary between classes: how to tell one thing from another. They answer: “Given this data, which class does it belong to?”",
+   "Their outputs",
+   "Number: a prediction score · Discrete: “cat” or “dog” · Class: one of a fixed set · Probability: “70% chance of rain”",
+   "Uses: spam detection, sentiment analysis, image classification, fraud detection.",
+   "Examples: logistic regression, support vector machines (SVM), CNN image classifiers."
+  ],
+  "notes": "Key message: discriminative models classify or predict. They draw a line between groups; they do not create anything new. Explain the two images: - Left image (discriminative technique): a photo of a dog goes in; the model classifies it; the output is the label “Dog”. It decides “this is a dog, not a cat”. - Right image (discriminative model): the dashed line is the decision boundary. Everything on one side is green, everything on the other is yellow. The model only cares where that line is, not what the dots look like in detail. P(y | x) in plain words: “how likely is this label, given what I see?” For example, given this email (x), how likely is it to be spam (y)? Characteristics: they focus on decision boundaries, model only the relationship between inputs and outputs, and are often faster and simpler than generative models for classification. They are trained on labelled data, so they depend on data labelers.",
+  "img": "assets/day4/genai/s37.jpg"
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "text": [
+   "Generative Models: Creating Something New",
+   "They learn how the data itself is made, so they can produce new examples that look real. They answer: “Given what I have learned, can I make a new one?”",
+   "Their outputs",
+   "Language: sentences and conversation · Images: pictures and artwork · Audio: speech, music and sound",
+   "Uses: chatbots, image generation, voice synthesis, creating extra training data.",
+   "Examples: GPT (text), DALL·E and Stable Diffusion (images), WaveNet (audio); built with GANs, VAEs, diffusion and autoregressive models."
+  ],
+  "notes": "Key message: generative models learn what the data looks like so well that they can create new examples of it. Explain the two images: - Left image (generative technique): after learning from photos of dogs, the generative model produces a new dog image. Notice it is not the same dog it was trained on. - Right image (generative model): instead of drawing one line between groups, the model learns the whole shape of where each kind of data lives (the shaded areas). Because it knows the shape, it can pick a new point inside it, which is a new, realistic example. P(x, y) in plain words: the model learns the full picture of the data, not just the boundary. That is why it can generate. Characteristics: generative models focus on creating new content or filling in missing information, model the whole data distribution, and need much more computing power. Data augmentation: generative models can create synthetic data to help train other models, for example extra images of a rare crop disease. These still need human checking.",
+  "img": "assets/day4/genai/s38.jpg"
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "text": [
+   "Generative vs Discriminative: Side by Side",
+   "Choosing: the task decides. Need a decision or a category? Use discriminative. Need something new written, drawn or spoken? Use generative. Many real systems use both together."
+  ],
+  "notes": "Key message: neither type is “better”. They do different jobs, and the task decides which one to use. Walk through the customer service row, which comes from the original deck. Imagine a company’s help desk: - A discriminative model (for example logistic regression or an SVM trained on labelled past queries) reads the incoming message and sorts it into “Billing issue” or “Technical support”, so it reaches the right team. - A generative model (for example a GPT-style chatbot) writes a natural-sounding reply to the customer. A real help desk might use both: the discriminative model routes the message, and the generative model drafts the answer for a human agent to check. When to choose generative AI (from the original): creative tasks such as images, music or stories; filling in missing data such as speech-to-text or text completion; learning rich representations of data for unsupervised tasks. When to choose discriminative AI: classification or decision tasks such as spam or fraud detection; supervised tasks with labelled data; problems where speed and simplicity matter.",
+  "img": "assets/day4/genai/s39.jpg"
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 3 · 10 MIN · WHOLE CLASS",
+   "Stand Up for Generative",
+   "Read each one aloud. Stand up if it is generative (it creates). Stay seated if it is discriminative (it classifies or predicts).",
+   "1",
+   "A phone unlocking when it sees your face",
+   "6",
+   "A bank flagging a suspicious transfer",
+   "2",
+   "An app that writes a birthday poem",
+   "7",
+   "A chatbot drafting an email reply for you",
+   "3",
+   "YouTube choosing your next video",
+   "8",
+   "Spotting disease in a photo of a maize leaf",
+   "4",
+   "Turning a text description into a picture",
+   "9",
+   "Creating a synthetic voice for an audiobook",
+   "5",
+   "Predicting tomorrow’s maize price",
+   "10",
+   "Sorting messages into “billing” or “technical”"
+  ],
+  "notes": "Run this fast, about 30 seconds per item. After each one, ask a person who stood (or stayed seated) to explain in one sentence. The movement keeps energy up after the theory slides. Answer key (G = generative, stand up; D = discriminative, stay seated): 1. D: it classifies your face as owner or not owner. 2. G: it creates a new poem. 3. D: it predicts which existing video you are likely to watch (a recommendation system). 4. G: it creates a new image. 5. D: the output is a number, a prediction. Remember Y = f(X): if Y is a number, it is not generative. 6. D: it classifies the transfer as normal or suspicious. 7. G: it writes new text. 8. D: it classifies the leaf as healthy or diseased. 9. G: it creates new audio. 10. D: it sorts messages into fixed categories. Common confusion: learners often stand for number 3 because recommendations feel “creative”. Point out that YouTube is choosing from videos that already exist, not making a new one.",
+  "img": "assets/day4/genai/s40.jpg"
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "text": [
+   "PART 4",
+   "Generative AI"
+  ],
+  "notes": "Section 4 of 6: Generative AI and transformers (about 60 minutes including Practical 4). This is the heart of the module. Learners will define generative AI, see how it actually produces text one word at a time, explore the kinds of content it can create, and understand the transformer: the technology that made tools like ChatGPT possible. Transition line: “We now know generative models create new content. Let’s see how today’s generative AI tools do it, and what makes them so powerful.”",
+  "img": "assets/day4/genai/s41.jpg"
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "text": [
+   "What Is Generative AI?",
+   "Generative AI is AI that produces new content: text, images, audio, video, code and synthetic data.\nIt is a subset of deep learning: it uses artificial neural networks and can learn from labelled and unlabelled data.\nLike other AI, it learns from past data. What sets it apart is that it creates original material rather than only classifying or recognising.\nIts models are trained on very large datasets to learn patterns and structures, then generate new content that is statistically similar to what they learned.\nLarge language models (LLMs), like those behind ChatGPT, Claude and Gemini, are generative AI for text."
+  ],
+  "notes": "Key message: generative AI is the part of deep learning that creates. It learns patterns from huge amounts of data and produces new content that resembles what it learned. Point to the diagram: generative AI sits inside deep learning, which is inside machine learning, which is inside artificial intelligence. Every generative AI tool is therefore also a deep learning, machine learning and AI system. The goal of a generative model is to capture the patterns and variations in its training data, and reproduce them in new examples. A model trained on millions of photos of faces can produce a face that has never existed, but that looks like it could. Important nuance: generative AI produces what is statistically likely, based on its training data. It is not looking facts up in a database. That is why it can sound confident and still be wrong, which sets up the hallucinations section. Ask: “Which generative AI tools have you used, and for what?” Collect a few answers to use as examples later.",
+  "img": "assets/day4/genai/s42.jpg"
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "text": [
+   "How Generative AI Creates: Predicting What Comes Next",
+   "When you give it a prompt, generative AI uses the patterns it learned to predict the most likely response, then builds it one small piece at a time.",
+   "Generative language models are pattern-matching systems. They do not look up a stored answer; they produce new text based on what usually follows.",
+   "Like your phone’s autocomplete: type “I am” and it suggests “fine” because you often type “I am fine”. An LLM does the same at enormous scale, with much more context.",
+   "THE MODEL’S CHOICES",
+   "“The sky is …”",
+   "blue",
+   "82%",
+   "clear",
+   "9%",
+   "cloudy",
+   "6%",
+   "falling",
+   "1%",
+   "Illustrative numbers. It picks a word, adds it, and predicts again."
+  ],
+  "notes": "Key message: under the hood, a text generator is predicting the next word, over and over, very well. Demonstrate with phones: ask learners to open a message and keep tapping the middle autocomplete suggestion ten times. They will get a strange but grammatical sentence. That is a tiny language model. An LLM is the same idea trained on a huge portion of the internet’s text, with transformers to keep track of context. The bar chart: for “The sky is …”, the model gives every possible next word a probability. Usually it picks one of the most likely (“blue”), adds it to the sentence, and repeats the process for the next word. The numbers on the slide are illustrative. Technical note: models actually predict “tokens”, which are words or pieces of words. “Words” is fine for this audience. Why answers differ each time: the model often picks among the top few options with some randomness (a setting called “temperature”). Higher temperature means more creative and less predictable. This is why regenerating gives a different answer.",
+  "img": "assets/day4/genai/s43.jpg"
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "text": [
+   "The Power of Generative AI: Transformers",
+   "The power of today’s generative AI comes from the transformer, a type of neural network introduced by Google researchers in 2017.",
+   "A transformer transforms an input sequence into an output sequence. It does this by learning context and tracking how every part of the sequence relates to every other part.",
+   "Input: “What is the colour of the sky?”",
+   "The model links colour, sky and blue …",
+   "Output: “The sky is blue.”",
+   "Any sequence of text, image or video data can be handled by a transformer.",
+   "One large transformer (a “foundation model”) is trained once, then adapted to many tasks."
+  ],
+  "notes": "Key message: transformers are the breakthrough technology behind ChatGPT, Claude, Gemini and many image tools. They are good at understanding context in sequences. Correction to the original deck: it said transformers “came into being during the 2018 revolution in NLP”. The transformer was introduced in 2017 in the Google paper “Attention Is All You Need”. In 2018, models built on it, BERT and the first GPT, kicked off the NLP revolution. The sky example: the transformer builds an internal mathematical representation of how the words relate. It recognises that “colour” and “sky” together point strongly to “blue”, and generates “The sky is blue.” Explain the image: a foundation model is a large transformer trained on huge amounts of varied data (text, images, speech, structured data). It is then adapted (“fine-tuned”) for many different tasks: answering questions, analysing sentiment, extracting information, captioning images, recognising objects and following instructions. This saves training a new model from scratch for every job. A virtuous cycle (from the original deck): transformers make accurate predictions, which drives wider use, which generates more data to build even better models.",
+  "img": "assets/day4/genai/s44.jpg"
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "text": [
+   "Why Transformers Were a Breakthrough: Attention",
+   "Before: short memory",
+   "Early models guessed the next word from the last few words, like phone autocomplete. They lost context over a paragraph. In “I am from Italy. I like horse riding. I speak ___”, they forgot Italy, so could not say Italian.",
+   "After: self-attention",
+   "A transformer looks at all the words at once and works out which ones matter to each other, even when they are far apart. It tags each word’s position, maps how every word relates to the others, and runs many of these checks in parallel (multi-head attention).",
+   "SELF-ATTENTION FINDS MEANING",
+   "She poured water from the pitcher into the cup until it was full. → it = the cup",
+   "She poured water from the pitcher into the cup until it was empty. → it = the pitcher"
+  ],
+  "notes": "Key message: “attention” lets a transformer keep track of context across a whole passage. That is what makes its writing coherent. Before transformers: early NLP models worked like phone autocomplete, guessing the next word from the previous one or two. They mapped how often word pairs appeared together. They could not remember the start of a paragraph by the end, so they could not link “Italy” to “Italian”. After transformers: the attention mechanism lets every word “look at” every other word and decide how much attention to pay to it. In the pitcher sentences, changing just one word (“full” versus “empty”) changes what “it” refers to. People get this instantly; attention lets the model get it too. How it works, simply (from the original deck): - Positional encoders tag each word with its place in the sequence. - Attention units use these tags to calculate a kind of map of how each word relates to the others. - Many attention calculations run in parallel: multi-head attention. Why it mattered: by finding patterns between elements mathematically, transformers can learn from the trillions of words and images on the web, without needing them to be labelled by hand.",
+  "img": "assets/day4/genai/s45.jpg"
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "text": [
+   "Inside a Transformer: Encoder and Decoder",
+   "The encoder",
+   "Reads the input sequence and turns it into a rich internal representation of its meaning and context.",
+   "The decoder",
+   "Uses that representation to produce the output, one piece at a time, for a task such as translating or answering.",
+   "Today: BERT uses only the encoder (good for understanding). GPT-style chatbots use only the decoder (good for generating)."
+  ],
+  "notes": "Key message: at a high level, a transformer has two halves. The encoder understands the input; the decoder produces the output. Analogy: a human interpreter at a meeting. First they listen to the whole sentence in Twi and understand its meaning (encoder). Then they speak the meaning in English, word by word (decoder). The diagram shows the original 2017 design. Each side is a stack of identical blocks containing attention layers and “feed-forward” layers, repeated several times (the “Nx”). Learners do not need to remember the block names. Clarification: the original deck described all transformers as encoder plus decoder. Many modern models use only one half. Encoder-only models such as BERT are used for understanding tasks like classification and search. Decoder-only models such as GPT, Claude and Gemini are used for generating text. Full encoder-decoder models are common in translation. Keep this slide short. It is here so learners recognise the terms if they meet them later.",
+  "img": "assets/day4/genai/s46.jpg"
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "text": [
+   "Advantages and Disadvantages of Transformers",
+   "Advantages",
+   "Better understanding\nLong-range context\nParallel Processing\nScalable\nTransfer Learning\nVersatile",
+   "Disadvantages",
+   "Costly\nData hungry\nEthical Risks\nHard to Explain\nContext Window\nFrozen Knowledge"
+  ],
+  "notes": "Advantages, briefly: \nBetter understanding: grasps language and context more accurately than earlier models.\nLong-range context: scalable, can handle huge datasets and long sequence links words far apart, vital for summaries.\nParallel processing is why they train so much faster than older step-by-step models. \nTransfer learning: a company can take a large pre-trained model and fine-tune it for one job (for example customer support in Twi) instead of training from scratch. \nWide applicability: they are versatile i.e., chatbots, translation (including near real-time captions that open meetings to hearing-impaired people), computer vision, speech recognition, and even research on DNA and proteins for drug design. \n\nDisadvantages, briefly: \nCost and energy: training needs specialised hardware and a lot of electricity. \nBias: a model trained on biased data repeats or amplifies it. Balanced, careful labelling helps. \nContext window: a limit on how much text the model can consider at once. The attention calculation grows very quickly as the input gets longer.\nFrozen knowledge: once trained, the model’s parameters are fixed. It does not learn from conversations unless it is retrained or connected to search. \nBridge: “One more problem is so important it gets its own section: hallucinations.",
+  "img": "assets/day4/genai/s47.jpg"
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 4 · 15 MIN",
+   "Be the Transformer",
+   "PART A · WHOLE CLASS · 5 MIN",
+   "Human next-word chain",
+   "The trainer starts a sentence: “Every morning when I wake up, I …”\nGoing round the room, each person adds the single most likely next word.\nRound two: each person adds a surprising word that still makes sense.\nCompare the two sentences.",
+   "PART B · PAIRS · 10 MIN",
+   "Test a real chatbot",
+   "Ask: “Describe a Kenyan market in two sentences.” Regenerate the answer twice.\nAsk it to finish: “I grew up in Mombasa . I love viazi karai. At home I speak …”\nWrite down: what changed each time, and what did it remember?"
+  ],
+  "notes": "Purpose: learners feel next-word prediction and attention for themselves. Part A (5 minutes). Stand in a line or go around the room. Each learner says one word that most likely comes next. Round one will be predictable and sensible (“… wake up early and go to work”). In round two, each person must choose a surprising but grammatical word, and the sentence becomes creative and odd. Debrief: “Round one is the model picking the most likely word. Round two is like turning up the ‘temperature’ setting: more creative, less predictable, and more likely to go wrong.” Part B (10 minutes). Any free chatbot works (ChatGPT, Claude, Gemini or Copilot). 1. Regenerating gives different answers each time. This shows the model is sampling likely words, not retrieving one stored answer. 2. The completion shows attention at work: the model should answer “Twi” (Asante Twi) because it links “Kumasi” to the language, the same idea as Italy and Italian. Ask two or three pairs to share their most surprising observation. No internet? Skip Part B and run Part A twice with different opening sentences.",
+  "img": "assets/day4/genai/s48.jpg"
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "text": [
+   "PART 5",
+   "Hallucinations"
+  ],
+  "notes": "Section 5 of 6: Hallucinations (about 35 minutes including Practical 5). Learners will find out what AI hallucinations are, why they happen, how to reduce them, and then go hunting for real ones. Transition line: “Generative AI predicts what is likely, not what is true. Most of the time, likely and true are the same. When they are not, we get a hallucination.”",
+  "img": "assets/day4/genai/s49.jpg"
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "text": [
+   "What Are AI Hallucinations?",
+   "A hallucination is when generative AI produces information that is incorrect, misleading or completely made up, but presents it as if it were fact.",
+   "They range from small inaccuracies to entirely invented facts that look authentic.",
+   "They happen in text generators, image creators and other generative AI tools.",
+   "They are dangerous because they are usually fluent and confident. Nothing in the writing warns you.",
+   "Made-up facts",
+   "A wrong date, a false statistic, a person who never existed",
+   "Fake sources",
+   "Books, articles or court cases that do not exist",
+   "Broken instructions",
+   "Code or commands that do not work when run",
+   "Distorted images",
+   "Six fingers, unreadable text, impossible objects"
+  ],
+  "notes": "Key message: a hallucination is confident, fluent, wrong output from generative AI. The danger is that it looks exactly like a correct answer. Corrections to the original deck: - It described hallucinations as often “nonsensical or grammatically incorrect”. With today’s models they are usually well written and grammatical. That is exactly what makes them hard to catch. - Two original examples, a fraud model wrongly flagging a transaction and a weather model predicting rain that does not come, are prediction errors by discriminative models, not hallucinations. They are replaced here with generative examples. Real-world hook: there have been well-publicised cases of lawyers submitting AI-written court documents that cited court cases which did not exist. Ask: “Whose fault was that, the AI’s or the lawyer’s?” Lead to: the human is always responsible for checking. Ask learners: “Has a chatbot ever told you something you later found was wrong?” Collect one or two stories.",
+  "img": "assets/day4/genai/s50.jpg"
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "text": [
+   "Why Do Hallucinations Happen?",
+   "The root cause: the model is built to give a likely-sounding answer, not to check whether it is true. When it lacks good information, it fills the gap.",
+   "Not enough data",
+   "The model saw little about the topic, for example a small town or a niche subject.",
+   "Noisy or dirty data",
+   "It learned from data containing errors, rumours or contradictions.",
+   "Not enough context",
+   "A vague prompt leaves it to guess what you mean, so it fills in the blanks.",
+   "Not enough constraints",
+   "Nothing tells it to stick to facts, cite sources or admit uncertainty.",
+   "Wrong assumptions",
+   "It assumes something false in the question is true and builds on it.",
+   "Built-in limits",
+   "High model complexity and the way generative AI is designed: predicting, not knowing."
+  ],
+  "notes": "Key message: hallucinations are not random glitches. They come from predictable causes, most of which relate to data and to how the question is asked. Go through each card with an example: - Not enough data: ask a chatbot about a small local business and it may invent an opening date or owner. - Noisy or dirty data: if the internet contains a common myth, the model may repeat it as fact. - Not enough context: “Tell me about the Volta project” could mean many things; the model will pick one and may mix details. - Not enough constraints: without being told “only use the document I gave you”, the model draws on anything it half-remembers. - Wrong assumptions: “Why did Ghana win the 2010 World Cup?” A model may invent reasons rather than correct the false premise (Ghana reached the quarter-finals). - Built-in limits: the model’s job is to predict a plausible continuation, so plausible-but-false is always possible. Labelling link: two of these causes, too little data and noisy data, are exactly what good data labelling prevents.",
+  "img": "assets/day4/genai/s51.jpg"
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "text": [
+   "How to Reduce Hallucinations",
+   "As a user",
+   "Use a trusted model or a tool built for the task.",
+   "Write specific prompts with clear context and limits.",
+   "Give it the source: “Answer only from this document.”",
+   "Allow “I don’t know”: “If you are not sure, say so.”",
+   "Ask for sources, then check every one yourself.",
+   "As the people building AI",
+   "Improve training data quality: accurate, clean, well-labelled examples.",
+   "Improve the training process and build more efficient algorithms.",
+   "Use task-specific models for specialised work such as medicine or tax.",
+   "Keep a human in the loop to review and correct outputs.",
+   "Keep researching: no method removes hallucinations completely yet.",
+   "Golden rule: fluent is not the same as true. Always verify before you rely on or share AI output."
+  ],
+  "notes": "Key message: hallucinations cannot be removed completely today, but users and builders can greatly reduce them. User side (left card), with examples of prompt wording: - Specific prompt: instead of “Tell me about cocoa”, ask “Summarise the main diseases affecting cocoa in Ghana in five bullet points, for farmers.” - Give the source: paste a document and say “Use only this text. If the answer is not in it, say so.” - Allow uncertainty: the original deck said “tell the LLM to be honest”. A more effective version is to explicitly permit “I don’t know”. - Check sources: a link or reference from AI must be opened and read. Fake references are one of the most common hallucinations. Builder side (right card): this is where data labelers come in. Higher-quality training data and human-in-the-loop review are two of the strongest defences. Many AI companies employ people to rate and correct model answers so the next version hallucinates less. Correction to the original: “use tax-specific models for tax-related tasks” was a typo for “task-specific models”, meaning a model designed for that particular job. The user-side tips are a preview of the next module, Prompt Engineering.",
+  "img": "assets/day4/genai/s52.jpg"
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 5 · 15 MIN · PAIRS",
+   "Hallucination Hunt",
+   "Use any chatbot. Your job is to catch it making things up, then fix the prompt.",
+   "1",
+   "Ask for sources",
+   "“List three research papers on AI in cocoa farming in Ghana, with authors, year and link.”",
+   "Check: search for each one. Is it real, fake or partly real?",
+   "2",
+   "Ask about a fake",
+   "“Summarise the main points of the 2011 Volta Lake Treaty on Artificial Intelligence.”",
+   "Check: this treaty does not exist. Does the chatbot say so, or invent it?",
+   "3",
+   "Fix the prompt",
+   "Repeat task 1 or 2, adding: “If you are not sure, or it does not exist, say so.”",
+   "Check: what changed in the answer?"
+  ],
+  "notes": "Purpose: learners catch a hallucination with their own eyes and practise the habit of checking. Before class: try all three tasks yourself on the chatbots your learners will use. Newer chatbots, especially those connected to web search, may correctly say the treaty does not exist or find real papers. That is a good result to discuss, not a failure. If the chatbot handles them too well, try a more obscure request, such as quotes from a little-known local figure’s speech. Task 1: learners check each paper on Google Scholar or a normal web search, and record each as Real, Fake or Partly real (for example, a real author with an invented title, which is common). Task 2: the “Volta Lake Treaty on Artificial Intelligence” is invented for this exercise. A chatbot that confidently summarises it is hallucinating. Task 3: adding permission to say “I don’t know” often reduces made-up answers. This previews the Prompt Engineering module. Debrief (4 minutes): How many fake sources did the class find in total? Did the fake ones look any different from the real ones? What would happen if you pasted these into a report for your manager?",
+  "img": "assets/day4/genai/s53.jpg"
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "text": [
+   "Using Generative AI Responsibly",
+   "Bias",
+   "Unbalanced data or labels produce unfair results for some groups of people.",
+   "Privacy",
+   "Never paste personal or confidential data into public AI tools.",
+   "Deepfakes and misinformation",
+   "Realistic fake voices, images and videos can deceive. Check the source before sharing.",
+   "Copyright and consent",
+   "Was the training data used with permission? Who owns AI-made work?",
+   "Accountability",
+   "A person is always responsible for checking and using AI output.",
+   "Your role",
+   "Accurate, consistent, balanced labels make AI fairer and safer for everyone.",
+   "Discuss: which of these could your labelling work make better, or worse?"
+  ],
+  "notes": "Key message: AI is only as fair, safe and trustworthy as the data and the people behind it. Run this as a 5-minute small-group discussion using the question at the bottom. Take one answer per group. Points to draw out: - Bias: if a face dataset is mostly lighter-skinned faces, the model works worse on darker-skinned faces. Labelers can flag unbalanced data and label consistently. - Privacy: customer records, ID numbers and health information must never go into public chatbots. Labelers often see sensitive data and must follow data-protection rules and their employer’s policies. - Deepfakes: AI-generated voices and videos of public figures are already used in scams and political misinformation. - Copyright and consent: there are ongoing legal disputes about training AI on books, art and music without permission. - Accountability: “the AI said so” is never an excuse. Whoever uses the output is responsible for it. - Your role: the quality of every AI model starts with its data.",
+  "img": "assets/day4/genai/s54.jpg"
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "text": [
+   "Exit Quiz",
+   "1",
+   "What is the difference between an automated system and an autonomous (AI) system?",
+   "2",
+   "Put in order, widest to narrowest: deep learning, AI, generative AI, machine learning.",
+   "3",
+   "You have 10,000 unlabelled photos and want to find natural groups. Which type of learning fits?",
+   "4",
+   "Why is a test set kept hidden from the model until the end?",
+   "5",
+   "A model reads an X-ray and says “pneumonia, 87%”. Discriminative or generative? Why?",
+   "6",
+   "What does “attention” let a transformer do?",
+   "7",
+   "Give two causes of hallucinations and two ways to reduce them."
+  ],
+  "notes": "Learners answer on paper individually (6 minutes), then swap with a neighbour and mark together as you reveal answers (4 minutes). Answers: 1. Automated systems follow pre-set rules and do not learn; autonomous systems make their own decisions in real time and improve with data. 2. AI → machine learning → deep learning → generative AI. 3. Unsupervised learning (clustering). 4. So it gives a fair measure of how well the model works on data it has never seen, like an exam with unseen questions. If the model saw it in training, the score would be meaningless. 5. Discriminative. It classifies the image and gives a probability; it does not create new content. 6. The weights, meaning the strength of the connections between neurons. 7. It lets the model weigh how every word relates to every other word, so it keeps track of context even across long distances (for example linking “it” to “the cup”). 8. Causes, any two: not enough data, noisy data, not enough context, not enough constraints, wrong assumptions, the predictive design of the model. Reductions, any two: specific prompts with context, give the source document, allow “I don’t know”, ask for and check sources, use trusted or task-specific tools, keep a human in the loop. Scoring: 6 or more correct = ready for Prompt Engineering. Fewer than 4 = revisit the AI layers diagram and the discriminative versus generative slides at the start of the next session.",
+  "img": "assets/day4/genai/s55.jpg"
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "text": [
+   "KEY TAKEAWAYS",
+   "Four things to remember",
+   "1",
+   "AI learns patterns from examples instead of following fixed rules.",
+   "2",
+   "Data and labels shape everything a model learns. Good labelling makes good AI.",
+   "3",
+   "Generative AI creates new content by predicting what comes next, powered by transformers.",
+   "4",
+   "Fluent is not the same as true. Always check what AI produces.",
+   "NEXT MODULE",
+   "Introduction to Prompt Engineering: how to ask generative AI for exactly what you need"
+  ],
+  "notes": "Close by reading the four takeaways aloud. Ask each learner to tell a neighbour which one surprised them most (1 minute). Bridge to the next module: “Today you saw that a vague prompt invites hallucinations, and that adding one sentence (‘say if you are not sure’) changed the answer. In Prompt Engineering we learn to write prompts deliberately: giving the AI a role, context, examples and a clear format.” Optional homework: use a chatbot for one real task this week, such as summarising a long message or drafting an email. Write down one thing it did well and one thing it got wrong, and bring both to the Prompt Engineering session. Thank learners and collect any feedback on the session.",
+  "img": "assets/day4/genai/s56.jpg"
+ }
+]

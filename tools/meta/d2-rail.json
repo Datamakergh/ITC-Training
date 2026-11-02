@@ -1,0 +1,259 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "ver.2.0",
+   "Rail & Catenary Condition Awareness Project"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "This file is intended for training \n'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker’, and \nunauthorized distribution and \nreproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "img": "assets/day2/rail/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project\nLabeling target\nLabeling detail"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project",
+   "■ Purpose of the project",
+   "The purpose is to identify damaged tools in the rail stations that could cause train accidents. This is a bounding box and polygon project."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Rail",
+   "-pandrol_e-clip, Insulation_block"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target",
+   "■ Labeling criteria"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – pandrol_e-clip - normal",
+   "The yellow part is the pandrol_e-clip.\nIt looks like a pig tail.\nThe example above shows normal."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – pandrol_e-clip - abnormal",
+   "If the pandrol is not in its normal position, it is abnormal.\nIf the pandrol is around an existing location, such as the image on the left, please label the part itself.\nIf it’s away from its original position as shown in the image above, label the original position."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – insulation_block- normal",
+   "The yellow part corresponds to the insulation block.\nThis is the oval-shaped part.\nThe example image above shows normal"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – insulation_block - abnormal",
+   "An abnormal insulation block includes broken or disconnected insulation blocks in different locations, or no insulation block at all.\nPlease check the examples above and the bounding box range.",
+   "Broken",
+   "Disconnected",
+   "Broken"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – insulation_block - abnormal",
+   "Create a B-box on the part itself if it is near the original location, or on the original location if it’s further away from the original location.\nPlease check the examples above and the bounding box range.",
+   "It’s away from the original location",
+   "It’s far from the original location "
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Catenary",
+   "-long_ear, Insulator"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – long_ear",
+   "Create a polygon by placing dots along the outline of the long_ear",
+   "Select the long_ear that corresponds to the labeled object."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – long_ear",
+   "Select the normal / abnormal class based on the status of the long_ear."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "normal",
+   "normal",
+   "abnormal",
+   "abnormal",
+   "Long ears are connected without damage.",
+   "Long ears are connected without damage.",
+   "Bolts and nuts on the long ear are missing.",
+   "Bolts and nuts on the long ear are missing."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – Insulator",
+   "Create a bounding box along the outline of the insulator",
+   "Select the insulator that corresponds to the labeled object."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling criteria – Insulator",
+   "Select the normal / abnormal class based on the status of the insulator."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Insulator -  normal",
+   "If the insulator is broken, it should be classified as abnormal"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Common Rules",
+   "Precaution",
+   "02",
+   "Label with bounding box per object.\nAnnotations are tagged for each end of the object, and multiple annotations can overlap.\nIf part of the object is invisible or occluded, label the visible part only.\nLabel the object as far as it’s visible, regardless of its visible range."
+  ],
+  "notes": "",
+  "img": "assets/day2/rail/s21.jpg"
+ }
+]

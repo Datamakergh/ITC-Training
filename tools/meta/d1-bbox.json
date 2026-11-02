@@ -1,0 +1,491 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "BOUNDING-BOX",
+   "DATA LABELING TRAINING GUIDE"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Bounding-Box – Day 1",
+   "Training Practice Session"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "What is a Bounding-box?",
+   "A bounding box is an imaginary rectangle that serves as a point of reference for object detection and creates a collision box for that object in projects on image processing"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "04",
+   "How to Draw a B-Box?",
+   "Click and Drag a Box Diagonally to draw a box."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "05",
+   "How to Draw a B-Box?",
+   "Click and Drag a Box Diagonally to draw a box."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "06",
+   "How to Draw a B-Box?",
+   "Click and Drag a Box Diagonally to draw a box."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "07",
+   "Example of Bounding Box "
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "08",
+   "Example of Bounding Box "
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "09"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "10"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "11"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "12"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "13"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "14"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "15"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "16",
+   "Delete a box",
+   "Press d to delete a box. ",
+   "Click on the box"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "17",
+   "Delete a box",
+   "Press d to delete a box. ",
+   "Step 2: press           on your keyboard to delete.",
+   "D"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Delete a box"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "19",
+   "Reduce image transparency ",
+   "Sometimes Images of higher resolution make it difficult to see the bounding box clearly. In that case use the brightness icon to increase or decrease the brightness of the image to see the borderlines clearly.\nUse < or > to reduce or decrease the brightness of the image."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "20",
+   "Expand the image or reduce the image(Zoom)",
+   "Use these buttons to increase the size of the image or reduce it. This helps to see the object boundaries clearly."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "21",
+   "Move a box",
+   "Use the mouse to move the box by holding click and dragging it around"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "22",
+   "Move a box",
+   "Use the mouse to move the box by holding click and dragging it around"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "23",
+   "Move a box",
+   "Use the mouse to move the box by holding click and dragging it around"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "24",
+   "CATEGORIES",
+   "These are the objects you want the AI model to recognize. \u000bThey are organized into categories, also known as classes, which may have different states or subcategories depending on the project requirements. The number of classes can range from 1 to 12 or more. Therefore, it is important to organize your work effectively, manage your time well, and complete tasks within the given deadlines."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "25",
+   "Vegetable\nCabbage\nFresh.\nNot Fresh.\nLettuce\nGreen\nNot Fresh\nCarrot\nFresh\nNot Fresh",
+   "Main Category"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "26",
+   "Vegetable\nCabbage\nFresh.\nNot Fresh.\nLettuce\nGreen\nNot Fresh\nCarrot\nFresh\nNot Fresh",
+   "Subcategory"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "27",
+   "Vegetable\nCabbage\nFresh.\nNot Fresh.\nLettuce\nGreen\nNot Fresh\nCarrot\nFresh\nNot Fresh",
+   "Subcategory",
+   "class*"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "28",
+   "Turn on or off Labels or borders",
+   "Press “L” on the keyboard to turn on or off labels whiles labelling",
+   "3",
+   "1"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "38",
+   "Turn on or off Labels or borders",
+   "Press “b” on the keyboard to turn on or off borders whiles labelling",
+   "3",
+   "2",
+   "1"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "Turn on or off Labels or borders",
+   "Press “g” on the keyboard to turn on or off the white guideline"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "Using the Pen tool",
+   "Training Practice Session"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "1. Hold Your Pen Vertically",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s32.jpg"
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "Draw from the Shoulder",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s33.jpg"
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "Overusing the wrist leads to inflammation",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s34.jpg"
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "Keep Your Grip As Light As Possible",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s35.jpg"
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "Keep Your Grip As Light As Possible",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s36.jpg"
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "text": [
+   "Bounding- box training project"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s37.jpg"
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "text": [
+   "Bound each Person and car plate in a box precisely.\u000b\u000bExample:\u000bChoose the Face category for each Person.\nAnd Car_Plate for every car",
+   "CCTV Bounding Box Project",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s38.jpg"
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Click here to open and login to the datamaker Dashboard",
+   "Click to select the project."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s39.jpg"
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Click to download the project guide.",
+   "Click here to open and login to the datamaker Dashboard"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s40.jpg"
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Click to start work on the project.",
+   "Click here to open and login to the datamaker Dashboard"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s41.jpg"
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Click here to open and login to the datamaker Dashboard",
+   "Click to start work on the project."
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s42.jpg"
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "text": [
+   "End of Day"
+  ],
+  "notes": "",
+  "img": "assets/day1/bbox/s43.jpg"
+ }
+]

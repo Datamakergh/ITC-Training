@@ -1,0 +1,132 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "ver.2.0",
+   "Interior Segmentation Project"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "This file is intended for training \n'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker’, and \nunauthorized distribution and \nreproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "img": "assets/day4/interior/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project\nLabeling target\nLabeling process"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project",
+   "Interior Segmentation Project is a project that labels interior space with the Polygon tool and classifies it into 42 classes.\nThe process involves viewing photos and tagging objects to create the necessary training dataset."
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Class",
+   "01",
+   "Make sure you don’t tag a category as undefined even if it already exists.",
+   "Door – Wooden doors, Turkish doors, etc.\nGlass wall – Building exterior walls, meeting room wall, etc. / excludes glass in partitions\nGlass door – Includes all glass doors and frames connected to the elevator spaces.\nSignage – signs / ceiling bar type, vertical type or anything advertising something."
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "Class",
+   "01",
+   "Make sure you don’t tag a category as undefined even if it already exists.",
+   "Furniture: desk – work desk.\nFurniture: table – sofa table, conference table, etc.\nFurniture: partition – Including glass"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "Class",
+   "01",
+   "Make sure you don’t tag a category as undefined even if it already exists.",
+   "Appliance: floor vent – floor air conditioning system (air hole).\nAppliance: floor outlet – floor power hole (including closed).\nAppliance: vending machine – any vending machine type."
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Labeling order",
+   "01",
+   "Shortcut",
+   "Please use the shortcut below to view colored images",
+   "Shift + 1",
+   "Shift + 2",
+   "Shift + 3",
+   "Raw data + Polygon",
+   "Raw data + Segmentation",
+   "Segmentation"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Labeling order",
+   "01",
+   "How to label",
+   "Create a polygon for each object and tag it with the appropriate class.\nBe careful not to leave any spaces between polygons",
+   "Raw data",
+   "Create polygons",
+   "Tag classes"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "Thank You"
+  ],
+  "notes": "",
+  "img": "assets/day4/interior/s11.jpg"
+ }
+]

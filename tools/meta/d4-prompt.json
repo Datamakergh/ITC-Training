@@ -1,0 +1,1131 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "PROMPT ENGINEERING",
+   "Basic level: how to ask generative AI for exactly what you need"
+  ],
+  "notes": "Welcome learners. This module follows on directly from Introduction to Generative AI. There, learners saw that generative AI predicts likely text, that vague prompts invite hallucinations, and that one extra sentence can change an answer. This module teaches them to write prompts deliberately. Before the session: every learner (or pair) needs a laptop or phone with internet and a free chatbot account (ChatGPT, Claude, Gemini or Copilot). Print or share the prompt templates from Part 2 and the capstone template from Part 5 if possible. Warm-up (3 minutes): ask “Who did the homework from the last module: one thing AI did well and one thing it got wrong?” Take two or three stories. For each mistake, ask: “Could a better question have prevented it?” That is what prompt engineering is about.",
+  "img": "assets/day4/prompt/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Overview",
+   "After completing this module, you will be able to:",
+   "01",
+   "Explain what prompt engineering is and why it matters.",
+   "02",
+   "Identify the four elements of a prompt: instruction, context, input data and output indicator.",
+   "03",
+   "Apply general tips to turn a vague prompt into a clear, specific one.",
+   "04",
+   "Write prompts for common tasks: summarising, extracting, answering, classifying, conversation, code and reasoning.",
+   "05",
+   "Use core techniques such as zero-shot, few-shot, chain-of-thought and prompt chaining.",
+   "06",
+   "Recognise advanced techniques such as RAG, ReAct and tool use.",
+   "07",
+   "Apply prompt engineering to real work: study, projects, accounting, research and data labelling.",
+   "08",
+   "Use AI responsibly: check outputs and protect private data."
+  ],
+  "notes": "Read the outcomes aloud. Point out that outcomes 01 to 04 are the core skills everyone must leave with; 05 and 06 build on them; 07 is where learners apply everything to their own work. Ask: “Has anyone ever rewritten a question to a chatbot because the first answer was not what they wanted?” Almost everyone has. Tell them: “Then you have already done prompt engineering. Today we make it deliberate and repeatable.”",
+  "img": "assets/day4/prompt/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "PART 1",
+   "What Is Prompt Engineering?"
+  ],
+  "notes": "Part 1 of 6 (about 40 minutes including Practical 1). Learners find out what prompt engineering is, why it matters, what a prompt is, and the four elements that can make up a prompt. Transition line: “In the last module we learned how generative AI produces answers. Now we learn how to steer it.”",
+  "img": "assets/day4/prompt/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "What Is Prompt Engineering?",
+   "A prompt is the instruction or question you give to an AI model, such as ChatGPT, Claude or Gemini.",
+   "Prompt engineering is the skill of designing and improving prompts so that language models give you useful, accurate results for a task.",
+   "It is a relatively new discipline. The act of guiding a language model with a prompt is called “prompting”.",
+   "Prompt engineering skills also help you understand what large language models (LLMs) can and cannot do.",
+   "IN SIMPLE TERMS",
+   "Prompt engineering is learning how to ask AI the right way, so it understands exactly what you want.",
+   "Like giving clear directions to a taxi driver: “Take me to Jomo Kenyatta Int. Airport, by the fastest route” works better than “Take me to the airport.”"
+  ],
+  "notes": "Key message: a prompt is what you type to the AI; prompt engineering is the skill of writing prompts well. Why it is called “engineering”: like any engineering, it is about designing, testing and improving. You rarely get the perfect prompt first time; you try, look at the result, and adjust. Taxi analogy: the driver (the AI) is skilled and knows the city, but can only take you where you ask. “The airport” might get you to the right place, or the wrong terminal. Clear directions get you exactly where you need to be. Connect to the last module: generative AI predicts the most likely response to whatever you give it. A vague prompt leaves many likely responses open; a precise prompt narrows them down to the one you want. Ask: “What is the difference between a prompt and a search query on Google?” Answer: a search query finds existing pages; a prompt asks the AI to produce a new response, so how you phrase it shapes the result much more.",
+  "img": "assets/day4/prompt/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Why Prompt Engineering Matters",
+   "It is not just about writing prompts. It is a set of skills for working with, building with and understanding large language models.",
+   "Better results",
+   "Clear prompts give more accurate, relevant answers on everyday tasks and on complex ones like question answering and arithmetic reasoning.",
+   "Safer AI",
+   "Good prompts reduce hallucinations and keep the model on topic, for example by telling it to say when it is unsure.",
+   "New capabilities",
+   "Prompts can give a model your own knowledge (documents, data) or connect it to external tools like search and calculators.",
+   "Time saved",
+   "Getting a good answer first time means less rewriting, fewer follow-ups and less checking of bad output."
+  ],
+  "notes": "Key message: prompt engineering is a practical skill with real benefits: better answers, safer use, new possibilities and saved time. Explain each card with an example: - Better results: researchers use prompt engineering to improve how LLMs handle question answering and maths reasoning. For learners, it means getting a usable answer instead of a generic one. - Safer AI: a prompt such as “Answer only from the text below; if the answer is not there, say so” directly reduces hallucinations, which links back to the last module. - New capabilities: by pasting a company policy into a prompt, you can make the AI answer questions about that policy. This is called augmenting the model with domain knowledge. - Time saved: a five-minute investment in a good prompt can save an hour of fixing a bad answer. Link to data labelling: many data labelling jobs now include writing prompts, rating AI answers and writing example responses. Prompt engineering is becoming part of the job.",
+  "img": "assets/day4/prompt/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Basics of Prompting",
+   "You can achieve a lot with simple prompts, but the quality of the result depends on how much information you give and how well the prompt is written. A prompt can include an instruction or question, plus context, inputs or examples.",
+   "Attempt 1: no instruction",
+   "PROMPT",
+   "The sky is",
+   "OUTPUT",
+   "blue.",
+   "The model just continues the text with something that makes sense. It may not be what you wanted.",
+   "Attempt 2: a clear instruction",
+   "PROMPT",
+   "Complete the sentence:\nThe sky is",
+   "OUTPUT",
+   "blue during the day and dark at night.",
+   "Telling the model what you want it to do gives a more complete, useful answer."
+  ],
+  "notes": "Key message: a model responds to whatever it is given. Without an instruction it simply continues your text; with an instruction it does what you asked. Demonstrate live: type “The sky is” into a chatbot. Modern chatbots may respond with something like “It looks like your message was cut off. What would you like to know about the sky?” That itself proves the point: the model does not know what you want. Explain: the output “blue.” is a sensible continuation, a sequence of words that makes sense after “The sky is”. But it may be far from the task you had in mind, maybe you wanted a poem, a science explanation or a weather report. This example shows why we need to give more context and clearer instructions. That is what prompt engineering is all about. Note: the outputs on the slides are examples. Learners’ chatbots will word things slightly differently each time, which is normal.",
+  "img": "assets/day4/prompt/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "A Vague Prompt vs an Engineered Prompt",
+   "Vague",
+   "PROMPT",
+   "Write about maize.",
+   "What you get: a long, general essay. Maybe about chocolate, maybe about farming, maybe about world prices. The AI has to guess.",
+   "Engineered",
+   "PROMPT",
+   "Write a 150-word introduction to Kenya’s maize industry for secondary school students. Use simple English and end with one surprising fact.",
+   "What you get: a short, focused text at the right level, in the right length and style.",
+   "The second prompt says what to write, for whom, how long, in what style and how to finish."
+  ],
+  "notes": "Key message: the difference between a weak answer and a strong one is usually the prompt, not the AI. Live demo (3 minutes): type both prompts into a chatbot on the projector and compare the outputs side by side. Ask the class which one they could use straight away. Break down the engineered prompt with the class: - What: an introduction to Ghana’s cocoa industry (not chocolate in general). - For whom: secondary school students (sets the reading level). - How long: 150 words. - Style: simple English. - How to finish: one surprising fact. Each detail removes a guess the AI would otherwise have to make. Fewer guesses mean more useful output. Tell learners: by the end of today they will be able to turn any vague prompt into an engineered one using a simple formula.",
+  "img": "assets/day4/prompt/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "The Four Elements of a Prompt",
+   "A prompt can contain any of these elements. Each one guides the model in a different way.",
+   "1",
+   "Instruction",
+   "The specific task you want the model to perform.",
+   "Summarise this email",
+   "2",
+   "Context",
+   "Background information that steers the model to a better response.",
+   "I am a busy manager",
+   "3",
+   "Input data",
+   "The text, question or data you want a response about.",
+   "[the email text]",
+   "4",
+   "Output indicator",
+   "The type or format of the answer you want.",
+   "3 bullet points"
+  ],
+  "notes": "Key message: most good prompts are built from up to four parts. Learning to see these parts helps you diagnose why a prompt is not working. Walk through each element with the email example shown at the bottom of each card. Put together, the full prompt would read: “I am a busy manager. Summarise this email in 3 bullet points: [the email text].” - Instruction: the verb that says what to do: summarise, translate, classify, write, list, explain. - Context: who you are, who the answer is for, why you need it, any background the AI cannot know. - Input data: the material to work on, pasted in, or the question itself. - Output indicator: the shape of the answer: a table, 3 bullets, one sentence, a label, JSON, a word count. Video reference from the original deck for self-study: youtu.be/kgBZhJnh-vk. Ask learners to look at the “Engineered” cocoa prompt from the previous slide and find each element. (Instruction: write an introduction. Context: for secondary school students. Input: Ghana’s cocoa industry. Output indicator: 150 words, simple English, end with a fact.)",
+  "img": "assets/day4/prompt/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "The Elements in a Real Prompt",
+   "Here is a simple prompt that asks the model to classify text by its sentiment (the feeling it expresses).",
+   "Classify the text into neutral, negative or positive.",
+   "Instruction",
+   "Text: I think the food was okay.",
+   "Input data",
+   "Sentiment:",
+   "Output indicator",
+   "OUTPUT",
+   "Neutral",
+   "The instruction names the task, the input data is the sentence to judge, and “Sentiment:” tells the model to reply with a label. This prompt has no context, and it still works."
+  ],
+  "notes": "Key message: you can now see the elements in a real prompt. This exact prompt appears again later in the module, so make sure everyone understands it. Read the prompt line by line and point to the label on the right: - “Classify the text into neutral, negative or positive.” is the instruction: it names the task and the allowed answers. - “Text: I think the food was okay.” is the input data: the thing to classify. - “Sentiment:” is the output indicator: it signals that the model should answer with a sentiment label, and nothing else. Ask learners: “Why does ‘Sentiment:’ at the end help?” Because the model predicts what comes next, ending with “Sentiment:” makes a single label the most likely continuation. Link to data labelling: this is exactly the kind of task data labelers do by hand: sentiment labelling. AI can now do a first pass, and humans check it.",
+  "img": "assets/day4/prompt/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Adding Context, and When You Need It",
+   "You do not need all four elements in every prompt. The right format depends on the task.",
+   "Context helps when the model cannot guess what you mean. It can be background facts, who the answer is for, or examples that show the model the kind of answer you expect.",
+   "Ask yourself: “What would a new colleague need to know to do this task well?” That is your context.",
+   "PROMPT WITH ALL FOUR ELEMENTS",
+   "[Context] You are helping a restaurant in Mombasa sort customer reviews. Reviews that say “okay” or “fine” count as neutral.",
+   "[Instruction] Classify the review into neutral, negative or positive.",
+   "[Input data] Review: The pilau was fine but the waiter was rude.",
+   "[Output indicator] Answer with one word in lowercase."
+  ],
+  "notes": "Key message: elements are tools, not rules. Use the ones the task needs. The previous example worked without context because sentiment classification is a well-known task. Context becomes important when: - the task has local or company-specific rules (“okay counts as neutral”); - the audience matters (a doctor versus a child); - the answer depends on facts the model cannot know (your sales figures, your policy). Discuss the example review: “The jollof was fine but the waiter was rude.” It is mixed. Without context, models might choose neutral or negative. Ask learners: “What extra context would make the answer predictable?” For example: “If a review mentions any complaint about staff, classify it as negative.” This is exactly how real labelling guidelines are written. Note: the labels in square brackets are only there to teach the elements. In a real prompt you would leave them out, or use clear headings like “Context:” and “Review:”.",
+  "img": "assets/day4/prompt/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 1 · 10 MIN · PAIRS",
+   "Spot the Elements",
+   "Mark each part: I instruction · C context · D input data · O output indicator. Which element is missing?",
+   "1",
+   "Translate this sentence into French: “Where is the bus station?”",
+   "2",
+   "You are a nurse talking to a worried parent. In 3 short sentences, explain what a fever is.",
+   "3",
+   "Turn the meeting notes below into a table with columns Task, Owner and Deadline. [notes]",
+   "4",
+   "I sell second-hand phones in Kumasi. Suggest five short names for my shop.",
+   "5",
+   "Is this review positive or negative? “Delivery was late but the food was hot.” Answer in one word."
+  ],
+  "notes": "Pairs mark the elements on paper or in a notes app for 6 minutes. Review together for 4 minutes. Answer key: 1. I = “Translate this sentence into French”; D = “Where is the bus station?”. No context or output indicator, and none is needed for a simple translation. 2. C = “You are a nurse talking to a worried parent”; O = “In 3 short sentences”; I = “explain what a fever is”. No separate input data; the question is the input. 3. I = “Turn the meeting notes below into a table”; O = “with columns Task, Owner and Deadline”; D = [notes]. 4. C = “I sell second-hand phones in Kumasi”; I = “Suggest … names for my shop”; O = “five short”. 5. I = “Is this review positive or negative?”; D = the review; O = “Answer in one word”. Missing context: the review is mixed, so the model must guess. Better: add a rule like “If a review has both, choose the one that matters most to the customer” or allow a “mixed” label. Discussion: number 5 shows why context matters when data is ambiguous, which is something data labelers face every day.",
+  "img": "assets/day4/prompt/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "PART 2",
+   "General Tips for Designing Prompts"
+  ],
+  "notes": "Part 2 of 6 (about 45 minutes including Practical 2). Learners learn five practical habits for writing prompts: start simple, write a clear instruction, be specific, avoid imprecise wording, and say what to do rather than what not to do. The section ends with a simple formula they can use for any prompt. Transition line: “Now that we know what a prompt is made of, how do we write a good one?”",
+  "img": "assets/day4/prompt/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "Tip 1: Start Simple, Then Improve",
+   "Designing prompts is an iterative process: you rarely get the best result on the first try.",
+   "Start with a simple prompt, look at the answer, then add more elements and context step by step.",
+   "Specific, simple and concise prompts usually work best.",
+   "For a big task, break it into smaller subtasks instead of asking for everything at once.",
+   "1. Write",
+   "a simple first prompt",
+   "2. Test",
+   "run it and read the answer",
+   "4. Refine",
+   "add detail, context or examples",
+   "3. Review",
+   "what is missing or wrong?",
+   "Big task, small steps: instead of “Plan our training workshop”, ask first for an agenda, then for a budget, then for an invitation email."
+  ],
+  "notes": "Key message: good prompts are built, not written in one go. Start simple, test, and improve. Walk through the loop (read it clockwise: write, test, review, refine, then back to test). Emphasise that refining is normal, not failure. Professional prompt engineers often go through many versions. Why start simple: if you start with a huge, complicated prompt and the answer is wrong, you cannot tell which part caused the problem. Starting simple lets you see the effect of each addition. Breaking down big tasks: one huge request (“plan our training workshop”) produces a shallow answer to everything. Separate requests produce deeper, more useful answers to each part, and you can check each step before moving on. This idea returns later as “prompt chaining”. Tools: the original deck mentioned the OpenAI and Cohere playgrounds. Today any chatbot (ChatGPT, Claude, Gemini, Copilot) is a fine place to practise.",
+  "img": "assets/day4/prompt/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "Tip 2: Write a Clear Instruction",
+   "Start with a clear command that says exactly what to do:",
+   "Write",
+   "Classify",
+   "Summarise",
+   "Translate",
+   "Order",
+   "List",
+   "Explain",
+   "Compare",
+   "Put the instruction at the beginning of the prompt.",
+   "Use separators like ### or \"\"\" to keep the instruction apart from the text it works on.",
+   "Experiment with different wording and keywords to see what works best.",
+   "PROMPT",
+   "### Instruction ###\nTranslate the text below to Spanish:\nText: “hello!”",
+   "OUTPUT",
+   "¡Hola!",
+   "The ### markers make it obvious which part is the instruction and which part is the text to translate."
+  ],
+  "notes": "Key message: the instruction is the heart of the prompt. Make it a clear action verb, put it first, and separate it from the material. Why action verbs: “Summarise”, “List” or “Classify” leave no doubt about the task. Compare “Can you maybe look at this?” with “Summarise this report in five bullet points.” Why put the instruction first: the model reads the whole prompt, but placing the instruction at the start sets up how everything after it should be read. Why separators: when your prompt contains a long text, the model can confuse your instruction with the text, or follow instructions written inside the text. Markers like ###, \"\"\" or clear labels (“Text:”, “Instructions:”) draw a clear line. This becomes very important when you paste in emails or documents. Try it: ask learners to translate a sentence of their choice into another language using the ### format, then without it, and notice whether anything changes. For short tasks it often makes no difference; for long ones it helps a lot.",
+  "img": "assets/day4/prompt/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "Tip 3: Be Specific",
+   "The more detailed and descriptive the prompt, the more likely you get the result you want.",
+   "Show the format you want. Examples of the output format work very well.",
+   "There are no magic words. What matters is a clear format and description.",
+   "Watch the length: include only details that help the task.",
+   "PROMPT",
+   "Extract the names of places in the following text.\nDesired format:\nPlace: <comma_separated_list_of_places>\nInput: “… says Henrique Veiga-Fernandes, a neuroimmunologist at the Champalimaud Centre for the Unknown in Lisbon. …”",
+   "OUTPUT",
+   "Place: Champalimaud Centre for the Unknown, Lisbon"
+  ],
+  "notes": "Key message: specific prompts get specific results. Showing the exact output format is one of the most powerful tricks. Walk through the example: the instruction says what to extract (places). The “Desired format” line shows exactly how the answer should look: the word “Place:” followed by a comma-separated list. The model copies that format precisely. Without it, you might get a paragraph, a numbered list, or extra commentary. The full input in the original deck is a longer paragraph from a science article; only the important part is shown here. Learners can try it with any paragraph, for example a local news story, asking for places, people or dates. Why “no magic words”: people sometimes believe special phrases unlock better answers. In practice, clear structure and description matter far more. Length: prompts have limits, and irrelevant detail can distract the model. Include what helps the task; leave out the rest. Link to data labelling: “desired format” is exactly how annotation guidelines work. You tell labelers (or the AI) precisely how to write the label.",
+  "img": "assets/day4/prompt/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "Tip 4: Avoid Imprecise Wording",
+   "Do not try to be clever with words. Be specific and direct, like clear communication between people: the more straightforward you are, the better you are understood.",
+   "Imprecise",
+   "PROMPT",
+   "Explain the concept prompt engineering. Keep the explanation short, only a few sentences, and don’t be too descriptive.",
+   "How many is “a few”? How short is “short”? For whom? The model has to guess.",
+   "Precise",
+   "PROMPT",
+   "Use 2–3 sentences to explain the concept of prompt engineering to a high school student.",
+   "A clear length (2–3 sentences) and a clear audience (a high school student) set the style and level."
+  ],
+  "notes": "Key message: vague words like “short”, “a few”, “simple” or “not too detailed” mean different things to different people, and to AI. Replace them with exact numbers and a named audience. Both prompts on this slide are from the original deck. The first one is not terrible; you would still get a decent answer. But the second one is shorter, clearer and gives a more predictable result. Exercise (2 minutes): ask learners to rewrite these imprecise phrases precisely: - “Make it short” → “Use no more than 100 words.” - “Make it simple” → “Explain it so a 12-year-old would understand.” - “Give me some ideas” → “Give me 5 ideas.” - “Make it professional” → “Write it as a formal email to a bank manager.” Analogy: telling a tailor “make it a bit shorter” versus “take 3 centimetres off the sleeves”.",
+  "img": "assets/day4/prompt/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "Tip 5: Say What to Do, Not What Not to Do",
+   "Focuses on what NOT to do",
+   "PROMPT",
+   "The following is an agent that recommends movies to a customer. DO NOT ASK FOR INTERESTS. DO NOT ASK FOR PERSONAL INFORMATION.\nCustomer: Please recommend a movie based on my interests.\nAgent:",
+   "OUTPUT",
+   "Sure, I can recommend a movie based on your interests. What kind of movie would you like to watch? Do you prefer action, comedy, romance…?",
+   "It asks for interests, the very thing it was told not to do.",
+   "Says what TO do",
+   "PROMPT",
+   "The agent recommends a movie from the top global trending movies. It refrains from asking for preferences or personal information. If it has no movie to recommend, it replies “Sorry, couldn’t find a movie to recommend today.”\nCustomer: Please recommend a movie based on my interests.\nAgent:",
+   "OUTPUT",
+   "Sorry, I don’t have any information about your interests. However, here’s a list of the top global trending movies right now: [list]. I hope you find something you like!"
+  ],
+  "notes": "Key message: tell the model what to do, rather than only what to avoid. Positive instructions give it a clear path to follow. Walk through the left example from the original deck. The prompt is full of “DO NOT” rules but never says what the agent should do instead. The model falls back on the most common pattern for a recommendation conversation, which is asking about preferences, exactly what it was told not to do. The right prompt gives the agent a clear job (recommend from the trending list) and a fallback reply. The output follows the plan. Analogy: telling a new shop assistant “Don’t be rude, don’t ignore customers, don’t forget the receipt” is less helpful than “Greet every customer, help them find what they need, and always give a receipt.” Note: negative rules are not forbidden. They work best alongside a clear positive instruction, as in the right-hand prompt. Modern models follow “don’t” instructions better than older ones, but the principle still produces clearer prompts.",
+  "img": "assets/day4/prompt/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "Putting It Together: A Simple Prompt Formula",
+   "Role",
+   "Who should the AI act as?",
+   "Task",
+   "What exactly should it do?",
+   "Context",
+   "Who is it for, and why?",
+   "Format",
+   "What shape should the answer take?",
+   "Limits",
+   "Length, tone, and what to do if unsure",
+   "TEMPLATE",
+   "Act as [role].\n[Task] for [audience / purpose].\nUse [format].\n[Length, tone, other limits].\nIf you are not sure, say so.",
+   "FILLED IN",
+   "Act as a customer service trainer. Write 5 polite replies to a customer complaining about a late delivery, for new staff at an online shop in Kumasi. Use a numbered list. Keep each reply under 40 words and offer a solution in every reply."
+  ],
+  "notes": "Key message: a simple checklist turns the tips into a habit. Before sending a prompt, check: role, task, context, format, limits. This formula is an addition to the original deck, built from its tips. It brings together everything in Part 2: - Role: tells the AI what kind of expert to be (more on “role prompting” in Part 3). - Task: a clear instruction verb (Tip 2). - Context: audience and purpose (the context element, Part 1). - Format: the output indicator (Tip 3). - Limits: exact length, tone and an “if unsure” line (Tip 4 and the last module’s advice on hallucinations). Not every prompt needs all five. A quick translation needs only a task. But when an answer disappoints, checking these five usually shows what was missing. Read the filled-in example and ask learners to point to each part. Then ask them to try it in a chatbot and judge the output.",
+  "img": "assets/day4/prompt/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 2 · 20 MIN · PAIRS",
+   "Fix the Bad Prompt",
+   "1",
+   "Write an email.",
+   "2",
+   "Tell me about malaria.",
+   "3",
+   "Make this better: [paste a paragraph]",
+   "4",
+   "Give me a business idea.",
+   "Your task",
+   "Pick two prompts. Run each one as it is.\nRewrite them with the formula: role, task, context, format, limits.\nRun your new prompts and compare the answers.\nSwap with another pair: which rewrite worked best, and why?"
+  ],
+  "notes": "Pairs work for 14 minutes, then 6 minutes of sharing. Ask two or three pairs to read their best rewrite aloud and show the before-and-after outputs on the projector if possible. Sample rewrites to share if pairs are stuck: 1. “Act as an office administrator. Write a polite email to all staff reminding them that the office closes at 2 pm on Friday for cleaning. Keep it under 80 words and use a friendly tone.” 2. “Explain how malaria spreads and three ways a family can prevent it, for parents with no medical background. Use simple English and a bulleted list. Keep it under 150 words.” 3. “Edit the paragraph below for a job application letter. Fix grammar and spelling, make it more confident, and keep it under 120 words. Then list the main changes you made. Paragraph: […]” 4. “I live in Tamale, have GH₵ 2,000 to invest and can work evenings. Suggest 3 small business ideas that fit this budget. For each, give the start-up costs, the main risk and the first step. Use a table.” What to look for: a clear verb, an audience, a number for length or quantity, a format, and context the AI could not have guessed. Point out how much more useful the answers become.",
+  "img": "assets/day4/prompt/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "PART 3",
+   "Examples of Prompts"
+  ],
+  "notes": "Part 3 of 6 (about 60 minutes including Practical 3). Learners work through prompts for seven common tasks: summarising, extracting information, answering questions, classifying text, holding a conversation, generating code and reasoning. Encourage everyone to type each example into their own chatbot as you go. Transition line: “Let’s see how these tips work on the kinds of tasks people use AI for every day.”",
+  "img": "assets/day4/prompt/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Example 1: Text Summarisation",
+   "Summarising is one of the most useful things language models do: turning long articles and concepts into quick, easy-to-read summaries.",
+   "Say you want to learn about antibiotics. Start with a simple prompt.",
+   "The “A:” is a question-and-answer format. It signals that an answer should follow.",
+   "PROMPT",
+   "Explain antibiotics\nA:",
+   "OUTPUT",
+   "Antibiotics are a type of medication used to treat bacterial infections. They work by either killing the bacteria or preventing them from reproducing, allowing the body’s immune system to fight off the infection. Antibiotics are usually taken orally in the form of pills, capsules or liquid solutions, or sometimes administered intravenously. They are not effective against viral infections, and using them inappropriately can lead to antibiotic resistance."
+  ],
+  "notes": "Key message: summarisation is one of the most useful everyday applications of generative AI, and it starts with a very simple prompt. Ask learners to type “Explain antibiotics” into their chatbots. Their answers will probably be longer than the slide, often with headings and bullet points, because modern chatbots are set up to give detailed answers. About “A:”: it is an older question-answering format that tells the model an answer is expected. Modern chatbots do not need it, but it shows how structure in a prompt steers the response. It becomes useful in later examples. The output is accurate but quite long. What if we only want one sentence? The next slide shows how to ask for that. Teaching point: this is the “start simple” tip in action. Begin with a basic prompt, look at the result, then refine.",
+  "img": "assets/day4/prompt/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Summarising Further: One Sentence",
+   "That was too much information. Paste the text back in and add a clear instruction about length.",
+   "The input text comes first; the instruction comes at the end and says exactly what to do with it.",
+   "Try it: change “in one sentence” to “for a 10-year-old” or “as 3 bullet points” and compare.",
+   "PROMPT",
+   "Antibiotics are a type of medication used to treat bacterial infections. They work by either killing the bacteria or preventing them from reproducing … using them inappropriately can lead to antibiotic resistance.",
+   "Explain the above in one sentence:",
+   "OUTPUT",
+   "Antibiotics are medications used to treat bacterial infections by either killing the bacteria or stopping them from reproducing, but they are not effective against viruses and overuse can lead to antibiotic resistance."
+  ],
+  "notes": "Key message: you control the length and style of a summary by saying so explicitly. Point to the highlighted line in the prompt, “Explain the above in one sentence:”. That one instruction turned a paragraph into a single sentence that keeps all the key points. Practical use: people summarise emails, meeting notes, reports and articles this way every day. The pattern is simple: paste the text, then add an instruction that says how short, for whom and in what form. Quick activity (2 minutes): ask learners to paste a long WhatsApp message, email or news paragraph into their chatbot and ask for a one-sentence summary, then a summary “for a 10-year-old”. Compare. Warning to add: always check a summary against the original for anything important. Summaries can drop key details or, occasionally, add things that were not there (a hallucination).",
+  "img": "assets/day4/prompt/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Example 2: Information Extraction",
+   "Language models are trained to generate text, but they are also very good at other language tasks, such as pulling specific information out of a paragraph.",
+   "Useful for finding names, dates, amounts, places or products in long documents.",
+   "Source of the paragraph: Nature, 2023 (nature.com/articles/d41586-023-00288-7)",
+   "PROMPT",
+   "Author-contribution statements and acknowledgements in research papers should state clearly and specifically whether, and to what extent, the authors used AI technologies such as ChatGPT in the preparation of their manuscript and analysis. They should also indicate which LLMs were used. …",
+   "Mention the large language model-based product mentioned in the paragraph above:",
+   "OUTPUT",
+   "The large language model-based product mentioned in the paragraph above is ChatGPT."
+  ],
+  "notes": "Key message: AI can read a paragraph and pull out exactly the piece of information you ask for. Walk through: the paragraph is from a 2023 Nature editorial about how researchers should disclose their use of AI tools. The instruction at the end asks for one specific piece of information, the LLM product mentioned, and the model finds “ChatGPT”. How to improve it (the original deck said there are many ways): ask for a format, for example “Answer with the product name only”; or ask for several things at once, “List every organisation, product and date in the paragraph above as a table”. Real uses: extracting invoice numbers and amounts from emails, pulling names and phone numbers from forms, finding deadlines in contracts. Link to data labelling: “named entity recognition”, labelling people, places and organisations in text, is a very common labelling task. AI can do a first pass using extraction prompts, and human labelers then check and correct it.",
+  "img": "assets/day4/prompt/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Example 3: Question Answering",
+   "To get specific answers, improve the structure of the prompt: combine instruction, context, input and output indicator.",
+   "This prompt also tells the model to answer only from the context, and what to say if it is not sure.",
+   "“Respond ‘Unsure about answer’ if not sure” is a simple, powerful defence against hallucinations.",
+   "PROMPT",
+   "Answer the question based on the context below. Keep the answer short and concise. Respond “Unsure about answer” if not sure about the answer.",
+   "Context: Teplizumab traces its roots to a New Jersey drug company called Ortho Pharmaceutical. There, scientists generated an early version of the antibody, dubbed OKT3. Originally sourced from mice, the molecule was able to bind to the surface of T cells and limit their cell-killing potential. …",
+   "Question: What was OKT3 originally sourced from?\nAnswer:",
+   "OUTPUT",
+   "Mice"
+  ],
+  "notes": "Key message: a well-structured prompt with clear sections (instruction, context, question, answer) gets short, accurate answers grounded in the text you provided. Walk through each part: - Instruction: answer from the context, keep it short, and say “Unsure about answer” if not sure. - Context: a paragraph about the history of a drug (teplizumab) and an early antibody called OKT3. - Question: what was OKT3 originally sourced from? - “Answer:” is the output indicator. The model answers “Mice”, which is correct according to the context, and nothing more. Why this matters: this is the basic pattern behind many business chatbots. A company pastes in its policies or product information as context and tells the model to answer only from that. It is a simple version of “retrieval augmented generation”, which we meet in Part 4. Try it: ask learners to paste a paragraph from a policy, school notice or news article, then ask a question whose answer is NOT in the text. A good response is “Unsure about answer”. If the model makes something up, that is a hallucination and a reason to tighten the instruction.",
+  "img": "assets/day4/prompt/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Example 4: Text Classification",
+   "For harder tasks, a good instruction alone is not always enough. You also need to think about context, input data and examples.",
+   "Here the model is asked to sort text into one of three labels. The answer “Neutral” is correct.",
+   "But what if your system needs the label in an exact format, such as lowercase neutral? How do you get that?",
+   "PROMPT",
+   "Classify the text into neutral, negative or positive.\nText: I think the food was okay.\nSentiment:",
+   "OUTPUT",
+   "Neutral"
+  ],
+  "notes": "Key message: classification prompts sort text into categories. The basic version works, but real systems often need the answer in an exact format. This is the same prompt learners saw in Part 1. The model correctly answers “Neutral”. Why the exact format matters: if the label is going into a spreadsheet, a database or another program, “Neutral”, “neutral” and “The sentiment is neutral.” are three different values. A program checking for “neutral” would miss the first and third. Data labelling platforms also expect labels in exact, consistent formats. Ask learners: “How could we get the model to reply exactly ‘neutral’ in lowercase?” Collect ideas: say “answer in lowercase”, give an example, list the exact allowed labels. All of these work; the next slide shows the example approach.",
+  "img": "assets/day4/prompt/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "Classification with an Example",
+   "Add one example that shows exactly how the answer should look.",
+   "The model copies the pattern and returns neutral in lowercase, exactly as needed.",
+   "Examples are powerful. They show the model the exact format and behaviour you want, often better than describing it.",
+   "PROMPT",
+   "Classify the text into neutral, negative or positive.\nText: I think the vacation is okay.\nSentiment: neutral\nText: I think the food was okay.\nSentiment:",
+   "OUTPUT",
+   "neutral"
+  ],
+  "notes": "Key message: a single example (shown in blue in the prompt) can fix the format of the answer. Walk through: the prompt now contains one worked example, “Text: I think the vacation is okay. Sentiment: neutral”, before the real question. The model sees the pattern (lowercase label after “Sentiment:”) and follows it. This is called “few-shot prompting” (here “one-shot”, because there is one example). We study it properly in Part 4. Why examples work so well: remember that a language model predicts what is most likely to come next. After seeing “Sentiment: neutral” in lowercase, the most likely continuation is another lowercase label. Link to data labelling: this is exactly how good labelling guidelines work. Guidelines with clear examples of each label produce far more consistent labels than guidelines with descriptions alone, whether the labeler is a person or an AI.",
+  "img": "assets/day4/prompt/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "Spot the Problem",
+   "PROMPT",
+   "Classify the text into nutral, negative or positive.\nText: I think the vacation is okay.\nSentiment:",
+   "OUTPUT",
+   "Neutral",
+   "Suppose you really want the made-up label “nutral”. The model ignores it and answers “Neutral”, because it has a strong bias towards the familiar word.",
+   "How could you fix it?",
+   "Add a description of each label, for example “nutral = no strong feeling”.",
+   "Add examples that use “nutral”.",
+   "Say it directly: “Use the label exactly as written.”"
+  ],
+  "notes": "Key message: models have strong habits from their training. When your instruction goes against a common pattern, you must be extra specific. Ask learners to look at the prompt and find the problem before you explain. Many will spot the spelling of “nutral”. Explanation: imagine a labelling project really uses the custom label “nutral” (labelling projects often have unusual label names or codes). The model has seen the word “Neutral” millions of times and almost never “nutral”, so it outputs the familiar word. The instruction was not specific enough to override that habit. Ways to fix it (ask learners to try one in their chatbot): - Describe the labels: “Use one of these exact labels: nutral (no strong feeling), negative, positive.” - Give examples using “nutral”, as on the previous slide. - State the rule: “Copy the label exactly as written, including spelling.” Wider lesson: when a model keeps doing something you did not ask for, think about what it is used to seeing, and give it clearer instructions or examples to override that.",
+  "img": "assets/day4/prompt/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "Example 5: Conversation and Role Prompting",
+   "You can shape the model’s behaviour, intent and identity. This is very useful for chatbots, such as customer service assistants.",
+   "Telling the model what role to play is called role prompting.",
+   "Instruction: “You are a technical expert in scientific research. Give detailed, technical answers using precise terminology.”",
+   "PROMPT",
+   "The following is a conversation with an AI research assistant. The assistant tone is technical and scientific.\nHuman: Hello, who are you?\nAI: Greetings! I am an AI research assistant. How can I help you today?\nHuman: Can you tell me about the creation of black holes?\nAI:",
+   "OUTPUT",
+   "Sure! Black holes are regions of spacetime where the gravitational force is so strong that nothing, not even light, can escape from it. They are created when a very massive star dies and its core collapses in on itself, forming a singularity of infinite density. …"
+  ],
+  "notes": "Key message: you can set the AI’s role, tone and personality with a single instruction. This is how companies build chatbots that behave in a consistent, on-brand way. Walk through the prompt: the first line sets the scene (a conversation with an AI research assistant) and the highlighted sentence sets the tone: technical and scientific. The output uses technical words such as “spacetime” and “singularity”. Why roles work: a role packs a lot of instructions into a few words. “You are an experienced nurse” implies a caring tone, medical accuracy and practical advice, without listing all of that. Everyday role examples learners can try: - “You are a patient maths teacher …” - “You are a strict editor who checks grammar …” - “You are a friendly customer service agent for a mobile network …” Caution: a role does not give the AI real expertise. A “doctor” role still needs its answers checked by a real doctor. Next slide: the same question with a different audience.",
+  "img": "assets/day4/prompt/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "Same Question, Different Audience",
+   "Change just one sentence about the audience, and the whole answer changes style.",
+   "Technical audience",
+   "The assistant tone is technical and scientific.",
+   "OUTPUT",
+   "Black holes are regions of spacetime where the gravitational force is so strong that nothing, not even light, can escape … forming a singularity of infinite density.",
+   "Primary school audience",
+   "The assistant answers should be easy to understand even by primary school students.",
+   "OUTPUT",
+   "Sure! Black holes are created when a very massive star runs out of fuel and collapses in on itself. The gravity of the star is so strong that nothing, not even light, can escape its pull."
+  ],
+  "notes": "Key message: naming the audience is one of the quickest ways to control the level and style of an answer. Compare the two outputs. The technical version uses words like “spacetime” and “singularity of infinite density”. The primary school version uses everyday words: “runs out of fuel”, “collapses”, “strong pull”. Everything else in the prompt stayed the same; only the audience sentence changed. Try it (3 minutes): ask learners to pick one topic (for example how mobile money works, or what inflation is) and ask a chatbot to explain it three times: for a banker, for a market trader and for a 10-year-old. Ask: which explanation would you use for your own training sessions? Practical tip: “Explain it like I am new to this” or “for someone with no technical background” are very useful phrases when learning anything new with AI.",
+  "img": "assets/day4/prompt/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "Example 6: Code Generation",
+   "LLMs are very good at writing code from a plain-language description. Tools like GitHub Copilot are built on this.",
+   "A simple greeting program",
+   "PROMPT",
+   "/*\nAsk the user for their name and say \"Hello\"\n*/",
+   "OUTPUT",
+   "let name = prompt(\"What is your name?\");\nconsole.log(`Hello, ${name}!`);",
+   "You did not even need to name the programming language.",
+   "A database query",
+   "PROMPT",
+   "Table departments, columns = [DepartmentId, DepartmentName]\nTable students, columns = [DepartmentId, StudentId, StudentName]\nCreate a MySQL query for all students in the Computer Science Department",
+   "OUTPUT",
+   "SELECT StudentId, StudentName FROM students WHERE DepartmentId IN (SELECT DepartmentId FROM departments WHERE DepartmentName = 'Computer Science');"
+  ],
+  "notes": "Key message: AI can turn a plain-language request into working code, as long as you give it the information it needs. Left example: the prompt is just a comment, “Ask the user for their name and say Hello”. The model writes two lines of JavaScript that do exactly that. It chose the language itself because the comment style (/* */) is common in JavaScript. Right example: the prompt gives the database structure (table and column names) and the request. The model writes a correct MySQL query. The key lesson: it could only do this because the prompt included the table and column names. Without that context, it would have had to guess, and probably guessed wrong. For non-programmers: the same skill applies to spreadsheet formulas. Try: “In Excel, column A has names and column B has sales amounts. Write a formula that totals the sales for the name in cell D1.” Caution: AI-generated code can contain errors or security problems. Always test it, and do not run code you do not understand on important systems.",
+  "img": "assets/day4/prompt/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "Example 7: Reasoning",
+   "Tasks that need reasoning, like multi-step maths and logic, are where LLMs make the most mistakes. Asking for step-by-step working helps a lot.",
+   "Without steps",
+   "PROMPT",
+   "The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1.\nA:",
+   "OUTPUT",
+   "No, the odd numbers in this group add up to an odd number: 119.",
+   "Wrong sum. 119 is not the total of the odd numbers.",
+   "With steps",
+   "PROMPT",
+   "… 15, 32, 5, 13, 82, 7, 1. Solve by breaking the problem into steps. First, identify the odd numbers, add them, and say whether the result is odd or even.",
+   "OUTPUT",
+   "Odd numbers: 15, 5, 13, 7, 1\nSum: 41\n41 is an odd number."
+  ],
+  "notes": "Key message: for anything with several steps, ask the model to show its working. It reduces mistakes and lets you check each step. Simple arithmetic like “What is 9,000 × 9,000?” (81,000,000) is usually fine. Multi-step problems are where errors creep in. Walk through the left example: the model gave a confident but wrong total (119). The correct sum of the odd numbers 15 + 5 + 13 + 7 + 1 is 41. Right example: the prompt asks the model to go step by step: find the odd numbers, add them, then decide odd or even. Each step is easy, so the final answer is right, and you can check the working yourself. Why it works: the model generates text one piece at a time. Writing out the intermediate steps gives it something to build on, instead of jumping straight to an answer. This technique is called “chain-of-thought” prompting; we cover it in Part 4. Note: newer models are much better at maths than the ones in the original examples and often show their working automatically. The habit of asking for steps is still useful, especially when you need to verify the answer.",
+  "img": "assets/day4/prompt/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 3 · 25 MIN · PAIRS",
+   "Prompt Stations",
+   "Complete at least three stations. Write your prompt, run it, then improve it once.",
+   "STATION A",
+   "Summarise",
+   "Paste a news article. Get a 2-sentence summary for a busy manager, then 3 bullet points for a radio announcement.",
+   "STATION B",
+   "Extract",
+   "From the trainer’s sample message, pull out every name, date and amount into a table.",
+   "STATION C",
+   "Classify",
+   "Label the 5 sample reviews as positive, negative or neutral, in lowercase. Add one example if needed.",
+   "STATION D",
+   "Role and audience",
+   "Explain “data labelling” twice: to your grandmother, then to a software engineer."
+  ],
+  "notes": "Set up: put the four stations on the board or on separate tables. Pairs spend about 6 minutes per station and complete at least three. Final 5 minutes: each pair shares their best prompt. Sample material to project or print: Station B sample message: “Hi Ama, please pay Kofi Mensah GH₵ 450 for the chairs by 15 November. Abena will collect the GH₵ 1,200 deposit from the hall owner on 18 November. Remind Yaw that the caterer needs GH₵ 3,000 by 20 November. Thanks, Esi.” A good output is a table with Name, Date and Amount columns. Station C sample reviews: 1. “Fast delivery and the shoes fit perfectly!” 2. “The phone stopped working after two days.” 3. “It was okay, nothing special.” 4. “Customer service never replied to my emails.” 5. “Good price, but the packaging was damaged.” (mixed: watch how the model handles it) A model given one example, “Text: … Sentiment: neutral”, should reply with single lowercase labels. What to look for: clear instruction verbs, a stated format, a named audience, and at least one improvement after the first try. Ask: “What did you change on your second attempt, and did it help?”",
+  "img": "assets/day4/prompt/s32.jpg"
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "text": [
+   "PART 4",
+   "Prompt Engineering Techniques"
+  ],
+  "notes": "Part 4 of 6 (about 70 minutes including Practical 4). Learners meet 18 named techniques. The first five (zero-shot, few-shot, chain-of-thought, role or meta prompting, prompt chaining) are core skills to practise. The rest are for awareness: learners should recognise the names and understand the idea, because they will meet them in AI tools and job descriptions. Transition line: “You have been using some of these techniques already without knowing their names. Let’s name them and add a few more.”",
+  "img": "assets/day4/prompt/s33.jpg"
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "text": [
+   "A Map of Prompt Engineering Techniques",
+   "Techniques are ways of crafting prompts to get more relevant, precise and high-quality responses. Here are 18, in four groups.",
+   "Core skills",
+   "Practise these",
+   "Zero-shot",
+   "Few-shot",
+   "Chain-of-thought",
+   "Meta / role prompting",
+   "Prompt chaining",
+   "Better reasoning",
+   "Check and improve answers",
+   "Self-consistency",
+   "Generate knowledge",
+   "Tree of thoughts",
+   "Reflexion",
+   "Outside help",
+   "Documents, tools, code",
+   "RAG",
+   "Reasoning and tool use",
+   "Program-aided (PAL)",
+   "ReAct",
+   "Specialist",
+   "Recognise the names",
+   "Automatic prompt engineer",
+   "Active-prompt",
+   "Directional stimulus",
+   "Multimodal CoT",
+   "Graph prompting"
+  ],
+  "notes": "Key message: there are many named techniques, but learners only need to master a handful. This map shows how they fit together. The original deck listed all 18 techniques in one long list. Here they are grouped so learners can see the purpose of each group: - Core skills (blue): everyday techniques anyone can use in any chatbot. We practise these. - Better reasoning: ways to make the model check, compare or improve its own thinking. - Outside help: ways to connect the model to documents, tools, calculators or code, so it relies less on memory. These mostly live inside AI products rather than in a single prompt. - Specialist: research techniques; learners should recognise the names and the basic idea. Reassure learners: they have already used several of these today. Adding an example to the classification prompt was few-shot prompting. Asking for steps in the odd-numbers problem was chain-of-thought. Giving the AI a research-assistant role was role prompting. The next slides take each technique in turn, with an example.",
+  "img": "assets/day4/prompt/s34.jpg"
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "text": [
+   "Zero-Shot Prompting",
+   "What it is: you give the model an instruction with no examples. It relies only on what it learned in training.",
+   "When to use it: common, simple tasks the model already understands well, like translating, summarising or answering general questions.",
+   "Why “zero-shot”: a “shot” is an example. Zero shots means zero examples.",
+   "PROMPT",
+   "Translate “hello” to French.",
+   "OUTPUT",
+   "Bonjour",
+   "A direct instruction. The model uses its pre-trained knowledge, with no extra context."
+  ],
+  "notes": "Key message: zero-shot is the default way most people use AI: just ask. It works well for tasks the model has seen many times. Most of the prompts learners have written today are zero-shot: “Summarise this”, “Explain antibiotics”, “Translate this sentence”. When zero-shot is not enough: if the task is unusual, the format is strict, or the labels are custom (remember “nutral”), the model may not do what you want. That is when you move to few-shot prompting, on the next slide. Quick check: “Was ‘Classify the text into neutral, negative or positive. Text: I think the food was okay. Sentiment:’ zero-shot?” (Yes, no examples.) “And the version with the vacation example?” (No, that was one-shot, a kind of few-shot.)",
+  "img": "assets/day4/prompt/s35.jpg"
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "text": [
+   "Few-Shot Prompting",
+   "What it is: you include a handful of examples in the prompt to show the task, format or style you want.",
+   "When to use it: unusual or ambiguous tasks, strict output formats, custom labels, or a particular writing style.",
+   "Tip: 2 to 5 clear, varied examples usually work best. Keep them all in the same format.",
+   "PROMPT",
+   "Translate the following words to French:\nhello → bonjour\ncat → chat\napple → pomme\ndog →",
+   "OUTPUT",
+   "chien",
+   "The three examples (in blue) show the pattern, so the model answers with just the French word, in lowercase, with no extra explanation."
+  ],
+  "notes": "Key message: examples teach the model faster and more precisely than descriptions. Few-shot prompting is one of the most reliable techniques there is. The original deck’s example: three word pairs, then “dog →”. The model continues the pattern and answers “chien”. Without the examples, a chatbot might reply “The French word for dog is ‘chien’. Here are some example sentences …”. The examples control both the answer and its format. Learners already used this on the classification slide (one example fixed the lowercase format). Tips for good examples: - Make them clear and correct; the model copies mistakes too. - Vary them so the model learns the pattern, not one specific case. - Keep the format identical across examples. - Include tricky cases if you have them (for labelling: a mixed review and how it should be labelled). Link to data labelling: few-shot prompts are basically mini labelling guidelines with examples. Labelers who write good examples write good prompts.",
+  "img": "assets/day4/prompt/s36.jpg"
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "text": [
+   "Chain-of-Thought (CoT) Prompting",
+   "What it is: you ask the model to show its reasoning step by step before giving the final answer, the way a person works through a problem.",
+   "When to use it: maths, logic, planning, comparisons, and any problem with several steps.",
+   "Easy version: add “Let’s think step by step” or “Show your working” to your prompt.",
+   "PROMPT",
+   "How many books will John have if he buys 3 and already has 5? First, work out how many he buys. Then add how many he already has.",
+   "OUTPUT",
+   "John buys 3 books.\nHe already has 5 books.\n3 + 5 = 8.\nJohn will have 8 books."
+  ],
+  "notes": "Key message: asking for step-by-step reasoning improves accuracy on multi-step problems, and lets you check the reasoning. Connect to Part 3: the odd-numbers example was chain-of-thought. Without steps, the model gave a wrong total; with steps, it got 41. How it works: the model writes the intermediate steps first. Each step is simple, and each one becomes context for the next, so the final answer is better grounded. It also makes errors easy to spot: you can see exactly which step went wrong. The original example (John’s books) is very simple on purpose. Ask learners to try a harder one, for example: “A trotro charges GH₵ 8 per person. A group of 7 people pays with two GH₵ 50 notes. How much change do they get? Think step by step.” (7 × 8 = 56; 100 − 56 = 44, so GH₵ 44 change.) Note: many newer models now reason step by step automatically for hard questions. Asking explicitly still helps when you want to see and check the working.",
+  "img": "assets/day4/prompt/s37.jpg"
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "text": [
+   "Meta Prompting and Role Instructions",
+   "What it is: a higher-level instruction about how the model should handle all your requests: its role, style and structure, not just one task.",
+   "When to use it: at the start of a conversation, so every later answer follows the same rules.",
+   "Tip: many chatbots let you save these as custom instructions or a project setting.",
+   "PROMPT",
+   "From now on, act as a professor explaining complex topics to beginners. Use simple language and give an example for every idea.",
+   "EFFECT",
+   "Every following answer uses a teaching tone, simple words and relatable examples, until you change the instruction."
+  ],
+  "notes": "Key message: a meta prompt sets the rules for a whole conversation, so you do not have to repeat them in every message. The original deck’s example, “From now on, act as a professor explaining complex topics to beginners”, sets a teaching role and style for all future answers. Note on terms: in research, “meta prompting” also refers to prompts that focus on the structure and steps of a type of problem, rather than specific content, for example giving a model a general template for solving any maths word problem. At this basic level, the important idea is the same: you give instructions about how to respond, not only what to respond to. Practical use: in ChatGPT this is “Custom instructions”; in Claude it is project instructions or styles; Gemini has “Gems”. Learners can store something like: “I am a data labeler in Ghana. Explain things simply, use local examples, and tell me when you are not sure.” Try it (2 minutes): give the professor instruction, then ask two different questions and notice that both answers follow the style.",
+  "img": "assets/day4/prompt/s38.jpg"
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "text": [
+   "Self-Consistency",
+   "What it is: get several answers to the same question, each reasoned separately, then pick the answer that most of them agree on.",
+   "Why it works: the model’s answers vary a little each time. A mistake rarely repeats, but the right answer usually does.",
+   "When to use it: questions where accuracy really matters, such as calculations, facts and decisions.",
+   "PROMPT",
+   "A shop sells 3 pens for GH₵ 12. How much do 10 pens cost? Solve it three different ways, then give the answer most of your methods agree on.",
+   "OUTPUT",
+   "Method 1: one pen = GH₵ 4, so 10 pens = GH₵ 40.\nMethod 2: 9 pens = GH₵ 36, plus 1 pen = GH₵ 40.\nMethod 3: 12 ÷ 3 × 10 = 40.\nAll three agree: GH₵ 40."
+  ],
+  "notes": "Key message: if several independent attempts agree, you can trust the answer more. If they disagree, that is a warning sign to check. Correction to the original example: the original prompt, “List three key benefits of solar energy. Generate multiple responses to ensure accuracy”, does not really show self-consistency. The technique works best for questions with one right answer (calculations, facts), where you compare several separately reasoned answers and take the most common one. Two ways to do it as a user: 1. Ask the model to solve the problem in several different ways within one prompt (as on the slide). 2. Ask the same question several times (regenerate, or open new chats) and compare the answers yourself. In AI systems, developers automate this: they generate, say, 5 or 10 reasoning paths and take a majority vote. Link to data labelling: this is exactly why labelling projects often have the same item labelled by several people and take the majority label. The idea is the same: agreement increases confidence.",
+  "img": "assets/day4/prompt/s39.jpg"
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "text": [
+   "Generate Knowledge Prompting",
+   "What it is: ask the model to first write out the relevant background facts, then use them to answer the real question.",
+   "Why it works: the background becomes extra context inside the conversation, so the final answer is better informed and more complete.",
+   "When to use it: explanations and questions that need general knowledge to answer well.",
+   "PROMPT",
+   "Before explaining how solar panels work, write a short background on solar energy and its benefits. Then use that background to explain how solar panels turn sunlight into electricity.",
+   "WHAT HAPPENS",
+   "Step 1: a short background on solar energy.\nStep 2: an explanation of solar panels that builds on it.",
+   "Remember: the generated background comes from the model’s memory, so it can still contain mistakes. Check important facts."
+  ],
+  "notes": "Key message: getting the model to “warm up” with relevant facts before answering often produces a better, more complete answer. Analogy: before writing an essay, a student jots down what they already know about the topic. The notes help them write a better essay. Walk through the example from the original deck: the model first writes a background on solar energy, then explains how solar panels work, using that background as context. Important limitation: the “knowledge” the model generates comes from its training, not from a trusted source. If the background contains an error, the final answer will repeat it. For facts that must be correct, use RAG instead (giving the model real documents), which we cover shortly. Try it: ask learners to compare two prompts on a topic they know well, one asking directly and one asking for background first. Which answer is more complete?",
+  "img": "assets/day4/prompt/s40.jpg"
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "text": [
+   "Prompt Chaining",
+   "Break a complex task into a sequence of prompts, where each answer feeds into the next. Each step is simpler, and you can check it before moving on.",
+   "Learning example",
+   "1. Who was Isaac Newton?",
+   "2. What is Newton known for in physics?",
+   "3. Explain Newton’s laws of motion briefly.",
+   "Workplace example",
+   "1. List the key decisions in these meeting notes: […]",
+   "2. Turn those decisions into an email to the team.",
+   "3. Shorten the email to under 100 words."
+  ],
+  "notes": "Key message: for big or multi-part tasks, a chain of small prompts beats one giant prompt. You stay in control and can fix problems at each step. Left example (from the original deck): each question builds on the previous one, moving from who Newton was, to what he is known for, to a focused explanation of his laws. The conversation keeps the context, so each answer gets deeper. Right example: a realistic work chain. First extract, then draft, then polish. If step 1 misses a decision, you correct it before the email is written, rather than discovering the error at the end. This is the same idea as Tip 1 (“break complex tasks into subtasks”), now with a name. In AI systems, developers chain prompts automatically: one prompt’s output is passed into the next prompt by a program. Many AI “agents” work this way. Try it (3 minutes): ask learners to plan a chain of three prompts for a task from their own life, for example planning a wedding budget or preparing for a job interview.",
+  "img": "assets/day4/prompt/s41.jpg"
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "text": [
+   "Tree of Thoughts",
+   "What it is: an advanced form of chain-of-thought. The model explores several possible paths, judges each one, drops the weak ones and continues with the best.",
+   "When to use it: problems with many possible approaches, such as planning, strategy and puzzles.",
+   "Like: a chess player thinking through several moves before choosing one.",
+   "PROMPT",
+   "Suggest three different ways to reduce food waste in our school canteen. For each, think through the cost and the likely result. Reject the weakest idea, then turn the best one into a 5-step plan.",
+   "Idea A\nevaluate",
+   "Idea B\nrejected",
+   "Idea C\nbest → plan"
+  ],
+  "notes": "Key message: instead of following one line of thinking, tree of thoughts branches out, compares options and keeps the best, like a decision tree. Clarification of the original deck: its example, “List pros and cons of switching to electric vehicles, then propose solutions to the cons”, is useful but is closer to a structured chain of thought. True tree of thoughts generates several alternative paths, evaluates them, and abandons weak ones before continuing. The prompt on this slide shows that pattern more clearly. In research systems, tree of thoughts is run by a program that makes the model generate and score branches many times, sometimes going back to an earlier branch. As a user, you can get much of the benefit with a single prompt that asks for options, evaluation and selection. Try it: ask learners to use this pattern for a real decision, such as choosing between three ways to save money or three ways to study for an exam.",
+  "img": "assets/day4/prompt/s42.jpg"
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "text": [
+   "Retrieval Augmented Generation (RAG)",
+   "The system first retrieves relevant information from documents, a database or a search engine, then the model uses it to write the answer. This makes answers more accurate and up to date, and reduces hallucinations.",
+   "Your question",
+   "Search the documents",
+   "Relevant passages + question",
+   "Answer based on real sources",
+   "WITH A SEARCH-ENABLED CHATBOT",
+   "Use reliable sources to find the latest data on climate change impacts in West Africa and summarise it, with links.",
+   "DO-IT-YOURSELF VERSION",
+   "Using only the policy document I uploaded, answer: how many leave days do new staff get? Quote the section."
+  ],
+  "notes": "Key message: RAG gives the model real information to work from, instead of relying on memory. It is the most important technique for reducing hallucinations in business AI. Explain the flow left to right: a question comes in; the system searches a collection of documents (or the web) for relevant passages; those passages are added to the prompt along with the question; the model writes an answer based on them. Clarification of the original example: “Use reliable sources to find the latest data …” only works if the chatbot can search the web (many can now, for example ChatGPT with search, Gemini, Claude with web search, Copilot). A model without search will answer from memory and may invent sources. The do-it-yourself version: uploading or pasting a document and saying “using only this document” is a simple, manual form of RAG that anyone can use today. The Question Answering example in Part 3 (teplizumab) used this idea. Where learners will meet RAG: company chatbots that answer from internal policies, customer support bots that read product manuals, and research tools that cite sources. Always check: even with RAG, open the cited source and confirm the answer.",
+  "img": "assets/day4/prompt/s43.jpg"
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "text": [
+   "Letting the Model Use Tools and Code",
+   "Language models are not calculators or databases. These techniques let them hand off precise work to tools that are.",
+   "Automatic Reasoning and Tool-use (ART)",
+   "The model reasons through a task and decides when to call a tool, such as a calculator, search engine or code runner, then uses the result.",
+   "Calculate the average of 5, 10, 15 and 20.",
+   "→ The model calls a calculator: 12.5",
+   "Program-Aided Language Models (PAL)",
+   "The model writes a small program to solve the problem, and the program is run to get the exact answer.",
+   "Analyse this CSV file and return the key sales trends.",
+   "→ The model writes code to read and total the data, then explains the trends."
+  ],
+  "notes": "Key message: language models are good with words but can make mistakes with exact numbers and large data. Tool use and program-aided prompting let them use a calculator or write code instead of guessing. ART: the model works out that it needs a tool, calls it, and uses the result. Example: the average of 5, 10, 15 and 20 is 50 ÷ 4 = 12.5. Note: the original deck said the model uses a “built-in calculation function”. More precisely, this only happens when the AI product gives the model access to a calculator or code tool; otherwise it calculates in its head and may err. PAL: instead of reasoning in words, the model writes a short program (for example in Python) that computes the answer; running the program gives an exact result. Many chatbots do this when you upload a spreadsheet and ask for analysis: they write and run code behind the scenes. Practical tip for learners: for anything numerical that matters (budgets, totals, statistics), ask: “Use code to calculate this and show me the code.” Then check the result.",
+  "img": "assets/day4/prompt/s44.jpg"
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "text": [
+   "Automatic Prompt Engineer and Active-Prompt",
+   "Automatic Prompt Engineer (APE)",
+   "AI is used to write and improve prompts, testing versions and keeping the one that gives the best results.",
+   "Refine this prompt for clarity: “Write about climate change.”",
+   "→ “Summarise recent scientific findings on climate change, focusing on its impact on global temperatures and ecosystems.”",
+   "Active-Prompt",
+   "Find the questions where the model is least certain (its answers keep changing). People write worked examples for those, and the examples go into the prompt.",
+   "Human effort goes where the model needs it most, just like targeted data labelling.",
+   "Related habit: “Ask me any questions you need before you answer.”"
+  ],
+  "notes": "Key message: AI can help write prompts, and human examples are most valuable where the AI is most uncertain. Automatic Prompt Engineer: researchers use AI to generate many candidate prompts, test them and keep the best. As a user, you can do a simple version: paste your prompt and ask “Improve this prompt so the answer is clearer and more useful. Ask me what information is missing.” This is a great tool for learners who are just starting. Active-Prompt, corrected: the original deck described it as the model asking the user follow-up questions. In the research, Active-Prompt means: run the model several times on many questions, find the ones where its answers disagree most (high uncertainty), have humans annotate those with step-by-step worked answers, and use those as the few-shot examples. This is very close to data labelling: focusing human labelling effort on the hardest cases. The original idea, a model asking clarifying questions, is still a good habit, so it is kept as the “related habit”: ending a prompt with “Ask me questions before you answer” often produces much better results for complex tasks.",
+  "img": "assets/day4/prompt/s45.jpg"
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "text": [
+   "Directional Stimulus and Graph Prompting",
+   "Directional Stimulus Prompting",
+   "Add hint words (a “stimulus”) that steer the model towards the themes, tone or details you want.",
+   "Describe the city of Paris in a way that highlights its artistic and historical significance.",
+   "→ The keywords make the model focus on art and history, not food or shopping.",
+   "Graph Prompting",
+   "Give the model information as a structure of connections (nodes and links), such as a family tree, an organisation chart or a network.",
+   "“→” means “is the parent of”.\nJohn → Mary → Sam → Sarah\nHow is John related to Sarah?",
+   "→ John is Sarah’s great-grandfather."
+  ],
+  "notes": "Key message: small additions to a prompt, like hint words or a clear structure, can steer the model precisely. Directional stimulus: the original example adds the words “artistic” and “historical” so the description of Paris focuses on those aspects. In research, a second, smaller model generates these hint keywords automatically for each input; at the user level, you just add the keywords yourself. Try: “Describe Accra, highlighting its music and nightlife” versus “highlighting its markets and trade”. Graph prompting: useful when the information is about relationships: family trees, reporting lines, supply chains, or how concepts connect. Important improvement to the original example: always define what the arrow means. “John → Mary” could mean “parent of”, “manager of” or “sent money to”. Once defined, the model can reason over the chain: John is the parent of Mary, who is the parent of Sam, who is the parent of Sarah, so John is Sarah’s great-grandfather. In research, graph prompting is mostly used with special graph neural networks. Learners only need the basic idea: structured relationships help the model reason.",
+  "img": "assets/day4/prompt/s46.jpg"
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "text": [
+   "ReAct and Reflexion",
+   "ReAct (Reason + Act)",
+   "The model alternates between thinking and taking actions, such as searching or using a tool, and uses what it finds to decide the next step.",
+   "Thought: I need the capital of the Ashanti Region.\nAction: search “Ashanti Region capital”\nObservation: Kumasi\nThought: now I can answer.\nAnswer: Kumasi.",
+   "Reflexion",
+   "The model reviews its own answer, finds mistakes or gaps, and produces an improved version.",
+   "Explain the causes of World War I. Then review your answer, list anything missing or wrong, and write an improved version.",
+   "→ First draft, then a self-review, then a better final answer."
+  ],
+  "notes": "Key message: ReAct lets a model look things up as it reasons; Reflexion makes it check and improve its own work. ReAct: the pattern is Thought → Action → Observation, repeated until the model can answer. The “action” is something outside the model: a web search, a database lookup, a calculator. This is how AI agents and search-enabled chatbots work behind the scenes. Correction to the original deck: its ReAct example (“Is a square a rectangle? Explain your reasoning before giving a final answer”) only shows reasoning, with no real action, so it is really chain-of-thought. The example on the slide includes a search action, which is the key feature of ReAct. Reflexion: the original example is good. Asking a model to critique and revise its own answer often catches gaps. In research, Reflexion agents also store lessons from failed attempts and use them in the next try. Practical habit for learners: after any important answer, ask “Review your answer. What might be wrong or missing?” It takes ten seconds and often improves the result. It does not replace your own checking.",
+  "img": "assets/day4/prompt/s47.jpg"
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "text": [
+   "Multimodal Chain-of-Thought",
+   "What it is: chain-of-thought reasoning across more than one type of data, such as text together with images, charts, audio or video.",
+   "How: upload an image or file to a chatbot that accepts them, then ask it to describe what it sees step by step before drawing conclusions.",
+   "When to use it: reading charts, checking photos, understanding diagrams or scanned forms.",
+   "PROMPT + IMAGE",
+   "[graph of population growth attached]\nFirst describe what the axes and lines show. Then explain the main trends, step by step. Finish with a 2-sentence summary.",
+   "WHAT HAPPENS",
+   "The model reads the picture, reasons through what it sees, and writes a summary you can check against the graph."
+  ],
+  "notes": "Key message: modern AI can reason about images, charts and documents as well as text. Asking it to describe first, then reason, makes its conclusions more reliable and easier to check. The original example: “Analyse this graph (image) showing population growth, then explain the main trends in a written summary.” The improved version on the slide adds “describe the axes and lines first”, which is the chain-of-thought part. If the model misreads the axes, you will see it immediately. Which tools: most major chatbots (ChatGPT, Claude, Gemini, Copilot) now accept image uploads, and many accept PDFs. Try it (3 minutes): ask learners to photograph something in the room, a poster, a chart or a handwritten note, upload it and ask the model to describe it step by step, then answer a question about it. Link to data labelling: image description and image annotation are major labelling tasks. Multimodal models are increasingly used for a first pass, with humans checking the results, which is exactly where careful human labelers add value.",
+  "img": "assets/day4/prompt/s48.jpg"
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "text": [
+   "Cheat Sheet: Which Technique When?"
+  ],
+  "notes": "Key message: learners do not need to memorise every technique. They need to know which one to reach for when a prompt is not working. Suggest learners photograph this slide or copy it into their notes; it is the most practical summary in Part 4. Walk through it as a problem-solving guide: “My answer is in the wrong format” → few-shot. “The maths is wrong” → chain-of-thought or tools. “It made up facts” → RAG, self-consistency, reflexion. “It keeps forgetting my style” → meta prompting. “The task is too big” → prompt chaining. Techniques can be combined. A strong prompt might give a role (meta), two examples (few-shot), ask for step-by-step reasoning (chain-of-thought) and end with “If unsure, say so.”",
+  "img": "assets/day4/prompt/s49.jpg"
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 4 · 20 MIN · PAIRS",
+   "Technique Challenge",
+   "Run each task twice: once plain, once with the technique. Record which answer was better and why.",
+   "ROUND 1 · FEW-SHOT",
+   "Custom labels",
+   "Sort 6 customer messages into BILL, TECH or DELIV. First with no examples, then with 2 examples.",
+   "ROUND 2 · CHAIN-OF-THOUGHT",
+   "Word problem",
+   "Solve the trainer’s market maths problem. First ask for just the answer, then add “Think step by step.”",
+   "ROUND 3 · REFLEXION",
+   "Improve a draft",
+   "Ask for a short job-application email. Then add: “Review your answer, list 3 weaknesses and rewrite it.”"
+  ],
+  "notes": "Pairs complete all three rounds (about 5 minutes each), then 5 minutes of sharing. Ask: “In which round did the technique make the biggest difference?” Round 1 material, 6 customer messages: 1. “I was charged twice for my order.” 2. “The app crashes when I open it.” 3. “My parcel has not arrived after 10 days.” 4. “Why is my bill higher this month?” 5. “I can’t log in with my password.” 6. “The courier delivered to the wrong address.” Expected: BILL, TECH, DELIV, BILL, TECH, DELIV. Without examples, models often write “Billing” or full sentences; with 2 examples in the format “Message: … Label: BILL”, they use the exact codes. Round 2 problem: “Akosua buys 4 kg of tomatoes at GH₵ 15 per kg and 3 tubers of yam at GH₵ 25 each. She pays with a GH₵ 200 note. How much change does she get?” Working: 4 × 15 = 60; 3 × 25 = 75; 60 + 75 = 135; 200 − 135 = 65. Answer: GH₵ 65. Modern chatbots may get it right both times; the point is that the step-by-step version can be checked. Round 3: the reviewed version is usually more specific and better structured. Discuss whether all of the AI’s “weaknesses” were real.",
+  "img": "assets/day4/prompt/s50.jpg"
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "text": [
+   "PART 5",
+   "Practical Applications"
+  ],
+  "notes": "Part 5 of 6 (about 50 minutes including the capstone practical). Learners see how prompt engineering is used by students, project managers, accountants, researchers and data labelers, each with a step-by-step workflow. The section ends with the capstone: building a prompt for their own work. Transition line: “You now have the skills and techniques. Let’s see how different professionals put them to work.”",
+  "img": "assets/day4/prompt/s51.jpg"
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "text": [
+   "Students: Learning with AI",
+   "Study assistance",
+   "Summarise textbook chapters, explain hard concepts, and create study notes tailored to your level.",
+   "Summarise this chapter into 10 key points for revision: […]",
+   "Homework help",
+   "Ask for explanations and problem-solving strategies, or guidance on structuring an essay, not finished answers to copy.",
+   "Guide me through this problem with hints. Don’t give the final answer yet.",
+   "Exam preparation",
+   "Generate practice quizzes, flashcards and revision guides to prepare more effectively.",
+   "Write 10 multiple-choice questions on photosynthesis, with answers at the end."
+  ],
+  "notes": "Key message: for students, AI works best as a tutor, not as a way to skip learning. Walk through the three uses from the original deck, with the example prompts at the bottom of each card. Important guidance to share: - Homework help: asking for hints and explanations builds understanding; copying answers does not, and many schools treat submitting AI-written work as cheating. The “hints first” prompt keeps the learner doing the thinking. - Always check facts and maths in AI answers, especially for exams. - Follow your school’s or university’s rules on AI use. Quick activity (2 minutes): ask learners to generate 5 quiz questions on a topic from today’s module (for example the four elements of a prompt) and answer them with a neighbour.",
+  "img": "assets/day4/prompt/s52.jpg"
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "text": [
+   "Students: Homework Help, Step by Step",
+   "Objective: get help understanding complex topics and solving problems.",
+   "1",
+   "Identify the questions",
+   "List the specific problems or concepts you need help with.",
+   "2",
+   "Write the prompt",
+   "“Explain photosynthesis in simple terms suitable for a 10th-grade biology student.”",
+   "3",
+   "Give the input",
+   "Paste the homework question or topic, for example “Solve this and explain the steps: [problem]”.",
+   "4",
+   "Review the explanation",
+   "Read it carefully and make sure you understand each step. Check it against your notes.",
+   "5",
+   "Ask for clarification",
+   "“Can you explain step 3 in more detail?” Follow-ups are prompt chaining in action.",
+   "6",
+   "Do it yourself",
+   "Solve a similar problem on your own to prove you have learned it."
+  ],
+  "notes": "Key message: a good workflow turns AI into a tutor: identify, prompt, input, review, clarify and practise. Steps 1 to 5 come from the original deck. Step 6 is added so that learning stays with the student, not the AI. Point out the techniques hiding in this workflow: - Step 2 names the audience (a 10th-grade biology student): the context element and the audience tip. - “Solve this and explain the steps” is chain-of-thought. - Step 5, asking follow-up questions, is prompt chaining. Optional demonstration: run the photosynthesis prompt live, then ask “Can you explain the part about chlorophyll in more detail, with an everyday comparison?”",
+  "img": "assets/day4/prompt/s53.jpg"
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "text": [
+   "Project Managers: Reports, Decisions and Meetings",
+   "Task automation and reporting",
+   "Generate project reports, status updates and risk assessments; get timelines, resource plans or team performance summaries.",
+   "Turn these task updates into a one-page status report: […]",
+   "Decision-making support",
+   "Compare options by generating pros and cons of different strategies, or simple cost-benefit analyses.",
+   "Compare hiring two contractors vs one full-time staff member. Use a table.",
+   "Meeting summaries",
+   "Summarise long meeting notes and pull out the key decisions and action items for follow-up.",
+   "List every action item, owner and deadline from these notes: […]"
+  ],
+  "notes": "Key message: project managers spend a lot of time turning information into reports, decisions and follow-ups. Prompt engineering can speed this up, with the manager still checking and owning the result. Walk through the three uses from the original deck, with an example prompt for each. Important cautions: - AI only knows what you give it. A status report is only as accurate as the task updates you paste in. - For decision support, the AI’s pros and cons are a starting point for discussion, not a decision. - Meeting notes may contain confidential information. Use tools your organisation has approved (more in the responsible-use section). Ask: “Who has to write regular reports in their job or studies? Which part takes the longest?” Usually it is gathering and summarising, which is exactly what AI can help with.",
+  "img": "assets/day4/prompt/s54.jpg"
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "text": [
+   "Project Managers: Automating a Weekly Report",
+   "Objective: generate project reports and updates quickly and consistently.",
+   "1",
+   "Identify key metrics: milestones, deadlines, team performance and risks.",
+   "2",
+   "Create the prompt with clear instructions (see right).",
+   "3",
+   "Input the data: task progress, milestones achieved, delays and issues.",
+   "4",
+   "Analyse the output: check every detail is captured and accurate.",
+   "5",
+   "Refine the prompt to add detail or fix anything unclear, then save it to reuse every week.",
+   "REUSABLE PROMPT",
+   "Act as a project coordinator. Generate a weekly project status report for senior management.\nUse these sections: Summary (3 lines), Progress, Risks, Action items (owner and date).\nBase it only on the data below. If anything is missing, list it under “Information needed”.\nData: [project details]"
+  ],
+  "notes": "Key message: a well-designed prompt can become a reusable template. Write it once, refine it, then use it every week. Steps 1 to 4 come from the original deck (step 4 included “refine the prompt”, now shown as step 5). Point out the techniques in the reusable prompt: - Role: “Act as a project coordinator”. - Audience: senior management. - Format: fixed sections, including a 3-line summary. - Grounding: “Base it only on the data below” (a simple form of RAG, preventing invented progress). - Safety net: “If anything is missing, list it under ‘Information needed’” instead of guessing. Encourage learners to keep a personal “prompt library”, a document of prompts that worked well, so they do not start from scratch each time.",
+  "img": "assets/day4/prompt/s55.jpg"
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "text": [
+   "Accountants: Categorising Expenses",
+   "Uses: drafting financial reports (balance sheets, income statements, tax summaries) from data, categorising expenses and spotting discrepancies, and explaining tax rules and possible deductions.",
+   "Workflow: expense categorisation",
+   "1. Prepare the data: collect the transactions and receipts to sort.",
+   "2. Write the prompt with the categories you want (right).",
+   "3. Input the list of expenses.",
+   "4. Review: check every category and fix mistakes.",
+   "5. Refine: ask for subcategories, such as Travel: flights, accommodation, meals.",
+   "PROMPT",
+   "Categorise the following expenses by type (Travel, Office Supplies, Client Entertainment, Utilities). Return a table with Date, Item, Amount and Category. Mark anything unclear as “Check”.\n[list of expenses]",
+   "Always verify totals and tax advice with a qualified accountant and the current tax rules."
+  ],
+  "notes": "Key message: accountants can use AI to speed up sorting, summarising and drafting, while keeping full responsibility for accuracy. The three uses and the 5-step workflow come from the original deck (the original split them across three slides). Point out the prompt techniques: - Fixed category list: the AI chooses only from your categories (like custom labels in classification). - Table format: easy to paste into a spreadsheet. - “Mark anything unclear as ‘Check’”: a safety net instead of guessing. Important cautions: - AI can make arithmetic mistakes. For totals, ask it to use code (the PAL technique) or check in a spreadsheet. - Tax rules change and differ by country. AI suggestions about deductions must be checked against current Ghana Revenue Authority rules or by a qualified professional. - Financial records are confidential. Remove names and account numbers, or use an approved company tool. Link to data labelling: categorising expenses is a labelling task. The same prompt pattern works for any categorisation job.",
+  "img": "assets/day4/prompt/s56.jpg"
+ },
+ {
+  "n": 57,
+  "hidden": false,
+  "text": [
+   "Researchers: Literature Reviews",
+   "Uses: summarising academic papers, finding trends and patterns in data, and structuring research proposals to fit a funder’s format.",
+   "Workflow: literature review",
+   "1. Collect papers relevant to your topic.",
+   "2. Write a summary prompt (right).",
+   "3. Provide the input: paste or upload the abstract or full text.",
+   "4. Review the summaries against the papers.",
+   "5. Ask for more detail, such as the theoretical framework or limitations.",
+   "PROMPT",
+   "Summarise the main findings, methodology and conclusions of the research paper below. Use headings for each. Quote the paper’s own words for key findings.\n[paper text]",
+   "Never cite a paper you have not opened yourself. AI can invent references that look real."
+  ],
+  "notes": "Key message: AI can save researchers many hours of reading and summarising, but every claim and every reference must be checked against the real source. The three uses and the 5-step workflow come from the original deck. Why the prompt asks for quotes: if the model must quote the paper’s own words for key findings, it is much easier to check that the summary is faithful, and harder for it to drift away from the source. The biggest risk is invented references, as learners saw in the hallucination hunt in the previous module. Rule: only cite what you have opened and read. Use the AI to summarise papers you supply (a form of RAG), not to find papers from memory, unless the tool searches real databases and gives links you then open. Data analysis: for statistics on real data, ask the AI to use code and show its working, and check the results.",
+  "img": "assets/day4/prompt/s57.jpg"
+ },
+ {
+  "n": 58,
+  "hidden": false,
+  "text": [
+   "Data Labelers: Prompting in Your Own Work",
+   "Prompt engineering is now part of many data labelling jobs, both using AI to help and evaluating what AI produces.",
+   "Understand the guidelines",
+   "“Explain this labelling rule in simple words and give me two examples of each label.”",
+   "Find tricky edge cases",
+   "“List 10 reviews that would be hard to label as positive or negative, and explain why.”",
+   "Write prompts and ideal answers",
+   "Many AI-training tasks ask you to write a prompt and a model answer, or to improve a weak one.",
+   "Rate and correct AI answers",
+   "Judge responses for accuracy, helpfulness and safety, then explain your rating. This is how chatbots get better."
+  ],
+  "notes": "Key message: for data labelers, prompt engineering is not just a productivity trick; it is increasingly part of the job. This slide is an addition to the original deck, tailored to this training programme. Explain the four uses: - Understanding guidelines: AI can explain a confusing rule and generate examples. Always confirm with the official guideline or your team lead; the guideline is the authority, not the AI. - Edge cases: generating difficult examples helps you practise and helps teams improve guidelines. - Writing prompts and ideal answers: AI companies hire people to write prompts and high-quality “reference” responses that models learn from. Everything in this module, clear instructions, context, format and examples, applies directly. - Rating and correcting AI answers: this is called human feedback. Raters compare model answers, score them and explain why. It is one of the main ways chatbots are improved (reinforcement learning from human feedback, mentioned in the previous module). Important rule: never paste client data or confidential project material into public AI tools. Follow your project’s rules on AI use; some projects forbid it completely.",
+  "img": "assets/day4/prompt/s58.jpg"
+ },
+ {
+  "n": 59,
+  "hidden": false,
+  "text": [
+   "PRACTICAL 5 · CAPSTONE · 25 MIN · INDIVIDUAL",
+   "Build a Prompt for Your Own Work",
+   "Your task",
+   "Choose a real task from your work, studies or business.\nWrite a prompt using the template on the right.\nAdd one technique: examples, step-by-step or a review step.\nRun it, review the answer and improve the prompt at least once.\nShare your before-and-after prompt with a partner.",
+   "TEMPLATE",
+   "ROLE: Act as …\nTASK: …\nCONTEXT: This is for … because …\nINPUT: [paste here]\nFORMAT: Answer as …\nLIMITS: Length, tone …\nTECHNIQUE: [examples / think step by step / review]\nIf you are not sure, say so."
+  ],
+  "notes": "This is the capstone of the module: learners apply everything to a task they actually care about. Give 15 minutes to build and test, then 10 minutes for partner sharing and a few volunteers presenting to the class. Suggest tasks if learners are stuck: writing a CV summary, planning a small business’s social media posts, preparing interview answers, summarising a long WhatsApp group discussion, drafting a complaint letter, creating a study plan, or writing labelling guidelines for a simple task. What to look for as you walk around: - Is the task a clear action verb? - Is there context the AI could not have guessed? - Is the format specified? - Did they add a technique and improve the prompt after the first run? Remind learners not to use real confidential information; invented or anonymised details are fine for practice. Encourage everyone to save their final prompt as the first entry in a personal prompt library.",
+  "img": "assets/day4/prompt/s59.jpg"
+ },
+ {
+  "n": 60,
+  "hidden": false,
+  "text": [
+   "Prompting Responsibly",
+   "Verify everything",
+   "Check facts, numbers, quotes and references. A good prompt reduces errors; it does not remove them.",
+   "Protect private data",
+   "Never paste personal, client or confidential information into public AI tools.",
+   "Watch for bias",
+   "Check whether answers treat people and groups fairly, and ask for balanced views.",
+   "Be open about AI use",
+   "Follow your school’s or employer’s rules, and say when AI helped with your work.",
+   "Keep learning yourself",
+   "Use AI to learn faster, not to stop thinking. Make sure you understand what you submit.",
+   "You are responsible",
+   "Whatever you send, publish or submit, you own it, not the AI."
+  ],
+  "notes": "Key message: prompt engineering makes AI more useful, but responsibility for the result always stays with the person using it. Points to draw out: - Verify: links back to hallucinations. Even an excellent prompt can produce a wrong fact or an invented reference. - Private data: customer records, ID numbers, health information, passwords and confidential project material must not go into public chatbots. Many companies provide approved tools; some data labelling projects ban AI tools entirely. - Bias: ask for balanced perspectives and check whether examples or assumptions stereotype any group. - Transparency: the Nature extract in Part 3 was about researchers disclosing AI use. Schools and employers increasingly expect the same. - Keep learning: AI is a tutor and assistant, not a replacement for your own understanding. Discussion (3 minutes): “Which of these rules is easiest to forget in a busy day?”",
+  "img": "assets/day4/prompt/s60.jpg"
+ },
+ {
+  "n": 61,
+  "hidden": false,
+  "text": [
+   "Exit Quiz",
+   "1",
+   "Name the four elements of a prompt.",
+   "2",
+   "Rewrite “Write about malaria” as a specific prompt.",
+   "3",
+   "Why is it better to say what to do than what not to do?",
+   "4",
+   "What is the difference between zero-shot and few-shot prompting?",
+   "5",
+   "Which technique would you use for a multi-step maths problem, and what would you add to the prompt?",
+   "6",
+   "How does RAG help reduce hallucinations?",
+   "7",
+   "Give one reason to break a big task into a chain of prompts.",
+   "8",
+   "Name two things you should never paste into a public chatbot."
+  ],
+  "notes": "Learners answer on paper individually (6 minutes), then swap and mark with a neighbour as you reveal the answers (4 minutes). Answers: 1. Instruction, context, input data, output indicator. 2. Any specific version with a clear task, audience, format and length, for example: “Explain how malaria spreads and three ways to prevent it, for parents in a rural community. Use simple English, a bulleted list, and under 150 words.” 3. Positive instructions give the model a clear path to follow. When a prompt only says what to avoid, the model may fall back on its usual pattern, which can be the very thing you wanted to avoid. 4. Zero-shot gives no examples; few-shot includes a handful of examples showing the task, format or style. 5. Chain-of-thought: add “Think step by step” or “Show your working”. Tools or code (PAL) are also acceptable. 6. It retrieves real information from documents, databases or search and gives it to the model, so the answer is based on real sources instead of the model’s memory. 7. Any one of: each step is simpler; you can check and correct each step before moving on; you get deeper answers to each part. 8. Any two of: personal data such as ID numbers, health records or passwords; client data; confidential company or project material; financial account details. Scoring: 6 or more correct means the learner is ready for intermediate prompt engineering. Fewer than 4: revisit the elements, the prompt formula and the cheat sheet.",
+  "img": "assets/day4/prompt/s61.jpg"
+ },
+ {
+  "n": 62,
+  "hidden": false,
+  "text": [
+   "KEY TAKEAWAYS",
+   "Four things to remember",
+   "1",
+   "A prompt is built from instruction, context, input data and output indicator.",
+   "2",
+   "Be specific: role, task, context, format and limits. Then test and improve.",
+   "3",
+   "Pick the technique for the problem: examples, step by step, chaining or sources.",
+   "4",
+   "You are responsible for what AI produces. Verify it and protect private data.",
+   "KEEP PRACTISING",
+   "Start a personal prompt library: save every prompt that works well, and improve it each time you use it."
+  ],
+  "notes": "Close by reading the four takeaways. Ask each learner to share with a neighbour the one prompt from today they will actually use this week (1 minute). Homework: use the prompt formula on three real tasks this week. For each, write down the first prompt, the improved prompt, and what changed in the answer. Bring the best one to the next session. Next steps for interested learners: practise the core techniques (few-shot, chain-of-thought, chaining) until they are habits, then explore RAG and tool use in the AI products they use at work. Thank learners and collect feedback on the session.",
+  "img": "assets/day4/prompt/s62.jpg"
+ }
+]

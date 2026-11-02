@@ -1,0 +1,301 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "DATA LABELING TRAINING GUIDE",
+   "POLYLINE SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Polyline segmentation"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "What is Polyline Annotation?",
+   "It is used to annotate long, narrow shapes in an image. It involves placing a series of points along the object and connecting them to follow its path accurately. ",
+   "Polyline Annotation and Automated Vehicles (keymakr.com)"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "What is Polyline Annotation?",
+   "For example, when marking a road lane, multiple points are placed along the lane and joined to match its direction. This approach is useful for clearly identifying features such as road lanes, railway tracks, and pipelines.",
+   "Polyline Annotation and Automated Vehicles (keymakr.com)"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polyline tool?",
+   "To draw with the polyline tool. Click through the center of the shape to create a line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polyline tool?",
+   "To draw with the polyline tool. Click through the center of the shape to create a line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polyline tool?",
+   "To draw with the polyline tool. Click through the center of the shape to create a line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polyline tool?",
+   "To draw with the polyline tool. Click through the center of the shape to create a line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Example of Polyline Segmentation "
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Example of Polyline Segmentation "
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Example of Polyline Segmentation "
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Example of Polyline Segmentation "
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polyline",
+   "Press D to delete a point. ",
+   "Click on the line",
+   "Make sure it's selected"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "16",
+   "Delete a polyline"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Resizing a polyline shape",
+   "Click and drag a point to resize the line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Resizing a polyline shape",
+   "Click and drag a point to resize the line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Resizing a polyline shape",
+   "Click and drag a point to resize the line."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Add a polyline point"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Add a polyline point"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polyline point"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polyline point"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polyline point"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "17",
+   "Reduce image transparency ",
+   "Sometimes Images of higher resolution make it difficult to see the polyline clearly. In that case, use the brightness icon to increase or decrease the brightness of the image to see the borderline clearly."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Expand the image or reduce the image (Zoom)",
+   "Use these buttons to increase the size of the image or reduce it. This helps to see the object boundaries clearly."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "POLYLINE",
+   "03",
+   "Click here to open and login to the datamaker Dashboard"
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "POLYLINE",
+   "03",
+   "Go to your dashboard.\nSelect NIA_Polyline\nClick on Start Task.\nHold on for further instructions."
+  ],
+  "notes": "",
+  "img": "assets/day2/polyline/s26.jpg"
+ }
+]

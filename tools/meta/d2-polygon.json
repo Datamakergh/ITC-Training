@@ -1,0 +1,355 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "DATA LABELING TRAINING GUIDE",
+   "POLYGON SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "What is Polygon Annotation?",
+   "Polygon annotation is a method of marking an object by clicking to create points around its edges. By connecting these points, you create a shape that closely follows the real shape and edges of the object.\nUnlike a rectangle, polygon annotation allows you to change direction and create different angles, making it useful for objects with irregular or complex shapes."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool",
+   "When you make a mistake with the polygon point tap   backspace  on the keyboard."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to label with the polygon tool"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Example of Polygon Segmentation "
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Examples of polygon shape"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Examples of polygon shape"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Examples of polygon shape"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Resizing a polygon shape",
+   "Click and drag a point to resize the shape."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Resizing a polygon shape",
+   "Click and drag a point to resize the shape."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Add a polygon point",
+   "Hold CTRL and click to add a point to the polygon shape."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polygon point",
+   "Hold ALT and click to delete a point from the polygon shape."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a polygon point",
+   "Hold ALT and click to delete a point from the polygon shape."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "Reduce image transparency ",
+   "Sometimes Images of higher resolution make it difficult to see the bounding box clearly. In that case, use the brightness icon to increase or decrease the brightness of the image to see the boundaries clearly."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "PRECISE LABELLING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Make sure the work is precise before you proceed.",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Make sure the work is precise before you proceed.",
+   "Do not label like this!",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Press “esc” on your keyboard, so that you can select the shape before you can delete.",
+   "Delete a shape",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Press “b” repeatedly to check precision on the edges of your shape",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "On curves, reduce the length of your polygon line to get accurate points.",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "RAIL & CATENARY CONDITION AWARENESS \nPOLYGON SEGMENTATION",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "PRACTICAL DEMONSTRATION",
+   "To label precisely, zoom in and label the edges.",
+   "Go to your Dashboard Projects.\nSelect the NIA_Polygon Project.\nClick on start Task.\nHold on for further instructions."
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "RAIL & CATENARY AWARENESS PROJECT",
+   "Purpose of project.\n\u000bThe purpose is to identify damaged tools in the rail stations that could cause train accidents.",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "This project has two categories.",
+   "DATA LABELING"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Click here to open and login to the datamaker Dashboard"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "End of Day"
+  ],
+  "notes": "",
+  "img": "assets/day2/polygon/s32.jpg"
+ }
+]

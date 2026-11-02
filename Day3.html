@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3: Data Labelling Training for AI | Kenya ITC × datamaker</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --accent:#2461E9; --accent-2:#1a48b8; --dark:#182034;
+  --bg:#ffffff; --bg-soft:#f4f6fb; --surface:#ffffff; --surface-2:#eef1f8;
+  --border:#e2e6ef; --border-strong:#c9d0e0;
+  --text-1:#182034; --text-2:#4b5568; --text-3:#8a92a6;
+  --good:#1aaf6c; --warn:#e0a324; --bad:#e0445a;
+  --radius:14px; --radius-lg:22px;
+  --shadow:0 8px 24px rgba(24,32,52,.08); --shadow-lg:0 20px 48px rgba(24,32,52,.16);
+  --font:'Malgun Gothic','Apple SD Gothic Neo','Inter',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0b0e16;font-family:var(--font);color:var(--text-1)}
+img{max-width:100%;display:block}
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden;background:var(--dark)}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg);
+  opacity:0;pointer-events:none;transform:translateX(24px);transition:opacity .4s ease,transform .4s ease}
+.slide.is-active{opacity:1;pointer-events:auto;transform:translateX(0);z-index:2}
+.slide.is-prev{transform:translateX(-24px)}
+.slide.dark{background:var(--dark);color:#fff}
+.slide.dark .text-2,.slide.dark .lede{color:#c3c9dc}
+body.single .slide{position:relative;width:100vw;height:100vh;opacity:1;transform:none;pointer-events:auto}
+
+.deck-chrome{display:flex;align-items:center;justify-content:space-between;padding:26px 56px 0;font-size:12.5px;
+  letter-spacing:.08em;color:var(--text-3);text-transform:uppercase;flex:0 0 auto}
+.slide.dark .deck-chrome{color:#8b93ad}
+.dc-left{display:flex;align-items:center;gap:10px}
+.dc-logo{font-weight:800;color:var(--accent);letter-spacing:-.01em;text-transform:none;font-size:14px}
+.slide.dark .dc-logo{color:#6f97ff}
+/* ---- 로고 이미지 (텍스트 로고 -> logo.svg 교체) ---- */
+.dc-logo{display:inline-flex;align-items:center}
+.dc-logo img{height:17px;width:auto;display:block}
+.dc-logo .logo-dark{display:none}
+.slide.dark .dc-logo .logo-light{display:none}
+.slide.dark .dc-logo .logo-dark{display:block}
+.title-logo img{height:24px;width:auto;display:block}
+.dc-sep{opacity:.5}
+.slide-num::before{content:attr(data-n) " / " attr(data-total)}
+/* ---- 페이지 번호: 반투명 pill + 살짝 위로 (제본 피드백 반영) ---- */
+.slide-num{display:inline-block;background:rgba(255,255,255,.78);padding:2px 9px;border-radius:8px;
+  position:relative;top:-9px;font-weight:700}
+.slide.dark .slide-num{background:rgba(15,20,32,.55)}
+
+.slide-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:18px 56px 46px;overflow:hidden;position:relative}
+
+/* ---- 실습 중 상시 표시 화면 (흰 배경 / 표지·섹션과 구분되는 전용 양식) ---- */
+.slide.practice{background:#fff}
+.slide.practice .slide-body{padding:0 56px}
+.pr-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;flex:1}
+.pr-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(36,97,233,.09);
+  border:1px solid rgba(36,97,233,.28);border-radius:999px;padding:9px 22px;margin-bottom:24px;
+  font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.pr-badge svg{width:17px;height:17px}
+.pr-title{font-size:78px;font-weight:800;color:var(--accent);line-height:1.04;letter-spacing:-.02em;margin:0 0 16px}
+.pr-sub{font-size:22px;color:var(--text-2);margin:0 0 38px;max-width:820px}
+.pr-checks{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;max-width:1000px}
+.pr-checks span{font-size:15px;font-weight:700;color:var(--accent);background:rgba(36,97,233,.07);
+  border:1px solid rgba(36,97,233,.22);border-radius:999px;padding:11px 21px}
+.pr-help{margin-top:34px;font-size:18px;font-weight:700;color:var(--text-1);
+  border-top:1px solid var(--border);padding-top:22px}
+@media print{
+  .slide.practice{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ---- Synapse 툴 가이드 (레퍼런스 원본 슬라이드 이미지 그대로 사용) ---- */
+/* Kenya: guide image sits below the chrome strip so the slide number never covers the original slide */
+.slide.guide .deck-chrome{padding:12px 56px 0}
+.slide.guide .slide-num{top:0}
+.slide.guide .slide-body{padding:8px 56px 14px;align-items:center}
+.guide-img{width:100%;height:100%;min-height:0;object-fit:contain;display:block;border:1px solid var(--border);border-radius:6px}
+
+/* ---- typography ---- */
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.slide.dark .eyebrow{color:#7fa2ff}
+.h1{font-size:52px;font-weight:800;line-height:1.12;letter-spacing:-.02em;margin:0 0 12px;word-break:keep-all}
+.h2{font-size:38px;font-weight:800;line-height:1.16;letter-spacing:-.015em;margin:0 0 16px;word-break:keep-all}
+.lede{font-size:19px;line-height:1.55;color:var(--text-2);font-weight:400;max-width:74ch;margin:0 0 18px}
+.bl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.bl li{position:relative;padding-left:24px;font-size:17px;line-height:1.5;color:var(--text-2);word-break:keep-all}
+.bl li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.slide.dark .bl li{color:#d3d8e8}
+
+/* ---- section divider ---- */
+.section-slide .slide-body{justify-content:center;align-items:flex-start}
+.sec-wrap{max-width:900px}
+.sec-num{color:var(--accent);opacity:.9;margin-bottom:18px}
+.sec-title{font-size:64px}
+.section-slide{background:radial-gradient(1100px 700px at 85% 15%, rgba(36,97,233,.35), transparent 60%),
+  radial-gradient(900px 600px at 5% 95%, rgba(36,97,233,.18), transparent 55%), var(--dark)}
+
+/* ---- title slide ---- */
+.title-slide{background:linear-gradient(155deg,#101526 0%,#182034 45%,#1c2c57 100%)}
+.title-slide .slide-body{justify-content:center;align-items:flex-start;position:relative}
+.title-wm{position:absolute;right:24px;top:-30px;color:rgba(111,151,255,.10);font-weight:800;font-size:240px;
+  letter-spacing:-.05em;line-height:1;pointer-events:none;user-select:none}
+.title-deco{position:absolute;right:70px;bottom:60px;color:rgba(111,151,255,.16);pointer-events:none;user-select:none}
+.title-day{font-size:15px;font-weight:700;color:#7fa2ff;letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px}
+.title-h1{font-size:66px;font-weight:800;color:#fff;line-height:1.1;max-width:900px;letter-spacing:-.02em;margin:0 0 14px}
+.title-sub{font-size:22px;color:#aab3cc;font-weight:400;margin:0 0 30px;max-width:760px}
+.title-meta{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
+.title-meta div{display:flex;align-items:center;gap:10px;color:#c3c9dc;font-size:15px}
+.title-meta svg{color:#7fa2ff}
+.title-logo{position:absolute;left:56px;bottom:36px;font-weight:800;color:#fff;font-size:16px;letter-spacing:-.01em}
+.title-logo b{color:#7fa2ff}
+
+/* ---- icon cards ---- */
+.icard-grid{display:grid;gap:22px;margin-top:10px}
+.icard-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.icard-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.icard-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.icard{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--accent);
+  border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center}
+.icard-ic{color:var(--accent);margin-bottom:16px}
+.icard-ic svg{width:34px;height:34px}
+.icard-t{font-size:19px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;word-break:keep-all}
+.icard-d{font-size:15.5px;color:var(--text-2);line-height:1.55;word-break:keep-all}
+.slide.dark .icard{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.slide.dark .icard-t{color:#fff}
+.slide.dark .icard-d{color:#b9c0d6}
+
+/* ---- flow / pipe ---- */
+.pipe{display:flex;align-items:stretch;gap:0;margin-top:10px}
+.pnode{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px 20px;text-align:left;box-shadow:var(--shadow);min-width:0;display:flex;flex-direction:column;justify-content:center}
+.pn-badge{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:15px;margin-bottom:14px}
+.pn-t{font-size:17px;font-weight:700;margin-bottom:6px;word-break:keep-all}
+.pn-d{font-size:14.5px;color:var(--text-2);line-height:1.5;word-break:keep-all}
+.pn-viz{margin-top:14px}
+.pn-viz-lg{margin-top:0;margin-bottom:16px;height:150px}
+
+/* ---- lifecycle infographic ---- */
+.lc-wrap{position:relative;margin-top:22px}
+.lc-track{position:absolute;top:26px;left:0;width:100%;height:40px;z-index:0}
+.lc-row{position:relative;z-index:1;display:flex;gap:14px}
+.lc-node{flex:1;text-align:center;min-width:0}
+.lc-ic{position:relative;width:56px;height:56px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 16px rgba(36,97,233,.25)}
+.lc-ic.ic-collect{background:linear-gradient(140deg,#5b8def,#2461E9)}
+.lc-ic.ic-label{background:linear-gradient(140deg,#4f7de0,#1e50c9)}
+.lc-ic.ic-train{background:linear-gradient(140deg,#456ed1,#1a45b0)}
+.lc-ic.ic-validate{background:linear-gradient(140deg,#3a5fc4,#163c99)}
+.lc-ic.ic-deploy{background:linear-gradient(140deg,#2fae5c,#1f8a47)}
+.lc-ic.ic-repeat{background:linear-gradient(140deg,#f0a831,#d6841a)}
+.lc-num{position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--accent);color:var(--accent);font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.lc-node .pn-t{font-size:15.5px}
+.lc-node .pn-d{font-size:12.5px}
+.lc-wrap-lg{margin-top:36px;padding:0 40px}
+.lc-wrap-lg .lc-row{gap:28px}
+.lc-wrap-lg .lc-ic{width:84px;height:84px;margin-bottom:20px}
+.lc-wrap-lg .lc-num{width:26px;height:26px;font-size:13px;border-width:2.5px}
+.lc-wrap-lg .pn-t{font-size:19px;margin-bottom:6px}
+.lc-wrap-lg .pn-d{font-size:15px;max-width:260px;margin:0 auto}
+.loop-back{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:0}
+.loop-back svg{width:100%}
+.loop-label{font-size:14.5px;color:var(--text-1);font-weight:700;text-align:center}
+.pipe-viz-first .pnode{padding:16px 16px 20px}
+.pipe-viz-first .pn-badge{margin-bottom:12px}
+.parrow{display:flex;align-items:center;justify-content:center;color:var(--border-strong);padding:0 6px;flex:0 0 auto}
+.slide.dark .pnode{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.slide.dark .pn-d{color:#b9c0d6}
+.flow-note{margin-top:18px;padding:14px 20px;border-left:5px solid var(--accent);background:var(--bg-soft);border-radius:0 12px 12px 0;font-size:15.5px;font-weight:600;color:var(--text-1);line-height:1.5;display:flex;align-items:flex-start;gap:10px}
+.flow-note svg{flex:0 0 auto;margin-top:2px}
+
+/* ---- stat band ---- */
+.stat-band{display:flex;gap:0;margin-top:10px}
+.bar-chart{margin-top:16px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+
+/* ---- difficulty ladder ---- */
+.ladder{display:flex;align-items:flex-end;gap:16px;flex:1;min-height:0;margin-top:26px;padding-top:30px}
+.ladder-step{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.ladder-bar{width:100%;height:var(--h);border-radius:9px 9px 0 0;background:linear-gradient(180deg,#5b8def,#2461E9);box-shadow:0 6px 14px rgba(36,97,233,.2)}
+.ladder-step.dim .ladder-bar{background:#dde3f0;box-shadow:none}
+.ladder-t{margin-top:12px;font-size:13.5px;font-weight:700;text-align:center;color:var(--text-1);word-break:keep-all}
+.ladder-step.dim .ladder-t{color:var(--text-3);font-weight:600}
+.ladder-tag{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+
+/* ---- trend bar ---- */
+.trend-bar{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.trend-col{display:flex;align-items:center;gap:14px}
+.trend-cap{flex:0 0 auto;width:120px;font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em}
+.trend-track{flex:1;background:var(--surface-2);border-radius:8px;overflow:hidden;height:32px;display:flex;align-items:center}
+.trend-fill{height:100%;display:flex;align-items:center;padding:0 12px;font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trend-fill.simple{background:linear-gradient(90deg,#9db3d9,#7590c2)}
+.trend-fill.complex{background:linear-gradient(90deg,#5b8def,#2461E9)}
+
+/* ---- career path ---- */
+.career-path{display:flex;align-items:center;gap:6px;flex:1;min-height:0;margin-top:34px}
+.career-start{flex:0 0 210px;position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:22px 16px;font-size:16px;font-weight:700;text-align:center;color:var(--text-1)}
+.career-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.career-start small{display:block;margin-top:4px;font-weight:500;color:var(--text-2);font-size:12.5px}
+.career-fan{flex:0 0 100px;height:110px}
+.career-branches{flex:1;display:flex;flex-direction:column;gap:14px}
+.career-node{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:15px 20px;font-weight:700;font-size:15.5px;box-shadow:var(--shadow)}
+.career-node.accent{border-color:var(--accent);background:rgba(36,97,233,.06);color:var(--accent)}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut-wrap svg{filter:drop-shadow(0 8px 14px rgba(36,97,233,.18))}
+.reason-list{display:flex;flex-direction:column;justify-content:center;gap:22px}
+.reason-item{display:flex;align-items:flex-start;gap:16px}
+.reason-ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:rgba(36,97,233,.1);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.reason-t{font-size:17px;font-weight:800;color:var(--text-1);margin-bottom:4px}
+.reason-d{font-size:14.5px;color:var(--text-2);line-height:1.55}
+.growth-chart{margin-top:18px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
+.picto{margin-top:14px;display:flex;align-items:center;justify-content:center}
+.qcompare{margin-top:14px}
+.chart-caveat{position:absolute;bottom:2px;right:6px;font-size:10.5px;color:var(--text-3);font-style:italic}
+.stat{flex:1;text-align:center;padding:20px 10px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-big{font-size:56px;font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.stat-small{font-size:14px;color:var(--text-2);margin-top:10px;line-height:1.4}
+.stat-band-ic .stat-ic{color:var(--accent);margin-bottom:10px;display:flex;align-items:center;justify-content:center}
+.platform-frame{position:relative;margin-top:26px;padding:22px 20px 16px;border:2px dashed #c7d3ea;border-radius:18px}
+.platform-tag{position:absolute;top:-13px;left:24px;background:var(--bg);padding:0 10px;font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--accent)}
+
+/* ---- module feature chips ---- */
+.feat-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.feat-chips span{font-size:11.5px;font-weight:700;color:var(--accent);background:rgba(36,97,233,.09);border-radius:999px;padding:4px 10px}
+
+/* ---- platform module grid (4-column, icon+text feature list) ---- */
+.mod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;flex:1;min-height:0}
+.mod-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.mod-head{background:var(--accent);color:#fff;font-weight:800;font-size:14.5px;padding:11px 14px;letter-spacing:.01em}
+.mod-body{padding:13px 14px;display:flex;flex-direction:column;gap:13px;flex:1;background:var(--bg-soft)}
+.mod-item{display:flex;gap:9px;align-items:flex-start}
+.mod-item .mi-ic{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.mod-item .mi-ic svg{width:16px;height:16px}
+.mod-item .mi-t{font-weight:700;font-size:12.5px;color:var(--text-1);line-height:1.2}
+.mod-item .mi-d{font-size:11px;color:var(--text-2);line-height:1.3;margin-top:2px}
+
+/* ---- solution blocks ---- */
+.sol-block{margin-top:14px}
+.sol-block.solo{margin-top:22px}
+.sol-block.solo .sol-name{font-size:17px;padding:6px 16px}
+.sol-block.solo .sol-desc{font-size:15px}
+.sol-block.solo .sol-grid{gap:20px;margin-top:6px}
+.sol-block.solo .sol-fig img{height:300px}
+.sol-block.solo .sol-fig figcaption{font-size:14px;padding:12px 12px}
+
+.sol-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.sol-name{font-size:14px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:4px 12px;white-space:nowrap}
+.sol-desc{font-size:13px;color:var(--text-2);line-height:1.4;flex:1;min-width:0}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sol-fig{margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.sol-fig img{width:100%;height:108px;object-fit:cover;display:block}
+.sol-fig figcaption{font-size:12px;font-weight:700;color:var(--text-2);padding:8px 10px;text-align:center}
+
+/* ---- 3-step case study images ---- */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px;flex:1;min-height:0}
+.step-fig{margin:0;position:relative;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-2);display:flex;flex-direction:column;min-height:0}
+.step-fig img{width:100%;flex:1;min-height:0;object-fit:cover;display:block}
+.step-tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(10,14,26,.78);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.05em;padding:5px 11px;border-radius:999px}
+.step-fig figcaption{font-size:12.5px;font-weight:700;color:var(--text-2);padding:9px 12px;text-align:center;background:var(--surface)}
+.platform-frame .icard-grid{margin-top:0}
+
+/* ---- client logo wall ---- */
+.client-logo-wrap{margin-top:14px;padding:0;
+  flex:1;min-height:0;min-width:0;display:flex;flex-direction:column;justify-content:space-evenly;overflow:hidden}
+.logo-row{display:flex;align-items:center;gap:18px;min-width:0;padding:6px 0;border-top:1px solid var(--border)}
+.logo-row:first-child{border-top:none}
+.logo-cat{flex:0 0 auto;width:145px;font-size:13.5px;font-weight:800;line-height:1.25;color:var(--text-2)}
+.logo-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;min-width:0}
+.logo-list img{height:22px;width:auto;max-width:120px;object-fit:contain;display:block}
+
+/* ---- split / image panel ---- */
+.split{display:grid;gap:34px;align-items:center;flex:1}
+.img-panel{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:16px;height:100%;display:flex;flex-direction:column;justify-content:center}
+.img-panel img{border-radius:10px;box-shadow:var(--shadow)}
+.img-cap{margin-top:10px;font-size:13px;color:var(--text-3);text-align:center}
+.photo-ph{aspect-ratio:4/3;border-radius:12px;background:repeating-linear-gradient(135deg,#e7ebf5,#e7ebf5 10px,#eef1f8 10px,#eef1f8 20px);
+  display:flex;align-items:center;justify-content:center;color:var(--text-3);border:1.5px dashed var(--border-strong);gap:10px;flex-direction:column}
+.photo-ph span{font-size:13px;font-weight:600;letter-spacing:.02em}
+.photo-real{aspect-ratio:4/3;border-radius:12px;overflow:hidden}
+.photo-real img{width:100%;height:100%;object-fit:cover;display:block}
+.team-photos{display:flex;gap:18px;flex:1;min-height:0;margin-top:16px}
+.team-photo{position:relative;flex:1;min-width:0;border-radius:14px;overflow:hidden;background:var(--surface-2)}
+.team-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.team-badge{position:absolute;left:14px;bottom:14px;background:rgba(10,14,26,.72);color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px}
+
+/* ---- full image ---- */
+.img-full-wrap{flex:1;display:flex;flex-direction:column;min-height:0}
+.img-full-frame{position:relative;flex:1;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);background:#0e1220;display:flex;align-items:center;justify-content:center}
+.img-full-frame img{width:100%;height:100%;object-fit:cover}
+.img-full-cap{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;color:var(--text-3)}
+.callout{position:absolute;background:rgba(24,32,52,.92);color:#fff;font-size:13px;padding:6px 11px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.25);font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+
+/* ---- checklist ---- */
+.checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 26px}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;color:var(--text-2);line-height:1.45;word-break:keep-all}
+.cl-ic.good{color:var(--good);flex:0 0 auto;margin-top:1px}
+.cl-ic.warn{color:var(--bad);flex:0 0 auto;margin-top:1px}
+
+/* ---- compare2 ---- */
+.compare2{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;margin-top:6px;flex:0 0 auto;max-height:400px}
+.cmp-col{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+.cmp-col.accent{background:linear-gradient(160deg,rgba(36,97,233,.08),rgba(36,97,233,.02));border-color:rgba(36,97,233,.35)}
+.cmp-head{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;margin-bottom:14px;color:var(--text-1)}
+.cmp-head svg{color:var(--accent)}
+.cmp-vs{display:flex;align-items:center;color:var(--text-3)}
+
+/* ---- task card ---- */
+.task-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+.task-card{background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--accent);
+  border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+.task-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.task-badge{width:36px;height:36px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+.task-title{font-weight:800;font-size:18px;flex:1;word-break:keep-all}
+.task-min{display:flex;align-items:center;gap:6px;color:var(--accent);font-weight:700;font-size:14px;background:rgba(36,97,233,.1);
+  padding:4px 10px;border-radius:999px}
+.task-desc{margin:0;font-size:15px;line-height:1.55;color:var(--text-2)}
+
+/* ---- note bar ---- */
+.note-bar{margin-top:18px;padding:16px 22px;border-left:5px solid var(--accent);background:var(--bg-soft);
+  border-radius:0 12px 12px 0;font-size:15.5px;line-height:1.55;color:var(--text-1)}
+.note-bar b{color:var(--accent)}
+.slide.dark .note-bar{background:rgba(255,255,255,.06);color:#e8ebf6}
+.award-row{display:flex;flex-wrap:wrap;gap:10px}
+.award-chip{font-size:12.5px;font-weight:700;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:7px 14px}
+.nest-dia{display:flex;align-items:center;justify-content:center;min-height:0;min-width:0}
+.nest-dia svg{width:100%;height:100%;max-width:400px;max-height:400px}
+.nest-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.nest-item:last-of-type{border-bottom:none}
+.nest-t{font-weight:800;font-size:19px;color:var(--text-1)}
+.nest-d{font-size:15px;color:var(--text-2);margin-top:5px;line-height:1.5}
+.spectrum-hdr{display:flex;align-items:center;gap:14px;margin:16px 0 12px;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
+.spectrum-track{flex:1;height:4px;border-radius:2px;background:linear-gradient(90deg,#cfd9ec,var(--accent))}
+.dep-meter{margin-top:14px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.dep-fill{height:100%;background:linear-gradient(90deg,#9db8f2,var(--accent))}
+.dep-label{margin-top:6px;font-size:11.5px;color:var(--text-3);font-weight:600}
+.lunch-split{display:flex;align-items:center;gap:20px;margin-top:34px;max-width:820px}
+.lunch-half{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 22px;font-size:15px;color:#d3d8e8;line-height:1.4}
+.lunch-half.accent{background:rgba(36,97,233,.22);border-color:rgba(111,151,255,.4);color:#fff}
+.lunch-tag{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7fa2ff;margin-bottom:8px}
+.lunch-arrow{flex:0 0 auto;color:#7fa2ff;font-size:22px}
+
+/* ---- table ---- */
+table.dtbl{width:100%;border-collapse:collapse;margin-top:8px}
+table.dtbl th{text-align:left;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);
+  padding:0 14px 10px;border-bottom:2px solid var(--border-strong)}
+table.dtbl td{padding:14px 14px;font-size:15.5px;border-bottom:1px solid var(--border);color:var(--text-2)}
+table.dtbl tr:last-child td{border-bottom:none}
+table.dtbl td:first-child{font-weight:700;color:var(--text-1)}
+
+/* ---- agenda list ---- */
+.agenda{display:flex;flex-direction:column;gap:0;margin-top:10px;border-top:1px solid var(--border)}
+.agenda .a-row{display:flex;align-items:center;gap:18px;padding:15px 4px;border-bottom:1px solid var(--border)}
+.a-idx{width:30px;height:30px;border-radius:8px;background:var(--surface-2);color:var(--text-3);font-weight:800;font-size:13px;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.a-title{flex:1;font-weight:600;font-size:16.5px}
+.a-time{color:var(--accent);font-weight:700;font-size:14px;background:rgba(36,97,233,.08);padding:4px 12px;border-radius:999px}
+.a-row.lunch{opacity:.68}
+.a-row.lunch .a-title{font-weight:500;font-style:italic}
+.a-row.lunch .a-time{color:var(--text-3);background:var(--surface-2)}
+
+/* ---- certificate ---- */
+.cert-wrap{flex:1;display:flex;align-items:center;justify-content:center}
+.cert{width:100%;max-width:920px;border:2px solid var(--accent);border-radius:20px;padding:52px 60px;text-align:center;
+  background:linear-gradient(180deg,#fff,#f7f9ff);box-shadow:var(--shadow-lg);position:relative}
+.cert-ic{color:var(--accent);margin-bottom:14px}
+.cert-org{font-weight:800;color:var(--accent);letter-spacing:.08em;font-size:13px;text-transform:uppercase;margin-bottom:6px}
+.cert-h{font-size:28px;font-weight:800;margin:0 0 22px}
+.cert-name{font-size:34px;font-weight:800;color:var(--dark);margin:14px 0;border-bottom:2px solid var(--border-strong);
+  display:inline-block;padding:0 40px 10px}
+.cert-body{font-size:15.5px;color:var(--text-2);max-width:640px;margin:16px auto;line-height:1.6}
+.cert-meta{display:flex;justify-content:center;gap:40px;margin-top:24px;font-size:14px;color:var(--text-3)}
+.cert-sign{margin-top:34px;font-size:14px;color:var(--text-3)}
+
+/* ---- deck-footer / progress ---- */
+.progress-bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);z-index:30}
+.progress-bar>span{display:block;height:100%;width:0;background:var(--accent);transition:width .25s ease}
+
+/* ---- notes overlay ---- */
+.notes{display:none}
+.notes-overlay{position:fixed;inset:auto 0 3px 0;max-height:34vh;background:rgba(12,14,22,.97);color:#e8ebf4;
+  padding:18px 56px;font-size:15px;line-height:1.6;border-top:1px solid rgba(255,255,255,.12);
+  transform:translateY(100%);transition:transform .25s ease;z-index:40;overflow:auto}
+.notes-overlay.open{transform:translateY(0)}
+.notes-overlay .nl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fa2ff;font-weight:700;margin-bottom:6px}
+
+/* ---- overview grid ---- */
+.overview{position:fixed;inset:0;background:rgba(8,10,16,.95);z-index:50;display:none;padding:36px 56px;overflow:auto}
+.overview.open{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-content:start}
+.overview .thumb{background:#151a2b;border:1px solid rgba(255,255,255,.12);border-radius:10px;aspect-ratio:16/9;
+  cursor:pointer;color:#fff;padding:10px 12px;font-size:10.5px;position:relative;overflow:hidden}
+.overview .thumb:hover{border-color:var(--accent)}
+.overview .thumb .n{position:absolute;top:6px;left:8px;font-weight:800;font-size:12px;color:#7fa2ff}
+.overview .thumb .t{position:absolute;bottom:8px;left:10px;right:10px;font-weight:700;line-height:1.25}
+
+.hint{position:fixed;left:56px;bottom:14px;font-size:11.5px;color:#5a6padding;color:rgba(255,255,255,.35);z-index:25;letter-spacing:.03em}
+.slide.light ~ .hint{color:rgba(24,32,52,.3)}
+
+/* ---- print / book panel (screen only) ---- */
+.print-panel{position:fixed;right:16px;bottom:16px;z-index:60;background:#fff;border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);padding:10px 12px;font-size:12.5px;color:var(--text-1);display:flex;flex-direction:column;gap:8px}
+.print-panel-head{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.print-panel-collapse{background:none;border:none;cursor:pointer;color:var(--text-2);font-size:14px;line-height:1;padding:2px 4px;border-radius:6px}
+.print-panel-collapse:hover{background:var(--bg-soft)}
+.print-panel-body{display:flex;flex-direction:column;gap:8px}
+.print-panel.collapsed .print-panel-body{display:none}
+.print-panel.collapsed{padding:8px 10px}
+.print-panel label{display:flex;align-items:center;gap:7px;cursor:pointer;font-weight:600}
+.print-panel button{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:7px 12px;font-weight:700;font-size:12.5px;cursor:pointer}
+body.single .print-panel{display:none}
+/* Kenya: keep the print panel out of the way while presenting */
+.print-panel{opacity:0;transition:opacity .2s}
+.print-panel:hover,.print-panel:focus-within{opacity:1}
+html:fullscreen .print-panel,html:fullscreen .hint{display:none}
+.print-only{display:none}
+
+/* ---- print stylesheet: one slide per page, notes optional via body.print-with-notes ---- */
+@media print{
+  @page{ size: 1280px 720px; margin: 0; }
+  html,body{width:1280px;height:auto;background:#fff}
+  .print-panel,.progress-bar,.notes-overlay,.overview,.hint{display:none!important}
+  .deck{position:static;width:1280px;height:auto;overflow:visible;background:#fff}
+  .slide{position:relative!important;opacity:1!important;transform:none!important;
+    width:1280px;height:720px;page-break-after:always;page-break-inside:avoid;
+    display:flex!important;box-sizing:border-box}
+  .slide:last-child{page-break-after:auto}
+  video{display:none!important}
+  .video-print-note{display:flex!important}
+  .print-only{display:block!important}
+  .notes{display:none}
+  .note-page{display:none}
+  body.print-with-notes .note-page{display:flex!important;flex-direction:column;
+    width:1280px;height:720px;box-sizing:border-box;padding:64px 76px;background:#fbf8ee;
+    page-break-after:always;page-break-inside:avoid;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.print-with-notes .note-page:last-of-type{page-break-after:auto}
+}
+.video-print-note{display:none;align-items:center;gap:10px;justify-content:center;margin-top:16px;padding:12px 18px;
+  background:#f6f2da;border:1px dashed #c9b978;border-radius:8px;color:#5c4f22;font-size:14px}
+.note-page{display:none}
+.note-page .np-eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8a7a3a;margin-bottom:14px}
+.note-page h3{font-size:26px;margin:0 0 26px;color:#3a3320;font-weight:800}
+.note-page p{font-size:19px;line-height:1.8;color:#3a3320;max-width:1000px}
+
+body.embed .print-panel,body.embed .hint,body.embed .notes-overlay{display:none!important}
+
+/* ---- Kenya ITC additions ---- */
+.icard-grid.compact{gap:14px}
+.icard-grid.compact .icard{padding:16px 18px}
+.icard-grid.compact .icard-ic{margin-bottom:8px}
+.icard-grid.compact .icard-ic svg{width:26px;height:26px}
+.icard-grid.compact .icard-t{font-size:16.5px;margin-bottom:4px}
+.icard-grid.compact .icard-d{font-size:13.5px;line-height:1.4}
+.agenda .a-row{padding:12px 4px}
+.pr-title{line-height:1.14}
+.icard-grid.cols-5{grid-template-columns:repeat(5,1fr)}
+pre.code,.code-p{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;line-height:1.6;color:var(--text-1);white-space:pre-wrap}
+.code-p{font-family:inherit;font-size:15px}
+.prompt-box{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:12px}
+.prompt-box.out{background:#fdf6dc;border-color:#ecdca0}
+.prompt-box p{margin:0 0 8px;font-size:14.5px;line-height:1.55;color:var(--text-2)}
+.prompt-box p:last-child{margin-bottom:0}
+.prompt-box .pb-ask{color:var(--accent);font-weight:700}
+.pb-label{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.prompt-box.out .pb-label{color:#8a6d00}
+.vid-box{width:100%;max-width:760px;flex:0 1 430px;min-height:0;display:flex;flex-direction:column}
+.vid-box>div{flex:1;min-height:0;display:flex}
+.vid-box video{width:100%;height:100%;max-height:none!important;object-fit:contain}
+.steps{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.steps li{display:flex;align-items:flex-start;gap:14px;font-size:17px;line-height:1.5;color:var(--text-2)}
+.steps .st-n{flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center;margin-top:-1px}
+.journey{display:flex;align-items:stretch;gap:12px;margin:18px 0 14px}
+.j-day{flex:1;border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:var(--bg-soft);min-width:0}
+.j-day.today{border-color:var(--accent);background:rgba(36,97,233,.05);box-shadow:var(--shadow)}
+.j-label{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px}
+.j-day.today .j-label{color:var(--accent)}
+.j-chips{display:flex;flex-direction:column;gap:6px}
+.j-chips span{font-size:12.5px;font-weight:700;color:var(--text-1);background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 9px;line-height:1.3}
+.j-day.today .j-chips span{border-color:rgba(36,97,233,.45);color:var(--accent)}
+@media print{ .j-day{-webkit-print-color-adjust:exact;print-color-adjust:exact} }
+.a-tag{font-weight:700;font-size:12.5px;padding:4px 12px;border-radius:999px;color:var(--accent);background:rgba(36,97,233,.08)}
+.a-tag.theory{color:var(--accent-2);background:var(--surface-2)}
+.kbd{display:inline-flex;align-items:center;justify-content:center;min-width:26px;padding:2px 8px;border:1px solid var(--border-strong);
+  border-bottom-width:3px;border-radius:7px;background:var(--surface);font-size:13px;font-weight:800;color:var(--text-1);font-family:inherit;white-space:nowrap}
+.sc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;flex:1;min-height:0}
+.sc-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;min-height:0}
+.sc-head{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:9px}
+.sc-row{display:flex;align-items:center;gap:10px;padding:5px 0;font-size:13.5px;color:var(--text-2);border-top:1px solid var(--border)}
+.sc-row:first-of-type{border-top:none}
+.sc-row .kbd{flex:0 0 auto}
+.tree{display:flex;gap:22px;align-items:stretch;margin-top:14px}
+.tree-root{flex:0 0 200px;display:flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border-radius:var(--radius);
+  font-size:20px;font-weight:800;box-shadow:var(--shadow)}
+.tree-kids{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tree-kid{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--accent);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.tree-kid b{display:block;font-size:17px;margin-bottom:10px}
+.tree-kid span{display:inline-block;font-size:13px;font-weight:700;color:var(--accent);background:rgba(36,97,233,.08);border-radius:999px;padding:4px 11px;margin:0 6px 6px 0}
+.tree-lvl{display:flex;gap:18px;margin-top:10px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.warn-bar{border-left-color:var(--bad)}
+.warn-bar b{color:var(--bad)}
+.split-img{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;flex:1;min-height:0}
+.split-img img{width:100%;max-height:440px;object-fit:contain;border-radius:12px;box-shadow:var(--shadow)}
+.link-chip{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:15px;font-weight:700;color:var(--accent);
+  background:rgba(36,97,233,.08);border:1px solid rgba(36,97,233,.25);border-radius:999px;padding:7px 16px;text-decoration:none}
+</style>
+</head>
+<body class="">
+<div class="deck">
+
+<section class="slide dark title-slide" id="d3-title" data-title="Title"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Day 3</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="title-wm">03</div>
+  <div class="title-day">Day 3 of 5 &nbsp;&middot;&nbsp; Data Labelling Training for AI</div>
+  <h1 class="title-h1">Semantic Segmentation,<br>PCD &amp; Photobooth</h1>
+  <p class="title-sub">Kenya ITC &times; datamaker</p>
+  <div class="title-meta"><div><svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg><span>Hands-on in Datamaker Synapse</span></div><div><svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>Kenya ITC Training 2026</span></div></div>
+  <div class="title-deco"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M6 2v14a2 2 0 0 0 2 2h14"/><path d="M18 22V8a2 2 0 0 0-2-2H2"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="d3-journey" data-title="Where We Are"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Program Overview</div>
+  <h2 class="h2">Where We Are</h2>
+
+  <p class="lede">From outlines to whole scenes, and from flat images into 3D.</p>
+  <div class="journey"><div class="j-day"><div class="j-label">Day 1</div><div class="j-chips"><span>Synapse Dashboard</span><span>Bounding Box</span><span>CCTV BBox Project</span></div></div><div class="j-day"><div class="j-label">Day 2</div><div class="j-chips"><span>Polyline</span><span>Polygon</span><span>Traffic Flow</span><span>Rail &amp; Catenary</span></div></div><div class="j-day today"><div class="j-label">Day 3 &middot; Today</div><div class="j-chips"><span>Semantic Segmentation</span><span>PCD (3D point cloud)</span><span>Photobooth Project</span></div></div><div class="j-day"><div class="j-label">Day 4</div><div class="j-chips"><span>Interior Segmentation</span><span>Photobooth Project</span><span>Generative AI</span><span>Prompt Engineering</span></div></div><div class="j-day"><div class="j-label">Day 5</div><div class="j-chips"><span>Vibe Coding</span></div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="d3-agenda" data-title="Today&amp;rsquo;s Agenda"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Day 3 Overview</div>
+  <h2 class="h1">Today&rsquo;s Agenda</h2>
+  <div class="agenda"><div class="a-row"><div class="a-idx">1</div><div class="a-title">Semantic Segmentation: drawing, editing, front and rear mode</div><div class="a-tag ">Hands-on</div></div><div class="a-row"><div class="a-idx">2</div><div class="a-title">Understanding 3D and LiDAR fundamentals</div><div class="a-tag theory">Theory</div></div><div class="a-row"><div class="a-idx">3</div><div class="a-title">PCD (Point Cloud Data) project guideline and dashboard</div><div class="a-tag theory">Theory</div></div><div class="a-row"><div class="a-idx">4</div><div class="a-title">PCD practice</div><div class="a-tag ">Hands-on</div></div><div class="a-row"><div class="a-idx">5</div><div class="a-title">Photobooth Image Labelling project: guideline and practice</div><div class="a-tag ">Hands-on</div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="sm-sec" data-title="Semantic Segmentation"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Session 1</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 16-5-5-9 9"/></svg></div>
+      <div class="eyebrow">Session 1</div>
+      <h1 class="h1 sec-title">Semantic Segmentation</h1>
+      <p class="lede">Pixel-level labelling of every object in the scene</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="sm-what" data-title="What Is Semantic Segmentation?"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Semantic Segmentation</div>
+  <h2 class="h2">What Is Semantic Segmentation?</h2>
+
+  <div class="split-img">
+    <div>
+      <p class="lede">Semantic segmentation is a <b>group of pixels</b> that acts as a <b>reference point for object detection</b> and produces a <b>mesh-like map</b> for that object.</p>
+      <ul class="bl"><li>Annotators group the pixels by drawing over the image.</li><li>Every pixel of the object gets the object&rsquo;s class, for example <b>body</b>.</li></ul></div>
+    <img src="assets/day3/media/semantic-mask.jpg" alt="What Is Semantic Segmentation?">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="sm-how" data-title="How to Draw in Semantic Segmentation"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14 6.5 17.5 10"/></svg></div>
+      <div class="eyebrow">Semantic Segmentation</div>
+      <h1 class="h1 sec-title">How to Draw in Semantic Segmentation</h1>
+      <p class="lede">Six steps from tool to class</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 16-5-5-9 9"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s04" data-title="Step 1: Select the Polygon Tool"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s04.jpg" alt="Step 1: Select the Polygon Tool" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s05" data-title="Step 2: Click Along the Edges"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s05.jpg" alt="Step 2: Click Along the Edges" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s06" data-title="Step 3: Continue Along the Edges"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s06.jpg" alt="Step 3: Continue Along the Edges" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s07" data-title="Step 3: Continue Along the Edges"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s07.jpg" alt="Step 3: Continue Along the Edges" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s08" data-title="Step 3: Continue Along the Edges"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s08.jpg" alt="Step 3: Continue Along the Edges" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s09" data-title="Step 3: Continue Along the Edges"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s09.jpg" alt="Step 3: Continue Along the Edges" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s10" data-title="Step 3: Close the Shape"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s10.jpg" alt="Step 3: Close the Shape" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s11" data-title="Step 4: Press Enter When Complete"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s11.jpg" alt="Step 4: Press Enter When Complete" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s12" data-title="Step 5: Open the Class Dropdown"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s12.jpg" alt="Step 5: Open the Class Dropdown" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s13" data-title="Step 6: Select the Class"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s13.jpg" alt="Step 6: Select the Class" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s14" data-title="Result: The Labelled Mask"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s14.jpg" alt="Result: The Labelled Mask" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s15" data-title="Result: Mask View"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">How to Draw</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s15.jpg" alt="Result: Mask View" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="sm-bs1" data-title="Remove the Current Point (1/3)"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Delete a Point</div>
+  <h2 class="h2">Remove the Current Point (1/3)</h2>
+
+  <div class="split-img">
+    <div><p class="lede">Made a wrong click while drawing? Press <span class="kbd">Backspace</span> on the keyboard to remove the current point.</p><p class="lede">The red arrow shows the point that will be removed.</p></div>
+    <img src="assets/day3/media/semantic-backspace-16.jpg" alt="Remove the Current Point (1/3)">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="sm-bs2" data-title="Remove the Current Point (2/3)"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Delete a Point</div>
+  <h2 class="h2">Remove the Current Point (2/3)</h2>
+
+  <div class="split-img">
+    <div><p class="lede">Made a wrong click while drawing? Press <span class="kbd">Backspace</span> on the keyboard to remove the current point.</p><p class="lede">The red arrow shows the point that will be removed.</p></div>
+    <img src="assets/day3/media/semantic-backspace-17.jpg" alt="Remove the Current Point (2/3)">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="sm-bs3" data-title="Remove the Current Point (3/3)"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Delete a Point</div>
+  <h2 class="h2">Remove the Current Point (3/3)</h2>
+
+  <div class="split-img">
+    <div><p class="lede">Made a wrong click while drawing? Press <span class="kbd">Backspace</span> on the keyboard to remove the current point.</p><p class="lede">The red arrow shows the point that will be removed.</p></div>
+    <img src="assets/day3/media/semantic-backspace-18.jpg" alt="Remove the Current Point (3/3)">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s19" data-title="Reduce Image Brightness"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Image Controls</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s19.jpg" alt="Reduce Image Brightness" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s20" data-title="Increase Image Brightness"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Image Controls</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s20.jpg" alt="Increase Image Brightness" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s21" data-title="Zoom In and Out"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Image Controls</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s21.jpg" alt="Zoom In and Out" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="sm-other" data-title="Other Tools for Annotation"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg></div>
+      <div class="eyebrow">Semantic Segmentation</div>
+      <h1 class="h1 sec-title">Other Tools for Annotation</h1>
+      <p class="lede">Front mode and rear mode</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="sm-fr" data-title="Front and Rear Mode"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Other Tools</div>
+  <h2 class="h2">Front and Rear Mode</h2>
+
+  <div class="compare2">
+    <div class="cmp-col accent"><div class="cmp-head"><svg class="ic " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg><span>Front Mode <span class="kbd">Shift + F</span></span></div>
+      <ul class="bl"><li>If there is an existing shape, you <b>draw on top</b> of that shape.</li></ul></div>
+    <div class="cmp-vs"><svg class="ic " width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+    <div class="cmp-col"><div class="cmp-head"><svg class="ic " width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg><span>Rear Mode <span class="kbd">Shift + R</span></span></div>
+      <ul class="bl"><li>If there is an existing shape, you <b>draw behind</b> that shape.</li></ul></div>
+  </div>
+  <ul class="bl" style="margin-top:18px">
+    <li>These modes apply to all the main tools. You can only use one at a time.</li>
+    <li>If no shape is drawn in that region yet, front or rear mode gives the same result.</li>
+    <li>You can leave it in rear mode, so that every new shape falls behind the others.</li>
+  </ul>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s26" data-title="Example: Polygon in Front Mode"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s26.jpg" alt="Example: Polygon in Front Mode" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s27" data-title="The First Person Is Already Labelled"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s27.jpg" alt="The First Person Is Already Labelled" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s28" data-title="Front Mode Draws on Top"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s28.jpg" alt="Front Mode Draws on Top" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s29" data-title="Rear Mode Draws Behind"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s29.jpg" alt="Rear Mode Draws Behind" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="sm-ex" data-title="Other Examples"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Semantic Segmentation</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 16-5-5-9 9"/></svg></div>
+      <div class="eyebrow">Semantic Segmentation</div>
+      <h1 class="h1 sec-title">Other Examples</h1>
+      
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s31" data-title="If the Other Person Is Drawn First"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s31.jpg" alt="If the Other Person Is Drawn First" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s32" data-title="Label the Next Person in Rear Mode"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s32.jpg" alt="Label the Next Person in Rear Mode" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s33" data-title="Without Worrying About the Existing Object"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s33.jpg" alt="Without Worrying About the Existing Object" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s34" data-title="Finished Scene"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s34.jpg" alt="Finished Scene" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s35" data-title="Annotate to Front"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s35.jpg" alt="Annotate to Front" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="semantic-s36" data-title="Annotate to Back"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Front and Rear Mode</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/semantic/s36.jpg" alt="Annotate to Back" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide practice" id="sm-practice" data-title="Labelling Practice"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Hands-on</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="pr-wrap">
+      <span class="pr-badge"><svg class="ic " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14 6.5 17.5 10"/></svg>Practice in progress</span>
+      <h1 class="pr-title">Semantic Practice</h1>
+      <p class="pr-sub">Open your semantic segmentation task in Synapse and label every person.</p>
+      <div class="pr-checks"><span>Polygon tool selected</span><span>Points along the true edge</span><span>Enter to finish, then pick the class</span><span>Backspace to remove a wrong point</span><span>Use front / rear mode for overlaps</span><span>Save often</span></div>
+      <div class="pr-help">Raise your hand at any time.</div>
+    </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="pc-sec" data-title="Understanding 3D and LiDAR Fundamentals"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Session 2</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+      <div class="eyebrow">Session 2</div>
+      <h1 class="h1 sec-title">Understanding 3D and LiDAR Fundamentals</h1>
+      <p class="lede">Introduction to three-dimensional space and the principles of LiDAR</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-3d" data-title="Introduction to Three-Dimensional Space"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D Space</div>
+  <h2 class="h2">Introduction to Three-Dimensional Space</h2>
+
+  <div class="split-img">
+    <div>
+      <p class="lede"><b>3D (three-dimensional):</b> we normally talk about dimensions as measurements in a direction.</p>
+      <p class="lede">Real-world objects exist in 3D space, allowing deeper perception through <b>height, width and depth</b>.</p></div>
+    <img src="assets/day3/media/pcd-s02-1.jpg" alt="Introduction to Three-Dimensional Space">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-xyz" data-title="Spatial Coordinates and Dimensions"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Basics</div>
+  <h2 class="h2">Spatial Coordinates and Dimensions</h2>
+
+  <p class="lede">Spatial coordinates use the <b>X, Y and Z axes</b> to locate points in 3D space.</p>
+  <div class="icard-grid cols-3 "><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
+        <div class="icard-t">X: Horizontal</div><div class="icard-d">The horizontal position (left or right).</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 10 10l4 4 6-7"/><path d="M15 7h5v5"/></svg></div>
+        <div class="icard-t">Y: Vertical</div><div class="icard-d">The vertical position (up or down).</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+        <div class="icard-t">Z: Depth</div><div class="icard-d">The depth, or position along the third dimension.</div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-uses" data-title="Uses of Spatial Coordinates and Dimensions"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Uses</div>
+  <h2 class="h2">Uses of Spatial Coordinates and Dimensions</h2>
+
+  <p class="lede">Dimensions add depth to objects, enhancing realism.</p>
+  <div class="icard-grid cols-3 "><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <div class="icard-t">Technology and Computing</div><div class="icard-d">Computer graphics, VR and simulation: realistic 3D environments, robotics and automation, VR / AR and GPS navigation.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <div class="icard-t">Navigation and Mapping</div><div class="icard-d">Accurate navigation and mapping: find locations, plan routes and understand geographic relationships.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h14M6 16l1.5-5h9L18 16"/><circle cx="8" cy="17.5" r="1.5"/><circle cx="16" cy="17.5" r="1.5"/></svg></div>
+        <div class="icard-t">Autonomous Vehicles</div><div class="icard-d">Mapping, navigation and object detection; localisation, map creation, path planning and safe intersection management.</div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-lidar" data-title="LiDAR Fundamentals"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">LiDAR</div>
+  <h2 class="h2">LiDAR Fundamentals</h2>
+
+  <div class="split-img">
+    <div>
+      <p class="lede"><b>LiDAR</b> (Light Detection and Ranging) is a remote sensing technology that uses <b>laser pulses</b> to measure distances to objects or surfaces.</p>
+      <ul class="bl"><li>It creates detailed 3D maps.</li><li>Used for mapping, navigation and urban planning.</li></ul></div>
+    <img src="assets/day3/media/pcd-s06-1.png" alt="LiDAR Fundamentals">
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-v1" data-title="LiDAR in Action"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D &amp; LiDAR</div>
+  <h2 class="h2">LiDAR in Action</h2>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div class="vid-box"><div><video src="assets/day3/media/pcd-s07-1.mp4" autoplay muted loop playsinline style="width:100%;max-height:440px;border-radius:12px;box-shadow:var(--shadow);display:block;background:#000"></video><img class="print-only" src="assets/day3/media/pcd-s07-1.jpg" alt="LiDAR in Action"></div></div>
+    <p class="img-cap">A LiDAR point cloud of a street scene.</p>
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-v2" data-title="LiDAR in Action"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D &amp; LiDAR</div>
+  <h2 class="h2">LiDAR in Action</h2>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div class="vid-box"><div><video src="assets/day3/media/pcd-s08-1.mp4" autoplay muted loop playsinline style="width:100%;max-height:440px;border-radius:12px;box-shadow:var(--shadow);display:block;background:#000"></video><img class="print-only" src="assets/day3/media/pcd-s08-1.jpg" alt="LiDAR in Action"></div></div>
+    <p class="img-cap">A self-driving car scanning its surroundings with LiDAR.</p>
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-uses2" data-title="Uses of LiDAR Technology"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Applications</div>
+  <h2 class="h2">Uses of LiDAR Technology</h2>
+  <div class="icard-grid cols-3 compact"><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h14M6 16l1.5-5h9L18 16"/><circle cx="8" cy="17.5" r="1.5"/><circle cx="16" cy="17.5" r="1.5"/></svg></div>
+        <div class="icard-t">Autonomous Vehicles</div><div class="icard-d">LiDAR helps AVs &ldquo;see&rdquo; and navigate by detecting objects and creating maps.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <div class="icard-t">Aerial Surveying</div><div class="icard-d">LiDAR-equipped aircraft and drones accurately map terrain, forests and cities.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 9l10 6 10-6-10-6Z"/><path d="m2 15 10 6 10-6"/><path d="m2 12 10 6 10-6"/></svg></div>
+        <div class="icard-t">GIS</div><div class="icard-d">Detailed maps for urban planning and environmental management.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+        <div class="icard-t">Archaeology</div><div class="icard-d">Uncovers hidden archaeological sites by scanning terrain with precision.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></div>
+        <div class="icard-t">Forestry Monitoring</div><div class="icard-d">Measures tree heights and monitors forest health.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg></div>
+        <div class="icard-t">Disaster Management</div><div class="icard-d">Maps disaster areas to aid rescue operations and assess damage.</div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-v3" data-title="LiDAR Detects People"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D &amp; LiDAR</div>
+  <h2 class="h2">LiDAR Detects People</h2>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div class="vid-box"><div><video src="assets/day3/media/pcd-s11-1.mp4" autoplay muted loop playsinline style="width:100%;max-height:440px;border-radius:12px;box-shadow:var(--shadow);display:block;background:#000"></video><img class="print-only" src="assets/day3/media/pcd-s11-1.jpg" alt="LiDAR Detects People"></div></div>
+    <p class="img-cap">Real-time detection of people.</p>
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-v4" data-title="A City in Point Clouds"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D &amp; LiDAR</div>
+  <h2 class="h2">A City in Point Clouds</h2>
+
+  <div style="flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+    <div class="vid-box"><div><video src="assets/day3/media/pcd-s12-1.mp4" autoplay muted loop playsinline style="width:100%;max-height:440px;border-radius:12px;box-shadow:var(--shadow);display:block;background:#000"></video><img class="print-only" src="assets/day3/media/pcd-s12-1.jpg" alt="A City in Point Clouds"></div></div>
+    <p class="img-cap">A 3D point cloud of city streets and buildings.</p>
+  </div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-role" data-title="LiDAR&amp;rsquo;s Role in Capturing 3D Data"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">3D Data</div>
+  <h2 class="h2">LiDAR&rsquo;s Role in Capturing 3D Data</h2>
+  <div class="sc-grid">
+    <div class="sc-card"><div class="sc-head">1. LiDAR Basics</div><div class="sc-row">Uses laser pulses for distance measurement</div><div class="sc-row">Creates detailed 3D maps</div></div>
+    <div class="sc-card"><div class="sc-head">2. Distance Measurement</div><div class="sc-row">Measures the time for laser pulses to travel</div><div class="sc-row">Enables precise distance calculations</div></div>
+    <div class="sc-card"><div class="sc-head">3. 360-Degree Coverage</div><div class="sc-row">Scans a wide field of view</div><div class="sc-row">Captures data from various angles</div></div>
+    <div class="sc-card"><div class="sc-head">4. Real-time Data</div><div class="sc-row">Rapid data collection</div><div class="sc-row">Ideal for real-time applications</div></div>
+    <div class="sc-card"><div class="sc-head">5. Obstacle Detection</div><div class="sc-row">Crucial for autonomous vehicles</div><div class="sc-row">Aids navigation in complex environments</div></div>
+    <div class="sc-card"><div class="sc-head">6. Environmental Monitoring</div><div class="sc-row">Forestry, agriculture and urban planning</div><div class="sc-row">Assesses terrain, vegetation and structures</div></div>
+  </div>
+  <div class="note-bar"><svg class="ic " width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg> <b>3D point clouds:</b> LiDAR captures reflections that form point clouds, each point a specific location in 3D, with high-precision measurements.</div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s17" data-title="Conclusion"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">3D &amp; LiDAR</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s17.jpg" alt="Conclusion" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="pc-proj" data-title="Point Cloud Data (PCD) Project"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Session 3</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+      <div class="eyebrow">Session 3</div>
+      <h1 class="h1 sec-title">Point Cloud Data (PCD) Project</h1>
+      <p class="lede">Introduction to the PCD project, guide, and the process of labelling</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-intro" data-title="Introduction to the PCD Project"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">PCD Project</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Introduction</div>
+  <h2 class="h2">Introduction to the PCD Project</h2>
+
+  <p class="lede"><b>PCD</b> stands for <b>Point Cloud Data</b>: points that represent data picked up by a LiDAR signal.</p>
+  <div style="display:flex;gap:16px;margin-top:14px"><figure class="sol-fig" style="flex:1;min-width:0"><img src="assets/day3/media/pcd-s19-1.jpg" alt="A vehicle as a point cloud" style="height:240px;object-fit:contain;background:#fff"><figcaption>A vehicle as a point cloud</figcaption></figure><figure class="sol-fig" style="flex:1;min-width:0"><img src="assets/day3/media/pcd-s19-2.jpg" alt="People as point clouds" style="height:240px;object-fit:contain;background:#fff"><figcaption>People as point clouds</figcaption></figure></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light" id="pc-why" data-title="Why Does This PCD Project Exist?"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">PCD Project</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <div class="eyebrow">Purpose</div>
+  <h2 class="h2">Why Does This PCD Project Exist?</h2>
+  <div class="icard-grid cols-2 compact"><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+        <div class="icard-t">Object Detection and Recognition</div><div class="icard-d">Autonomous vehicles must detect pedestrians, vehicles, cyclists and obstacles.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="icard-t">Depth Perception</div><div class="icard-d">Knowing the distance to objects is crucial for braking, lane changes and avoiding collisions.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <div class="icard-t">Environment Understanding</div><div class="icard-d">Road boundaries, lane markings, traffic signs and other infrastructure.</div></div><div class="icard"><div class="icard-ic"><svg class="ic " width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div class="icard-t">Safety and Reliability</div><div class="icard-d">Accurate labels reduce the risk of misinterpreting the surroundings.</div></div></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="pc-guide" data-title="PCD Project Guideline"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">PCD Project</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1M9 10h6M9 14h6"/></svg></div>
+      <div class="eyebrow">PCD Project</div>
+      <h1 class="h1 sec-title">PCD Project Guideline</h1>
+      <p class="lede">Introduction to the PCD project guideline</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s23" data-title="Project Overview: About the Project"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Project Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s23.jpg" alt="Project Overview: About the Project" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s24" data-title="Project Overview: Feedback We Need"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Project Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s24.jpg" alt="Project Overview: Feedback We Need" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s25" data-title="Labelling Targets: 13 Classes"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Project Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s25.jpg" alt="Labelling Targets: 13 Classes" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s26" data-title="Labelling Targets: 2D Examples"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Project Overview</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s26.jpg" alt="Labelling Targets: 2D Examples" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide dark section-slide" id="pc-dash" data-title="Labelling Dashboard"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">PCD Project</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="sec-wrap">
+      <div class="sec-num"><svg class="ic " width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+      <div class="eyebrow">PCD Project</div>
+      <h1 class="h1 sec-title">Labelling Dashboard</h1>
+      <p class="lede">The PCD tool and moving the camera</p>
+    </div><div class="title-deco"><svg width="110" height="110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 2.5 3 7v10l9 4.5 9-4.5V7l-9-4.5Z"/><path d="M3 7l9 4.5L21 7M12 11.5V21.5"/></svg></div>
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s28" data-title="Labelling Tool Description"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Labelling Dashboard</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s28.jpg" alt="Labelling Tool Description" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide light guide" id="pcd-s29" data-title="Moving the Viewpoint"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Labelling Dashboard</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+  <img class="guide-img" src="assets/day3/pcd/s29.jpg" alt="Moving the Viewpoint" loading="lazy">
+</div><div class="notes" data-slide=""></div></section>
+<section class="slide practice" id="pc-practice" data-title="Labelling Practice"><div class="deck-chrome">
+      <div class="dc-left"><span class="dc-logo"><img class="logo-light" src="assets/logo.svg" alt="datamaker"><img class="logo-dark" src="assets/logo-white.svg" alt="datamaker"></span><span class="dc-sep">|</span><span class="dc-kicker">Hands-on</span></div>
+      <div class="dc-right"><span class="slide-num" data-n=""></span></div>
+    </div><div class="slide-body">
+<div class="pr-wrap">
+      <span class="pr-badge"><svg class="ic " width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 0 0-3-3L5 17v3Z"/><path d="M14 6.5 17.5 10"/></svg>Practice in progress</span>
+      <h1 class="pr-title">PCD Practice</h1>
+      <p class="pr-sub">Open the PCD project in Synapse and start labelling the point cloud.</p>
+      <div class="pr-checks"><span>Right class out of 13</span><span>Rotate the camera to check</span><span>Use the 2D projection</span><span>Report tool errors in detail</span><span>Suggest workflow ideas</span><span>Save often</span></div>
+      <div class="pr-help">Raise your hand at any time.</div>
+    </div>
+</div><div class="notes" data-slide=""></div></section>
+</div>
+<div class="progress-bar"><span></span></div>
+<div class="notes-overlay" id="notesOverlay"><div class="nl">Speaker Notes (press N to hide)</div><div class="nl-body"></div></div>
+<div class="print-panel collapsed" id="printPanel">
+  <div class="print-panel-head">
+    <button class="print-panel-collapse" id="printPanelCollapse" title="Collapse/expand" aria-label="Expand print panel">&#9652; Print</button>
+  </div>
+  <div class="print-panel-body">
+    <label><input type="checkbox" id="printNotesToggle"> Include speaker notes when printing</label>
+    <button id="printBtn">Print / Save as PDF&hellip;</button>
+  </div>
+</div>
+<div class="overview" id="overviewGrid"></div>
+
+<script>
+(function(){
+  if(location.search.indexOf('embed')>-1){document.body.classList.add('embed');}
+
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const NUM_OFFSET = 0;          // slides in the deck(s) before this one on the same day
+  const OTHER_DECK_SLIDES = 64;     // slides in the deck(s) after this one on the same day
+  const GRAND_TOTAL = NUM_OFFSET + total + OTHER_DECK_SLIDES;
+  slides.forEach((s,i)=>{ const el=s.querySelector('.slide-num'); if(el){ el.setAttribute('data-n', i+1+NUM_OFFSET); el.setAttribute('data-total', GRAND_TOTAL); } });
+  const overviewGrid = document.getElementById('overviewGrid');
+  if(overviewGrid){
+    slides.forEach((s,i)=>{
+      const thumb = document.createElement('div');
+      thumb.className = 'thumb';
+      thumb.dataset.i = i;
+      const n = document.createElement('span'); n.className = 'n'; n.textContent = String(i+1).padStart(2,'0');
+      const t = document.createElement('span'); t.className = 't'; t.textContent = s.getAttribute('data-title') || '';
+      thumb.append(n,t);
+      overviewGrid.appendChild(thumb);
+    });
+  }
+  let cur = 0;
+  const bar = document.querySelector('.progress-bar > span');
+  function render(){
+    slides.forEach((s,i)=>{
+      s.classList.remove('is-active','is-prev');
+      if(i===cur) s.classList.add('is-active');
+      else if(i<cur) s.classList.add('is-prev');
+    });
+    if(bar) bar.style.width = ((cur+1)/total*100)+'%';
+    history.replaceState(null,'','#'+(cur+1));
+  }
+  function go(n){ cur = Math.max(0, Math.min(total-1, n)); render(); }
+  const hash = parseInt((location.hash||'').replace('#',''),10);
+  cur = (hash>=1 && hash<=total) ? hash-1 : 0;
+  render();
+
+  const notesOverlay = document.getElementById('notesOverlay');
+  let notesOn = false;
+  function updateNotes(){
+    if(!notesOn) return;
+    const n = slides[cur].querySelector('.notes');
+    notesOverlay.querySelector('.nl-body').textContent = n ? n.textContent : '';
+  }
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='ArrowRight' || e.key===' ' || e.key==='PageDown'){ go(cur+1); updateNotes(); }
+    else if(e.key==='ArrowLeft' || e.key==='PageUp'){ go(cur-1); updateNotes(); }
+    else if(e.key==='Home'){ go(0); updateNotes(); }
+    else if(e.key==='End'){ go(total-1); updateNotes(); }
+    else if(e.key.toLowerCase()==='n'){ notesOn=!notesOn; notesOverlay.classList.toggle('open',notesOn); updateNotes(); }
+    else if(e.key.toLowerCase()==='o' || e.key==='Escape'){
+      const ov = document.getElementById('overviewGrid');
+      if(e.key==='Escape'){ ov.classList.remove('open'); return; }
+      ov.classList.toggle('open');
+    }
+    else if(e.key.toLowerCase()==='f'){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  });
+  document.querySelectorAll('.overview .thumb').forEach(t=>{
+    t.addEventListener('click', ()=>{ go(parseInt(t.dataset.i,10)); document.getElementById('overviewGrid').classList.remove('open'); updateNotes(); });
+  });
+  let touchX=null;
+  document.addEventListener('touchstart', e=>touchX=e.touches[0].clientX);
+  document.addEventListener('touchend', e=>{
+    if(touchX===null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(dx<-40) go(cur+1); else if(dx>40) go(cur-1);
+    touchX=null;
+  });
+
+  function buildNotePages(){
+    document.querySelectorAll('.deck > .slide').forEach(slide=>{
+      if(slide.nextElementSibling && slide.nextElementSibling.classList && slide.nextElementSibling.classList.contains('note-page')) return;
+      const notesEl = slide.querySelector('.notes');
+      const text = notesEl ? notesEl.textContent.trim() : '';
+      if(!text) return;
+      const title = slide.getAttribute('data-title') || '';
+      const numEl = slide.querySelector('.slide-num');
+      const num = numEl ? numEl.getAttribute('data-n') : '';
+      const np = document.createElement('div');
+      np.className = 'note-page';
+      const eyebrow = document.createElement('div'); eyebrow.className = 'np-eyebrow'; eyebrow.textContent = 'Speaker Notes: Slide ' + num;
+      const h3 = document.createElement('h3'); h3.textContent = title;
+      const p = document.createElement('p'); p.textContent = text;
+      np.append(eyebrow, h3, p);
+      slide.insertAdjacentElement('afterend', np);
+    });
+  }
+  buildNotePages();
+
+  const printToggle = document.getElementById('printNotesToggle');
+  const printBtn = document.getElementById('printBtn');
+  if(printToggle) printToggle.addEventListener('change', ()=>{ document.body.classList.toggle('print-with-notes', printToggle.checked); });
+  if(printBtn) printBtn.addEventListener('click', ()=>window.print());
+  const printPanel = document.getElementById('printPanel');
+  const printPanelCollapse = document.getElementById('printPanelCollapse');
+  if(printPanelCollapse) printPanelCollapse.addEventListener('click', ()=>{
+    const collapsed = printPanel.classList.toggle('collapsed');
+    printPanelCollapse.innerHTML = collapsed ? '&#9652; Print' : '&#9662;';
+  });
+})();
+</script>
+</body>
+</html>

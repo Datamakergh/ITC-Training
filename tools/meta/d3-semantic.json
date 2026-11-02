@@ -1,0 +1,418 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "DATA LABELING TRAINING GUIDE",
+   "SEMANTIC SEGMENTATION"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "07",
+   "Semantic Segmentation",
+   "Semantic Segmentation is a group of pixels that acts as a reference point for object detection and produces a mesh-like map for that object. These pixels are grouped by drawing them over images by data annotators."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "How to Draw in Semantic Segmentation."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 1: Select the polygon tool for drawing."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 2: click along the edges of the person."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 3: continue to click along the edges of the person."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 4: press ‘enter’ when the annotation is complete."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 5: click on the class dropdown button"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Step 6: select the appropriate class"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a semantic point or remove current point.",
+   "Press  backspace on the key to remove the current point"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a semantic point or remove current point.",
+   "Press  backspace  on the keyboard to remove the current point"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "03",
+   "Delete a semantic point or remove current point.",
+   "Press  backspace  on the keyboard to remove the current point"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "17",
+   "Reduce image transparency ",
+   "Sometimes Images of higher resolution make it difficult to see the bounding box clearly. In that case use the brightness slider to increase or decrease the brightness of the image to see the borderlines clearly and to also see what has been drawn already."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "17",
+   "Reduce image transparency ",
+   "Sometimes Images of higher resolution make it difficult to see the bounding box clearly. In that case use the brightness slider to increase or decrease the brightness of the image to see the borderlines clearly and to also see what has been drawn already."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Expand the image or reduce the image(Zoom)",
+   "Use these buttons to increase the size of the image or reduce it. This helps to see the object boundaries clearly."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Other tools for annotation",
+   "DATA LABELING",
+   "07"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Front and Rear mode"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Front and Rear mode",
+   "Front mode : if there is an existing shape, draw on top of that shape.\nRear mode : if there is an existing shape, draw behind that existing shape",
+   "Note : if there is no shape drawn in that region then your mode can either be in front mode or rear mode.",
+   "Note:  you can leave it rear mode, so that every shape can just fall behind the other.",
+   "Let's look at some examples "
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Front and Rear mode",
+   "These modes apply to all the main tools. You can only use one at a time. You are either drawing on top of another object, or you are drawing behind another object."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "For example, using polygon in front mode",
+   "Make sure the polygon tool and the front mode are both selected."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "The first person has already been labeled."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "If we label the next person in front mode",
+   "It will draw on top of the existing shape"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "If we draw the other person in rear mode",
+   "It will draw behind the existing shape"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Other Examples"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "If the other person is drawn first"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "We can label the next person in rear mode",
+   "Without worrying about the existing object"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s32.jpg"
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "We can label the next person in rear mode",
+   "Without worrying about the existing object"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s33.jpg"
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s34.jpg"
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Annotate to Front",
+   "Annotate on Top is what this means. Use this to Draw on Top of Annotations."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s35.jpg"
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "text": [
+   "DATA LABELING",
+   "18",
+   "Annotate to\u000bBack",
+   "Annotate this behind. Use this to Draw Behind of Annotations."
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s36.jpg"
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "text": [
+   "End of Day"
+  ],
+  "notes": "",
+  "img": "assets/day3/semantic/s37.jpg"
+ }
+]

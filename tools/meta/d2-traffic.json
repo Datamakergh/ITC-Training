@@ -1,0 +1,286 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "ver.2.0",
+   "Traffic Flow for Autonomous Driving Polyline"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "This file is intended for training \n'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker’, and \nunauthorized distribution and \nreproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "img": "assets/day2/traffic/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project\nLabeling target\nLabeling process"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project",
+   "At present, there is a global trend emerging where cars utilize AI for autonomous driving instead of relying on humans.\nThe purpose of this project is to create learning data for autonomous driving AI."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target",
+   "The assignment requires working with 6 types of objects:"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target: Solid Line",
+   "For “Double” solid line, label it separately"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target: Dotted Line"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target – Stop-line",
+   "Stop-line is the Horizontal line that comes before a pedestrian crossing or traffic light."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Labeling target",
+   "This project is a sub-category, and each lane must be labeled with a color as shown below"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02",
+   "“U-turn” allowing line is considered as “White, Dotted Line”"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02",
+   "Typically, the outermost line of the road is often a solid yellow lane.",
+   "Double solid line",
+   "Dotted line"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02",
+   "Even when lanes are blocked by obstacles (fences, cars, etc.), please consider which lane it was originally and label it accordingly."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02",
+   "Even when lanes are blocked by obstacles (fences, cars, etc.), please consider what lane it was originally and label it accordingly."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "Labeling criteria",
+   "02",
+   "It is very uncommon for there to be other classes of lanes on the road. Specifically, with regards to “road leader” and “bus parking lines”. Please refrain from labeling them, as they are not meant to be labeled, despite resembling lanes with different colors."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Precautions to take when labeling"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Please be careful not to label these subjects:"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Discard Standard: Tasks in the following cases should be discarded.",
+   "When there is no labeling target",
+   "When there’s excessive smearing or light spillage, only one or two dim lanes remain.",
+   "When the screen image is flipped",
+   "When the pixels of the screen image are too broken or faint, only one or two dim lanes remain."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Discard Standard",
+   "Please be careful not to label these subjects. The subjects below are not labeling targets."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Discard Standard",
+   "Please be careful not to label these subjects. The subjects below are not labeling targets."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "If parking lots are on the road, label the vertical line only.",
+   "Exclude labeling bus parking lots, parking lots for shops, apartments, or malls. "
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Commonly Found Errors",
+   "Due to the high contrast in some images, lane colors may appear different. Always keep in mind that the outermost lane is often a solid yellow line, and Y-shaped lanes are often solid yellow lines."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Precaution",
+   "03",
+   "Commonly Found Errors",
+   "Due to the high contrast in some images, lane colors may appear different. Always keep in mind that the outermost lane is often a solid yellow line, and Y-shaped lanes are often solid yellow lines."
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Thank You"
+  ],
+  "notes": "",
+  "img": "assets/day2/traffic/s25.jpg"
+ }
+]

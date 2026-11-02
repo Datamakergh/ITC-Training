@@ -1,0 +1,622 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "ver.2.0",
+   "Photobooth Image Labeling Project"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "This file is intended for training \n'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker’, and \nunauthorized distribution and \nreproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers. \nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "img": "assets/day3/photobooth/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project\nLabeling criteria\nPrecaution"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project",
+   "The purpose of this project is to create a dataset for AI to recognize people and use the AI to create a photobooth-type media art experience that can be combined with various IPS.",
+   "Synapse",
+   "Platform",
+   "Annotation Type",
+   "Class",
+   "Bounding Box\nPolygon",
+   "Face, Body, Age, Gender, Image brightness",
+   "Labeling Targets",
+   "Target:\nPerson"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Project overview",
+   "01",
+   "Purpose of the project",
+   "All people in the image are labeling targets"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "Labeling Criteria",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [
+   "Labeling Criteria",
+   "02",
+   "Labeling target",
+   "1. Bounding Box: Face= The person’s head, face, and neck must be contained within the bounding box area.\nHair, hats, headbands, bag, etc are not include in the bounding box area. \nPlease note that neck, face until forehead is labeling area to b-box."
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [
+   "Labeling Criteria",
+   "02",
+   "Labeling target",
+   "2. Attributes: Gender, Age, and Image brightness= Please select the correct age, gender, and image brightness seen in the image."
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Labeling Criteria",
+   "02",
+   "Labeling target",
+   "3. Polygon: Body= The person’s whole-body outline must be labeled with the polygon tool.\nHair, bags, hat, headbands, etc are labeling target for the body class."
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Labeling Criteria",
+   "02",
+   "Labeling target",
+   "Task completion Screen "
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [
+   "Age – Under 10",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "Age - Teen",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Age - 20",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s29.jpg"
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s30.jpg"
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s31.jpg"
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s32.jpg"
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "text": [
+   "Age - 30",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s33.jpg"
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s34.jpg"
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s35.jpg"
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s36.jpg"
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s37.jpg"
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s38.jpg"
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s39.jpg"
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s40.jpg"
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s41.jpg"
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s42.jpg"
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s43.jpg"
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s44.jpg"
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "text": [
+   "Age – 40 and above",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s45.jpg"
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s46.jpg"
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s47.jpg"
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s48.jpg"
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s49.jpg"
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s50.jpg"
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s51.jpg"
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s52.jpg"
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s53.jpg"
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s54.jpg"
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s55.jpg"
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s56.jpg"
+ },
+ {
+  "n": 57,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s57.jpg"
+ },
+ {
+  "n": 58,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s58.jpg"
+ },
+ {
+  "n": 59,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s59.jpg"
+ },
+ {
+  "n": 60,
+  "hidden": false,
+  "text": [
+   "Age",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/photobooth/s60.jpg"
+ }
+]

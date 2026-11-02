@@ -1,0 +1,292 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "text": [
+   "Introduction to three-dimensional space and the Principles of LiDAR",
+   "Understanding 3D and LiDAR Fundamentals"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s01.jpg"
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "text": [
+   "Introduction to three-dimensional space",
+   "3D (3-dimensional): We normally talk about dimensions as measurements in a direction. Real-world objects exist in 3D space, allowing for deeper perception by using height, width, and depth.",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s02.jpg"
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "text": [
+   "Basics of spatial coordinates and dimensions",
+   "Spatial coordinates use X, Y, and Z axes to locate points in 3D space.\nThe x-coordinate represents the horizontal position (left or right).\nThe y-coordinate represents the vertical position (up or down).\nThe z-coordinate represents the depth or position along the third dimension.",
+   "03"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s03.jpg"
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "text": [
+   "Uses of spatial coordinates and dimensions",
+   "Dimensions add depth to objects, enhancing realism.\nTechnology and Computing: In the realm of technology and computing, spatial coordinates are vital for computer graphics, virtual reality, and simulation. They enable the creation of realistic 3D environments, immersive experiences, and accurate simulations. Examples of spatial coordinates in technology and computing include robotics and automation, virtual reality and augmented reality, and GPS navigation",
+   "04"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s04.jpg"
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "text": [
+   "Uses of spatial coordinates and dimensions",
+   "Navigation and Mapping: Spatial coordinates enable accurate navigation and mapping, allowing people to find locations, plan routes, and understand geographic relationships.\nAid in the development of Autonomous Vehicles (AVs): Spatial coordinates are pivotal for autonomous vehicles (AVs), guiding mapping, navigation, and object detection. They facilitate localization, map creation, and path planning. AVs share spatial data for safe intersection management.",
+   "05"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s05.jpg"
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "text": [
+   "LiDAR Fundamentals",
+   "LiDAR, or Light Detection and Ranging, is a remote sensing technology that uses laser pulses to measure distances to objects or surfaces. It creates detailed 3D maps for various applications, such as mapping, navigation, and urban planning.",
+   "07"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s06.jpg"
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "text": [],
+  "notes": "",
+  "img": "assets/day3/pcd/s07.jpg"
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "text": [],
+  "notes": "",
+  "img": "assets/day3/pcd/s08.jpg"
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "text": [
+   "Uses of LiDAR Technology",
+   "Autonomous Vehicles (AVs): LiDAR helps AVs \"see\" and navigate by detecting objects and creating maps.\nAerial Surveying: LiDAR -equipped aircraft and drones accurately map terrain, forests, and cities.\nGeographic Information Systems (GIS): LiDAR data helps create detailed maps for urban planning and environmental management.",
+   "07"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s09.jpg"
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "text": [
+   "Uses of LiDAR Technology",
+   "Archeology: LiDAR uncovers hidden archaeological sites by scanning terrain with precision.\nForestry Monitoring: LiDAR measures tree heights and monitors forest health.\nDisaster Management: LiDAR maps disaster areas to aid rescue operations and assess damage. ",
+   "07"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s10.jpg"
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "text": [],
+  "notes": "",
+  "img": "assets/day3/pcd/s11.jpg"
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "text": [],
+  "notes": "",
+  "img": "assets/day3/pcd/s12.jpg"
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "3D Point Clouds:\u000b   - Captures reflections to form point clouds.\u000b   - Represents specific locations in 3D.\u000b\u000bPrecision and Accuracy:\u000b   - Provides high-precision measurements.\u000b   - Ensures detailed and accurate 3D models.\u000b\u000b",
+   "09"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s13.jpg"
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "1. LiDAR Basics:\n   - Uses laser pulses for distance measurement.\n   - Creates detailed 3D maps.\n2. Distance Measurement:\n   - Measures the time for laser pulses to travel.\n   - Enables precise distance calculations.",
+   "08"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s14.jpg"
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "3. 360-Degree Coverage:\u000b   - Incorporates scanning for a wide field of view.\u000b   - Captures data from various angles.\u000b\u000b4. Real-time Data:\u000b   - Rapid data collection.\u000b   - Ideal for real-time applications.",
+   "10"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s15.jpg"
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "5. Obstacle Detection:\u000b   - Crucial for autonomous vehicles.\u000b   - Aids in navigating complex environments.\u000b\u000b6. Environmental Monitoring:\u000b   - Used in forestry, agriculture, and urban planning.\u000b   - Assesses terrain, vegetation, and structures.",
+   "11"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s16.jpg"
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "text": [
+   "Conclusion"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s17.jpg"
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "text": [
+   "Introduction to the PCD Project, Guide, and the Process of Labeling.",
+   "Point Cloud Data(PCD) PROJECT"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s18.jpg"
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "text": [
+   "Introduction to PCD Project",
+   "PCD is termed Point Cloud Data. These are points that represent data picked up by a LiDAR signal. ",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s19.jpg"
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "text": [
+   "Why does this PCD Project exist?",
+   " Accurate Object Detection and Recognition: Autonomous vehicles need to detect and recognize various objects in their environment, such as pedestrians, vehicles, cyclists, and obstacles.\nDepth Perception and Spatial Awareness: This allows autonomous vehicles to perceive the distance to objects, which is crucial for making safe driving decisions such as braking, lane changes, and avoiding collisions.",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s20.jpg"
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "text": [
+   "Why does this PCD Project exist?",
+   "Environment Understanding: 3D PCD labelling helps in understanding the layout of the environment, including road boundaries, lane markings, traffic signs, and other infrastructure elements.\nEnhanced Safety and Reliability: Accurate 3D PCD labelling improves the safety and reliability of autonomous vehicles by reducing the risk of misinterpreting the surroundings.",
+   "02"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s21.jpg"
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "text": [
+   "Introduction to PCD Project Guideline",
+   "PCD Project Guideline"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s22.jpg"
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "text": [
+   "Project Overview",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s23.jpg"
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "text": [
+   "Project Overview",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s24.jpg"
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "text": [
+   "Project Overview",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s25.jpg"
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "text": [
+   "Project Overview",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s26.jpg"
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "text": [
+   "Labelling Dashboard"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s27.jpg"
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "text": [
+   "Labelling Tool Description",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s28.jpg"
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "text": [
+   "Labeling Dashboard",
+   "01"
+  ],
+  "notes": "",
+  "img": "assets/day3/pcd/s29.jpg"
+ }
+]
