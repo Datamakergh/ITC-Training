@@ -15,7 +15,7 @@
   "text": [
    "Table of Content",
    "03",
-   "Platform Intro\nUser Environment\nMain Dashboard\nProject Page\nLabeling Tools\nTop Bar\nTool Bar\nShortcuts/settings\nPreferences\nShortcuts\nTips and Tricks "
+   "Platform Intro\nUser Environment\nMain Dashboard\nProject Page\nLabeling Tools\nTop Bar\nTool Bar\nShortcuts/settings\nPreferences\nShortcuts"
   ],
   "notes": "",
   "img": "assets/day1/synapse/s02.jpg"
@@ -35,7 +35,7 @@
   "text": [
    "SYNAPSE ENVIROMENT",
    "03",
-   "To use synapse platform for data labelling, one must log into the web app at\nhttp://platform.datamaker.io\nThe required browser for using the synapse web application is the Chrome Browser "
+   "To use synapse platform for data labelling, one must log into the web app at\nhttp://platform.datamaker.io\n\n\nThe required browser for using the synapse web application is the Chrome Browser "
   ],
   "notes": "",
   "img": "assets/day1/synapse/s04.jpg"
@@ -79,13 +79,9 @@
   "text": [
    "DASHBOARD(Labelling > Project page) ",
    "07",
-   "1",
-   "2",
-   "3",
    "Start or continue labeling tasks by clicking this button.",
    "1",
-   "5",
-   "4"
+   "1"
   ],
   "notes": "",
   "img": "assets/day1/synapse/s08.jpg"
@@ -96,13 +92,9 @@
   "text": [
    "DASHBOARD(Labelling > Project page) ",
    "08",
-   "1",
    "2",
-   "3",
-   "Use the search bar here find specific                      to modify.",
-   "2",
-   "5",
-   "4"
+   "Use the search bar here find specific                    to modify.",
+   "2"
   ],
   "notes": "",
   "img": "assets/day1/synapse/s09.jpg"
@@ -113,13 +105,9 @@
   "text": [
    "DASHBOARD(Labelling > Project page) ",
    "09",
-   "1",
-   "2",
    "3",
-   "Increase or decrease the number of number of tasks per page.\n10, 20, 30, 50, 100, 500 or 1000.",
-   "3",
-   "5",
-   "4"
+   "Increase or decrease the number of number of tasks per page.\n10, 20, 30, 50, 100, or 500.",
+   "3"
   ],
   "notes": "",
   "img": "assets/day1/synapse/s10.jpg"
@@ -130,12 +118,8 @@
   "text": [
    "DASHBOARD(Labelling > Project page) ",
    "10",
-   "1",
-   "2",
-   "3",
-   "This filter allows you to view a range of tasks by providing a specific range of criteria.\nThese criteria include\nWork status\nName of image group if available.\nBy Last labeled date ",
+   "This filter allows you to view a range of tasks by providing a specific range of criteria.\nThese criteria include\nWork status\nName of image group if available.\nBy Last labeled date.\n",
    "4",
-   "5",
    "4"
   ],
   "notes": "",
@@ -172,7 +156,7 @@
   "text": [
    "DASHBOARD (Review dashboard > project page) ",
    "13",
-   "A name of the Worker you are inspecting.",
+   "The name of the worker you are inspecting.",
    "1",
    "1"
   ],
