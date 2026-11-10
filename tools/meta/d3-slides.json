@@ -1,0 +1,1102 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "title": "Data Labeling Training",
+  "text": [
+   "Data Labeling Training",
+   "Presented by datamaker Ghana LimitedKenya 18-20th November 2026"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "title": "Semantic Segmentation & PCD",
+  "text": [
+   "DAILY SCHEDULE",
+   "DAY 3 OF 5",
+   "Semantic Segmentation & PCD",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "09:00–09:15",
+   "Review, objectives and knowledge recap",
+   "Emmanuel Owusu Appiah",
+   "09:15–10:00",
+   "Introduction to segmentation tools and labelling with the polygon tool",
+   "Emmanuel Owusu Appiah",
+   "10:00–10:45",
+   "[543] Photobooth Project guide training",
+   "Emmanuel Owusu Appiah",
+   "10:45–11:00",
+   "Break",
+   "11:00–11:45",
+   "[543] Photobooth Project labelling demonstration and practice",
+   "Sylvester Sakitey",
+   "11:45–12:15",
+   "[543] Photobooth Project inspection",
+   "ToT Trainees & GH Facilitators",
+   "12:15–13:00",
+   "Lunch break",
+   "13:00–14:00",
+   "Introduction to PCD (point-cloud data)",
+   "Sylvester Sakitey"
+  ],
+  "notes": "Day 3 is semantic segmentation on the [543] Photobooth Project: tools, project guide, demonstration, practice and inspection. The afternoon is a one-hour introduction to point-cloud data (PCD), which leads into LiDAR work.",
+  "media": []
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "title": "data Labeling Training   ·  ITC KENYA x datamaker",
+  "text": [
+   "data Labeling Training   ·  ITC KENYA x datamaker",
+   "Day 3: Semantic Segmentation",
+   "Kenya18th-20th November 2026",
+   "Day 3 of 5   |   5 contact hours including breaks   |   09:00 – 14:00",
+   "Audience: prospective trainers for AI data-Labeling training"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "title": "What is Semantic Segmentation",
+  "text": [
+   "What is Semantic Segmentation",
+   "Semantic Segmentation means labeling every pixel of an object in an image. Annotators draw over the image to mark each object, so the model can recognize and locate it."
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.9,
+     18.666681248177312,
+     56.93000328083989,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/media1.mp4",
+    "poster": "assets/day3/media/media1-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "title": "How to draw in semantic segmentation",
+  "text": [
+   "How to draw in semantic segmentation",
+   "Select the Polygon Tool and click along the object's outline to draw.",
+   "Once complete, press Enter and select the object's class."
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.9000082020997375,
+     18.666666666666668,
+     56.93000328083989,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.16492,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/media2.mp4",
+    "poster": "assets/day3/media/media2-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": true,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "title": "Delete a current point",
+  "text": [
+   "Delete a current point",
+   "Press Backspace on your keyboard to delete the current point"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     4.9,
+     24.10540974044911,
+     56.93020833333333,
+     46.122499270924465
+    ],
+    "crop": {
+     "l": 0.07976,
+     "t": 0.14968,
+     "r": 0.08012,
+     "b": 0.14017
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image19.gif"
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "title": "Reduce image transparency and Zoom",
+  "text": [
+   "Reduce image transparency and Zoom",
+   "Use the + and – keys to zoom in and out of the image.",
+   "Use the brightness slider to adjust the image brightness and make it clearer."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.9,
+     18.666666666666668,
+     56.93020833333333,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.16628,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/media3.mp4",
+    "poster": "assets/day3/media/media3-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": true,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "title": "Front and Rear mode",
+  "text": [
+   "Front and Rear mode",
+   "Front mode : if there is an existing shape, draw on top of that shape.",
+   "Rear mode : if there is an existing shape, draw behind that existing shape",
+   "Note : if there is no shape drawn in that region then your mode can either be in front mode or rear mode.",
+   "Note:  you can leave it rear mode, so that every shape can just fall behind the other.",
+   "Let's look at some examples",
+   "Other tools for annotation"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "title": "For example, using polygon in front mode",
+  "text": [
+   "For example, using polygon in front mode",
+   "Make sure the polygon tool and the front mode are both selected."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "title": "The first person has already been labeled.",
+  "text": [
+   "The first person has already been labeled."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.9,
+     18.666666666666668,
+     56.93020833333333,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/media4.mp4",
+    "poster": "assets/day3/media/media4-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "title": "DATA LABELING",
+  "text": [
+   "DATA LABELING",
+   "Annotate to Front",
+   "Annotate on Top. Use this to Draw on Top of Annotations.",
+   "Annotate to Back",
+   "Annotate this behind. Use this to Draw Behind of Annotations."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "title": "ver.2.0",
+  "text": [
+   "ver.2.0",
+   "Photobooth Image Labeling Project",
+   "datamaker Guideline"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "title": "This file is intended for training",
+  "text": [
+   "This file is intended for training",
+   "'datamaker' workers.",
+   "All images and content used are the intellectual property of 'datamaker’, and",
+   "unauthorized distribution and",
+   "reproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers.\nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "media": []
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "title": "Project overview",
+  "text": [
+   "Project overview",
+   "Purpose of the project",
+   "Labeling criteria",
+   "Precaution"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "title": "Project overview",
+  "text": [
+   "Project overview",
+   "Purpose of the project",
+   "The purpose of this project is to create a dataset for AI to recognize people and use the AI to create a photobooth-type media art experience that can be combined with various IPS.",
+   "Synapse",
+   "Platform",
+   "Annotation Type",
+   "Class",
+   "Bounding Box",
+   "Polygon",
+   "Face, Body, Age, Gender, Image brightness",
+   "Labeling Targets",
+   "Target:",
+   "Person"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "title": "Project overview",
+  "text": [
+   "Project overview",
+   "Purpose of the project",
+   "All people in the image are labeling targets"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "title": "Labeling Criteria",
+  "text": [
+   "Labeling Criteria"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "title": "Labeling Criteria",
+  "text": [
+   "Labeling Criteria",
+   "Labeling target",
+   "1. Bounding Box: Face= The person’s head, face, and neck must be contained within the bounding box area.",
+   "Hair, hats, headbands, bag, etc are not include in the bounding box area.",
+   "Please note that neck, face until forehead is labeling area to b-box."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "title": "Labeling Criteria",
+  "text": [
+   "Labeling Criteria",
+   "Labeling target",
+   "2. Attributes: Gender, Age, and Image brightness= Please select the correct age, gender, and image brightness seen in the image."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "title": "Labeling Criteria",
+  "text": [
+   "Labeling Criteria",
+   "Labeling target",
+   "3. Polygon: Body= The person’s whole-body outline must be labeled with the polygon tool.",
+   "Hair, bags, hat, headbands, etc are labeling target for the body class."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "title": "Labeling Criteria",
+  "text": [
+   "Labeling Criteria",
+   "Labeling target",
+   "Task completion Screen"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "title": "Age – Under 10",
+  "text": [
+   "Age – Under 10"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "title": "Age – Under 10 · Male",
+  "text": [
+   "Age – Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male",
+   "Under 10 · Male"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "title": "Age – Under 10 · Female",
+  "text": [
+   "Age – Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female",
+   "Under 10 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "title": "Age - Teen",
+  "text": [
+   "Age - Teen"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "title": "Age – Teen · Male & Female",
+  "text": [
+   "Age – Teen · Male & Female",
+   "Teen · Male",
+   "Teen · Male",
+   "Teen · Male",
+   "Teen · Male",
+   "Teen · Female",
+   "Teen · Female",
+   "Teen · Female",
+   "Teen · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "title": "Age - 20",
+  "text": [
+   "Age - 20"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "title": "Age – 20 · Male",
+  "text": [
+   "Age – 20 · Male",
+   "20 · Male",
+   "20 · Male",
+   "20 · Male",
+   "20 · Male",
+   "20 · Male",
+   "20 · Male",
+   "20 · Male"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "title": "Age – 20 · Female",
+  "text": [
+   "Age – 20 · Female",
+   "20 · Female",
+   "20 · Female",
+   "20 · Female",
+   "20 · Female",
+   "20 · Female",
+   "20 · Female",
+   "20 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "title": "Age - 30",
+  "text": [
+   "Age - 30"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "title": "Age – 30 · Male",
+  "text": [
+   "Age – 30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male",
+   "30 · Male"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "title": "Age – 30 · Female",
+  "text": [
+   "Age – 30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "title": "Age – 30 · Female",
+  "text": [
+   "Age – 30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female",
+   "30 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "title": "Age – 40 and above",
+  "text": [
+   "Age – 40 and above"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "title": "Age – 40 and above · Male",
+  "text": [
+   "Age – 40 and above · Male",
+   "40 · Male",
+   "40 · Male",
+   "40 · Male",
+   "50 ~ 60 · Male",
+   "50 ~ 60 · Male",
+   "70 · Male"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "title": "Age – 40 and above · Female",
+  "text": [
+   "Age – 40 and above · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "title": "Age – 40 and above · Female",
+  "text": [
+   "Age – 40 and above · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "40 · Female",
+   "50 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "title": "Age – 40 and above · Female",
+  "text": [
+   "Age – 40 and above · Female",
+   "50 · Female",
+   "50 ~ 60 · Female",
+   "50 ~ 60 · Female",
+   "50 ~ 60 · Female",
+   "50 ~ 60 · Female",
+   "50 ~ 60 · Female"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "title": "Thank You",
+  "text": [
+   "Thank You",
+   "END OF SESSION",
+   "END OF SESSION",
+   "Training of Trainers  ·  AI Data Labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker."
+  ],
+  "notes": "Final slide. Keep the close short.\nConfirm three practical things before people leave: that assessment records and action plans have been collected, who to contact with follow-up questions, and the date of any planned follow-up or reassessment session.",
+  "media": []
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "title": "Introduction to three-dimensional space and the Principles of LiDAR",
+  "text": [
+   "Introduction to three-dimensional space and the Principles of LiDAR",
+   "Understanding 3D and LiDAR Fundamentals"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "title": "Introduction to three-dimensional space",
+  "text": [
+   "Introduction to three-dimensional space",
+   "3D (3-dimensional): We normally talk about dimensions as measurements in a direction. Real-world objects exist in 3D space, allowing for deeper perception by using height, width, and depth."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "title": "Basics of spatial coordinates and dimensions",
+  "text": [
+   "Basics of spatial coordinates and dimensions",
+   "Spatial coordinates use X, Y, and Z axes to locate points in 3D space.",
+   "The x-coordinate represents the horizontal position (left or right).",
+   "The y-coordinate represents the vertical position (up or down).",
+   "The z-coordinate represents the depth or position along the third dimension."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "title": "Uses of spatial coordinates and dimensions",
+  "text": [
+   "Uses of spatial coordinates and dimensions",
+   "Dimensions add depth to objects, enhancing realism.",
+   "Technology and Computing: In the realm of technology and computing, spatial coordinates are vital for computer graphics, virtual reality, and simulation. They enable the creation of realistic 3D environments, immersive experiences, and accurate simulations. Examples of spatial coordinates in technology and computing include robotics and automation, virtual reality and augmented reality, and GPS navigation"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "title": "Uses of spatial coordinates and dimensions",
+  "text": [
+   "Uses of spatial coordinates and dimensions",
+   "Navigation and Mapping: Spatial coordinates enable accurate navigation and mapping, allowing people to find locations, plan routes, and understand geographic relationships.",
+   "Aid in the development of Autonomous Vehicles (AVs): Spatial coordinates are pivotal for autonomous vehicles (AVs), guiding mapping, navigation, and object detection. They facilitate localization, map creation, and path planning. AVs share spatial data for safe intersection management."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "title": "LiDAR Fundamentals",
+  "text": [
+   "LiDAR Fundamentals",
+   "LiDAR, or Light Detection and Ranging, is a remote sensing technology that uses laser pulses to measure distances to objects or surfaces. It creates detailed 3D maps for various applications, such as mapping, navigation, and urban planning."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     68.26388615485564,
+     47.01659375911345,
+     26.73610564304462,
+     30.555555555555557
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image89.gif"
+   }
+  ]
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "title": "",
+  "text": [],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     9.584375000000001,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image90.gif"
+   }
+  ]
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "title": "",
+  "text": [],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     9.584375000000001,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image91.gif"
+   }
+  ]
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "title": "Uses of LiDAR Technology",
+  "text": [
+   "Uses of LiDAR Technology",
+   "Autonomous Vehicles (AVs): LiDAR helps AVs \"see\" and navigate by detecting objects and creating maps.",
+   "Aerial Surveying: LiDAR -equipped aircraft and drones accurately map terrain, forests, and cities.",
+   "Geographic Information Systems (GIS): LiDAR data helps create detailed maps for urban planning and environmental management."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "title": "Uses of LiDAR Technology",
+  "text": [
+   "Uses of LiDAR Technology",
+   "Archeology: LiDAR uncovers hidden archaeological sites by scanning terrain with precision.",
+   "Forestry Monitoring: LiDAR measures tree heights and monitors forest health.",
+   "Disaster Management: LiDAR maps disaster areas to aid rescue operations and assess damage."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "title": "",
+  "text": [],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     9.584375000000001,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image92.gif"
+   }
+  ]
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "title": "",
+  "text": [],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     9.584375000000001,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day3/media/image93.gif"
+   }
+  ]
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "title": "LiDAR's Role in Capturing 3D Data",
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "3D Point Clouds:   - Captures reflections to form point clouds.   - Represents specific locations in 3D.Precision and Accuracy:   - Provides high-precision measurements.   - Ensures detailed and accurate 3D models."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "title": "LiDAR's Role in Capturing 3D Data",
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "1. LiDAR Basics:",
+   "- Uses laser pulses for distance measurement.",
+   "- Creates detailed 3D maps.",
+   "2. Distance Measurement:",
+   "- Measures the time for laser pulses to travel.",
+   "- Enables precise distance calculations."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "title": "LiDAR's Role in Capturing 3D Data",
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "3. 360-Degree Coverage:   - Incorporates scanning for a wide field of view.   - Captures data from various angles.4. Real-time Data:   - Rapid data collection.   - Ideal for real-time applications."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "title": "LiDAR's Role in Capturing 3D Data",
+  "text": [
+   "LiDAR's Role in Capturing 3D Data",
+   "5. Obstacle Detection:   - Crucial for autonomous vehicles.   - Aids in navigating complex environments.6. Environmental Monitoring:   - Used in forestry, agriculture, and urban planning.   - Assesses terrain, vegetation, and structures."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "title": "Conclusion",
+  "text": [
+   "Conclusion"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 57,
+  "hidden": false,
+  "title": "Introduction to the PCD Project, Guide, and the Process of Labeling.",
+  "text": [
+   "Introduction to the PCD Project, Guide, and the Process of Labeling.",
+   "Point Cloud Data(PCD) PROJECT"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 58,
+  "hidden": false,
+  "title": "Introduction to PCD Project",
+  "text": [
+   "Introduction to PCD Project",
+   "PCD is termed Point Cloud Data. These are points that represent data picked up by a LiDAR signal."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 59,
+  "hidden": false,
+  "title": "Why does this PCD Project exist?",
+  "text": [
+   "Why does this PCD Project exist?",
+   "Accurate Object Detection and Recognition: Autonomous vehicles need to detect and recognize various objects in their environment, such as pedestrians, vehicles, cyclists, and obstacles.",
+   "Depth Perception and Spatial Awareness: This allows autonomous vehicles to perceive the distance to objects, which is crucial for making safe driving decisions such as braking, lane changes, and avoiding collisions."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 60,
+  "hidden": false,
+  "title": "Why does this PCD Project exist?",
+  "text": [
+   "Why does this PCD Project exist?",
+   "Environment Understanding: 3D PCD labelling helps in understanding the layout of the environment, including road boundaries, lane markings, traffic signs, and other infrastructure elements.",
+   "Enhanced Safety and Reliability: Accurate 3D PCD labelling improves the safety and reliability of autonomous vehicles by reducing the risk of misinterpreting the surroundings."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 61,
+  "hidden": false,
+  "title": "Introduction to PCD Project Guideline",
+  "text": [
+   "Introduction to PCD Project Guideline",
+   "PCD Project Guideline"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 62,
+  "hidden": false,
+  "title": "Project Overview",
+  "text": [
+   "Project Overview",
+   "About the project",
+   "The purpose of this training project is to test the 3D segmentation tool and familiarize workers with the tool."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 63,
+  "hidden": false,
+  "title": "Project Overview",
+  "text": [
+   "Project Overview",
+   "About the project",
+   "1. Report errors in detail",
+   "Please report errors in detail so we can find under what circumstances and by what actions.",
+   "2. Tool update to help workflow",
+   "Please give us ideas for easier, more efficient ways to work and tool you need"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 64,
+  "hidden": false,
+  "title": "Project Overview",
+  "text": [
+   "Project Overview"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 65,
+  "hidden": false,
+  "title": "Project Overview",
+  "text": [
+   "Project Overview"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 66,
+  "hidden": false,
+  "title": "Labelling Dashboard",
+  "text": [
+   "Labelling Dashboard"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 67,
+  "hidden": false,
+  "title": "Labelling Tool Description",
+  "text": [
+   "Labelling Tool Description"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 68,
+  "hidden": false,
+  "title": "Labeling Dashboard",
+  "text": [
+   "Labeling Dashboard"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 69,
+  "hidden": false,
+  "title": "Thank You",
+  "text": [
+   "Thank You",
+   "END OF DAY",
+   "END OF DAY",
+   "Training of Trainers  ·  AI Data Labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker."
+  ],
+  "notes": "Final slide. Keep the close short.\nConfirm three practical things before people leave: that assessment records and action plans have been collected, who to contact with follow-up questions, and the date of any planned follow-up or reassessment session.",
+  "media": []
+ }
+]

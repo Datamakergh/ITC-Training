@@ -1,0 +1,1329 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "title": "Quality Assurance & Generative AI",
+  "text": [
+   "DAILY SCHEDULE",
+   "DAY 4 OF 5",
+   "Quality Assurance & Generative AI",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "09:00–09:15",
+   "Review, objectives and knowledge recap",
+   "Sylvester Sakitey",
+   "09:15–10:00",
+   "Feedback and correction",
+   "ToT Trainees & GH Facilitators",
+   "10:00–10:45",
+   "Live inspection of the [543] Photobooth Project by the clients",
+   "GH Facilitators as clients",
+   "10:45–11:00",
+   "Break",
+   "11:00–12:15",
+   "Introduction to Generative AI",
+   "Emmanuel Owusu Appiah",
+   "12:15–13:00",
+   "Lunch break",
+   "13:00–14:00",
+   "Introduction to prompt engineering",
+   "Emmanuel Owusu Appiah"
+  ],
+  "notes": "Day 4 morning is quality assurance: a recap, feedback and correction, then a live inspection of the [543] Photobooth Project with GH facilitators acting as the clients. After the break the focus moves to Generative AI and prompt engineering.",
+  "media": []
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "title": "AI Essentials",
+  "text": [
+   "AI Essentials",
+   "Generative AI",
+   "A simple, hands-on course: use AI for everyday life, learning and work"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "title": "Who Trained This AI?",
+  "text": [
+   "Who Trained This AI?"
+  ],
+  "notes": "BEFORE THE VIDEO\nSay: \"Watch this. Who do you think made this AI?\"\nAFTER THE VIDEO\nSay: \"This AI is called EXAONE Deep. A team of RESEARCHERS at DGL, a company in South Korea, trained it\"\nIt can think step by step, like a student solving a problem.\nIt can solve maths, science and computer problems.\nIt scored very high on a hard maths exam.\nAnyone can use it for free.\nTHE MESSAGE\nSay: \"The team knew how AI learns, so they could teach it well. In this course, you will learn how AI learns too.\"\nASK THE ROOM\n\"If you could teach an AI to solve one problem, what would it be?\"",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     9.584375000000001,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day4/media/media1.mp4",
+    "poster": "assets/day4/media/media1-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "title": "Today’s Journey",
+  "text": [
+   "Today’s Journey",
+   "1. Understand AI",
+   "What AI is and how it learns",
+   "2. Talk to AI",
+   "Write clear messages to get",
+   "good answers",
+   "3. Build with AI",
+   "Build 3 small projects by",
+   "describing them",
+   "No computer background needed. We go step by step."
+  ],
+  "notes": "Today has three steps. First we understand AI. Then we learn to talk to AI. Then we build something with AI.\nEvery part has a practical activity. You will try things yourself.\nINTERPRETER: Check everyone understands the word 'AI'. We explain it properly on the next slides.",
+  "media": []
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "title": "How We Learn Together",
+  "text": [
+   "How We Learn Together",
+   "Ask anytime",
+   "No question is too",
+   "small.",
+   "Any language",
+   "Speak in your",
+   "language. We will",
+   "help.",
+   "Mistakes are OK",
+   "We learn by trying.",
+   "Stay private",
+   "Never type private",
+   "details into AI."
+  ],
+  "notes": "Some agreements for our time together.\nAsk any question, at any time. There are no silly questions.\nYou can speak in your own language. The interpreter will help.\nMistakes are part of learning, for you and for the AI.\nWe never put private information into AI tools. We will talk about why later.\nIs there anything you would like to add?",
+  "media": []
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "title": "5 Key Words for Today",
+  "text": [
+   "5 Key Words for Today",
+   "AI",
+   "A computer program that learns",
+   "Data",
+   "Examples: pictures, words, numbers",
+   "Prompt",
+   "The message you send to AI",
+   "App",
+   "A program on a phone or computer",
+   "Code/Algorithm",
+   "Instructions a computer can follow",
+   "Website",
+   "Pages you open on the internet"
+  ],
+  "notes": "These five words come back all day. Let us learn them now.\nINTERPRETER: Please translate each word and its meaning. If there is no word in the language, the English word is fine.\nTIP: Write the five words on the board, with the translation next to each one.\nWhich of these words have you heard before?",
+  "media": []
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "title": "Ride Smart, Dodge Smarter! 🚴🤖",
+  "text": [
+   "Ride Smart, Dodge Smarter! 🚴🤖",
+   "Who Dodges Better? Human vs AI!"
+  ],
+  "notes": "AUTOMATED OR AUTONOMOUS?\nAutomated = the machine does a job, but a person decides. Example: the bicycle helps brake, but the rider still steers and chooses where to go.\nAutonomous = the machine decides by itself. No person is needed. Example: a bicycle that sees danger, chooses what to do and rides on its own.\nSay: \"Automated helps you. Autonomous decides for you.\"\nAsk: \"Is the AI bicycle in the video automated or autonomous? Why?\" (Answer: automated. The rider is still in control.)\nThe lesson here is simple: AI isn't just about making machines smarter; it's about making everyday activities safer, easier, and more efficient.\"",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.833333333333333,
+     18.666666666666668,
+     43.635416666666664,
+     47.24074074074074
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day4/media/media2.mp4",
+    "poster": "assets/day4/media/media2-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   },
+   {
+    "kind": "video",
+    "box": [
+     51.46875,
+     18.666666666666668,
+     43.635416666666664,
+     47.35185185185185
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day4/media/media3.mp4",
+    "poster": "assets/day4/media/media3-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "title": "Watch: A Car That Flies?",
+  "text": [
+   "Watch: A Car That Flies?",
+   "Automated or autonomous? Who decides?",
+   "Talk about it",
+   "Upside down in the air: can a person react fast enough?",
+   "Automated or autonomous? Who decides?",
+   "Is it ready for the road?"
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.830003280839895,
+     18.666666666666668,
+     57.000008202099735,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day4/media/media4.mp4",
+    "poster": "assets/day4/media/media4-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "title": "AI or Not AI?",
+  "text": [
+   "AI or Not AI?",
+   "PRACTICAL 1 · 10 MIN · PAIRS",
+   "Calculator",
+   "Google Maps",
+   "Microwave",
+   "timer",
+   "Phone face",
+   "unlock",
+   "Translation app",
+   "Light switch",
+   "= AI (it learns)",
+   "= not AI (fixed rules)"
+  ],
+  "notes": "PRACTICAL 1 · 10 MINUTES · PAIRS\nLook at each picture. Talk with your partner. Is it AI (it learns) or not AI (it only follows rules)?\nThumbs up for AI. Thumbs down for not AI.\nANSWERS: Calculator: not AI. Google Maps: AI. Microwave timer: not AI. Phone face unlock: AI (it learned your face). Translation app: AI. Light switch: not AI.\nINTERPRETER: Read each word slowly. Let pairs discuss in their own language.",
+  "media": []
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "title": "How Machines Learn",
+  "text": [
+   "How Machines Learn",
+   "Generative AI",
+   "Many Examples and lots of practice"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "title": "Try It: Be the Data Labeller (GIGO)",
+  "text": [
+   "Try It: Be the Data Labeller (GIGO)",
+   "TRY IT · 15 MIN · PHONE OR LAPTOP",
+   "5 real jobs AI is trained for:",
+   "Self-driving car",
+   "Warehouse safety gear",
+   "Wildlife count by drone",
+   "Maize disease scout",
+   "Chatbot answer check",
+   "Scan or open:",
+   "datamakergh.github.io/GIGO/projects.html"
+  ],
+  "notes": "TRY IT · 15 MINUTES · ON A PHONE OR LAPTOP\nSAY: GIGO means 'Garbage In, Garbage Out', the same idea as 'Rubbish in, rubbish out'. On this website you do the labelling job yourself, then you see what your labels teach the AI.\nTHE FIVE SCENES (each is a real job AI is trained for):\n1. Self-driving car: draw boxes around cars, people and traffic lights, so the car brakes for the right things.\n2. Warehouse safety gate: check workers for hard hats, goggles, vests and boots.\n3. Drone wildlife count: count animals in Maasai Mara from the air.\n4. Maize disease scout: mark healthy and sick maize leaves.\n5. Chatbot answer check: pick the right answer to each question. The chatbot learns whatever you pick.\nHOW: scan the QR code or open the link. Choose a scene, label it, run it, and see the result. Then try labelling carelessly on purpose and compare.\nNOTE: These are learning simulations with simple rules, not real AI models.\nLINK: https://datamakergh.github.io/GIGO/projects.html",
+  "media": []
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "title": "What Is Machine Learning?",
+  "text": [
+   "What Is Machine Learning?",
+   "Machine learning: the computer learns from examples, not from rules.",
+   "1. Data",
+   "Named examples",
+   "2. Training",
+   "It practises",
+   "3. Model",
+   "Its own rules",
+   "4. Prediction",
+   "Names a NEW photo",
+   "Dog",
+   "Cat",
+   "Dog",
+   "Cat",
+   "dog = floppy ears, long nose…",
+   "cat = pointed ears, whiskers…",
+   "✓ Cat",
+   "Key idea: the more good examples it sees, the better it gets."
+  ],
+  "notes": "AFTER THE VIDEO\nSay: \"A child learns dog and cat from a few pictures. A machine needs thousands. But a machine can look at millions of pictures very fast.\"\nCheck: \"Who teaches the machine?\" (Answer: people, with good examples.) Then go to the four steps on the slide.\nMachine learning is the part of AI that learns from examples.\nIn a normal computer program, a person writes every rule. For example: 'If a message says FREE MONEY, it is spam.' But people who send spam just change the words, and the rule stops working.\nWith machine learning, nobody writes the rules. We give the computer many examples, and it works out the rules by itself.\nSTEP 1, Data: many examples with names (photos marked 'dog' or 'cat').\nSTEP 2, Training: the computer practises with the examples, again and again.\nSTEP 3, Model: from the practice, it builds its own rules. This is called a model.\nSTEP 4, Prediction: we show it a NEW photo it has never seen. It says: 'Cat'.\nKEY IDEA: The more good examples it sees, the better it gets, just like people learn from experience.\nINTERPRETER: model = the rules the computer made by itself; prediction = a guess about something new.\nIt works much like people learn from experience: the more examples a system sees, the better its decisions become.\nAn ML system trains a model on input data. The trained model can then make useful predictions on new, never-seen data, as long as that data is similar to what it learned from.",
+  "media": []
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "title": "Learning Like a Child",
+  "text": [
+   "Learning Like a Child",
+   "A child sees many dogs.",
+   "Then the child knows: “dog”.",
+   "AI sees many dog photos.",
+   "Then AI knows: “dog”."
+  ],
+  "notes": "How does a small child learn what a dog is? Parents point and say 'dog' many times. Big dog, small dog, black dog. Soon the child knows a dog.\nAI learns the same way. We show it thousands of dog photos with the word 'dog'. Then it can find dogs in new photos.\nHow did you learn to recognise an apple as a child?",
+  "media": []
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "title": "4 Ways Machines Learn",
+  "text": [
+   "4 Ways Machines Learn",
+   "With a teacher",
+   "Every example has",
+   "the answer",
+   "Supervised",
+   "On its own",
+   "No answers. It",
+   "finds groups.",
+   "Unsupervised",
+   "A little help",
+   "A few answers,",
+   "many without",
+   "Semi-supervised",
+   "By trying",
+   "Points for good",
+   "moves",
+   "Reinforcement"
+  ],
+  "notes": "Machines learn in four main ways.\nWith a teacher: every example has the answer. 'This photo is a cat.' Expert word: supervised learning.\nOn its own: no answers. The AI puts things that look alike into groups. Expert word: unsupervised learning.\nA little help: a few examples have answers, most do not. Expert word: semi-supervised learning.\nBy trying: like a game. Good moves get points. Expert word: reinforcement learning.",
+  "media": []
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "title": "Labels Teach the AI",
+  "text": [
+   "Labels Teach the AI",
+   "A label is a name tag",
+   "A person writes “cat” or “dog” on each photo.",
+   "AI learns from labels",
+   "Then it can name new photos by itself.",
+   "Expert word:",
+   "Supervised learning",
+   "Predicts a category or label(Classification)",
+   "Predicts a number(Regression)",
+   "The answer is a value on a scale. The question it answers is",
+   "“how much?” or “how many?”"
+  ],
+  "notes": "The model trains on labelled data: data that comes with a tag such as a name, number or type (“apple”, “spam”, “GH₵ 250”).\nEach input is paired with its correct output. The model compares its prediction with the right answer and adjusts itself to reduce mistakes.\nIt works like a teacher guiding a student with a marking scheme, which is why it is called “supervised”.\nThe goal is to make accurate predictions on new, unseen data, for example reading handwritten digits it has never seen before.",
+  "media": []
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "title": "On Its Own: Finding Groups",
+  "text": [
+   "On Its Own: Finding Groups",
+   "1. Photos with no names",
+   "2. AI puts look-alikes together",
+   "Group A",
+   "Group B",
+   "AI does not know the names. It only sees: these look alike.",
+   "Expert word:",
+   "Unsupervised learning"
+  ],
+  "notes": "The model gets unlabeled data: no tags and no correct answers. Nobody tells it what to look for.\nIt studies the inputs on its own to find hidden patterns and groups, by measuring how similar data points are and looking at the structure of the data.\nUnlabeled data is easy and cheap to collect, but it is often messy: noisy values, gaps and unknowns.\nHere the AI gets many photos with NO names. Nobody tells it 'dog' or 'cat'.\nThe AI looks at the photos and puts the ones that look alike together: Group A and Group B.\nIt does not know the words 'dog' or 'cat'. It only knows: these look alike.\nShops use this to find groups of customers who buy similar things. News apps use it to group similar stories.\nunsupervised learning ('un' means 'no' teacher)",
+  "media": []
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "title": "Supervised Vs Unsupervised",
+  "text": [
+   "Supervised Vs Unsupervised",
+   "What type of",
+   "Learning is A?",
+   "What type of",
+   "Learning is B?",
+   "A",
+   "B"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "title": "Learning by Trying",
+  "text": [
+   "Learning by Trying",
+   "Try something",
+   "Get points, or lose points",
+   "Try again, better",
+   "Expert word:",
+   "Reinforcement learning"
+  ],
+  "notes": "Look at the picture. The robot (the agent) tries an action. The world gives a reward (points) or a penalty (lose points). The robot remembers and tries again.\nThis is how computers learn to play games, or how a robot learns to walk: fall, try again, fall less.\nWhat did you learn by trying again and again? Riding a bicycle? Cooking?",
+  "media": []
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "title": "A Little Help: A Few Names, Many Photos",
+  "text": [
+   "A Little Help: A Few Names, Many Photos",
+   "1. People name a few",
+   "2. Many have no name",
+   "3. AI names the rest",
+   "Dog",
+   "Cat",
+   "?",
+   "?",
+   "?",
+   "?",
+   "Dog",
+   "Cat",
+   "Cat",
+   "Dog",
+   "People name a few. AI learns and names the rest.",
+   "Expert word:",
+   "semi-supervised learning"
+  ],
+  "notes": "Giving names to photos takes a lot of time. So sometimes people name only a few photos\nSTEP 1: People name a few photos: 'dog', 'cat'.\nSTEP 2: There are many more photos with no names.\nSTEP 3: The AI learns from the few named photos, then names the rest by itself\nThis saves a lot of time and money. It is a mix of 'with a teacher' and 'on its own’.\nLINK: The careful naming in step 1 is data labelling work. If those few names are wrong, everything after is wrong.",
+  "media": []
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "title": "Which Way Did It Learn?",
+  "text": [
+   "Which Way Did It Learn?",
+   "PRACTICAL 2 · 10 MIN · PAIRS",
+   "Messages marked “spam” or",
+   "“not spam”",
+   "A shop sorts customers into",
+   "groups. No names given.",
+   "A robot learns to walk by falling",
+   "and trying again",
+   "Doctors name 50 X-rays. AI",
+   "learns from 5,000 more without",
+   "names.",
+   "With a teacher",
+   "On its own",
+   "A little help",
+   "By trying"
+  ],
+  "notes": "PRACTICAL 2 · 10 MINUTES · PAIRS\nFor each card, decide: did the AI learn with a teacher, on its own, with a little help, or by trying?\nANSWERS:\nSpam photos marked 'spam' / 'not spam': with a teacher/SUPERVISED.\nShop puts customers into groups, no names given: on its own/UNSUPERVISED.\nRobot learns to walk by falling and trying again: by trying/REINFORCEMENT.\nDoctors name 50 X-rays, AI learns from 5,000 more without names: a little help (semi-supervised).",
+  "media": []
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "title": "Which Way Did It Learn?",
+  "text": [
+   "Which Way Did It Learn?",
+   "PRACTICAL 2 · 10 MIN · PAIRS",
+   "200 maize-leaf photos labelled",
+   "healthy or diseased, 20,000 not",
+   "labelled",
+   "A chess program playing",
+   "millions of games against itself",
+   "Predicting house prices from",
+   "records of past sales",
+   "Reading handwritten digits,",
+   "trained on labelled samples",
+   "With a teacher",
+   "On its own",
+   "A little help",
+   "By trying"
+  ],
+  "notes": "Pairs discuss for 8 minutes, then review together for 7 minutes. Ask one pair to defend each answer before you reveal it.\nAnswer key:\nHouse Prices: S, supervised. Past sales come with the real price (the label). This is regression because the answer is a number.\nMaize: SS, semi-supervised. A small labelled set plus a large unlabeled one.\nChess: R, reinforcement. Winning is the reward.\nHandwritten: S, supervised. Each sample comes with the correct digit.\nNumbers 5 and 6 usually spark the best debate. Praise good reasoning even when the final label is wrong.",
+  "media": []
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "title": "Deep Learning and AI that Creates",
+  "text": [
+   "Deep Learning and AI that Creates",
+   "From a brain-like network to generative AI"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "title": "How the AI Words Fit Together",
+  "text": [
+   "How the AI Words Fit Together",
+   "AI",
+   "Machine learning",
+   "Deep learning",
+   "Generative AI",
+   "AI",
+   "Computers doing smart tasks",
+   "Machine learning",
+   "AI that learns from examples",
+   "Deep learning",
+   "Many layers, a little like a brain",
+   "Generative AI",
+   "Creates new text, pictures, sound"
+  ],
+  "notes": "We have heard many words: AI, machine learning, deep learning, generative AI. They fit inside each other, like boxes inside boxes.\nAI is the biggest box: computers doing smart tasks.\nInside it: machine learning, AI that learns from examples.\nInside that: deep learning, machine learning with many layers, a little like a brain.\nInside that: generative AI, deep learning that creates new things.\nIs all AI generative AI? (No. Generative AI is only one small part.)",
+  "media": []
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "title": "Deep Learning: Many Layers",
+  "text": [
+   "Deep Learning: Many Layers",
+   "Photo goes in",
+   "Layer 1: lines",
+   "Layer 2: eyes,",
+   "nose, ears",
+   "Dog",
+   "Layer 3: “It is a",
+   "dog!”",
+   "Deep = many layers. Each layer learns a little more.",
+   "Expert word:",
+   "neural network"
+  ],
+  "notes": "Deep learning uses a network with many layers. It works a little like our brain. ('Deep' means many layers.\nLook at how it sees a dog.\nLayer 1 finds simple lines and edges.\nLayer 2 puts lines together into parts: eyes, nose, ears.\nLayer 3 puts the parts together and decides: this is a dog.\nEach layer learns a little more. With many layers, the AI can understand photos, voices and language.\nDeep learning is behind face unlock, voice assistants and translation apps, and behind generative AI.\nExpert word: neural network",
+  "media": []
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "title": "Two Kinds of AI: Sort or Create",
+  "text": [
+   "Two Kinds of AI: Sort or Create",
+   "Discriminative AI",
+   "AI that sorts: it tells things apart",
+   "Generative AI",
+   "AI that creates: it makes new things",
+   "Dog",
+   "“Draw a dog chasing a cat.”",
+   "In: a photo  →  Out: a name",
+   "In: a message  →  Out: a new picture"
+  ],
+  "notes": "Discriminative AI SORTS things. You give it a photo. It answers with a name: 'This is a dog.' It tells things apart. Examples: spam filters, face unlock, finding plant disease.\nUsed to classify or predict. It learns the relationship between the data and its label, such as “this photo shows a dog”.\nThey learn the boundary between classes: how to tell one thing from another. They answer: “Given this data, which class does it belong to?”\nTheir Outputs: Number: a prediction score · Discrete: “cat” or “dog” · Class: one of a fixed set · Probability: “70% chance of rain”\nUses: spam detection, sentiment analysis, image classification, fraud detection.\nGenerative AI CREATES things. You give it a message, like 'Draw a dog chasing a cat'. It makes a brand-new picture that never existed. Examples: ChatGPT, Claude, picture makers.\nUsed to create new data like the data it was trained on. It learns the patterns in the content itself, for example to predict the next word.\nThey learn how the data itself is made, so they can produce new examples that look real. They answer: “Given what I have learned, can I make a new one?”\nTheir Outputs: Language: sentences and conversation · Images: pictures and artwork · Audio: speech, music and sound\n'Discriminate' means to tell apart. 'Generate' means to make.\nIs a translation app sorting or creating? (Creating: it writes new sentences in another language.)\nKey difference: if the model creates text, images or audio, it is generative. If it classifies or predicts, it is not.",
+  "media": []
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "title": "Everyday Uses of Discriminative AI",
+  "text": [
+   "Everyday Uses of Discriminative AI",
+   "Spam filter: spam or not?",
+   "Sentiments/ Feelings Analysis: happy, angry or neutral?",
+   "Image Classification: cat, dog or car?",
+   "Fraud detection: normal or fraud?",
+   "Win a FREE phone! Click now…",
+   "Spam",
+   "Meeting tomorrow at 10",
+   "Not spam",
+   "You won a prize! Send your PIN…",
+   "Spam",
+   "“Great service! I love it.”",
+   "Happy",
+   "“Terrible. Very slow.”",
+   "Angry",
+   "“It is okay.”",
+   "Neutral",
+   "Cat",
+   "Dog",
+   "Car",
+   "Normal",
+   "GH₵ 45",
+   "Food shop",
+   "10:30 in the morning",
+   "Fraud?",
+   "GH₵ 2,500",
+   "Unknown place",
+   "2:15 at night"
+  ],
+  "notes": "discriminative AI is everywhere. It looks at something and puts it in the right group.\nSPAM FILTER: it reads each message and decides: spam or not spam. 'Win a FREE phone!' goes to spam.\nFEELINGS: it reads a message or a review and decides: happy, angry or neutral. Shops use this to read thousands of customer comments. (Expert word: sentiment analysis.)\nPHOTOS: it looks at a photo and decides: cat, dog or something else.\nMONEY: banks and mobile money services check each payment: normal or fraud? A very big payment, at 2 in the morning, from an unknown place, looks suspicious, so it may be stopped.",
+  "media": []
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "title": "What Is Generative AI?",
+  "text": [
+   "What Is Generative AI?",
+   "Generative AI = AI that creates new things: text, pictures, sound, video and",
+   "code., by using the features it learned during its training.",
+   "1. You ask",
+   "2. It uses patterns",
+   "3. It creates something new",
+   "“Write a short",
+   "welcome",
+   "message for my",
+   "tailoring shop.”",
+   "Patterns from huge",
+   "amounts of text and",
+   "pictures",
+   "“Welcome to Amina’s Tailoring!",
+   "Beautiful clothes, made with care,",
+   "just for you.”",
+   "AI-made",
+   "<h1>Welcome</h1>",
+   "<p>Open 8am–6pm</p>",
+   "Code",
+   "It does not copy. It learns patterns, then creates something new."
+  ],
+  "notes": "Generative AI is AI that CREATES new things: text, pictures, sound, video and computer code. 'Generate' means to make or create.\nSTEP 1, you ask: you type a prompt, for example 'Write a short welcome message for my tailoring shop.'\nSTEP 2, it uses patterns: during training it studied huge amounts of text and pictures and learned the patterns of language and images.\nSTEP 3, it creates something new: a message that did not exist before. It can also make a picture (this dog was made by AI) or code for a web page\nIMPORTANT: It does not copy from one place. It uses the patterns it learned to create new content. (Some chat tools can also search the internet, but the writing itself comes from patterns.) That is why it can sound very good but still be wrong; always check.",
+  "media": []
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "title": "How AI Makes a New Picture",
+  "text": [
+   "How AI Makes a New Picture",
+   "1. Many photos",
+   "It looks at real dogs",
+   "2. The pattern",
+   "Shape, ears, nose, fur",
+   "3. Random dots",
+   "Slowly become a dog",
+   "4. A new dog",
+   "Not a copy",
+   "start",
+   "AI-made picture",
+   "Key idea: it learns what dogs look like, then makes a NEW dog. It does",
+   "not copy.",
+   "Expert word:",
+   "generative model"
+  ],
+  "notes": "How does generative AI make a picture of a dog that never existed?\nSTEP 1: It looks at many, many real dog photos. (These are real photos.)\nSTEP 2: It learns the pattern of 'dog': the shape, the ears, the nose, the fur. It does not keep the photos; it keeps the pattern.\nSTEP 3: It starts from random dots, like the noise on an old TV. Then, step by step, it changes the dots to match the dog pattern.\nSTEP 4: The result is a brand-new dog picture. It is not a copy of any photo. (Picture 4 really was made by AI.)\nKEY IDEA: AI learns what dogs look like, then makes a new one.\nIf AI can CREATE a new photo of a dog, can it GENERATE a photo of a person that looks real? (Yes. That is why we must check photos and videos, remember 'Fakes and Scams'.)\nMany picture makers are 'diffusion models': they start from noise and remove it step by step.",
+  "media": []
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "title": "Tools You Can Try",
+  "text": [
+   "Tools You Can Try",
+   "ChatGPT",
+   "Claude",
+   "We use this today",
+   "Gemini",
+   "Copilot",
+   "Free versions work on a phone",
+   "You need an email address to",
+   "sign up"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "title": "How Does AI Write?",
+  "text": [
+   "How Does AI Write?",
+   "The sky is …",
+   "AI picks a likely next word. Again",
+   "and again.",
+   "Like the word suggestions on your phone keyboard, but much bigger.",
+   "Which word comes next?",
+   "blue",
+   "82%",
+   "clear",
+   "9%",
+   "cloudy",
+   "6%",
+   "falling",
+   "1%"
+  ],
+  "notes": "How does AI write? It guesses the next word.\nAfter 'The sky is...' the most likely next word is 'blue'. The AI picks a likely word, then the next, then the next.\nIt is like the word suggestions on your phone keyboard, but much, much bigger.\nDoes your phone suggest words when you type a message?",
+  "media": []
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "title": "Self-attention Finds Meaning",
+  "text": [
+   "Self-attention Finds Meaning",
+   "“The dog chased the cat because it was fast”",
+   "“The dog chased the cat because it was scared”",
+   "What does “it” refer to in each sentence?",
+   ".",
+   "The Dog, as it is the one doing the chasing",
+   "The Cat, as scared is more naturally",
+   "associated with the cat because it is being",
+   "chased",
+   "AI looks at all the words to find which ones belong together."
+  ],
+  "notes": "How this relates to self-attention in Transformers\nIn Generative AI models such as GPT, self-attention helps the model understand relationships between words in a sentence.\nFor example:\nThe model processes the words dog, chased, cat, because, it, and fast.\nWhen processing “it,” the self-attention mechanism calculates how relevant other words are to understanding its meaning.\nIt uses information from the surrounding context to help determine whether “it” refers to the dog or the cat.",
+  "media": []
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "title": "Self-Attention: Same Word, Two Meanings",
+  "text": [
+   "Self-Attention: Same Word, Two Meanings",
+   "I went to the  bank  to get money.",
+   "bank = a place for money",
+   "We sat on the  bank  of the river.",
+   "bank = the side of a river",
+   "The words around “bank” tell the AI which meaning is right."
+  ],
+  "notes": "Here is another example. The word 'bank' has two meanings.\nSentence 1: 'I went to the bank to get money.' The word 'money' tells the AI: this bank is a place for money.\nSentence 2: 'We sat on the bank of the river.' The word 'river' tells the AI: this bank is the side of a river.\nThe AI pays attention to the words around 'bank' to choose the right meaning. People do the same thing without thinking.\nDo you know a word in your language with two meanings? How do you know which one is meant?",
+  "media": []
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "title": "Be the AI: Next-Word Game",
+  "text": [
+   "Be the AI: Next-Word Game",
+   "PRACTICAL 3 · 10 MIN · WHOLE CLASS",
+   "1. Trainer starts",
+   "“Every morning I …”",
+   "2. Add ONE word",
+   "each",
+   "Choose a word that",
+   "makes sense",
+   "3. Read it together",
+   "That is how AI writes!"
+  ],
+  "notes": "PRACTICAL 3 · 10 MINUTES · WHOLE CLASS\nLet us be the AI. I start a sentence: 'Every morning I...'. Going round the room, each person adds ONE word that makes sense.\nTry to choose a likely word, like the AI does. After 10 to 15 words, read the sentence together.\nThis is how AI writes: one likely word at a time. It does not 'know' the whole sentence before it starts.",
+  "media": []
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "title": "Hallucinations",
+  "text": [
+   "Hallucinations",
+   "AI is a helper. You are in charge."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "title": "AI Can Be Wrong",
+  "text": [
+   "AI Can Be Wrong",
+   "AI sometimes makes things",
+   "up.",
+   "It sounds sure, but it is wrong.",
+   "Name: “hallucination”"
+  ],
+  "notes": "Sometimes AI makes things up. It writes something that sounds very sure, but it is wrong.\nExperts call this a 'hallucination'.\nWhy? The AI is built to give a likely-sounding answer, not to check if it is true. When it does not know, it may fill the gap.\nINTERPRETER: hallucination = when AI invents wrong information.",
+  "media": []
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "title": "Common AI Mistakes",
+  "text": [
+   "Common AI Mistakes",
+   "Fake facts",
+   "Wrong dates,",
+   "names, numbers",
+   "Fake sources",
+   "Links that do not",
+   "exist",
+   "Bad maths",
+   "Wrong sums",
+   "Old",
+   "information",
+   "Rules or prices",
+   "that changed"
+  ],
+  "notes": "Four common mistakes.\nFake facts: wrong dates, names or numbers. Fake sources: links, books or laws that do not exist. Bad maths: wrong sums. Old information: rules, prices or phone numbers that have changed.\nWhy is old information a big problem for things like rules and offices?",
+  "media": []
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "title": "Why Does AI Make Things Up?",
+  "text": [
+   "Why Does AI Make Things Up?",
+   "Main reason: AI is built to give an answer that sounds right, not to check if it is",
+   "true.",
+   "Not enough",
+   "data",
+   "It knows little about",
+   "the topic",
+   "Bad data",
+   "It learned mistakes",
+   "and rumours",
+   "Unclear",
+   "question",
+   "So it guesses what",
+   "you mean",
+   "No rules given",
+   "Nobody said: “Say I",
+   "don’t know”",
+   "False idea in the",
+   "question",
+   "It believes it and",
+   "builds on it",
+   "Built to guess",
+   "It predicts words. It",
+   "does not “know”."
+  ],
+  "notes": "Why does AI make things up? The main reason: AI is built to give an answer that SOUNDS right. It does not check if the answer is TRUE. When it does not have good information, it fills the gap with a guess.\nSix reasons:\n1. Not enough data: it saw very little about the topic, for example a small town.\n2. Bad data: it learned from information with mistakes or rumours.\n3. Unclear question: your prompt was not clear, so it guessed what you meant.\n4. No rules: nobody told it to stick to facts or to say 'I don't know'.\n5. A false idea in the question: if your question has a wrong fact in it, the AI often believes it and builds on it.\n6. Built to guess: it predicts the next word. It does not really 'know' facts.\nWhich of these can YOU fix with a better prompt? (Number 3 and number 4.)\nINTERPRETER: rumour = a story people repeat that may not be true.",
+  "media": []
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "title": "Always Check",
+  "text": [
+   "Always Check",
+   "Ask: “How sure are",
+   "you?”",
+   "Check an official",
+   "website",
+   "Ask a real person",
+   "Legal, medical or money decision? Always ask a qualified person,",
+   "not only AI."
+  ],
+  "notes": "Three ways to check an AI answer.\n1. Ask the AI: 'Where did you get this? How sure are you?'\n2. Check an official website or a trusted organisation.\n3. Ask a real person who knows: a teacher, a caseworker, a community leader.\nFor legal, medical or money decisions, ALWAYS ask a qualified person. Never rely only on AI.\nINTERPRETER: Please stress the red box.",
+  "media": []
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "title": "How to Get Fewer Mistakes",
+  "text": [
+   "How to Get Fewer Mistakes",
+   "What YOU can do",
+   "“Answer only from this text: …”",
+   "“If you are not sure, say so.”",
+   "“Tell me your sources.” Then check them.",
+   "Use a trusted tool. Write a clear prompt.",
+   "What AI builders do",
+   "Better data: correct labels",
+   "People check the answers",
+   "Special AI for special jobs",
+   "Golden rule: sounding good is not the same as true. Always check."
+  ],
+  "notes": "We cannot stop AI mistakes completely, but we can make them fewer.\nWHAT YOU CAN DO: Use a trusted AI tool. Write a clear prompt. Give the AI the text to use: 'Answer only from this letter.' Allow it to say it does not know: 'If you are not sure, say so.' Ask for sources, then check each one yourself.\nWHAT AI BUILDERS DO: They use better data: correct, clean, well-labelled examples. This is why careful data labelling work matters! They also keep people checking the answers, and make special AI for special jobs, like medicine.\nGOLDEN RULE: Sounding good is not the same as being true. Always check before you use or share an AI answer.\nINTERPRETER: source = where the information comes from.",
+  "media": []
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "title": "Hallucination Hunt",
+  "text": [
+   "Hallucination Hunt",
+   "PRACTICAL 4 · 15 MIN · PAIRS",
+   "Your job: catch the AI making things up. Then fix the prompt.",
+   "1. Ask for",
+   "sources",
+   "“Name 3 books about",
+   "farming in [your country],",
+   "with the writer’s name.”",
+   "Search for each book. Is",
+   "it real?",
+   "2. Ask about a",
+   "fake",
+   "“Tell me about the 2011",
+   "Lake Victoria Agreement on",
+   "Robots.”",
+   "It does not exist! Does",
+   "the AI say so?",
+   "3. Fix the prompt",
+   "Add: “If you are not sure, or",
+   "it does not exist, say so.”",
+   "What changed in the",
+   "answer?"
+  ],
+  "notes": "PRACTICAL 4 · 15 MINUTES · PAIRS\nUse any AI chat. Your job is to catch the AI making things up, then fix the prompt.\nTASK 1, ask for sources: type the prompt on the card. Then search for each book on the internet. Is it real, fake, or partly real? (AI often invents book titles and writers.)\nTASK 2, ask about something fake: the '2011 Lake Victoria Agreement on Robots' does NOT exist. Does the AI say so, or does it invent a story?\nTASK 3, fix the prompt: repeat task 1 or 2 and add: 'If you are not sure, or it does not exist, say so.' What changed?\nSHARE: Who caught the AI inventing something?\nREMINDER: Do not type private information.\nINTERPRETER: Learners can type the prompts in their own language.",
+  "media": []
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "title": "Talking to AI",
+  "text": [
+   "Talking to AI",
+   "Prompt Engineering: how to ask for what you need"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "title": "Try It: Train a Chatbot with Your Labels",
+  "text": [
+   "Try It: Train a Chatbot with Your Labels",
+   "TRY IT · 20 MIN · PHONE OR LAPTOP",
+   "1. Label",
+   "Tick the pieces of a good reply",
+   "2. Train",
+   "The bot learns only from you",
+   "3. Improve",
+   "Fix your labels, train again",
+   "Scan or open:",
+   "llmlabellab.vercel.app"
+  ],
+  "notes": "TRY IT · 15–20 MINUTES · ON A PHONE OR LAPTOP\nSAY: This is LLM Label Lab. You build good chatbot replies from small pieces, then chat with a bot that learned ONLY from your labels. Every careless label shows up in what the bot says.\nSTEP 1, label: tick the pieces that belong in a good reply.\nSTEP 2, train: the bot learns from your labels and answers questions.\nSTEP 3, improve: see what went wrong and why, fix your labels, and train again.\nTHE RULES FOR A GOOD REPLY: correct facts and sums; refuse harmful requests and offer a safe alternative; follow the format asked for; be kind and professional; use plain language.\nLOOK AT THE SCREENSHOT: a good label means the bot gets it right. A flawed label means the bot repeats the mistake (here it refuses to help someone use a neighbour's WiFi without asking, but then tells them to try the router's default passwords). A thin label means the bot hesitates.\nLINK TO PART 4: this is why AI makes mistakes, and why careful labelling work matters.\nNOTE: hints cost 10 points. This is a learning simulation, not a real AI model.\nLINK: https://llmlabellab.vercel.app/index.html",
+  "media": []
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "title": "What Is a Prompt?",
+  "text": [
+   "What Is a Prompt?",
+   "Translate “Good morning” into French.",
+   "Bonjour !",
+   "Prompt = your message",
+   "to the AI",
+   "Clear message → better",
+   "answer",
+   "Type it, or speak it"
+  ],
+  "notes": "A prompt is the message you type (or say) to the AI.\nHere, the person asks: 'Translate Good morning into French.' The AI answers: 'Bonjour!'\nA clear message gives a better answer. Learning to write clear prompts is called prompt engineering.\nINTERPRETER: prompt = the message to the AI.",
+  "media": []
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "title": "Like Ordering Food",
+  "text": [
+   "Like Ordering Food",
+   "“Food, please.”",
+   "“Rice with chicken, not spicy,",
+   "to take away.”",
+   "The waiter must guess.",
+   "You get what you want.",
+   "AI is the waiter. Your order is the prompt."
+  ],
+  "notes": "Talking to AI is like ordering in a restaurant.\nIf you say only 'Food, please', the waiter does not know what to bring.\nIf you say 'Rice with chicken, not spicy, to take away', you get what you want.\nAI is the waiter. Your order is the prompt.\nWhat would you order?",
+  "media": []
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "title": "Unclear vs Clear Prompt",
+  "text": [
+   "Unclear vs Clear Prompt",
+   "Unclear",
+   "Write about maize.",
+   "A long, general essay. Hard to read.",
+   "Clear",
+   "Write 100 words about growing maize",
+   "for new farmers. Use simple English.",
+   "Short, useful, easy to read.",
+   "Say what, for whom, how long and in what style."
+  ],
+  "notes": "Compare two prompts.\nThe first: 'Write about maize.' The AI writes a long, general essay. Maybe too hard, maybe the wrong topic.\nThe second says what to write, for whom, how long and in what style. The answer is short, useful and at the right level.\nWhat did the second prompt add? (Who it is for, how long, what language level.)",
+  "media": []
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "title": "Weak Prompt vs Strong Prompt",
+  "text": [
+   "Weak Prompt vs Strong Prompt",
+   "Weak prompt",
+   "“Write about climate change.”",
+   "No role",
+   "No audience",
+   "No length",
+   "No local examples",
+   "Result: a long, general text",
+   "Strong prompt",
+   "“You are a friendly teacher. Write 150 words for adults",
+   "learning English. Explain 3 ways climate change affects",
+   "farming in West Africa, and what families can do. Use",
+   "simple words.”",
+   "Role: a friendly teacher",
+   "Audience: adults learning English",
+   "Length: 150 words",
+   "Local: farming in West Africa",
+   "Result: short, useful, right level"
+  ],
+  "notes": "Look at the difference.\nWEAK: 'Write about climate change.' No role, no audience, no length, no local examples. The AI writes a long, general text that is hard to use.\nSTRONG: it gives a role (a friendly teacher), the audience (adults learning English), a clear task (3 ways climate change affects farming in West Africa, and what families can do), a length (150 words) and a style (simple words).\nRESULT: a short, useful text that fits the reader.\nChange the strong prompt",
+  "media": []
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "title": "4 Parts of a Good Prompt",
+  "text": [
+   "4 Parts of a Good Prompt",
+   "1. Task",
+   "What to do",
+   "2. Background",
+   "Who it is for, and",
+   "why",
+   "3. Information",
+   "The facts or text",
+   "to use",
+   "4. Answer",
+   "style",
+   "How long, what",
+   "format, what",
+   "language"
+  ],
+  "notes": "A good prompt can have four parts. You do not always need all four.\n1. Task: what the AI should do. 2. Background: who it is for, why you need it. 3. Information: the text or facts it should use. 4. Answer style: how long, what format, what language.\nINTERPRETER: Expert names: instruction, context, input data, output indicator. The simple names are enough.",
+  "media": []
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "title": "5 Parts of a Strong Prompt",
+  "text": [
+   "5 Parts of a Strong Prompt",
+   "1. Role",
+   "Who the AI should be",
+   "“You are a business adviser for small shops in West Africa.”",
+   "2. Task",
+   "What to do (action words)",
+   "“Give me 5 ideas to sell more shea butter.”",
+   "3. Background",
+   "Your situation and limits",
+   "“I sell at a market. My budget is very small.”",
+   "4. Example",
+   "The answer style you want",
+   "“Answer like this: Idea: … Why: …”",
+   "5. Answer style",
+   "Format, length, language",
+   "“A short numbered list. Simple English.”"
+  ],
+  "notes": "For bigger tasks, a strong prompt can have five parts. We already know task, background and answer style. Two new parts: a ROLE and an EXAMPLE.\n1. Role: who the AI should be: 'You are a business adviser for small shops in West Africa.'\n2. Task: exactly what to do. Use action words: write, list, compare, explain.\n3. Background: your situation, who it is for, your limits.\n4. Example: show one example of the answer you want. Examples stop many mistakes.\n5. Answer style: list or table, how long, which language.\nPut them together and you get one strong prompt about selling shea butter.\nINTERPRETER: The example is about a small market business. Change it to a business the group knows.",
+  "media": []
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "title": "7 Golden Rules for Prompts",
+  "text": [
+   "7 Golden Rules for Prompts",
+   "1. Be specific",
+   "What, for whom, how long",
+   "2. Give a role",
+   "“You are a friendly teacher…”",
+   "3. Give background",
+   "Your situation and your goal",
+   "4. Say the format",
+   "A list, a table, 5 points",
+   "5. Show an example",
+   "“Answer like this: …”",
+   "6. Improve it",
+   "“Make it shorter.” “Simpler words.”",
+   "7. Small steps",
+   "Break a big job into small prompts"
+  ],
+  "notes": "1. Be specific: say what you want, for whom, and how long.\n2. Give a role: 'You are a friendly teacher.'\n3. Give background: your situation and your goal.\n4. Say the format: a list, a table, 5 points, 2 sentences each.\n5. Show an example of what you want.\n6. Improve it: the first answer is rarely perfect. Say 'Make it shorter' or 'Use simpler words'.\n7. Small steps: break a big job into several small prompts, one after another (expert word: prompt chaining).\nTIP: Learners can take a photo of this slide to keep.",
+  "media": []
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "title": "Tip 1: Start Simple, Then Improve",
+  "text": [
+   "Tip 1: Start Simple, Then Improve",
+   "Write",
+   "Send",
+   "Read",
+   "Improve",
+   "Then say:",
+   "“Make it shorter.”",
+   "“Use simpler",
+   "words.”",
+   "“Add a title.”"
+  ],
+  "notes": "Nobody writes the perfect prompt the first time.\nWrite a simple prompt. Send it. Read the answer. Then improve your prompt, or ask for changes. Repeat.\nEXAMPLE: 'Make it shorter.' 'Use simpler words.' 'Add a title.'",
+  "media": []
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "title": "Tip 2: Be Specific",
+  "text": [
+   "Tip 2: Be Specific",
+   "Who is it for?",
+   "How long?",
+   "What style?",
+   "What",
+   "language?",
+   "Explain how to make a monthly budget, for a beginner, in 5 short",
+   "steps, in simple English."
+  ],
+  "notes": "Give details. Ask yourself four questions: Who is it for? How long should it be? What style? What language?\nEXAMPLE: 'Explain how to make a monthly budget, for a beginner, in 5 short steps, in simple English.'\nChange the example for your own life.",
+  "media": []
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "title": "Tip 3: Say What TO Do",
+  "text": [
+   "Tip 3: Say What TO Do",
+   "Weak",
+   "Clear",
+   "“Don’t use difficult words.”",
+   "“Use simple words a",
+   "12-year-old understands.”",
+   "Tell the AI what TO do."
+  ],
+  "notes": "Tell the AI what to do, not only what not to do.\n'Don't use difficult words' is weak. 'Use simple words a 12-year-old understands' is clear.\nHow can we change 'Don't make it long' into what TO do? (Answer: 'Use 3 sentences.')",
+  "media": []
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "title": "Use Your Own Language",
+  "text": [
+   "Use Your Own Language",
+   "Explain what a CV is. Answer in English and in",
+   "Arabic.",
+   "A CV is a short document about your work and",
+   "skills …",
+   "[The same answer in Arabic]",
+   "Ask in your language",
+   "Get answers in two",
+   "languages",
+   "Check important",
+   "things with a person",
+   "Choose any language: French, Swahili, Arabic,",
+   "Amharic, Somali …"
+  ],
+  "notes": "Many AI tools understand many languages. You can write your prompt in your own language.\nYou can also ask for the answer in another language, or in two languages side by side.\nCAREFUL: The AI is often less accurate in some languages. For important things, check with a person who speaks the language well.\nWhich language would you like to try?",
+  "media": []
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "title": "Fix the Bad Prompt",
+  "text": [
+   "Fix the Bad Prompt",
+   "PRACTICAL 5 · 15 MIN · PAIRS",
+   "“Write a CV.”",
+   "“Tell me about",
+   "jobs.”",
+   "“Make a menu.”",
+   "Add the 4 parts:",
+   "Task",
+   "Background",
+   "Information",
+   "Answer style",
+   "Then try both prompts. Which answer is better?"
+  ],
+  "notes": "PRACTICAL 5 · 15 MINUTES · PAIRS\nHere are three weak prompts. With your partner, choose one and make it better. Add the four parts: task, background, information, answer style.\nThen try both prompts, the weak one and your better one, in the AI. Compare the answers.\nSHARE: Two pairs read their new prompt aloud.\nEXAMPLE: 'Write a CV' → 'Write a one-page CV for a tailor with 6 years of experience who wants work in a clothing shop. Use simple headings.'",
+  "media": []
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "title": "What AI Can Do for You",
+  "text": [
+   "What AI Can Do for You",
+   "Summarise",
+   "Make a long text short",
+   "Translate",
+   "Between many languages",
+   "Explain",
+   "Hard ideas in simple words",
+   "Write",
+   "Messages, letters, CVs",
+   "Plan",
+   "A budget, a study plan",
+   "Practise",
+   "A job interview, a new language"
+  ],
+  "notes": "Here are six useful things AI can help with.\nSummarise: make a long text short. Translate. Explain hard ideas simply. Write messages, letters or a CV. Plan a budget or a study plan. Practise: for example, a job interview or a new language.\nWhich one will you try first?",
+  "media": []
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "title": "Example: Understand a Letter",
+  "text": [
+   "Example: Understand a Letter",
+   "Explain this letter in simple words. Then list what I",
+   "must do, and by when.",
+   "[letter text, with names and numbers removed]",
+   "This letter is about … You must:",
+   "1. Bring a document",
+   "2. Go to the office by 15 March",
+   "First remove names and",
+   "numbers",
+   "Check official letters with a",
+   "person"
+  ],
+  "notes": "Did you get a letter that is hard to understand? AI can explain it in simple words and list what you must do.\nIMPORTANT: First remove your name, numbers and address. Replace them with [NAME], [NUMBER].\nIMPORTANT: For official letters, always check the meaning with a real person or the office that sent it.",
+  "media": []
+ },
+ {
+  "n": 57,
+  "hidden": false,
+  "title": "Example: Write Your CV",
+  "text": [
+   "Example: Write Your CV",
+   "Help me write a one-page CV. I was a tailor",
+   "for 6 years. I speak Arabic and English. I want",
+   "work in a clothing shop. Use simple",
+   "headings.",
+   "Your CV",
+   "Profile",
+   "Skills",
+   "Work experience",
+   "Languages",
+   "Check every line. Remove anything",
+   "that is not true."
+  ],
+  "notes": "AI can help you write a CV (a document about your work and skills).\nGive it your real experience and the job you want. It suggests a clear layout.\nCheck every line. The AI may add skills you do not have. Remove anything that is not true.\nWhat job would you write a CV for?",
+  "media": []
+ },
+ {
+  "n": 58,
+  "hidden": false,
+  "title": "Example: Practise a Job Interview",
+  "text": [
+   "Example: Practise a Job Interview",
+   "Act as an interviewer for a cashier job. Ask me one",
+   "question at a time. After each answer, give me one tip.",
+   "Question 1: Tell me a little about yourself.",
+   "I worked in a shop for two years …",
+   "Good start! Tip: add one thing you did well.",
+   "Give the AI a role",
+   "“Act as …”"
+  ],
+  "notes": "You can ask the AI to play a role. Here, it acts as an interviewer.\nIt asks one question at a time. You answer. It gives you tips to improve.\nThis is a safe way to practise before a real interview. You can also practise a new language this way.\nTRY: 'Act as a friendly English teacher. Talk with me about shopping. Correct my mistakes.'",
+  "media": []
+ },
+ {
+  "n": 59,
+  "hidden": false,
+  "title": "Same Question, Different Level",
+  "text": [
+   "Same Question, Different Level",
+   "How do phones connect to the internet?",
+   "“… for an engineer”",
+   "“… for a 10-year-old”",
+   "Radio signals, cell towers, data packets,",
+   "protocols …",
+   "Your phone talks to a tall tower using",
+   "invisible waves, like a walkie-talkie."
+  ],
+  "notes": "One small change in the prompt changes the whole answer.\nAsk the same question, but say who the answer is for. An answer for an engineer uses technical words. An answer for a 10-year-old uses simple words and examples.\nTIP: When an answer is too difficult, add: 'Explain it for a 10-year-old.'",
+  "media": []
+ },
+ {
+  "n": 60,
+  "hidden": false,
+  "title": "3 Smart Tricks",
+  "text": [
+   "3 Smart Tricks",
+   "Give an example",
+   "“Answer like this: …”",
+   "Step by step",
+   "“Think step by step.”",
+   "Give a role",
+   "“Act as a friendly",
+   "teacher.”"
+  ],
+  "notes": "Three tricks that make answers better.\n1. Give an example: show the AI one example of the answer you want. It copies the pattern. (Experts: few-shot prompting.)\n2. Step by step: for maths or planning, add 'Think step by step.' The AI makes fewer mistakes. (Chain of thought.)\n3. Give a role: 'Act as a friendly teacher.' (Role prompting.)",
+  "media": []
+ },
+ {
+  "n": 61,
+  "hidden": false,
+  "title": "A Prompt for Your Life",
+  "text": [
+   "A Prompt for Your Life",
+   "PRACTICAL 6 · 20 MIN · ON YOUR OWN",
+   "1. Choose",
+   "Something you",
+   "need this week",
+   "2. Write",
+   "Use the 4 parts",
+   "3. Test and",
+   "improve",
+   "At least once",
+   "4. Share",
+   "Show your partner",
+   "No private information. Write [NAME] or [NUMBER] instead."
+  ],
+  "notes": "PRACTICAL 6 · 20 MINUTES · ON YOUR OWN\nChoose one thing you really need this week. Ideas: a message to an employer, a study plan for a language, a weekly food budget, a simple recipe with cheap ingredients.\nWrite a prompt with the four parts. Test it. Improve it at least once. Then show your partner.\nREMINDER: No private information. Use [NAME] and [NUMBER] instead.\nINTERPRETER: Help people write in their own language if they prefer.",
+  "media": []
+ },
+ {
+  "n": 62,
+  "hidden": false,
+  "title": "DATAMAKER TRAINING CENTER",
+  "text": [
+   "DATAMAKER TRAINING CENTER",
+   "Thank you",
+   "Keep learning. Keep building.",
+   "Questions?"
+  ],
+  "notes": "Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.\nKeep practising, a little every day. Take questions.\nINTERPRETER: Thank you for your help today.",
+  "media": []
+ }
+]
