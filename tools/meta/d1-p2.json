@@ -1,6 +1,6 @@
 [
  {
-  "n": 77,
+  "n": 76,
   "hidden": false,
   "title": "Data Labeling Training Guide",
   "text": [
@@ -11,7 +11,7 @@
   "media": []
  },
  {
-  "n": 78,
+  "n": 77,
   "hidden": false,
   "title": "Foundations & Bounding Box",
   "text": [
@@ -53,7 +53,7 @@
   "media": []
  },
  {
-  "n": 79,
+  "n": 78,
   "hidden": false,
   "title": "data Labeling Training   ·  ITC KENYA x datamaker",
   "text": [
@@ -67,7 +67,7 @@
   "media": []
  },
  {
-  "n": 80,
+  "n": 79,
   "hidden": false,
   "title": "What is a Bounding-box?",
   "text": [
@@ -101,7 +101,7 @@
   ]
  },
  {
-  "n": 81,
+  "n": 80,
   "hidden": false,
   "title": "Examples of Polyline Annotation",
   "text": [
@@ -111,7 +111,7 @@
   "media": []
  },
  {
-  "n": 82,
+  "n": 81,
   "hidden": false,
   "title": "How to Draw a B-Box?",
   "text": [
@@ -140,7 +140,7 @@
   ]
  },
  {
-  "n": 83,
+  "n": 82,
   "hidden": false,
   "title": "Move a box",
   "text": [
@@ -169,7 +169,7 @@
   ]
  },
  {
-  "n": 84,
+  "n": 83,
   "hidden": false,
   "title": "Expand the image or reduce the image(Zoom)",
   "text": [
@@ -198,7 +198,7 @@
   ]
  },
  {
-  "n": 85,
+  "n": 84,
   "hidden": false,
   "title": "Reduce image transparency",
   "text": [
@@ -209,7 +209,7 @@
   "media": []
  },
  {
-  "n": 86,
+  "n": 85,
   "hidden": false,
   "title": "Reduce image transparency",
   "text": [
@@ -220,7 +220,7 @@
   "media": []
  },
  {
-  "n": 87,
+  "n": 86,
   "hidden": false,
   "title": "Categories",
   "text": [
@@ -246,7 +246,7 @@
   "media": []
  },
  {
-  "n": 88,
+  "n": 87,
   "hidden": false,
   "title": "Main Category",
   "text": [
@@ -280,7 +280,7 @@
   ]
  },
  {
-  "n": 89,
+  "n": 88,
   "hidden": false,
   "title": "Turn on or off Labels or borders",
   "text": [
@@ -315,7 +315,7 @@
   ]
  },
  {
-  "n": 90,
+  "n": 89,
   "hidden": false,
   "title": "Turn on or off Guideline",
   "text": [
@@ -349,7 +349,7 @@
   ]
  },
  {
-  "n": 91,
+  "n": 90,
   "hidden": false,
   "title": "Using the Pen tool",
   "text": [
@@ -360,7 +360,7 @@
   "media": []
  },
  {
-  "n": 92,
+  "n": 91,
   "hidden": false,
   "title": "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
   "text": [
@@ -371,7 +371,7 @@
   "media": []
  },
  {
-  "n": 93,
+  "n": 92,
   "hidden": false,
   "title": "Draw from the Shoulder",
   "text": [
@@ -400,7 +400,7 @@
   ]
  },
  {
-  "n": 94,
+  "n": 93,
   "hidden": false,
   "title": "Overusing the wrist leads to inflammation",
   "text": [
@@ -429,7 +429,7 @@
   ]
  },
  {
-  "n": 95,
+  "n": 94,
   "hidden": false,
   "title": "Keep Your Grip As Light As Possible",
   "text": [
@@ -458,7 +458,7 @@
   ]
  },
  {
-  "n": 96,
+  "n": 95,
   "hidden": false,
   "title": "CCTV Bounding Box project",
   "text": [
@@ -469,7 +469,7 @@
   "media": []
  },
  {
-  "n": 97,
+  "n": 96,
   "hidden": false,
   "title": "This file is intended for training",
   "text": [
@@ -483,7 +483,7 @@
   "media": []
  },
  {
-  "n": 98,
+  "n": 97,
   "hidden": false,
   "title": "Project overview",
   "text": [
@@ -496,7 +496,7 @@
   "media": []
  },
  {
-  "n": 99,
+  "n": 98,
   "hidden": false,
   "title": "Warning",
   "text": [
@@ -508,7 +508,7 @@
   "media": []
  },
  {
-  "n": 100,
+  "n": 99,
   "hidden": false,
   "title": "Purpose of the project",
   "text": [
@@ -528,7 +528,7 @@
   "media": []
  },
  {
-  "n": 101,
+  "n": 100,
   "hidden": false,
   "title": "Labeling target",
   "text": [
@@ -550,7 +550,7 @@
   "media": []
  },
  {
-  "n": 102,
+  "n": 101,
   "hidden": false,
   "title": "Labeling criteria",
   "text": [
@@ -562,7 +562,7 @@
   "media": []
  },
  {
-  "n": 103,
+  "n": 102,
   "hidden": false,
   "title": "Labeling criteria",
   "text": [
@@ -573,7 +573,7 @@
   "media": []
  },
  {
-  "n": 104,
+  "n": 103,
   "hidden": false,
   "title": "Labeling detail",
   "text": [
@@ -584,7 +584,7 @@
   "media": []
  },
  {
-  "n": 105,
+  "n": 104,
   "hidden": false,
   "title": "Precaution",
   "text": [
@@ -594,7 +594,7 @@
   "media": []
  },
  {
-  "n": 106,
+  "n": 105,
   "hidden": false,
   "title": "License plate labeling",
   "text": [
@@ -605,7 +605,7 @@
   "media": []
  },
  {
-  "n": 107,
+  "n": 106,
   "hidden": false,
   "title": "If a car's license plate is obscured, please estimate the original range and label it accordingly.",
   "text": [
@@ -616,7 +616,7 @@
   "media": []
  },
  {
-  "n": 108,
+  "n": 107,
   "hidden": false,
   "title": "License plate labeling",
   "text": [
@@ -627,7 +627,7 @@
   "media": []
  },
  {
-  "n": 109,
+  "n": 108,
   "hidden": false,
   "title": "Thank You",
   "text": [

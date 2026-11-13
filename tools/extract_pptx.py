@@ -7,7 +7,7 @@ usage: python3 tools/extract_pptx.py <day> <deck.pptx> [--start N --part NAME]
 Writes tools/meta/d<day>-slides.json and copies media into assets/day<day>/media/:
   - GIFs unchanged
   - videos re-encoded to H.264 MP4 (web size, trimmed as in the PPTX), plus a poster .jpg;
-    Day 2 and Day 3 videos have their sound removed (NO_AUDIO_DAYS)
+    Day 2 and Day 3 videos have their sound removed (NO_AUDIO_DAYS), except the slides in KEEP_AUDIO
 
 Per slide: title (for the overview), all slide text (image alt text), speaker notes, and
 each GIF / video with its frame as % of the slide, its crop (srcRect) and playback flags.
@@ -33,6 +33,8 @@ R = '{%s}' % NS['r']
 REL = 'http://schemas.openxmlformats.org/package/2006/relationships'
 # Days whose videos are published without sound.
 NO_AUDIO_DAYS = {2, 3}
+# Slides on those days whose videos keep their sound: {day: {slide numbers}}.
+KEEP_AUDIO = {3: {46, 49}}
 ANIM = re.compile(r'\.(gif|mp4|mov|m4v|avi|wmv)$', re.I)
 
 
@@ -230,7 +232,7 @@ def main(day, pptx, start=1, part=None):
                     with z.open(target) as fi, open(raw, 'wb') as fo:
                         while chunk := fi.read(1 << 22):
                             fo.write(chunk)
-                encode_video(raw, os.path.join(mdir, f'{base}.mp4'), trim, keep_audio=day not in NO_AUDIO_DAYS)
+                encode_video(raw, os.path.join(mdir, f'{base}.mp4'), trim, keep_audio=day not in NO_AUDIO_DAYS or n in KEEP_AUDIO.get(day, ()))
                 poster = f'{base}-poster.jpg'
                 with open(os.path.join(tmp, 'poster' + os.path.splitext(embed)[1]), 'wb') as f:
                     f.write(z.read(embed))

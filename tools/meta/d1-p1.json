@@ -88,7 +88,7 @@
    "Graduation, photos, next steps & close",
    "Both",
    "PROGRAMME SCHEDULE",
-   "AI DATA-Labeling TRAINING",
+   "AI Data-Labeling Training",
    "Five Days at a Glance"
   ],
   "notes": "Each day runs 09:00 to 14:00 in three blocks, with a short break at 10:45 and lunch at 12:15. Days 1 to 3 cover the Labeling techniques (bounding box, polyline, polygon, segmentation and an introduction to point clouds). Day 4 covers quality assurance with a live client-style inspection, then Generative AI and prompt engineering. Day 5 is the applied vibe-coding project, showcase and graduation.",
@@ -290,17 +290,6 @@
  {
   "n": 9,
   "hidden": false,
-  "title": "Many companies and institutions are working with datamaker",
-  "text": [
-   "Many companies and institutions are working with datamaker",
-   "Overview l 고객사 및 파트너사"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 10,
-  "hidden": false,
   "title": "Business Model",
   "text": [
    "Business Model",
@@ -343,7 +332,7 @@
    "X",
    "X",
    "Unparalleled data labelling quality and operational expertise",
-   "Proven via major corporate clients, datamakers skillful labelers with      acceptance rate of 60:1 and 6 years of experience  deliver high quality      data labeling work",
+   "Proven via major corporate clients, datamaker’s skillful labelers with      acceptance rate of 60:1 and 6 years of experience  deliver high quality      data labeling work",
    "Secondary data quality assurance activity is executed using      an automated defective data verification system",
    "Solve the disadvantages of high labor costs by utilizing overseas data labs",
    "Minimize manual data labeling work by Korea’s highest level      automatic data labeling technology",
@@ -367,7 +356,7 @@
   "media": []
  },
  {
-  "n": 11,
+  "n": 10,
   "hidden": false,
   "title": "‘Ghana Data Lab’ has an overwhelming price competitive advantage",
   "text": [
@@ -466,7 +455,7 @@
   "media": []
  },
  {
-  "n": 12,
+  "n": 11,
   "hidden": false,
   "title": "Many companies and institutions are working with datamaker",
   "text": [
@@ -477,7 +466,7 @@
   "media": []
  },
  {
-  "n": 13,
+  "n": 12,
   "hidden": false,
   "title": "datamaker Ghana",
   "text": [
@@ -510,12 +499,23 @@
   ]
  },
  {
+  "n": 13,
+  "hidden": false,
+  "title": "13",
+  "text": [
+   "13",
+   "datamaker Ghana DATA LAB A (49 seats)"
+  ],
+  "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
+  "media": []
+ },
+ {
   "n": 14,
   "hidden": false,
   "title": "14",
   "text": [
    "14",
-   "datamaker Ghana DATA LAB A 49seats"
+   "datamaker Ghana DATA LAB B (33 seats)"
   ],
   "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
   "media": []
@@ -526,24 +526,13 @@
   "title": "15",
   "text": [
    "15",
-   "datamaker Ghana DATA LAB B 33seats"
-  ],
-  "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
-  "media": []
- },
- {
-  "n": 16,
-  "hidden": false,
-  "title": "16",
-  "text": [
-   "16",
-   "datamaker Ghana TRAINING CENTRE(20seats)"
+   "datamaker Ghana TRAINING CENTRE (20 seats)"
   ],
   "notes": "Data lab B also manages remote labelers and performs the most LabelingFrom trainees to workers, training based on capacity building and practice",
   "media": []
  },
  {
-  "n": 17,
+  "n": 16,
   "hidden": false,
   "title": "Colonoscopy (colonoscopy) polyp detection solution demonstrationIn collaboration with the University of Ghana Medical Center\nApplying and Demonstrating Solutions to Local Endoscopy Equipment",
   "text": [
@@ -561,7 +550,7 @@
   "media": []
  },
  {
-  "n": 18,
+  "n": 17,
   "hidden": false,
   "title": "Introduction to Artificial Intelligence",
   "text": [
@@ -573,7 +562,7 @@
   "media": []
  },
  {
-  "n": 19,
+  "n": 18,
   "hidden": false,
   "title": "Text",
   "text": [
@@ -621,7 +610,7 @@
   "media": []
  },
  {
-  "n": 20,
+  "n": 19,
   "hidden": false,
   "title": "Artificial Intelligence, Machine Learning and Data",
   "text": [
@@ -646,7 +635,7 @@
   "media": []
  },
  {
-  "n": 21,
+  "n": 20,
   "hidden": false,
   "title": "",
   "text": [],
@@ -680,7 +669,7 @@
   ]
  },
  {
-  "n": 22,
+  "n": 21,
   "hidden": false,
   "title": "From Baby to Genius: How AI Learns",
   "text": [
@@ -742,7 +731,7 @@
   "media": []
  },
  {
-  "n": 23,
+  "n": 22,
   "hidden": false,
   "title": "Datamaker and data-Labeling",
   "text": [
@@ -775,7 +764,7 @@
   ]
  },
  {
-  "n": 24,
+  "n": 23,
   "hidden": false,
   "title": "SYNAPSE-MEDI",
   "text": [
@@ -796,7 +785,7 @@
   "media": []
  },
  {
-  "n": 25,
+  "n": 24,
   "hidden": false,
   "title": "Automatic detection of polyp areas in colonoscopy images/images",
   "text": [
@@ -834,7 +823,7 @@
   ]
  },
  {
-  "n": 26,
+  "n": 25,
   "hidden": false,
   "title": "Our Main Service Areas",
   "text": [
@@ -868,7 +857,7 @@
   "media": []
  },
  {
-  "n": 27,
+  "n": 26,
   "hidden": false,
   "title": "Semantic Segmentation",
   "text": [
@@ -897,7 +886,7 @@
   "media": []
  },
  {
-  "n": 28,
+  "n": 27,
   "hidden": false,
   "title": "Polyline",
   "text": [
@@ -919,7 +908,7 @@
   "media": []
  },
  {
-  "n": 29,
+  "n": 28,
   "hidden": false,
   "title": "Polygon",
   "text": [
@@ -941,7 +930,7 @@
   "media": []
  },
  {
-  "n": 30,
+  "n": 29,
   "hidden": false,
   "title": "Bounding Box",
   "text": [
@@ -963,7 +952,7 @@
   "media": []
  },
  {
-  "n": 31,
+  "n": 30,
   "hidden": false,
   "title": "Key Point",
   "text": [
@@ -985,7 +974,7 @@
   "media": []
  },
  {
-  "n": 32,
+  "n": 31,
   "hidden": false,
   "title": "LiDAR and Big Data",
   "text": [
@@ -1015,7 +1004,7 @@
   "media": []
  },
  {
-  "n": 33,
+  "n": 32,
   "hidden": false,
   "title": "3D Segmentation",
   "text": [
@@ -1043,7 +1032,7 @@
   "media": []
  },
  {
-  "n": 34,
+  "n": 33,
   "hidden": false,
   "title": "3D Bounding Box",
   "text": [
@@ -1065,7 +1054,7 @@
   "media": []
  },
  {
-  "n": 35,
+  "n": 34,
   "hidden": false,
   "title": "Where We Make an Impact",
   "text": [
@@ -1100,7 +1089,7 @@
   "media": []
  },
  {
-  "n": 36,
+  "n": 35,
   "hidden": false,
   "title": "An AI-Powered Society by 2035",
   "text": [
@@ -1130,6 +1119,40 @@
    "GHANA NATIONAL AI STRATEGY 2025–2035"
   ],
   "notes": "Lead with the vision, then go straight to the numbers. This strategy is unusually specific about targets, and that specificity is what makes it credible or not.\nNote the mission wording: it names artificial general intelligence, not just AI. Few national strategies do. Whether that is ambition or overreach is a fair discussion to have with the room.\nThe 1 million youth figure is the one closest to this audience — it is a commitment to exactly the kind of training programme they are part of.\nAll figures are in Ghanaian cedis as stated in the strategy; do not convert them on the fly.",
+  "media": []
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "title": "KENYA AI STRATEGY 2025–2030",
+  "text": [
+   "1 / 3",
+   "Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant.",
+   "VISION",
+   "To become a regional leader in AI research, development, innovation and commercialization for inclusive socioeconomic development.",
+   "CORE PURPOSE",
+   "Use local talent, data and innovation to improve economic      growth and public services across priority sectors.",
+   "PRIORITY SECTORS",
+   "Agriculture",
+   "Health",
+   "Education",
+   "Finance",
+   "Security",
+   "Government services",
+   "GUIDING PRINCIPLES",
+   "Inclusion",
+   "Public participation",
+   "Transparency and accountability",
+   "Privacy and safety",
+   "Cultural relevance",
+   "Environmental sustainability",
+   "Local-first approach",
+   "THE DEFINING CHOICE",
+   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts , rather than.           imported wholesale and adapted afterwards.",
+   "KENYA AI STRATEGY 2025–2030",
+   "KENYA AI STRATEGY"
+  ],
+  "notes": "Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.\nThe seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.\nThe Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.\nGood framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?",
   "media": []
  },
  {
@@ -1168,40 +1191,6 @@
  },
  {
   "n": 38,
-  "hidden": false,
-  "title": "KENYA AI STRATEGY 2025–2030",
-  "text": [
-   "1 / 3",
-   "Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant.",
-   "VISION",
-   "To become a regional leader in AI research, development, innovation and commercialization for inclusive socioeconomic development.",
-   "CORE PURPOSE",
-   "Use local talent, data and innovation to improve economic      growth and public services across priority sectors.",
-   "PRIORITY SECTORS",
-   "Agriculture",
-   "Health",
-   "Education",
-   "Finance",
-   "Security",
-   "Government services",
-   "GUIDING PRINCIPLES",
-   "Inclusion",
-   "Public participation",
-   "Transparency and accountability",
-   "Privacy and safety",
-   "Cultural relevance",
-   "Environmental sustainability",
-   "Local-first approach",
-   "THE DEFINING CHOICE",
-   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts , rather than.           imported wholesale and adapted afterwards.",
-   "KENYA AI STRATEGY 2025–2030",
-   "KENYA AI STRATEGY"
-  ],
-  "notes": "Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.\nThe seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.\nThe Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.\nGood framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?",
-  "media": []
- },
- {
-  "n": 39,
   "hidden": false,
   "title": "Three Pillars, Four Enablers",
   "text": [
@@ -1247,7 +1236,7 @@
   "media": []
  },
  {
-  "n": 40,
+  "n": 39,
   "hidden": false,
   "title": "Why Africa’s Participation in AI Matters",
   "text": [
@@ -1280,7 +1269,7 @@
   "media": []
  },
  {
-  "n": 41,
+  "n": 40,
   "hidden": false,
   "title": "datamaker Ghana data Labeling tool - SYNAPSE",
   "text": [
@@ -1313,7 +1302,7 @@
   ]
  },
  {
-  "n": 42,
+  "n": 41,
   "hidden": false,
   "title": ".",
   "text": [
@@ -1327,7 +1316,7 @@
   "media": []
  },
  {
-  "n": 43,
+  "n": 42,
   "hidden": false,
   "title": "SYNAPSE Platform and Practice",
   "text": [
@@ -1340,7 +1329,7 @@
   "media": []
  },
  {
-  "n": 44,
+  "n": 43,
   "hidden": false,
   "title": "Table of Content",
   "text": [
@@ -1359,7 +1348,7 @@
   "media": []
  },
  {
-  "n": 45,
+  "n": 44,
   "hidden": false,
   "title": "SYNAPSE INTRO",
   "text": [
@@ -1369,7 +1358,7 @@
   "media": []
  },
  {
-  "n": 46,
+  "n": 45,
   "hidden": false,
   "title": "SYNAPSE ENVIROMENT",
   "text": [
@@ -1383,7 +1372,7 @@
   "media": []
  },
  {
-  "n": 47,
+  "n": 46,
   "hidden": false,
   "title": "WEB-APP (https://platform.datamaker.io/auth/login)",
   "text": [
@@ -1394,7 +1383,7 @@
   "media": []
  },
  {
-  "n": 48,
+  "n": 47,
   "hidden": false,
   "title": "LANGUAGE SETTINGS",
   "text": [
@@ -1406,7 +1395,7 @@
   "media": []
  },
  {
-  "n": 49,
+  "n": 48,
   "hidden": false,
   "title": "DASHBOARD(Labeling)",
   "text": [
@@ -1419,7 +1408,7 @@
   "media": []
  },
  {
-  "n": 50,
+  "n": 49,
   "hidden": false,
   "title": "DASHBOARD(Labeling > Project page)",
   "text": [
@@ -1433,7 +1422,7 @@
   "media": []
  },
  {
-  "n": 51,
+  "n": 50,
   "hidden": false,
   "title": "DASHBOARD(Labelling > Project page)",
   "text": [
@@ -1447,7 +1436,7 @@
   "media": []
  },
  {
-  "n": 52,
+  "n": 51,
   "hidden": false,
   "title": "DASHBOARD(Labelling > Project page)",
   "text": [
@@ -1462,7 +1451,7 @@
   "media": []
  },
  {
-  "n": 53,
+  "n": 52,
   "hidden": false,
   "title": "DASHBOARD(Labelling > Project page)",
   "text": [
@@ -1479,7 +1468,7 @@
   "media": []
  },
  {
-  "n": 54,
+  "n": 53,
   "hidden": false,
   "title": "DASHBOARD(Labelling > Project page)",
   "text": [
@@ -1493,7 +1482,7 @@
   "media": []
  },
  {
-  "n": 55,
+  "n": 54,
   "hidden": false,
   "title": "DASHBOARD (Review dashboard)",
   "text": [
@@ -1506,7 +1495,7 @@
   "media": []
  },
  {
-  "n": 56,
+  "n": 55,
   "hidden": false,
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
@@ -1520,7 +1509,7 @@
   "media": []
  },
  {
-  "n": 57,
+  "n": 56,
   "hidden": false,
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
@@ -1534,7 +1523,7 @@
   "media": []
  },
  {
-  "n": 58,
+  "n": 57,
   "hidden": false,
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
@@ -1551,7 +1540,7 @@
   "media": []
  },
  {
-  "n": 59,
+  "n": 58,
   "hidden": false,
   "title": "LABELING TOOLS",
   "text": [
@@ -1561,7 +1550,7 @@
   "media": []
  },
  {
-  "n": 60,
+  "n": 59,
   "hidden": false,
   "title": "BOUNDING -BOX",
   "text": [
@@ -1594,7 +1583,7 @@
   ]
  },
  {
-  "n": 61,
+  "n": 60,
   "hidden": false,
   "title": "POLYGON SEGMENTATION",
   "text": [
@@ -1627,7 +1616,7 @@
   ]
  },
  {
-  "n": 62,
+  "n": 61,
   "hidden": false,
   "title": "POLYLINE",
   "text": [
@@ -1660,7 +1649,7 @@
   ]
  },
  {
-  "n": 63,
+  "n": 62,
   "hidden": false,
   "title": "KEYPOINTS",
   "text": [
@@ -1693,7 +1682,7 @@
   ]
  },
  {
-  "n": 64,
+  "n": 63,
   "hidden": false,
   "title": "3D- BOUNDING BOX",
   "text": [
@@ -1726,7 +1715,7 @@
   ]
  },
  {
-  "n": 65,
+  "n": 64,
   "hidden": false,
   "title": "3D- SEMANTIC SEGMENTATION",
   "text": [
@@ -1759,7 +1748,7 @@
   ]
  },
  {
-  "n": 66,
+  "n": 65,
   "hidden": false,
   "title": "SHORTCUTS",
   "text": [
@@ -1769,7 +1758,7 @@
   "media": []
  },
  {
-  "n": 67,
+  "n": 66,
   "hidden": false,
   "title": "Create/Delete",
   "text": [
@@ -1779,7 +1768,7 @@
   "media": []
  },
  {
-  "n": 68,
+  "n": 67,
   "hidden": false,
   "title": "Select/Move",
   "text": [
@@ -1789,7 +1778,7 @@
   "media": []
  },
  {
-  "n": 69,
+  "n": 68,
   "hidden": false,
   "title": "Cancel/Revert",
   "text": [
@@ -1799,7 +1788,7 @@
   "media": []
  },
  {
-  "n": 70,
+  "n": 69,
   "hidden": false,
   "title": "Image Size",
   "text": [
@@ -1809,7 +1798,7 @@
   "media": []
  },
  {
-  "n": 71,
+  "n": 70,
   "hidden": false,
   "title": "Show/Lock",
   "text": [
@@ -1819,7 +1808,7 @@
   "media": []
  },
  {
-  "n": 72,
+  "n": 71,
   "hidden": false,
   "title": "Display Mode",
   "text": [
@@ -1829,7 +1818,7 @@
   "media": []
  },
  {
-  "n": 73,
+  "n": 72,
   "hidden": false,
   "title": "Etc.",
   "text": [
@@ -1839,7 +1828,7 @@
   "media": []
  },
  {
-  "n": 74,
+  "n": 73,
   "hidden": false,
   "title": "Job Pathways After the Data Labeling Training",
   "text": [
@@ -1878,7 +1867,7 @@
   "media": []
  },
  {
-  "n": 75,
+  "n": 74,
   "hidden": false,
   "title": "Know SYNAPSE, Learn the Rest Faster",
   "text": [
@@ -1920,7 +1909,7 @@
   "media": []
  },
  {
-  "n": 76,
+  "n": 75,
   "hidden": false,
   "title": "Thank You",
   "text": [

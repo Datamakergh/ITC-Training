@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Day 5: Vibe Coding | Kenya ITC × datamaker</title>
-<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 :root{
@@ -449,50 +448,64 @@ html:fullscreen .print-panel,html:fullscreen .hint{display:none}
 
 body.embed .print-panel,body.embed .hint,body.embed .notes-overlay{display:none!important}
 
-/* ---- full-slide decks ----
-   The slide's own background artwork covers the whole screen (cropped, never stretched). The slide
-   content sits on it at its exact 16:9 shape, below a transparent top bar (day links + counter). */
-.slide.fullslide{background:#fff;color:var(--fg)}
-.fs-bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;display:block;z-index:0;user-select:none;
-  transform:scale(1.006)}  /* hides the 1-2px seam PowerPoint leaves on some artwork edges */
-.fs-top{flex:0 0 clamp(34px,4.4vh,48px);display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:0 clamp(14px,2vw,28px);color:var(--fg);font-family:Pretendard,'Inter',system-ui,sans-serif;
-  font-size:clamp(12px,1.5vh,15px);position:relative;z-index:3}
-.fs-menu{display:flex;align-items:center;gap:clamp(6px,1vw,12px);min-width:0}
-.fs-burger{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:4px;width:34px;height:30px;padding:0 8px;
-  border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer;opacity:.7}
-.fs-burger span{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
-.fs-burger:hover,.fs-burger:focus-visible{opacity:1;background:var(--hl);outline:none}
-body.nav-open .fs-burger{opacity:1;background:var(--hl)}
-body.nav-open .fs-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-body.nav-open .fs-burger span:nth-child(2){opacity:0}
-body.nav-open .fs-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.fs-nav{display:flex;align-items:center;gap:clamp(4px,.8vw,10px);min-width:0;overflow:hidden;
-  opacity:0;visibility:hidden;transform:translateX(-8px);transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
-body.nav-open .fs-nav{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
-.fs-nav a{color:inherit;opacity:.62;text-decoration:none;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
-.fs-nav a:hover{opacity:1;background:var(--hl)}
-.fs-nav a.on{opacity:1;font-weight:800;background:var(--hl)}
-.fs-top .slide-num{position:static;display:inline;background:none;padding:0;border-radius:0;box-shadow:none;
-  color:inherit;opacity:.75;font-size:inherit;font-weight:700;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
-.fs-area{flex:1;min-height:0;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;container-type:size}
-.fs-stage{position:relative;width:min(100cqw,calc(100cqh * 16 / 9));aspect-ratio:16/9}
-.fs-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block;user-select:none}
+/* ---- slideshow decks ----
+   Like PowerPoint's slideshow: the slide is scaled to fit the screen at 16:9, black bars fill the rest.
+   The menu button and slide number float in the corners and fade out when the mouse or finger is idle. */
+.deck{height:100vh;height:100dvh;background:#000;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+html,body{background:#000}
+.slide.fullslide{background:#000;color:#fff;transform:none;
+  opacity:0;z-index:0;transition:opacity 0s linear .45s}  /* the slide being left stays whole under the new one */
+.slide.fullslide.is-prev{transform:none}
+.slide.fullslide.is-active{opacity:1;z-index:2;transition:opacity .45s ease}  /* the new slide fades in on top */
+@media (prefers-reduced-motion:reduce){.slide.fullslide,.slide.fullslide.is-active{transition:none}}
+.fs-area{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;container-type:size;z-index:1}
+.fs-stage{position:relative;width:min(100cqw,calc(100cqh * 16 / 9));aspect-ratio:16/9;flex:0 0 auto}
+.fs-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block;user-select:none;-webkit-user-drag:none}
 .fs-media{position:absolute;overflow:hidden}
 .fs-media>img,.fs-media>video{position:absolute;max-width:none;object-fit:fill;display:block;background:transparent}
 .fs-media>video{cursor:pointer}
+.fs-toast{position:fixed;left:50%;bottom:6%;transform:translateX(-50%);z-index:60;pointer-events:none;
+  padding:.45em 1em;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:600 15px/1.2 system-ui,sans-serif;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .25s}
+.fs-toast.show{opacity:1}
+.fs-top{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;padding:clamp(8px,1.4vh,14px) clamp(8px,1.2vw,16px);pointer-events:none;
+  font-family:Pretendard,'Inter',system-ui,sans-serif;font-size:clamp(12px,1.5vh,15px);color:#fff}
+.fs-menu,.fs-top .slide-num{pointer-events:auto;opacity:0;transition:opacity .35s ease}
+body.ui-on .fs-menu,body.ui-on .fs-top .slide-num,body.nav-open .fs-menu{opacity:1}
+.fs-menu{display:flex;align-items:center;gap:6px;min-width:0;padding:4px;border-radius:12px;background:rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.fs-burger{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:4px;width:38px;height:34px;padding:0 10px;
+  border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer}
+.fs-burger span{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
+.fs-burger:hover,.fs-burger:focus-visible{background:rgba(255,255,255,.16);outline:none}
+body.nav-open .fs-burger{background:rgba(255,255,255,.16)}
+body.nav-open .fs-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.nav-open .fs-burger span:nth-child(2){opacity:0}
+body.nav-open .fs-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.fs-nav{display:none;align-items:center;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none}
+body.nav-open .fs-nav{display:flex}
+.fs-nav a{color:inherit;opacity:.7;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.fs-nav a:hover{opacity:1;background:rgba(255,255,255,.16)}
+.fs-nav a.on{opacity:1;font-weight:800;background:rgba(255,255,255,.16)}
+.fs-top .slide-num{position:static;top:0;display:inline-block;background:rgba(0,0,0,.55);padding:6px 12px;border-radius:999px;
+  box-shadow:none;color:#fff;font-size:inherit;font-weight:700;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.progress-bar{background:transparent;opacity:0;transition:opacity .35s ease}
+body.ui-on .progress-bar{opacity:1}
 .notes-overlay .nl-body,.note-page p{white-space:pre-line}
 .notes-overlay{transform:translateY(calc(100% + 8px))}  /* hidden panel used to peek 3px above the bottom edge */
 .notes-overlay.open{transform:translateY(0)}
-.progress-bar{background:transparent}
 .overview.open{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
 .overview .thumb{display:flex;align-items:center;justify-content:center;padding:0}
 .overview .thumb .n{position:static;font-size:22px;color:#fff}
 .overview .thumb .t{display:none}
 .overview .thumb.cur{border-color:var(--accent);background:#1e2a4d}
+@media (max-width:600px){.overview.open{padding:16px}}
 @media print{
-  .fs-top,.fs-media{display:none}
-  .fs-area{display:block;container-type:normal}
+  .fs-top,.fs-media,.fs-toast{display:none}
+  .slide.fullslide{background:#fff}
+  .fs-area{position:static;display:block;container-type:normal}
   .fs-stage{width:1280px;height:720px}
 }
 </style>
@@ -500,80 +513,80 @@ body.nav-open .fs-nav{opacity:1;visibility:visible;transform:none;transition:opa
 <body class="">
 <div class="deck">
 
-<section class="slide fullslide" id="s1" data-title="AI Essentials" style="--fg:#ffffff;--hl:rgba(255,255,255,.16)"><img class="fs-bg" src="assets/day5/bg/s01.jpg" alt=""><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s01.png" alt="AI Essentials / Build projects by describing them / Vibe Coding / AI Essentials / Build projects by describing them / Vibe Coding"></div></div><div class="notes" data-slide=""></div></section>
-<section class="slide fullslide" id="s2" data-title="Applied Project &amp; Graduation" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s02.jpg" alt=""><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s02.jpg" alt="1 / 2 / 3 / 4 / 5 / 09:00–10:45 / Vibe coding practice: build a website, portfolio or expense tracker / Emmanuel Owusu Appiah / 10:45–11:00 / Break / 11:00–11:45 / Project completion, showcase and Q&amp;A / Both facilitators / 11:45–12:30 / Testimonials, survey forms and programme feedback / ToT Trainees / 12:30–13:30 / Lunch break / 13:30–14:00 / Graduation ceremony and photography / Both facilitators / 14:00–14:15 / Programme Q&amp;A, next steps and close / Both facilitators / DAILY SCHEDULE / DAY 5 OF 5 / Applied Project &amp; Graduation"></div></div><div class="notes" data-slide="">Day 5 is the applied project: a full morning of vibe coding, where each trainee builds a website, portfolio or expense tracker, then a showcase, feedback forms and testimonials. The afternoon is the graduation ceremony, photographs and a closing Q&amp;A on next steps.</div></section>
-<section class="slide fullslide" id="s3" data-title="What Is Vibe Coding?" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s03.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s03.jpg" alt="What Is Vibe Coding? / You describe / AI writes code / You test / Improve / You are the boss. The AI is the builder." loading="lazy"></div></div><div class="notes" data-slide="">Vibe coding has four steps. You describe the web page you want. The AI writes the code. You open it and test it. Then you ask for improvements.
+<section class="slide fullslide" id="s1" data-title="AI Essentials"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s01.jpg" alt="AI Essentials / Build projects by describing them / Vibe Coding / AI Essentials / Build projects by describing them / Vibe Coding"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s2" data-title="Applied Project &amp; Graduation"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s02.jpg" alt="1 / 2 / 3 / 4 / 5 / 09:00–10:45 / Vibe coding practice: build a website, portfolio or expense tracker / Emmanuel Owusu Appiah / 10:45–11:00 / Break / 11:00–11:45 / Project completion, showcase and Q&amp;A / Both facilitators / 11:45–12:30 / Testimonials, survey forms and programme feedback / ToT Trainees / 12:30–13:30 / Lunch break / 13:30–14:00 / Graduation ceremony and photography / Both facilitators / 14:00–14:15 / Programme Q&amp;A, next steps and close / Both facilitators / DAILY SCHEDULE / DAY 5 OF 5 / Applied Project &amp; Graduation"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Day 5 is the applied project: a full morning of vibe coding, where each trainee builds a website, portfolio or expense tracker, then a showcase, feedback forms and testimonials. The afternoon is the graduation ceremony, photographs and a closing Q&amp;A on next steps.</div></section>
+<section class="slide fullslide" id="s3" data-title="What Is Vibe Coding?"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s03.jpg" alt="What Is Vibe Coding? / You describe / AI writes code / You test / Improve / You are the boss. The AI is the builder." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Vibe coding has four steps. You describe the web page you want. The AI writes the code. You open it and test it. Then you ask for improvements.
 You do not need to learn the code. You are the boss. The AI is the builder.
 EXAMPLE: Like telling a builder 'I want a house with two bedrooms and a blue door.' You do not lay the bricks yourself.</div></section>
-<section class="slide fullslide" id="s4" data-title="The CLEAR Recipe" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s04.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s04.jpg" alt="The CLEAR Recipe / C / Context / What is it? Who / is it for? / L / Language / “HTML in one / file” / E / Elements / What parts? / A / Appearance / Colours and / style / R / Result / What should it / do?" loading="lazy"></div></div><div class="notes" data-slide="">To build with AI, use the CLEAR recipe. Five letters.
+<section class="slide fullslide" id="s4" data-title="The CLEAR Recipe"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s04.jpg" alt="The CLEAR Recipe / C / Context / What is it? Who / is it for? / L / Language / “HTML in one / file” / E / Elements / What parts? / A / Appearance / Colours and / style / R / Result / What should it / do?" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">To build with AI, use the CLEAR recipe. Five letters.
 C = Context: what is it, and who is it for? L = Language: say 'HTML in one single file'. E = Elements: the parts of the page. A = Appearance: colours and style. R = Result: what it should do, for example look good on a phone.
 INTERPRETER: CLEAR is an English word that helps people remember. Explain each part; keep the letters in English.</div></section>
-<section class="slide fullslide" id="s5" data-title="3 Projects Today" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s05.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s05.jpg" alt="3 Projects Today / 1. Portfolio / A page about you and your / skills / 2. Expense tracker / An app that adds up your / money / 3. Photo album / A gallery for your photos / Each project: a new chat and a new file." loading="lazy"></div></div><div class="notes" data-slide="">Today you will build three real projects with AI, one after another.
+<section class="slide fullslide" id="s5" data-title="3 Projects Today"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s05.jpg" alt="3 Projects Today / 1. Portfolio / A page about you and your / skills / 2. Expense tracker / An app that adds up your / money / 3. Photo album / A gallery for your photos / Each project: a new chat and a new file." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Today you will build three real projects with AI, one after another.
 Project 1: a portfolio, a web page about you and your skills.
 Project 2: an expense tracker, an app that adds up your money.
 Project 3: a photo album, a gallery for your photos.
 These pictures are real pages, made with the same prompts you will use. Yours will look different, because you choose the words and colours.
 RULE: Start a NEW chat and a NEW file for each project.</div></section>
-<section class="slide fullslide" id="s6" data-title="Copy, Save, Open" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s06.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s06.jpg" alt="Copy, Save, Open / 1. Copy / Click “Copy” / under the code / 2. Paste / Open Notepad / and paste / 3. Save / portfolio.html (All / Files) / 4. Open / Double-click: / your website!" loading="lazy"></div></div><div class="notes" data-slide="">Four steps for every project.
+<section class="slide fullslide" id="s6" data-title="Copy, Save, Open"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s06.jpg" alt="Copy, Save, Open / 1. Copy / Click “Copy” / under the code / 2. Paste / Open Notepad / and paste / 3. Save / portfolio.html (All / Files) / 4. Open / Double-click: / your website!" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Four steps for every project.
 1. Copy the code: click the Copy button under the code.
 2. Open Notepad and paste.
 3. Save it with a name that ends in .html: portfolio.html, then expenses.html, then album.html. In 'Save as type', choose 'All Files'.
 4. Double-click the file. It opens in your browser. That is your website!
 INTERPRETER: Show the steps on the projector while translating.</div></section>
-<section class="slide fullslide" id="s7" data-title="Project 1: Your Portfolio" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s07.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s07.jpg" alt="Project 1: Your Portfolio / Like a business card on the internet. / Header and menu / About me / Skills / Projects / Contact (public email)" loading="lazy"></div></div><div class="notes" data-slide="">Project 1 is a portfolio: a web page that shows who you are, what you can do, and how to contact you.
+<section class="slide fullslide" id="s7" data-title="Project 1: Your Portfolio"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s07.jpg" alt="Project 1: Your Portfolio / Like a business card on the internet. / Header and menu / About me / Skills / Projects / Contact (public email)" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Project 1 is a portfolio: a web page that shows who you are, what you can do, and how to contact you.
 It is like a business card on the internet. It works 24 hours a day.
 Look at the example. It has five parts: a header with a menu, About me, Skills, Projects and Contact.
 IDEA: If you have a small business (tailoring, hair, food, phone repair), you can make the page about your business instead.
 SAFETY: Only a public email address. No phone number, no home address, no ID numbers.
 Note: the example is a real page made for this course; 'Amina' is an invented name.</div></section>
-<section class="slide fullslide" id="s8" data-title="Build It: Your Portfolio" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s08.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s08.jpg" alt="Build It: Your Portfolio / YOUR PROMPT · PROJECT 1 / Create a personal portfolio website in one HTML file, with / the CSS inside. My name is [YOUR NAME]. / Include, in this order: / 1. A header with my name and a menu / 2. About me: [3 FACTS ABOUT YOU] / 3. Skills: 4 cards: [YOUR 4 SKILLS] / 4. Projects: 3 cards with a title, short text and a View button / 5. Contact: [PUBLIC EMAIL] / Use [2 COLOURS]. Make it modern and friendly, and good / on a phone. / C / A portfolio for you / L / One HTML file / E / The 5 parts / A / Your colours / R / Good on a phone / Public email only. No phone / number or home address." loading="lazy"></div></div><div class="notes" data-slide="">Fill in the [brackets] on paper first. Then type the prompt into Claude.
+<section class="slide fullslide" id="s8" data-title="Build It: Your Portfolio"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s08.jpg" alt="Build It: Your Portfolio / YOUR PROMPT · PROJECT 1 / Create a personal portfolio website in one HTML file, with / the CSS inside. My name is [YOUR NAME]. / Include, in this order: / 1. A header with my name and a menu / 2. About me: [3 FACTS ABOUT YOU] / 3. Skills: 4 cards: [YOUR 4 SKILLS] / 4. Projects: 3 cards with a title, short text and a View button / 5. Contact: [PUBLIC EMAIL] / Use [2 COLOURS]. Make it modern and friendly, and good / on a phone. / C / A portfolio for you / L / One HTML file / E / The 5 parts / A / Your colours / R / Good on a phone / Public email only. No phone / number or home address." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Fill in the [brackets] on paper first. Then type the prompt into Claude.
 Check it with CLEAR: C, a portfolio for you. L, one HTML file. E, the five parts. A, your colours. R, good on a phone.
 SMALL BUSINESS: change 'my name' to the business name, and 'skills' to services with prices.
 SAFETY: public email only.
 INTERPRETER: The prompt can be typed in English or in the participant's language.</div></section>
-<section class="slide fullslide" id="s9" data-title="Make It Better: Speak Normally" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s09.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s09.jpg" alt="Make It Better: Speak Normally / “Make the title bigger.” / “Change the background to light green.” / “Add a section for photos.” / “The button does nothing. Make it open / WhatsApp.” / One change at a / time. / Test after each one." loading="lazy"></div></div><div class="notes" data-slide="">Now improve your page. Talk to the AI in normal words. You do not need technical words.
+<section class="slide fullslide" id="s9" data-title="Make It Better: Speak Normally"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s09.jpg" alt="Make It Better: Speak Normally / “Make the title bigger.” / “Change the background to light green.” / “Add a section for photos.” / “The button does nothing. Make it open / WhatsApp.” / One change at a / time. / Test after each one." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Now improve your page. Talk to the AI in normal words. You do not need technical words.
 Ask for one change at a time. After each change, copy, save and open again to test it.
 EXAMPLES: 'Make the title bigger.' 'Change the background to light green.' 'Add a section with photos.' 'The button does nothing. Make it open WhatsApp.'</div></section>
-<section class="slide fullslide" id="s10" data-title="Project 2: The Expense Tracker" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s10.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s10.jpg" alt="Project 2: The Expense Tracker / Like a money notebook that adds up by itself. / Add: name, amount, type / Delete with one click / Total adds up by itself / Filter: only Food, only Bills / Chart: where money goes / Saves, even after closing" loading="lazy"></div></div><div class="notes" data-slide="">Project 2 is your first app that DOES things, not only shows things.
+<section class="slide fullslide" id="s10" data-title="Project 2: The Expense Tracker"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s10.jpg" alt="Project 2: The Expense Tracker / Like a money notebook that adds up by itself. / Add: name, amount, type / Delete with one click / Total adds up by itself / Filter: only Food, only Bills / Chart: where money goes / Saves, even after closing" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Project 2 is your first app that DOES things, not only shows things.
 Many families keep a small book of money in and money out. This is the same book on a computer, but it adds up by itself.
 Look at the example. You type a name and an amount, choose a type (Food, Transport, Bills), and press Add. The total updates by itself. The round chart shows where the money goes.
 How could this help you or your family?
 Note: the example is a real page made for this course.</div></section>
-<section class="slide fullslide" id="s11" data-title="Build It: The Expense Tracker" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s11.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s11.jpg" alt="Build It: The Expense Tracker / Refresh the page. What / YOUR PROMPT · PROJECT 2 / Build an expense tracker app in one HTML file, with the / CSS and JavaScript inside. / A form: expense name, amount, and a type: Food, / Transport, Bills or Other. / When I click Add, show the expense in a list with a red / Delete button. / Show the total at the bottom. Update it by itself. / Show money in [YOUR CURRENCY]. Use [2 COLOURS]. / Test it / Add 3 expenses / Is the total right? / Delete one. Does the / total go down? / happens?" loading="lazy"></div></div><div class="notes" data-slide="">Start a NEW chat for this project. Save the code as expenses.html.
+<section class="slide fullslide" id="s11" data-title="Build It: The Expense Tracker"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s11.jpg" alt="Build It: The Expense Tracker / Refresh the page. What / YOUR PROMPT · PROJECT 2 / Build an expense tracker app in one HTML file, with the / CSS and JavaScript inside. / A form: expense name, amount, and a type: Food, / Transport, Bills or Other. / When I click Add, show the expense in a list with a red / Delete button. / Show the total at the bottom. Update it by itself. / Show money in [YOUR CURRENCY]. Use [2 COLOURS]. / Test it / Add 3 expenses / Is the total right? / Delete one. Does the / total go down? / happens?" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Start a NEW chat for this project. Save the code as expenses.html.
 Fill in your currency and colours, then send the prompt.
 TEST: Add 3 expenses. Is the total right? Check with a calculator. Delete one: does the total go down? Press Add with an empty form: what happens? Refresh the page: where did your expenses go? (They disappear. The next slide fixes that.)</div></section>
-<section class="slide fullslide" id="s12" data-title="Make the Tracker Smarter" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s12.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s12.jpg" alt="Make the Tracker Smarter / PROMPT 2 / Filter / Add buttons: All, Food, / Transport, Bills, Other. / Clicking one shows only / that type and its total. / PROMPT 3 / Save / Save my expenses in the / browser with / localStorage, so they are / still there when I open the / page again. / PROMPT 4 / Chart / Add a round chart that / shows how much I spent / on each type. Use / Chart.js. Update it after / every change." loading="lazy"></div></div><div class="notes" data-slide="">Now add three more features. Send ONE prompt, test it, then send the next.
+<section class="slide fullslide" id="s12" data-title="Make the Tracker Smarter"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s12.jpg" alt="Make the Tracker Smarter / PROMPT 2 / Filter / Add buttons: All, Food, / Transport, Bills, Other. / Clicking one shows only / that type and its total. / PROMPT 3 / Save / Save my expenses in the / browser with / localStorage, so they are / still there when I open the / page again. / PROMPT 4 / Chart / Add a round chart that / shows how much I spent / on each type. Use / Chart.js. Update it after / every change." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Now add three more features. Send ONE prompt, test it, then send the next.
 PROMPT 2, filter: shows only one type of spending, and its total.
 PROMPT 3, save: the expenses stay after you close the page. They are saved only on this computer's browser.
 PROMPT 4, chart: a round chart that shows where the money goes.
 TIP: If something breaks, say what you see and ask the AI to fix only that part.</div></section>
-<section class="slide fullslide" id="s13" data-title="Project 3: The Photo Album" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s13.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s13.jpg" alt="Project 3: The Photo Album / Like a family photo album, on your computer. / Photo grid / Caption under each photo / Albums: Family, Travel / Search captions / Upload your photos / Click to see it big" loading="lazy"></div></div><div class="notes" data-slide="">Project 3 is a photo album: like the family albums people pass around, but on the computer.
+<section class="slide fullslide" id="s13" data-title="Project 3: The Photo Album"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s13.jpg" alt="Project 3: The Photo Album / Like a family photo album, on your computer. / Photo grid / Caption under each photo / Albums: Family, Travel / Search captions / Upload your photos / Click to see it big" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Project 3 is a photo album: like the family albums people pass around, but on the computer.
 Look at the example: a neat grid of photos, a caption under each one, album names (Family, Friends, Travel), a search box and an Upload button. Click a photo to see it big.
 PRIVACY: Only use photos you are allowed to use. Ask people before you put their photo in, and do not put photos of other people's children online.
 Note: the example is a real page made for this course, with free photos from Unsplash.</div></section>
-<section class="slide fullslide" id="s14" data-title="Build It: The Photo Album" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s14.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s14.jpg" alt="Build It: The Photo Album / After Prompt 2: click a photo to see it / PROMPT 1 · THE GRID / Create a photo album web app in one HTML file. Show photos in a / grid of 3 columns, with a caption and an album name (Family, Friends / or Travel) under each photo. Use sample photos from picsum.photos / for now. On a phone, show 1 column. / PROMPT 2 · CLICK TO SEE IT BIG / When I click a photo, show it big in the middle of a dark screen, with / the caption below. An × button closes it. The Escape key also closes / it. / Next: ask for an Upload button and a Search box. / big" loading="lazy"></div></div><div class="notes" data-slide="">New chat, new file: album.html. Send Prompt 1, test it, then send Prompt 2.
+<section class="slide fullslide" id="s14" data-title="Build It: The Photo Album"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s14.jpg" alt="Build It: The Photo Album / After Prompt 2: click a photo to see it / PROMPT 1 · THE GRID / Create a photo album web app in one HTML file. Show photos in a / grid of 3 columns, with a caption and an album name (Family, Friends / or Travel) under each photo. Use sample photos from picsum.photos / for now. On a phone, show 1 column. / PROMPT 2 · CLICK TO SEE IT BIG / When I click a photo, show it big in the middle of a dark screen, with / the caption below. An × button closes it. The Escape key also closes / it. / Next: ask for an Upload button and a Search box. / big" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">New chat, new file: album.html. Send Prompt 1, test it, then send Prompt 2.
 Prompt 1 makes the grid with sample photos. Prompt 2 adds the 'lightbox': click a photo and it opens big on a dark screen, like the picture on the right.
 MORE (if there is time): 'Add an Upload button so I can add my own photos.' 'Add a search box that shows only photos whose caption has my words.'
 NOTE: Uploaded photos may disappear when you refresh. That is normal for practice.</div></section>
-<section class="slide fullslide" id="s15" data-title="When Something Goes Wrong" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s15.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s15.jpg" alt="When Something Goes Wrong / Blank page? / Tell the AI what you see. / Not what you / wanted? / Describe it again, with / more detail. / Same error again? / Start a new chat. Paste / your last working code." loading="lazy"></div></div><div class="notes" data-slide="">Problems are normal. Here is what to do.
+<section class="slide fullslide" id="s15" data-title="When Something Goes Wrong"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s15.jpg" alt="When Something Goes Wrong / Blank page? / Tell the AI what you see. / Not what you / wanted? / Describe it again, with / more detail. / Same error again? / Start a new chat. Paste / your last working code." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Problems are normal. Here is what to do.
 Blank or broken page? Tell the AI what you see: 'The page is blank. What went wrong?'
 Not what you wanted? Describe it again, with more detail.
 The same error again and again? Start a new chat. Paste your last code that worked, and describe the problem.
 Ask yourself: what information was missing from my prompt?</div></section>
-<section class="slide fullslide" id="s16" data-title="Build Your 3 Projects" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s16.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s16.jpg" alt="Build Your 3 Projects / PRACTICAL 7 · 75 MIN · ON YOUR OWN / 1. Portfolio / portfolio.html · 20 min / 2. Expense tracker / expenses.html · 25 min / 3. Photo album / album.html · 25 min / 1. Fill in the prompt / 2. Send / 3. Copy, save, open / 4. Improve" loading="lazy"></div></div><div class="notes" data-slide="">PRACTICAL 7 · ABOUT 75 MINUTES · ON YOUR OWN
+<section class="slide fullslide" id="s16" data-title="Build Your 3 Projects"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s16.jpg" alt="Build Your 3 Projects / PRACTICAL 7 · 75 MIN · ON YOUR OWN / 1. Portfolio / portfolio.html · 20 min / 2. Expense tracker / expenses.html · 25 min / 3. Photo album / album.html · 25 min / 1. Fill in the prompt / 2. Send / 3. Copy, save, open / 4. Improve" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">PRACTICAL 7 · ABOUT 75 MINUTES · ON YOUR OWN
 Build the three projects, one after another. Start a new chat and a new file for each one.
 Portfolio: about 20 minutes. Expense tracker: about 25 minutes. Photo album: about 25 minutes.
 For each: fill in the prompt, send it, copy-save-open, then make at least one improvement.
 TRAINER: Walk around and help. When someone is stuck, ask: 'What did you tell the AI? What is missing?' Fast learners can do the extra prompts (filter, save, chart, upload, search).
 SAFETY: public email only; no home address; only photos you are allowed to use.</div></section>
-<section class="slide fullslide" id="s17" data-title="Show and Tell" style="--fg:#182034;--hl:rgba(24,32,52,.08)"><img class="fs-bg" src="assets/day5/bg/s17.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s17.jpg" alt="Show and Tell / Swap screens / Look at your partner’s / page. / Two stars / Say two things you like. / One wish / Suggest one change and / the prompt for it." loading="lazy"></div></div><div class="notes" data-slide="">Swap seats with a partner. Look at their page.
+<section class="slide fullslide" id="s17" data-title="Show and Tell"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s17.jpg" alt="Show and Tell / Swap screens / Look at your partner’s / page. / Two stars / Say two things you like. / One wish / Suggest one change and / the prompt for it." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Swap seats with a partner. Look at their page.
 Two stars: tell them two things you like. One wish: suggest one change, and the prompt they could use to make it.
 Then two or three people show their page on the projector.
 To share your page online for free, ask the trainer after the session.</div></section>
-<section class="slide fullslide" id="s18" data-title="REMEMBER" style="--fg:#ffffff;--hl:rgba(255,255,255,.16)"><img class="fs-bg" src="assets/day5/bg/s18.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s18.png" alt="REMEMBER / Four things to take home / A clear prompt gets a better answer / Use the 4 parts: task, background, information, style / Build in small steps: describe, test, improve / Check everything. / Keep private things / private" loading="lazy"></div></div><div class="notes" data-slide="">Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.
+<section class="slide fullslide" id="s18" data-title="REMEMBER"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s18.jpg" alt="REMEMBER / Four things to take home / A clear prompt gets a better answer / Use the 4 parts: task, background, information, style / Build in small steps: describe, test, improve / Check everything. / Keep private things / private" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.
 Keep practising, a little every day. Take questions.
 INTERPRETER: Thank you for your help today.</div></section>
-<section class="slide fullslide" id="s19" data-title="Thank you" style="--fg:#ffffff;--hl:rgba(255,255,255,.16)"><img class="fs-bg" src="assets/day5/bg/s19.jpg" alt="" loading="lazy"><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s19.png" alt="Thank you / Keep learning. Keep building. / Questions?" loading="lazy"></div></div><div class="notes" data-slide="">Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.
+<section class="slide fullslide" id="s19" data-title="Thank you"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/day5/slides/s19.jpg" alt="Thank you / Keep learning. Keep building. / Questions?" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a href="Day1.html">Day 1</a><a href="Day2.html">Day 2</a><a href="Day3.html">Day 3</a><a href="Day4.html">Day 4</a><a href="Day5.html" class="on">Day 5</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.
 Keep practising, a little every day. Take questions.
 INTERPRETER: Thank you for your help today.</div></section>
 </div>
@@ -697,28 +710,66 @@ INTERPRETER: Thank you for your help today.</div></section>
   const deck = document.querySelector('.deck');
   const slides = Array.from(document.querySelectorAll('.slide'));
   const active = () => document.querySelector('.slide.is-active');
-  function play(v){ v.dataset.started = '1'; const p = v.play(); if(p) p.catch(()=>{ v.muted = true; v.play(); }); }
+  // sound: on by default; M toggles it for every video (a video muted in the PowerPoint stays muted)
+  let soundOn = true;
+  const sound = v => { v.muted = !soundOn || v.dataset.mute === '1'; };
+  function play(v){ v.dataset.started = '1'; sound(v); const p = v.play(); if(p) p.catch(()=>{ v.muted = true; v.play(); }); }
+  const toast = document.createElement('div');
+  toast.className = 'fs-toast'; toast.setAttribute('role', 'status');
+  document.body.appendChild(toast);
+  let toastT = null;
+  function setSound(on){
+    soundOn = on;
+    document.querySelectorAll('.fs-media video').forEach(sound);
+    toast.textContent = on ? 'Sound on' : 'Sound off (press M)';
+    toast.classList.add('show'); clearTimeout(toastT);
+    toastT = setTimeout(() => toast.classList.remove('show'), 1400);
+  }
   function setNav(open){
     document.body.classList.toggle('nav-open', open);
     document.querySelectorAll('.fs-burger').forEach(b => b.setAttribute('aria-expanded', open ? 'true' : 'false'));
+    if(!open) poke();
   }
+  // controls: visible while the pointer moves, hidden after 2.5 s idle (kept while the menu is open or hovered)
+  let idle = null, overMenu = false;
+  function poke(){
+    document.body.classList.add('ui-on');
+    clearTimeout(idle);
+    idle = setTimeout(() => { if(!overMenu && !document.body.classList.contains('nav-open')) document.body.classList.remove('ui-on'); }, 2500);
+  }
+  ['mousemove','pointerdown','wheel'].forEach(t => window.addEventListener(t, poke, {passive:true}));
+  document.querySelectorAll('.fs-menu,.slide-num').forEach(m => {
+    m.addEventListener('mouseenter', () => { overMenu = true; poke(); });
+    m.addEventListener('mouseleave', () => { overMenu = false; poke(); });
+  });
   document.querySelectorAll('.fs-burger').forEach(b => b.addEventListener('click', e => {
     e.stopPropagation(); setNav(!document.body.classList.contains('nav-open'));
   }));
-  document.addEventListener('click', e => { if(!e.target.closest('.fs-menu')) setNav(false); });
+  document.addEventListener('click', e => { if(!e.target.closest('.fs-menu') && document.body.classList.contains('nav-open')) setNav(false); });
   document.querySelectorAll('.fs-nav a').forEach(a => a.addEventListener('click', () => {
     if(!/[?]/.test(a.getAttribute('href'))) a.setAttribute('href', a.getAttribute('href') + '?menu');
   }));
+  // load and decode the slides around the current one so a change never fades in a blank slide
+  function warm(i){
+    for(let j = i - 1; j <= i + 2; j++){
+      const s = slides[j]; if(!s) continue;
+      s.querySelectorAll('img').forEach(img => {
+        if(img.loading === 'lazy') img.loading = 'eager';
+        if(img.decode) img.decode().catch(() => {});
+      });
+    }
+  }
   let last = null;
   function sync(){
     const s = active();
     if(s === last) return;
     last = s;
     slides.forEach(o => { if(o !== s) o.querySelectorAll('video').forEach(v => {
-      if(!v.paused) v.pause(); v.muted = true; if(v.dataset.started){ v.currentTime = 0; v.dataset.started = ''; } }); });
+      if(!v.paused) v.pause(); if(v.dataset.started){ v.currentTime = 0; v.dataset.started = ''; } }); });
     if(s) s.querySelectorAll('video[data-auto="1"]').forEach(play);
-    setNav(false);  // the day menu hides itself whenever the slide changes
+    if(document.body.classList.contains('nav-open')) setNav(false);  // the day menu hides itself when the slide changes
     const i = slides.indexOf(s);
+    warm(i);
     document.querySelectorAll('.overview .thumb').forEach(t => t.classList.toggle('cur', +t.dataset.i === i));
   }
   new MutationObserver(sync).observe(deck, {subtree:true, attributes:true, attributeFilter:['class']});
@@ -729,18 +780,33 @@ INTERPRETER: Thank you for your help today.</div></section>
       if(ov && ov.classList.contains('open')) return;
       e.preventDefault(); e.stopImmediatePropagation(); location.href = 'index.html'; return;
     }
+    if((e.key === 'm' || e.key === 'M') && !e.ctrlKey && !e.metaKey && !e.altKey && !e.target.closest('input,textarea')){
+      e.preventDefault(); setSound(!soundOn); return;
+    }
     if(!(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown')) return;
     const s = active();
     const v = s && Array.from(s.querySelectorAll('video[data-auto="0"]')).find(v => !v.dataset.started);
     if(v){ e.preventDefault(); e.stopImmediatePropagation(); play(v); }
   }, true);
   document.querySelectorAll('.fs-media video').forEach(v => {
-    v.muted = true;
-    v.addEventListener('click', () => { if(v.paused) play(v); else v.pause(); });
-    v.addEventListener('mouseenter', () => { v.controls = true; });
-    v.addEventListener('mouseleave', () => { v.controls = false; });
+    v.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); if(v.paused) play(v); else v.pause(); });
+  });
+  // tap to move: left third = previous slide, anywhere else = next (touch and pen only; swipes still work)
+  let tap = null;
+  deck.addEventListener('pointerdown', e => {
+    tap = (e.pointerType === 'touch' || e.pointerType === 'pen') && e.isPrimary ? {x: e.clientX, y: e.clientY, t: Date.now()} : null;
+  });
+  deck.addEventListener('pointercancel', () => { tap = null; });
+  deck.addEventListener('pointerup', e => {
+    const t = tap; tap = null;
+    if(!t || Math.hypot(e.clientX - t.x, e.clientY - t.y) > 12 || Date.now() - t.t > 600) return;
+    if(e.target.closest('.fs-menu,.slide-num,video,a,button,input,label,.overview,.notes-overlay,.print-panel')) return;
+    if(document.body.classList.contains('nav-open')){ setNav(false); return; }
+    const key = e.clientX < window.innerWidth / 3 ? 'ArrowLeft' : 'ArrowRight';
+    document.dispatchEvent(new KeyboardEvent('keydown', {key, bubbles:true, cancelable:true}));
   });
   sync();
+  poke();
   // Arriving from a day link (?menu): keep the day menu open on the new day
   if(/[?&]menu\b/.test(location.search)){
     setNav(true);
