@@ -23,12 +23,12 @@
    "GH Facilitators as clients",
    "10:45–11:00",
    "Break",
-   "11:00–12:15",
+   "11:00–12:30",
    "Introduction to Generative AI",
    "Emmanuel Owusu Appiah",
-   "12:15–13:00",
+   "12:30–13:30",
    "Lunch break",
-   "13:00–14:00",
+   "13:30–14:00",
    "Introduction to prompt engineering",
    "Emmanuel Owusu Appiah"
   ],
@@ -41,7 +41,6 @@
   "title": "AI Essentials",
   "text": [
    "AI Essentials",
-   "Generative AI",
    "A simple, hands-on course: use AI for everyday life, learning and work"
   ],
   "notes": "",
@@ -60,7 +59,7 @@
     "kind": "video",
     "box": [
      9.584375000000001,
-     14.205540974044911,
+     11.790740740740741,
      76.42083333333333,
      76.41851851851852
     ],
@@ -130,7 +129,6 @@
    "AI",
    "A computer program that learns",
    "Data",
-   "Examples: pictures, words, numbers",
    "Prompt",
    "The message you send to AI",
    "App",
@@ -138,7 +136,8 @@
    "Code/Algorithm",
    "Instructions a computer can follow",
    "Website",
-   "Pages you open on the internet"
+   "Pages you open on the internet",
+   "Examples: pictures, words, numbers"
   ],
   "notes": "These five words come back all day. Let us learn them now.\nINTERPRETER: Please translate each word and its meaning. If there is no word in the language, the English word is fine.\nTIP: Write the five words on the board, with the translation next to each one.\nWhich of these words have you heard before?",
   "media": []
@@ -156,8 +155,8 @@
    {
     "kind": "video",
     "box": [
-     4.833333333333333,
-     18.666666666666668,
+     4.866256561679791,
+     14.000000000000002,
      43.635416666666664,
      47.24074074074074
     ],
@@ -178,8 +177,8 @@
    {
     "kind": "video",
     "box": [
-     51.46875,
-     18.666666666666668,
+     51.501673228346455,
+     14.000000000000002,
      43.635416666666664,
      47.35185185185185
     ],
@@ -216,9 +215,9 @@
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.666666666666668,
-     57.000008202099735,
+     4.930831692913386,
+     14.333333333333334,
+     56.92708333333333,
      56.99999999999999
     ],
     "crop": {
@@ -264,7 +263,6 @@
   "title": "How Machines Learn",
   "text": [
    "How Machines Learn",
-   "Generative AI",
    "Many Examples and lots of practice"
   ],
   "notes": "",
@@ -299,7 +297,7 @@
    "1. Data",
    "Named examples",
    "2. Training",
-   "It practises",
+   "It practices",
    "3. Model",
    "Its own rules",
    "4. Prediction",
@@ -311,7 +309,7 @@
    "dog = floppy ears, long nose…",
    "cat = pointed ears, whiskers…",
    "✓ Cat",
-   "Key idea: the more good examples it sees, the better it gets."
+   "Key idea: the better examples it sees, the better it gets."
   ],
   "notes": "AFTER THE VIDEO\nSay: \"A child learns dog and cat from a few pictures. A machine needs thousands. But a machine can look at millions of pictures very fast.\"\nCheck: \"Who teaches the machine?\" (Answer: people, with good examples.) Then go to the four steps on the slide.\nMachine learning is the part of AI that learns from examples.\nIn a normal computer program, a person writes every rule. For example: 'If a message says FREE MONEY, it is spam.' But people who send spam just change the words, and the rule stops working.\nWith machine learning, nobody writes the rules. We give the computer many examples, and it works out the rules by itself.\nSTEP 1, Data: many examples with names (photos marked 'dog' or 'cat').\nSTEP 2, Training: the computer practises with the examples, again and again.\nSTEP 3, Model: from the practice, it builds its own rules. This is called a model.\nSTEP 4, Prediction: we show it a NEW photo it has never seen. It says: 'Cat'.\nKEY IDEA: The more good examples it sees, the better it gets, just like people learn from experience.\nINTERPRETER: model = the rules the computer made by itself; prediction = a guess about something new.\nIt works much like people learn from experience: the more examples a system sees, the better its decisions become.\nAn ML system trains a model on input data. The trained model can then make useful predictions on new, never-seen data, as long as that data is similar to what it learned from.",
   "media": []
@@ -461,11 +459,8 @@
    "“not spam”",
    "A shop sorts customers into",
    "groups. No names given.",
-   "A robot learns to walk by falling",
-   "and trying again",
-   "Doctors name 50 X-rays. AI",
-   "learns from 5,000 more without",
-   "names.",
+   "A robot learns to walk by falling and trying again",
+   "Doctors name 50 X-rays. AI learns from 5,000 more without names",
    "With a teacher",
    "On its own",
    "A little help",
@@ -480,12 +475,12 @@
   "title": "Which Way Did It Learn?",
   "text": [
    "Which Way Did It Learn?",
+   "millions of games against itself",
    "PRACTICAL 2 · 10 MIN · PAIRS",
    "200 maize-leaf photos labelled",
    "healthy or diseased, 20,000 not",
    "labelled",
    "A chess program playing",
-   "millions of games against itself",
    "Predicting house prices from",
    "records of past sales",
    "Reading handwritten digits,",
@@ -576,7 +571,6 @@
   "text": [
    "Everyday Uses of Discriminative AI",
    "Spam filter: spam or not?",
-   "Sentiments/ Feelings Analysis: happy, angry or neutral?",
    "Image Classification: cat, dog or car?",
    "Fraud detection: normal or fraud?",
    "Win a FREE phone! Click now…",
@@ -601,7 +595,8 @@
    "Fraud?",
    "GH₵ 2,500",
    "Unknown place",
-   "2:15 at night"
+   "2:15 at night",
+   "Sentiments/ Feelings Analysis: happy, angry or neutral?"
   ],
   "notes": "discriminative AI is everywhere. It looks at something and puts it in the right group.\nSPAM FILTER: it reads each message and decides: spam or not spam. 'Win a FREE phone!' goes to spam.\nFEELINGS: it reads a message or a review and decides: happy, angry or neutral. Shops use this to read thousands of customer comments. (Expert word: sentiment analysis.)\nPHOTOS: it looks at a photo and decides: cat, dog or something else.\nMONEY: banks and mobile money services check each payment: normal or fraud? A very big payment, at 2 in the morning, from an unknown place, looks suspicious, so it may be stopped.",
   "media": []
@@ -612,18 +607,12 @@
   "title": "What Is Generative AI?",
   "text": [
    "What Is Generative AI?",
-   "Generative AI = AI that creates new things: text, pictures, sound, video and",
-   "code., by using the features it learned during its training.",
+   "Generative AI = AI that creates new things: text, pictures, sound, video and code, by using the features it learned during its training.",
    "1. You ask",
    "2. It uses patterns",
    "3. It creates something new",
-   "“Write a short",
-   "welcome",
-   "message for my",
-   "tailoring shop.”",
-   "Patterns from huge",
-   "amounts of text and",
-   "pictures",
+   "“Write a short welcome message for my tailoring shop.”",
+   "Patterns from huge amounts of texts and pictures",
    "“Welcome to Amina’s Tailoring!",
    "Beautiful clothes, made with care,",
    "just for you.”",
@@ -684,10 +673,10 @@
   "title": "How Does AI Write?",
   "text": [
    "How Does AI Write?",
-   "The sky is …",
-   "AI picks a likely next word. Again",
-   "and again.",
    "Like the word suggestions on your phone keyboard, but much bigger.",
+   "The sky is …",
+   "AI picks a likely next word.",
+   "Again, and again.",
    "Which word comes next?",
    "blue",
    "82%",
@@ -696,7 +685,8 @@
    "cloudy",
    "6%",
    "falling",
-   "1%"
+   "1%",
+   "Like the word suggestions on your phone keyboard, but much bigger."
   ],
   "notes": "How does AI write? It guesses the next word.\nAfter 'The sky is...' the most likely next word is 'blue'. The AI picks a likely word, then the next, then the next.\nIt is like the word suggestions on your phone keyboard, but much, much bigger.\nDoes your phone suggest words when you type a message?",
   "media": []
@@ -771,8 +761,7 @@
   "title": "AI Can Be Wrong",
   "text": [
    "AI Can Be Wrong",
-   "AI sometimes makes things",
-   "up.",
+   "AI sometimes makes things up.",
    "It sounds sure, but it is wrong.",
    "Name: “hallucination”"
   ],
@@ -840,12 +829,12 @@
   "title": "Always Check",
   "text": [
    "Always Check",
+   "Legal, medical or money decision? Always ask a qualified person,",
    "Ask: “How sure are",
    "you?”",
    "Check an official",
    "website",
    "Ask a real person",
-   "Legal, medical or money decision? Always ask a qualified person,",
    "not only AI."
   ],
   "notes": "Three ways to check an AI answer.\n1. Ask the AI: 'Where did you get this? How sure are you?'\n2. Check an official website or a trusted organisation.\n3. Ask a real person who knows: a teacher, a caseworker, a community leader.\nFor legal, medical or money decisions, ALWAYS ask a qualified person. Never rely only on AI.\nINTERPRETER: Please stress the red box.",
@@ -956,8 +945,7 @@
   "text": [
    "Like Ordering Food",
    "“Food, please.”",
-   "“Rice with chicken, not spicy,",
-   "to take away.”",
+   "“Rice with chicken, not spicy, to take away.”",
    "The waiter must guess.",
    "You get what you want.",
    "AI is the waiter. Your order is the prompt."
@@ -1140,18 +1128,15 @@
   "title": "Use Your Own Language",
   "text": [
    "Use Your Own Language",
-   "Explain what a CV is. Answer in English and in",
-   "Arabic.",
+   "Explain what a CV is. Answer in English and in Arabic",
    "A CV is a short document about your work and",
-   "skills …",
-   "[The same answer in Arabic]",
+   "skills … [The same answer in Arabic]",
    "Ask in your language",
    "Get answers in two",
    "languages",
    "Check important",
    "things with a person",
-   "Choose any language: French, Swahili, Arabic,",
-   "Amharic, Somali …"
+   "Choose any language: French, Swahili, Arabic, Amharic, Somali …"
   ],
   "notes": "Many AI tools understand many languages. You can write your prompt in your own language.\nYou can also ask for the answer in another language, or in two languages side by side.\nCAREFUL: The AI is often less accurate in some languages. For important things, check with a person who speaks the language well.\nWhich language would you like to try?",
   "media": []
@@ -1183,7 +1168,7 @@
   "title": "What AI Can Do for You",
   "text": [
    "What AI Can Do for You",
-   "Summarise",
+   "Summarize",
    "Make a long text short",
    "Translate",
    "Between many languages",
@@ -1211,10 +1196,8 @@
    "This letter is about … You must:",
    "1. Bring a document",
    "2. Go to the office by 15 March",
-   "First remove names and",
-   "numbers",
-   "Check official letters with a",
-   "person"
+   "First remove names and numbers",
+   "Check official letters with a person"
   ],
   "notes": "Did you get a letter that is hard to understand? AI can explain it in simple words and list what you must do.\nIMPORTANT: First remove your name, numbers and address. Replace them with [NAME], [NUMBER].\nIMPORTANT: For official letters, always check the meaning with a real person or the office that sent it.",
   "media": []
@@ -1225,17 +1208,13 @@
   "title": "Example: Write Your CV",
   "text": [
    "Example: Write Your CV",
-   "Help me write a one-page CV. I was a tailor",
-   "for 6 years. I speak Arabic and English. I want",
-   "work in a clothing shop. Use simple",
-   "headings.",
+   "Help me write a one-page CV. I was a tailor for 6 years. I speak Arabic and English. I want to work in a clothing shop. Use simple headings.",
    "Your CV",
    "Profile",
    "Skills",
    "Work experience",
    "Languages",
-   "Check every line. Remove anything",
-   "that is not true."
+   "Check every line. Remove anything that is not true."
   ],
   "notes": "AI can help you write a CV (a document about your work and skills).\nGive it your real experience and the job you want. It suggests a clear layout.\nCheck every line. The AI may add skills you do not have. Remove anything that is not true.\nWhat job would you write a CV for?",
   "media": []
@@ -1243,9 +1222,9 @@
  {
   "n": 58,
   "hidden": false,
-  "title": "Example: Practise a Job Interview",
+  "title": "Example: Practice a Job Interview",
   "text": [
-   "Example: Practise a Job Interview",
+   "Example: Practice a Job Interview",
    "Act as an interviewer for a cashier job. Ask me one",
    "question at a time. After each answer, give me one tip.",
    "Question 1: Tell me a little about yourself.",

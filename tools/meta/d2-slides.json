@@ -13,16 +13,8 @@
  {
   "n": 2,
   "hidden": false,
-  "title": "Polyline & Polygon",
+  "title": "Polyline & Polygon Annotation",
   "text": [
-   "DAILY SCHEDULE",
-   "DAY 2 OF 5",
-   "Polyline & Polygon",
-   "1",
-   "2",
-   "3",
-   "4",
-   "5",
    "09:00–09:15",
    "Review, objectives and introduction to polyline labelling",
    "Both facilitators",
@@ -40,14 +32,25 @@
    "11:45–12:15",
    "Rail and Catenary Condition Awareness guide and polygon practice",
    "Both facilitators",
-   "12:15–13:00",
+   "12:15–12:30",
+   "Rail and Catenary Condition Awareness inspection",
+   "12:30–13:30",
    "Lunch break",
-   "13:00–13:30",
+   "13:30–13:45",
    "Rail and Catenary Condition Awareness inspection",
    "ToT Trainees & GH Facilitators",
-   "13:30–14:00",
+   "13:45–14:00",
    "Report gathering, reflection and daily review",
-   "ToT Trainees"
+   "ToT Trainees",
+   "ToT Trainees & GH Facilitators",
+   "DAILY SCHEDULE",
+   "DAY 2 OF 5",
+   "Polyline & Polygon Annotation",
+   "2",
+   "3",
+   "4",
+   "5",
+   "1"
   ],
   "notes": "Day 2 covers two techniques. The morning is polyline labelling on the Traffic Flow for Autonomous Driving project; late morning switches to polygons on the Rail and Catenary Condition Awareness project, followed by an afternoon inspection and daily review.",
   "media": []
@@ -102,15 +105,15 @@
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.333333333333332,
-     57.14390583989501,
-     58.013327500729076
+     6.986548556430446,
+     20.10256634587343,
+     56.99999999999999,
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
+     "l": 0.01612,
      "t": 0.08689,
-     "r": 0.0,
+     "r": 0.01612,
      "b": 0.0
     },
     "rot": 0.0,
@@ -136,20 +139,20 @@
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.333333333333332,
-     57.14390583989501,
-     58.013327500729076
+     6.986548556430446,
+     20.10256634587343,
+     56.99999999999999,
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
-     "t": 0.08689,
-     "r": 0.0,
+     "l": 0.02249,
+     "t": 0.08408,
+     "r": 0.02249,
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/media1.mp4",
-    "poster": "assets/day2/media/media1-poster.jpg",
+    "src": "assets/day2/media/media2.mp4",
+    "poster": "assets/day2/media/media2-poster.jpg",
     "autoplay": false,
     "loop": false,
     "muted": false,
@@ -170,22 +173,22 @@
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.66665208515602,
-     57.21697834645669,
-     56.99999999999999
+     6.986548556430446,
+     20.10256634587343,
+     56.99999999999999,
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
+     "l": 0.02518,
      "t": 0.08667,
-     "r": 0.0,
+     "r": 0.02518,
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/media2.mp4",
-    "poster": "assets/day2/media/media2-poster.jpg",
+    "src": "assets/day2/media/media3.mp4",
+    "poster": "assets/day2/media/media3-poster.jpg",
     "autoplay": false,
-    "loop": true,
+    "loop": false,
     "muted": false,
     "trim": null
    }
@@ -204,22 +207,22 @@
    {
     "kind": "video",
     "box": [
-     4.829995078740158,
-     18.666666666666668,
+     6.986548556430446,
+     20.10256634587343,
      56.99999999999999,
-     56.99999999999999
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
+     "l": 0.02337,
      "t": 0.08554,
-     "r": 0.0,
+     "r": 0.02337,
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/media3.mp4",
-    "poster": "assets/day2/media/media3-poster.jpg",
+    "src": "assets/day2/media/media4.mp4",
+    "poster": "assets/day2/media/media4-poster.jpg",
     "autoplay": false,
-    "loop": true,
+    "loop": false,
     "muted": false,
     "trim": null
    }
@@ -238,22 +241,22 @@
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.66665208515602,
+     6.986548556430446,
+     20.10256634587343,
      56.99999999999999,
-     57.00001458151065
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
+     "l": 0.02337,
      "t": 0.08541,
-     "r": 0.0,
+     "r": 0.02337,
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/media4.mp4",
-    "poster": "assets/day2/media/media4-poster.jpg",
+    "src": "assets/day2/media/media5.mp4",
+    "poster": "assets/day2/media/media5-poster.jpg",
     "autoplay": false,
-    "loop": true,
+    "loop": false,
     "muted": false,
     "trim": null
    }
@@ -272,19 +275,19 @@
    {
     "kind": "gif",
     "box": [
-     4.9000082020997375,
-     18.666666666666668,
-     57.13397309711286,
-     56.99999999999999
+     6.986548556430446,
+     20.10256634587343,
+     56.99999999999999,
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.11686,
+     "l": 0.13563,
      "t": 0.17054,
-     "r": 0.11657,
+     "r": 0.13534,
      "b": 0.2
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image24.gif"
+    "src": "assets/day2/media/image25.gif"
    }
   ]
  },
@@ -294,28 +297,27 @@
   "title": "Expand/reduce the image (Zoom)",
   "text": [
    "Expand/reduce the image (Zoom)",
-   "Use these (buttons to increase the size of the image or reduce it.",
-   "This helps to see the object boundaries clearly."
+   "Use these (+,-)buttons to increase the size of the image or reduce it."
   ],
   "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
   "media": [
    {
     "kind": "video",
     "box": [
-     4.830003280839895,
-     18.666666666666668,
+     6.986548556430446,
+     20.10256634587343,
      56.99999999999999,
-     56.99999999999999
+     59.79486730825313
     ],
     "crop": {
-     "l": 0.0,
+     "l": 0.02337,
      "t": 0.08453,
-     "r": 0.0,
+     "r": 0.02337,
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/media5.mp4",
-    "poster": "assets/day2/media/media5-poster.jpg",
+    "src": "assets/day2/media/media6.mp4",
+    "poster": "assets/day2/media/media6-poster.jpg",
     "autoplay": false,
     "loop": false,
     "muted": false,
@@ -522,15 +524,15 @@
  {
   "n": 29,
   "hidden": false,
-  "title": "Discard Standard: Tasks in the following cases should be discarded.",
+  "title": "Discard Standard",
   "text": [
-   "Discard Standard: Tasks in the following cases should be discarded.",
+   "Discard Standard",
    "When there is no labeling target",
    "When there’s excessive smearing or light spillage, only one or two dim lanes remain.",
    "When the screen image is flipped",
    "When the pixels of the screen image are too broken or faint, only one or two dim lanes remain."
   ],
-  "notes": "",
+  "notes": "Tasks in the following cases should be discarded.",
   "media": []
  },
  {
@@ -634,7 +636,7 @@
   "title": "How to label with the polygon tool",
   "text": [
    "How to label with the polygon tool",
-   "When you make a mistake with the polygon point tap   backspace  on the keyboard."
+   "When you make a mistake with the polygon point tap backspace on the keyboard."
   ],
   "notes": "",
   "media": [
@@ -653,7 +655,7 @@
      "b": 0.0
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image96.gif"
+    "src": "assets/day2/media/image97.gif"
    }
   ]
  },
@@ -692,7 +694,7 @@
      "b": 0.1461
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image101.gif"
+    "src": "assets/day2/media/image102.gif"
    }
   ]
  },
@@ -721,7 +723,7 @@
      "b": 0.14804
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image102.gif"
+    "src": "assets/day2/media/image103.gif"
    }
   ]
  },
@@ -750,7 +752,7 @@
      "b": 0.13379
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image103.gif"
+    "src": "assets/day2/media/image104.gif"
    }
   ]
  },
@@ -779,20 +781,10 @@
  {
   "n": 45,
   "hidden": false,
-  "title": "PRECISE LABELLING",
-  "text": [
-   "PRECISE LABELLING"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 46,
-  "hidden": false,
   "title": "Make sure the work is precise before you proceed.",
   "text": [
    "Make sure the work is precise before you proceed.",
-   "PRECISE LABELING"
+   "Precise Labeling"
   ],
   "notes": "",
   "media": [
@@ -811,17 +803,17 @@
      "b": 0.08699
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image108.gif"
+    "src": "assets/day2/media/image109.gif"
    }
   ]
  },
  {
-  "n": 47,
+  "n": 46,
   "hidden": false,
-  "title": "Press “b” repeatedly to check precision on the edges of your shape",
+  "title": "Press “B” repeatedly to check precision on the edges of your shape",
   "text": [
-   "Press “b” repeatedly to check precision on the edges of your shape",
-   "PRECISE LABELING"
+   "Press “B” repeatedly to check precision on the edges of your shape",
+   "Precise Labeling"
   ],
   "notes": "",
   "media": [
@@ -840,12 +832,12 @@
      "b": 0.08252
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image109.gif"
+    "src": "assets/day2/media/image110.gif"
    }
   ]
  },
  {
-  "n": 48,
+  "n": 47,
   "hidden": false,
   "title": "Make sure the work is precise before you proceed.",
   "text": [
@@ -869,12 +861,12 @@
      "b": 0.07823
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image110.gif"
+    "src": "assets/day2/media/image111.gif"
    }
   ]
  },
  {
-  "n": 49,
+  "n": 48,
   "hidden": false,
   "title": "Press “esc” on your keyboard, so that you can select the shape before you can delete.",
   "text": [
@@ -898,12 +890,12 @@
      "b": 0.08146
     },
     "rot": 0.0,
-    "src": "assets/day2/media/image111.gif"
+    "src": "assets/day2/media/image112.gif"
    }
   ]
  },
  {
-  "n": 50,
+  "n": 49,
   "hidden": false,
   "title": "ver.2.0",
   "text": [
@@ -915,7 +907,7 @@
   "media": []
  },
  {
-  "n": 51,
+  "n": 50,
   "hidden": false,
   "title": "This file is intended for training",
   "text": [
@@ -929,7 +921,7 @@
   "media": []
  },
  {
-  "n": 52,
+  "n": 51,
   "hidden": false,
   "title": "Project overview",
   "text": [
@@ -942,12 +934,11 @@
   "media": []
  },
  {
-  "n": 53,
+  "n": 52,
   "hidden": false,
   "title": "Purpose of the project",
   "text": [
    "Purpose of the project",
-   "Project overview",
    "■ Purpose of the project",
    "The purpose is to identify damaged tools in the rail stations that could cause train accidents. This is a bounding box and polygon project."
   ],
@@ -955,118 +946,10 @@
   "media": []
  },
  {
-  "n": 54,
+  "n": 53,
   "hidden": false,
-  "title": "Project overview",
+  "title": "Catenary",
   "text": [
-   "Project overview",
-   "Rail",
-   "-pandrol_e-clip, Insulation_block"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 55,
-  "hidden": false,
-  "title": "Labeling target",
-  "text": [
-   "Labeling target",
-   "Project overview",
-   "■ Labeling criteria",
-   "Tool",
-   "Class",
-   "State",
-   "B-box",
-   "pandrol_e-clip",
-   "normal",
-   "abnormal",
-   "Insulation_block",
-   "normal",
-   "abnormal"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 56,
-  "hidden": false,
-  "title": "Labeling criteria – pandrol_e-clip - normal",
-  "text": [
-   "Labeling criteria – pandrol_e-clip - normal",
-   "Project overview",
-   "The yellow part is the pandrol_e-clip.",
-   "It looks like a pig tail.",
-   "The example above shows normal."
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 57,
-  "hidden": false,
-  "title": "Labeling criteria – pandrol_e-clip - abnormal",
-  "text": [
-   "Labeling criteria – pandrol_e-clip - abnormal",
-   "Project overview",
-   "If the pandrol is not in its normal position, it is abnormal.",
-   "If the pandrol is around an existing location, such as the image on the left, please label the part itself.",
-   "If it’s away from its original position as shown in the image above, label the original position."
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 58,
-  "hidden": false,
-  "title": "Labeling criteria – insulation_block- normal",
-  "text": [
-   "Labeling criteria – insulation_block- normal",
-   "Project overview",
-   "The yellow part corresponds to the insulation block.",
-   "This is the oval-shaped part.",
-   "The example image above shows normal"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 59,
-  "hidden": false,
-  "title": "Labeling criteria – insulation_block - abnormal",
-  "text": [
-   "Labeling criteria – insulation_block - abnormal",
-   "Project overview",
-   "An abnormal insulation block includes broken or disconnected insulation blocks in different locations, or no insulation block at all.",
-   "Please check the examples above and the bounding box range.",
-   "Broken",
-   "Disconnected",
-   "Broken"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 60,
-  "hidden": false,
-  "title": "Labeling criteria – insulation_block - abnormal",
-  "text": [
-   "Labeling criteria – insulation_block - abnormal",
-   "Project overview",
-   "Create a B-box on the part itself if it is near the original location, or on the original location if it’s further away from the original location.",
-   "Please check the examples above and the bounding box range.",
-   "It’s away from the original location",
-   "It’s far from the original location"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 61,
-  "hidden": false,
-  "title": "Project overview",
-  "text": [
-   "Project overview",
    "Catenary",
    "-long_ear, Insulator"
   ],
@@ -1074,12 +957,11 @@
   "media": []
  },
  {
-  "n": 62,
+  "n": 54,
   "hidden": false,
   "title": "Labeling criteria",
   "text": [
    "Labeling criteria",
-   "Project overview",
    "Tool",
    "Class",
    "State",
@@ -1096,12 +978,11 @@
   "media": []
  },
  {
-  "n": 63,
+  "n": 55,
   "hidden": false,
   "title": "Labeling criteria – long_ear",
   "text": [
    "Labeling criteria – long_ear",
-   "Project overview",
    "Create a polygon by placing dots along the outline of the long_ear",
    "Select the long_ear that corresponds to the labeled object."
   ],
@@ -1109,19 +990,18 @@
   "media": []
  },
  {
-  "n": 64,
+  "n": 56,
   "hidden": false,
   "title": "Labeling criteria – long_ear",
   "text": [
    "Labeling criteria – long_ear",
-   "Project overview",
    "Select the normal / abnormal class based on the status of the long_ear."
   ],
   "notes": "",
   "media": []
  },
  {
-  "n": 65,
+  "n": 57,
   "hidden": false,
   "title": "Project overview",
   "text": [
@@ -1139,12 +1019,11 @@
   "media": []
  },
  {
-  "n": 66,
+  "n": 58,
   "hidden": false,
   "title": "Labeling criteria – Insulator",
   "text": [
    "Labeling criteria – Insulator",
-   "Project overview",
    "Create a bounding box along the outline of the insulator",
    "Select the insulator that corresponds to the labeled object."
   ],
@@ -1152,19 +1031,18 @@
   "media": []
  },
  {
-  "n": 67,
+  "n": 59,
   "hidden": false,
   "title": "Labeling criteria – Insulator",
   "text": [
    "Labeling criteria – Insulator",
-   "Project overview",
    "Select the normal / abnormal class based on the status of the insulator."
   ],
   "notes": "",
   "media": []
  },
  {
-  "n": 68,
+  "n": 60,
   "hidden": false,
   "title": "Project overview",
   "text": [
@@ -1176,22 +1054,11 @@
   "media": []
  },
  {
-  "n": 69,
+  "n": 61,
   "hidden": false,
-  "title": "Precaution",
+  "title": "Precaution & Common Rules",
   "text": [
-   "Precaution"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 70,
-  "hidden": false,
-  "title": "Common Rules",
-  "text": [
-   "Common Rules",
-   "Precaution",
+   "Precaution & Common Rules",
    "Label with bounding box per object.",
    "Annotations are tagged for each end of the object, and multiple annotations can overlap.",
    "If part of the object is invisible or occluded, label the visible part only.",
@@ -1201,7 +1068,7 @@
   "media": []
  },
  {
-  "n": 71,
+  "n": 62,
   "hidden": false,
   "title": "Thank You",
   "text": [

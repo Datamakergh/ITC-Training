@@ -178,9 +178,12 @@ def media_html(m):
     return f'<div class="fs-media" style="{box}">{el}</div>'
 
 
-def build(day, filename, page_title):
-    with open(os.path.join(META, f'd{day}-slides.json'), encoding='utf-8') as f:
-        slides = json.load(f)
+def build(day, filename, page_title, parts=('slides',)):
+    """parts: meta files tools/meta/d<day>-<part>.json, shown one after another (a day may join decks)."""
+    slides = []
+    for part in parts:
+        with open(os.path.join(META, f'd{day}-{part}.json'), encoding='utf-8') as f:
+            slides += json.load(f)
     nav = ('<div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false">'
            '<span></span><span></span><span></span></button><nav class="fs-nav">' + ''.join(
                '<a href="%s"%s>Day %d</a>' % (href, ' class="on"' if d == day else '', d) for d, href in DAY_LINKS)

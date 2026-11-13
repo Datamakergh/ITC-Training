@@ -1,0 +1,642 @@
+[
+ {
+  "n": 77,
+  "hidden": false,
+  "title": "Data Labeling Training Guide",
+  "text": [
+   "Data Labeling Training Guide",
+   "Presented by datamaker Ghana LimitedKenya 18-20th November 2026"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 78,
+  "hidden": false,
+  "title": "Foundations & Bounding Box",
+  "text": [
+   "DAILY SCHEDULE",
+   "DAY 1 OF 5",
+   "Foundations & Bounding Box",
+   "09:00–09:15",
+   "Introduction to programme",
+   "Sylvester Sakitey",
+   "09:15–10:00",
+   "Introduction to AI and the SYNAPSE platform",
+   "Sylvester Sakitey",
+   "10:00–10:45",
+   "Microsoft Office basics: Word, PowerPoint and Excel",
+   "Emmanuel Owusu Appiah",
+   "10:45–11:00",
+   "Break",
+   "11:00–11:45",
+   "Guideline comprehension and introduction to bounding box",
+   "Emmanuel Owusu Appiah",
+   "11:45–12:15",
+   "CCTV bounding-box guideline and labelling demonstration",
+   "Emmanuel Owusu Appiah",
+   "12:15–13:00",
+   "Lunch break",
+   "13:00–13:30",
+   "Bounding-box practice and quality feedback",
+   "ToT Trainees & GH Facilitators",
+   "13:30–14:00",
+   "Report gathering, reflection and daily review",
+   "ToT Trainees",
+   "2",
+   "3",
+   "4",
+   "5",
+   "1"
+  ],
+  "notes": "Day 1 opens the programme, introduces AI and the SYNAPSE platform and covers Office basics, then moves into the first labelling technique: bounding boxes on CCTV footage. The afternoon is hands-on practice with quality feedback.",
+  "media": []
+ },
+ {
+  "n": 79,
+  "hidden": false,
+  "title": "data Labeling Training   ·  ITC KENYA x datamaker",
+  "text": [
+   "data Labeling Training   ·  ITC KENYA x datamaker",
+   "Day 1: Bounding-Box",
+   "Kenya18th-20th November 2026",
+   "Day 1 of 5   |   5 contact hours including breaks   |   09:00 – 14:00",
+   "Audience: prospective trainers for AI data-Labeling training"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 80,
+  "hidden": false,
+  "title": "What is a Bounding-box?",
+  "text": [
+   "What is a Bounding-box?",
+   "A bounding box is an imaginary rectangle that serves as a point of reference for object detection and localisation"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.897924868766404,
+     21.5,
+     56.93020833333333,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-media1.mp4",
+    "poster": "assets/day1/media/p2-media1-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 81,
+  "hidden": false,
+  "title": "Examples of Polyline Annotation",
+  "text": [
+   "Examples of Polyline Annotation"
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": []
+ },
+ {
+  "n": 82,
+  "hidden": false,
+  "title": "How to Draw a B-Box?",
+  "text": [
+   "How to Draw a B-Box?",
+   "Click and Drag a Box Diagonally to draw a box."
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     4.865001640419948,
+     21.464975211431906,
+     56.99999999999999,
+     57.07006415864684
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image21.gif"
+   }
+  ]
+ },
+ {
+  "n": 83,
+  "hidden": false,
+  "title": "Move a box",
+  "text": [
+   "Move a box",
+   "Use the mouse to move the box by holding click and dragging it around"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     4.895833333333333,
+     21.5,
+     52.770833333333336,
+     56.99999999999999
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image22.gif"
+   }
+  ]
+ },
+ {
+  "n": 84,
+  "hidden": false,
+  "title": "Expand the image or reduce the image(Zoom)",
+  "text": [
+   "Expand the image or reduce the image(Zoom)",
+   "Use these buttons to increase the size of the image or reduce it. This helps to see the object boundaries clearly."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     12.561944741816772,
+     25.205045202682996,
+     39.05428218495897,
+     49.589909594634
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image25.gif"
+   }
+  ]
+ },
+ {
+  "n": 85,
+  "hidden": false,
+  "title": "Reduce image transparency",
+  "text": [
+   "Reduce image transparency",
+   "High-resolution images may make bounding box borders difficult to see. In such cases, use the brightness icon to adjust the image brightness and make the borders more visible."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 86,
+  "hidden": false,
+  "title": "Reduce image transparency",
+  "text": [
+   "Reduce image transparency",
+   "If bounding box borders are hard to see, use the brightness icon to adjust the image brightness and make them clearer."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 87,
+  "hidden": false,
+  "title": "Categories",
+  "text": [
+   "Categories",
+   "These are the objects the AI model needs to recognize.",
+   "They are grouped into categories called classes, which may have different states or subcategories depending on the project.",
+   "Vegetable",
+   "Cabbage",
+   "Fresh.",
+   "Not Fresh.",
+   "Lettuce",
+   "Green",
+   "Not Fresh",
+   "Carrot",
+   "Fresh",
+   "Not Fresh",
+   "Annotation 1",
+   "class*",
+   "Subcategory",
+   "Main Category"
+  ],
+  "notes": "QUESTION 1: When the car is upside down in the air, can a person react fast enough? (No. Things happen in fractions of a second, so the car's computer must control the thrusters.)\nQUESTION 2: Automated or autonomous? (Good discussion! The stunt is planned and practised in a closed area: the computer follows a plan and keeps the car balanced, which is mostly AUTOMATED. AUTONOMOUS would mean deciding by itself in new, busy places, like a city. The engineer says it cannot do that.)\nQUESTION 3: Is it ready for the road? (No. Maybe production in 2028, and it must pass safety rules. Exciting videos are not the same as a finished product: always check the facts, as we learned in Part 4.)\nINTERPRETER: thrusters = small jets that push the car; production = when the company starts making and selling it.\nSource: NBC Nightly News report, supplied by the course organisers. Keep it for classroom use only.",
+  "media": []
+ },
+ {
+  "n": 88,
+  "hidden": false,
+  "title": "Main Category",
+  "text": [
+   "Main Category",
+   "These are the objects you want the AI model to recognize. They are organized into categories, also known as classes, which may have different states or subcategories depending on the project requirements."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.897916666666666,
+     23.65740740740741,
+     56.92708333333333,
+     52.68518518518519
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.16667,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-media2.mp4",
+    "poster": "assets/day1/media/p2-media2-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 89,
+  "hidden": false,
+  "title": "Turn on or off Labels or borders",
+  "text": [
+   "Turn on or off Labels or borders",
+   "Press “L” on the keyboard to turn on or off labels whiles labelling",
+   "Press “B” on the keyboard to turn on or off borders whiles labeling"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     4.897916666666666,
+     23.796296296296298,
+     56.92708333333333,
+     52.407407407407405
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.17301,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-media3.mp4",
+    "poster": "assets/day1/media/p2-media3-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 90,
+  "hidden": false,
+  "title": "Turn on or off Guideline",
+  "text": [
+   "Turn on or off Guideline",
+   "Press “G” on the keyboard to turn on or off the black guideline."
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     8.69434875328084,
+     19.742811315252258,
+     49.706865157480316,
+     45.95406824146981
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.16795,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-media4.mp4",
+    "poster": "assets/day1/media/p2-media4-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 91,
+  "hidden": false,
+  "title": "Using the Pen tool",
+  "text": [
+   "Using the Pen tool",
+   "Training Practice Session"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 92,
+  "hidden": false,
+  "title": "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+  "text": [
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)",
+   "Hold Your Pen Vertically"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 93,
+  "hidden": false,
+  "title": "Draw from the Shoulder",
+  "text": [
+   "Draw from the Shoulder",
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     25.0,
+     13.048031496062992,
+     50.0,
+     66.66666666666666
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image39.gif"
+   }
+  ]
+ },
+ {
+  "n": 94,
+  "hidden": false,
+  "title": "Overusing the wrist leads to inflammation",
+  "text": [
+   "Overusing the wrist leads to inflammation",
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     25.0,
+     13.048031496062992,
+     50.0,
+     66.66666666666666
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image40.gif"
+   }
+  ]
+ },
+ {
+  "n": 95,
+  "hidden": false,
+  "title": "Keep Your Grip As Light As Possible",
+  "text": [
+   "Keep Your Grip As Light As Possible",
+   "How to Hold a Stylus Pen Correctly (Prevent Carpal Tunnel!) (nerdschalk.com)"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "gif",
+    "box": [
+     25.0,
+     13.048031496062992,
+     50.0,
+     66.66666666666666
+    ],
+    "crop": {
+     "l": 0.0,
+     "t": 0.0,
+     "r": 0.0,
+     "b": 0.0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p2-image41.gif"
+   }
+  ]
+ },
+ {
+  "n": 96,
+  "hidden": false,
+  "title": "CCTV Bounding Box project",
+  "text": [
+   "CCTV Bounding Box project",
+   "datamaker Guideline"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 97,
+  "hidden": false,
+  "title": "This file is intended for training",
+  "text": [
+   "This file is intended for training",
+   "'datamaker' workers.",
+   "All images and content used are the intellectual property of 'datamaker’, and",
+   "unauthorized distribution and",
+   "reproduction may be subject to legal sanctions."
+  ],
+  "notes": "This file is intended for training 'datamaker' workers.\nAll images and content used are the intellectual property of 'datamaker', and unauthorized distribution and reproduction may be subject to legal sanctions.",
+  "media": []
+ },
+ {
+  "n": 98,
+  "hidden": false,
+  "title": "Project overview",
+  "text": [
+   "Project overview",
+   "Purpose of the project",
+   "Labeling target",
+   "Labeling detail"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 99,
+  "hidden": false,
+  "title": "Warning",
+  "text": [
+   "Warning",
+   "This project highlights the importance of protecting personal information. Please ensure that the data in this project remains confidential.",
+   "Any data copied or exposed will be tracked."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 100,
+  "hidden": false,
+  "title": "Purpose of the project",
+  "text": [
+   "Purpose of the project",
+   "■ Purpose of the project",
+   "A project to detect and encrypt personal information in CCTV footage, such as human faces and vehicle license plates.",
+   "■ Create bounding box on the one’s head in the image",
+   "The human face is a bounding box labeling target, and the ears are labeling targets.",
+   "The back of a person's head is not a labeling target.​",
+   "Even if a person's face is not identifiable or is very small, they should still be considered as labeling targets.",
+   "■ Create bounding box on the ‘car license plate’",
+   "Create a bounding box to include both letters and numbers on a license plate.",
+   "Label plates even if both letters and numbers are not visible; if the boundaries of the plate are visible, label regardless.",
+   "Motorcycle plates are labeling targets."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 101,
+  "hidden": false,
+  "title": "Labeling target",
+  "text": [
+   "Labeling target",
+   "■ Labeling criteria",
+   "The labeling target is only the face; the hair is not the labeling target.",
+   "Masks and glasses on the face are labeling targets.",
+   "Earplugs, scarves, bags, umbrellas, helmets, hats, and handheld accessories are not labeling targets.",
+   "If earplugs or a cell phone are in the face range, this part should be labeled by guessing the face range.",
+   "The back of the person is not a labeling target. (Please note that it is a face labeling project)",
+   "Faces reflected in glass, a mirror, or an elevator wall are labeling targets.",
+   "When labeling the side faces, include the ears.",
+   "(o)The helmet is not the labeling target.",
+   "(o)When labeling the side faces, please label the ears.",
+   "(o)A person's face is not identifiable or very small is the labeling target.",
+   "(o)A person's face on the placards is the labeling target."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 102,
+  "hidden": false,
+  "title": "Labeling criteria",
+  "text": [
+   "Labeling criteria",
+   "The back of the head or the top of the head without a visible face is not a labeling target.",
+   "Do not label these areas."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 103,
+  "hidden": false,
+  "title": "Labeling criteria",
+  "text": [
+   "Labeling criteria",
+   "If there is no person in the image, please select the “skip” button without labeling."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 104,
+  "hidden": false,
+  "title": "Labeling detail",
+  "text": [
+   "Labeling detail",
+   "Create a bounding box around the entire car license plate. (numbers, letters)"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 105,
+  "hidden": false,
+  "title": "Precaution",
+  "text": [
+   "Precaution"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 106,
+  "hidden": false,
+  "title": "License plate labeling",
+  "text": [
+   "License plate labeling",
+   "Please ensure that the license plate is included correctly within the bounding box."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 107,
+  "hidden": false,
+  "title": "If a car's license plate is obscured, please estimate the original range and label it accordingly.",
+  "text": [
+   "If a car's license plate is obscured, please estimate the original range and label it accordingly.",
+   "License plate labeling"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 108,
+  "hidden": false,
+  "title": "License plate labeling",
+  "text": [
+   "License plate labeling",
+   "All motorcycle license plates are all labeling targets."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 109,
+  "hidden": false,
+  "title": "Thank You",
+  "text": [
+   "Thank You",
+   "END OF DAY",
+   "END OF DAY",
+   "Training of Trainers  ·  AI Data Labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker."
+  ],
+  "notes": "Final slide. Keep the close short.\nConfirm three practical things before people leave: that assessment records and action plans have been collected, who to contact with follow-up questions, and the date of any planned follow-up or reassessment session.",
+  "media": []
+ }
+]

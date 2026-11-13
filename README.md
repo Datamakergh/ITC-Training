@@ -8,15 +8,15 @@ Same format as the HQ Vietnam IAC package: open in a browser, nothing to install
 
 | File | Day | Source PowerPoint | Slides |
 |---|---|---|---|
-| `Day1.html` | 1 | Synapse Dashboard, Bounding Box, Pen tool, CCTV Bounding Box project | 94 |
-| `Day2.html` | 2 | `DAY 2/DAY 2 TRAINING MATERIAL.pptx` | 71 |
-| `Day3.html` | 3 | `DAY 3/DAY 3 TRAINING MATERIAL.pptx` | 69 |
-| `Day4.html` | 4 | `DAY 4/Generative AI & Prompt Engineering[04112026].pptx` | 62 |
-| `Day5.html` | 5 | `DAY 5/AI-Essentials Vibe Coding[04112026].pptx` | 19 |
+| `Day1.html` | 1 | `DAY 1/DATA ANNOTATION/Labeling Training Introduction Day 1.pptx`, then `DAY 1/DATA ANNOTATION/DAY 1 TRAINING MATERIAL.pptx` | 109 (76 + 33) |
+| `Day2.html` | 2 | `DAY 2/DAY 2 TRAINING MATERIAL.pptx` | 62 |
+| `Day3.html` | 3 | `DAY 3/DAY 3 TRAINING MATERIAL.pptx` | 63 |
+| `Day4.html` | 4 | `DAY 4/Generative AI & Prompt Engineering[11112026].pptx` | 62 |
+| `Day5.html` | 5 | `DAY 5/AI-Essentials Vibe Coding[11112026].pptx` | 19 |
 | `assets/` | | Slide images, GIFs and videos. **Keep next to the HTML files.** | |
 | `tools/` | | The generator that builds the HTML (see Editing) | |
 
-Day 1 does not use the `MICROSOFT OFFICE SUITE FILES` folder.
+Day 1 joins its two PowerPoints into one deck; slide numbers continue from the first into the second.
 
 ## Presenting
 
@@ -34,7 +34,7 @@ The URL keeps the slide number (`Day2.html#40`), so a refresh stays on the same 
 
 Speaker notes come only from the PowerPoint files.
 
-On Days 2 to 5:
+On every day:
 
 - The slide always fills the screen without being stretched: the slide's own background artwork
   covers the whole screen, and the slide content sits on it at its original 16:9 shape. The slide number
@@ -56,7 +56,7 @@ Videos print as a still frame.
 
 ## How the slides are made
 
-**Days 2 to 5** show every slide of the source PowerPoint, in order, exactly as designed:
+**Every day** shows every slide of its source PowerPoint(s), in order, exactly as designed:
 nothing added, nothing removed.
 
 - Every slide is exported by PowerPoint itself, so text, fonts, SmartArt, tables and layout match.
@@ -71,7 +71,7 @@ nothing added, nothing removed.
   the original files.
 - To change a slide, change the PowerPoint and rebuild (see below).
 
-**Day 1** (not yet rebuilt) mixes native HTML slides with slide images.
+**Day 1** is built from two PowerPoints, shown one after the other.
 
 ## Editing
 
@@ -91,12 +91,22 @@ python3 tools/extract_pptx.py N $D/dN.pptx              # text, notes, GIFs, vid
 python3 tools/dayN.py
 ```
 
-- `tools/fullslide.py` builds the Day 2 to 5 decks; `tools/split_layers.py`, `export_pdf.sh` and
+Day 1 is two PowerPoints (`d1a` = Labeling Training Introduction, `d1b` = Day 1 Training Material).
+Run steps 1 to 3 for each, then number part 2 after part 1 (76 slides at the time of writing):
+
+```
+python3 tools/render_layers.py 1 $D/d1a
+python3 tools/render_layers.py 1 $D/d1b --start 77
+python3 tools/extract_pptx.py 1 $D/d1a.pptx --part p1
+python3 tools/extract_pptx.py 1 $D/d1b.pptx --start 77 --part p2
+python3 tools/day1.py
+```
+
+- `tools/fullslide.py` builds every deck; `tools/split_layers.py`, `export_pdf.sh` and
   `render_layers.py` make the slide images; `tools/extract_pptx.py` reads the PPTX.
-- `tools/deck.py` and `tools/day1.py` build Day 1.
+- `tools/deck.py` holds shared paths and helpers (and the old native-slide builder, no longer used).
 - `tools/shell/` holds the stylesheet and presenter script from the HQ package.
 - `tools/meta/` holds the text, notes and media positions extracted from each PowerPoint.
-- `check_layout.py` checks the native HTML slides of Day 1 for clipped or overlapping content.
 - The build refuses to write a deck that contains an em dash (notes are rewritten with commas).
 
 ## Hosting

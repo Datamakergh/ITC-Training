@@ -2,11 +2,23 @@
  {
   "n": 1,
   "hidden": false,
+  "title": "AI Essentials",
+  "text": [
+   "AI Essentials",
+   "Build projects by describing them",
+   "Vibe Coding",
+   "AI Essentials",
+   "Build projects by describing them",
+   "Vibe Coding"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 2,
+  "hidden": false,
   "title": "Applied Project & Graduation",
   "text": [
-   "DAILY SCHEDULE",
-   "DAY 5 OF 5",
-   "Applied Project & Graduation",
    "1",
    "2",
    "3",
@@ -20,31 +32,22 @@
    "11:00–11:45",
    "Project completion, showcase and Q&A",
    "Both facilitators",
-   "11:45–12:15",
+   "11:45–12:30",
    "Testimonials, survey forms and programme feedback",
    "ToT Trainees",
-   "12:15–13:00",
+   "12:30–13:30",
    "Lunch break",
-   "13:00–13:30",
+   "13:30–14:00",
    "Graduation ceremony and photography",
    "Both facilitators",
-   "13:30–14:00",
+   "14:00–14:15",
    "Programme Q&A, next steps and close",
-   "Both facilitators"
+   "Both facilitators",
+   "DAILY SCHEDULE",
+   "DAY 5 OF 5",
+   "Applied Project & Graduation"
   ],
   "notes": "Day 5 is the applied project: a full morning of vibe coding, where each trainee builds a website, portfolio or expense tracker, then a showcase, feedback forms and testimonials. The afternoon is the graduation ceremony, photographs and a closing Q&A on next steps.",
-  "media": []
- },
- {
-  "n": 2,
-  "hidden": false,
-  "title": "AI Essentials",
-  "text": [
-   "AI Essentials",
-   "Vibe Coding",
-   "Build projects by describing them"
-  ],
-  "notes": "",
   "media": []
  },
  {
@@ -53,7 +56,6 @@
   "title": "What Is Vibe Coding?",
   "text": [
    "What Is Vibe Coding?",
-   "06",
    "You describe",
    "AI writes code",
    "You test",
@@ -69,7 +71,6 @@
   "title": "The CLEAR Recipe",
   "text": [
    "The CLEAR Recipe",
-   "06",
    "C",
    "Context",
    "What is it? Who",
@@ -99,7 +100,6 @@
   "title": "3 Projects Today",
   "text": [
    "3 Projects Today",
-   "06",
    "1. Portfolio",
    "A page about you and your",
    "skills",
@@ -119,7 +119,6 @@
   "title": "Copy, Save, Open",
   "text": [
    "Copy, Save, Open",
-   "06",
    "1. Copy",
    "Click “Copy”",
    "under the code",
@@ -142,7 +141,6 @@
   "title": "Project 1: Your Portfolio",
   "text": [
    "Project 1: Your Portfolio",
-   "06",
    "Like a business card on the internet.",
    "Header and menu",
    "About me",
@@ -159,7 +157,6 @@
   "title": "Build It: Your Portfolio",
   "text": [
    "Build It: Your Portfolio",
-   "06",
    "YOUR PROMPT · PROJECT 1",
    "Create a personal portfolio website in one HTML file, with",
    "the CSS inside. My name is [YOUR NAME].",
@@ -193,7 +190,6 @@
   "title": "Make It Better: Speak Normally",
   "text": [
    "Make It Better: Speak Normally",
-   "06",
    "“Make the title bigger.”",
    "“Change the background to light green.”",
    "“Add a section for photos.”",
@@ -212,7 +208,6 @@
   "title": "Project 2: The Expense Tracker",
   "text": [
    "Project 2: The Expense Tracker",
-   "06",
    "Like a money notebook that adds up by itself.",
    "Add: name, amount, type",
    "Delete with one click",
@@ -230,7 +225,7 @@
   "title": "Build It: The Expense Tracker",
   "text": [
    "Build It: The Expense Tracker",
-   "06",
+   "Refresh the page. What",
    "YOUR PROMPT · PROJECT 2",
    "Build an expense tracker app in one HTML file, with the",
    "CSS and JavaScript inside.",
@@ -245,7 +240,6 @@
    "Is the total right?",
    "Delete one. Does the",
    "total go down?",
-   "Refresh the page. What",
    "happens?"
   ],
   "notes": "Start a NEW chat for this project. Save the code as expenses.html.\nFill in your currency and colours, then send the prompt.\nTEST: Add 3 expenses. Is the total right? Check with a calculator. Delete one: does the total go down? Press Add with an empty form: what happens? Refresh the page: where did your expenses go? (They disappear. The next slide fixes that.)",
@@ -257,7 +251,6 @@
   "title": "Make the Tracker Smarter",
   "text": [
    "Make the Tracker Smarter",
-   "06",
    "PROMPT 2",
    "Filter",
    "Add buttons: All, Food,",
@@ -288,7 +281,6 @@
   "title": "Project 3: The Photo Album",
   "text": [
    "Project 3: The Photo Album",
-   "06",
    "Like a family photo album, on your computer.",
    "Photo grid",
    "Caption under each photo",
@@ -306,7 +298,7 @@
   "title": "Build It: The Photo Album",
   "text": [
    "Build It: The Photo Album",
-   "06",
+   "After Prompt 2: click a photo to see it",
    "PROMPT 1 · THE GRID",
    "Create a photo album web app in one HTML file. Show photos in a",
    "grid of 3 columns, with a caption and an album name (Family, Friends",
@@ -317,7 +309,6 @@
    "the caption below. An × button closes it. The Escape key also closes",
    "it.",
    "Next: ask for an Upload button and a Search box.",
-   "After Prompt 2: click a photo to see it",
    "big"
   ],
   "notes": "New chat, new file: album.html. Send Prompt 1, test it, then send Prompt 2.\nPrompt 1 makes the grid with sample photos. Prompt 2 adds the 'lightbox': click a photo and it opens big on a dark screen, like the picture on the right.\nMORE (if there is time): 'Add an Upload button so I can add my own photos.' 'Add a search box that shows only photos whose caption has my words.'\nNOTE: Uploaded photos may disappear when you refresh. That is normal for practice.",
@@ -329,7 +320,6 @@
   "title": "When Something Goes Wrong",
   "text": [
    "When Something Goes Wrong",
-   "06",
    "Blank page?",
    "Tell the AI what you see.",
    "Not what you",
@@ -349,7 +339,6 @@
   "title": "Build Your 3 Projects",
   "text": [
    "Build Your 3 Projects",
-   "06",
    "PRACTICAL 7 · 75 MIN · ON YOUR OWN",
    "1. Portfolio",
    "portfolio.html · 20 min",
@@ -371,7 +360,6 @@
   "title": "Show and Tell",
   "text": [
    "Show and Tell",
-   "06",
    "Swap screens",
    "Look at your partner’s",
    "page.",
@@ -391,27 +379,21 @@
   "text": [
    "REMEMBER",
    "Four things to take home",
-   "A clear prompt gets",
-   "a better answer",
-   "Use the 4 parts:",
-   "task, background,",
-   "information, style",
-   "Build in small",
-   "steps: describe,",
-   "test, improve",
+   "A clear prompt gets a better answer",
+   "Use the 4 parts: task, background, information, style",
+   "Build in small steps: describe, test, improve",
    "Check everything.",
    "Keep private things",
-   "private."
+   "private"
   ],
-  "notes": "Four things to take home.\n1. A clear prompt gets a better answer. 2. Use the four parts: task, background, information, answer style. 3. Build in small steps: describe, test, improve. 4. Always check, and keep private information private.\nWhat will you use AI for this week?",
+  "notes": "Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.\nKeep practising, a little every day. Take questions.\nINTERPRETER: Thank you for your help today.",
   "media": []
  },
  {
   "n": 19,
   "hidden": false,
-  "title": "DATAMAKER TRAINING CENTER",
+  "title": "Thank you",
   "text": [
-   "DATAMAKER TRAINING CENTER",
    "Thank you",
    "Keep learning. Keep building.",
    "Questions?"

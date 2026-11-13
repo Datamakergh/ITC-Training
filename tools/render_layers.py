@@ -1,6 +1,6 @@
 """Render the layer PDFs of a day into slide images.
 
-usage: python3 tools/render_layers.py <day> <pdf-prefix>
+usage: python3 tools/render_layers.py <day> <pdf-prefix> [--start N]   (--start: number slides from N)
   reads  <prefix>.pdf (the deck as is) and <prefix>-bg.pdf, <prefix>-fgw.pdf, <prefix>-fgb.pdf
          (from split_layers.py + export_pdf.sh)
   writes assets/day<day>/bg/sNN.jpg       background (fills the screen, cropped as needed)
@@ -27,7 +27,7 @@ def pages(pdf):
     return int(next(l.split()[-1] for l in out.splitlines() if l.startswith('Pages:')))
 
 
-def main(day, prefix):
+def main(day, prefix, start=1):
     pdfs = {k: f'{prefix}-{k}.pdf' for k in ('bg', 'fgw', 'fgb')}
     pdfs['full'] = f'{prefix}.pdf'
     counts = {k: pages(p) for k, p in pdfs.items()}
@@ -49,13 +49,14 @@ def main(day, prefix):
         w = len(str(n))  # pdftoppm pads page numbers to the page count's width
         for i in range(1, n + 1):
             tag = f'{i:0{w}d}'
-            os.replace(os.path.join(tmp, f'bg-{tag}.jpg'), os.path.join(bg_dir, f's{i:02d}.jpg'))
-            os.replace(os.path.join(tmp, f'full-{tag}.jpg'), os.path.join(fg_dir, f's{i:02d}.jpg'))
+            o = i + start - 1
+            os.replace(os.path.join(tmp, f'bg-{tag}.jpg'), os.path.join(bg_dir, f's{o:02d}.jpg'))
+            os.replace(os.path.join(tmp, f'full-{tag}.jpg'), os.path.join(fg_dir, f's{o:02d}.jpg'))
             subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(tmp, f'fgw-{tag}.png'),
                             '-i', os.path.join(tmp, f'fgb-{tag}.png'), '-filter_complex', MATTE,
-                            os.path.join(fg_dir, f's{i:02d}.png')], check=True)
+                            os.path.join(fg_dir, f's{o:02d}.png')], check=True)
     print(f'day {day}: {n} slides -> {bg_dir}, {fg_dir}')
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]), sys.argv[2])
+    main(int(sys.argv[1]), sys.argv[2], int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[3] == '--start' else 1)

@@ -1,6 +1,8 @@
 """Extract slide metadata and animated media (GIF / video) from a PPTX.
 
-usage: python3 tools/extract_pptx.py <day> <deck.pptx>
+usage: python3 tools/extract_pptx.py <day> <deck.pptx> [--start N --part NAME]
+  --start N    number the slides from N (a day built from several PowerPoints)
+  --part NAME  write tools/meta/d<day>-NAME.json and prefix media files with NAME-
 
 Writes tools/meta/d<day>-slides.json and copies media into assets/day<day>/media/:
   - GIFs unchanged
@@ -14,6 +16,7 @@ import json
 import os
 import posixpath
 import re
+import shutil
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -146,7 +149,7 @@ def encode_video(src, dst, trim, keep_audio=True):
     subprocess.run(cmd + [dst], check=True)
 
 
-def main(day, pptx):
+def main(day, pptx, start=1, part=None):
     z = zipfile.ZipFile(pptx)
     sw, sh = map(int, re.search(r'<p:sldSz cx="(\d+)" cy="(\d+)"', z.read('ppt/presentation.xml').decode()).groups())
     pres = ET.fromstring(z.read('ppt/presentation.xml'))
@@ -154,13 +157,15 @@ def main(day, pptx):
     order = [prel[s.get(R + 'id')][0] for s in pres.find('p:sldIdLst', NS)]
     mdir = os.path.join(ROOT, 'assets', f'day{day}', 'media')
     os.makedirs(mdir, exist_ok=True)
-    tmp = os.path.join(os.environ.get('TMPDIR', '/tmp'), f'kenya-d{day}-media')
-    os.makedirs(tmp, exist_ok=True)
+    tmp = os.path.join(os.environ.get('TMPDIR', '/tmp'), f'kenya-d{day}{part or ""}-media')
+    shutil.rmtree(tmp, ignore_errors=True)  # never reuse videos from an older copy of the deck
+    os.makedirs(tmp)
+    pre = f'{part}-' if part else ''
 
     slides = []
-    for n, part in enumerate(order, 1):
-        root = ET.fromstring(z.read(part))
-        srel = rels(z, part)
+    for n, spart in enumerate(order, start):
+        root = ET.fromstring(z.read(spart))
+        srel = rels(z, spart)
         hidden = root.get('show') == '0'
         tree = root.find('p:cSld/p:spTree', NS)
 
@@ -209,7 +214,7 @@ def main(day, pptx):
             crop = {k: int(sr.get(k, 0)) / 100000 if sr is not None else 0 for k in 'ltrb'}
             item = {'kind': kind, 'box': [x / sw * 100, y / sh * 100, w / sw * 100, h / sh * 100],
                     'crop': crop, 'rot': rot / 60000}
-            base = os.path.splitext(posixpath.basename(target))[0]
+            base = pre + os.path.splitext(posixpath.basename(target))[0]
             if kind == 'gif':
                 name = f'{base}.gif'
                 with open(os.path.join(mdir, name), 'wb') as f:
@@ -238,11 +243,18 @@ def main(day, pptx):
         if media:
             print(f's{n:02d}', [(m['kind'], m['src'].rsplit('/', 1)[1], m.get('autoplay'), m.get('loop')) for m in media])
 
-    out = os.path.join(ROOT, 'tools', 'meta', f'd{day}-slides.json')
+    out = os.path.join(ROOT, 'tools', 'meta', f'd{day}-{part or "slides"}.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(slides, f, ensure_ascii=False, indent=1)
     print(f'{out}: {len(slides)} slides, {sum(s["hidden"] for s in slides)} hidden')
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]), sys.argv[2])
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument('day', type=int)
+    ap.add_argument('pptx')
+    ap.add_argument('--start', type=int, default=1)
+    ap.add_argument('--part')
+    a = ap.parse_args()
+    main(a.day, a.pptx, a.start, a.part)

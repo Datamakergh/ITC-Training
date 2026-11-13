@@ -138,10 +138,11 @@ def plain_dashes(text):
     return text.replace(' — ', ', ').replace('—', ', ').replace('&mdash;', ', ')
 
 
-def slide(sid, title, kicker, body, cls='light', notes='', body_style=''):
+def slide(sid, title, kicker, body, cls='light', notes='', body_style='', section_style=''):
     notes = plain_dashes(notes)
     st = f' style="{body_style}"' if body_style else ''
-    return (f'<section class="slide {cls}" id="{sid}" data-title="{esc(title)}">{chrome(kicker)}'
+    ss = f' style="{section_style}"' if section_style else ''
+    return (f'<section class="slide {cls}" id="{sid}" data-title="{esc(title)}"{ss}>{chrome(kicker)}'
             f'<div class="slide-body"{st}>\n{body}\n</div><div class="notes" data-slide="">{esc(notes)}</div></section>')
 
 
@@ -169,8 +170,11 @@ def section(sid, title, kicker, lede='', ic='layers', deco_ic='box', notes='', d
 
 
 def guide(sid, title, kicker, img, notes=''):
+    # The original slide is shown whole (never cropped or stretched). Its blurred copy fills the
+    # side or top gaps, so there is no solid colour fill and no black bars.
     body = f'  <img class="guide-img" src="{img}" alt="{esc(title)}" loading="lazy">'
-    return slide(sid, title, kicker, body, 'light guide', notes)
+    return slide(sid, title, kicker, body, 'light guide', notes,
+                 section_style=f"--guide-src:url('{img}')")
 
 
 def content(sid, title, kicker, inner, eyebrow=None, notes='', h='h2', cls='light'):
