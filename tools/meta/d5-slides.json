@@ -1,0 +1,397 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "title": "AI Essentials",
+  "text": [
+   "AI Essentials",
+   "Build projects by describing them",
+   "Vibe Coding",
+   "AI Essentials",
+   "Build projects by describing them",
+   "Vibe Coding"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "title": "Applied Project & Graduation",
+  "text": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "09:00–10:45",
+   "Vibe coding practice: build a website, portfolio or expense tracker",
+   "Emmanuel Owusu Appiah",
+   "10:45–11:00",
+   "Break",
+   "11:00–11:45",
+   "Project completion, showcase and Q&A",
+   "Both facilitators",
+   "11:45–12:30",
+   "Testimonials, survey forms and programme feedback",
+   "ToT Trainees",
+   "12:30–13:30",
+   "Lunch break",
+   "13:30–14:00",
+   "Graduation ceremony and photography",
+   "Both facilitators",
+   "14:00–14:15",
+   "Programme Q&A, next steps and close",
+   "Both facilitators",
+   "DAILY SCHEDULE",
+   "DAY 5 OF 5",
+   "Applied Project & Graduation"
+  ],
+  "notes": "Day 5 is the applied project: a full morning of vibe coding, where each trainee builds a website, portfolio or expense tracker, then a showcase, feedback forms and testimonials. The afternoon is the graduation ceremony, photographs and a closing Q&A on next steps.",
+  "media": []
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "title": "What Is Vibe Coding?",
+  "text": [
+   "What Is Vibe Coding?",
+   "You describe",
+   "AI writes code",
+   "You test",
+   "Improve",
+   "You are the boss. The AI is the builder."
+  ],
+  "notes": "Vibe coding has four steps. You describe the web page you want. The AI writes the code. You open it and test it. Then you ask for improvements.\nYou do not need to learn the code. You are the boss. The AI is the builder.\nEXAMPLE: Like telling a builder 'I want a house with two bedrooms and a blue door.' You do not lay the bricks yourself.",
+  "media": []
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "title": "The CLEAR Recipe",
+  "text": [
+   "The CLEAR Recipe",
+   "C",
+   "Context",
+   "What is it? Who",
+   "is it for?",
+   "L",
+   "Language",
+   "“HTML in one",
+   "file”",
+   "E",
+   "Elements",
+   "What parts?",
+   "A",
+   "Appearance",
+   "Colours and",
+   "style",
+   "R",
+   "Result",
+   "What should it",
+   "do?"
+  ],
+  "notes": "To build with AI, use the CLEAR recipe. Five letters.\nC = Context: what is it, and who is it for? L = Language: say 'HTML in one single file'. E = Elements: the parts of the page. A = Appearance: colours and style. R = Result: what it should do, for example look good on a phone.\nINTERPRETER: CLEAR is an English word that helps people remember. Explain each part; keep the letters in English.",
+  "media": []
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "title": "3 Projects Today",
+  "text": [
+   "3 Projects Today",
+   "1. Portfolio",
+   "A page about you and your",
+   "skills",
+   "2. Expense tracker",
+   "An app that adds up your",
+   "money",
+   "3. Photo album",
+   "A gallery for your photos",
+   "Each project: a new chat and a new file."
+  ],
+  "notes": "Today you will build three real projects with AI, one after another.\nProject 1: a portfolio, a web page about you and your skills.\nProject 2: an expense tracker, an app that adds up your money.\nProject 3: a photo album, a gallery for your photos.\nThese pictures are real pages, made with the same prompts you will use. Yours will look different, because you choose the words and colours.\nRULE: Start a NEW chat and a NEW file for each project.",
+  "media": []
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "title": "Copy, Save, Open",
+  "text": [
+   "Copy, Save, Open",
+   "1. Copy",
+   "Click “Copy”",
+   "under the code",
+   "2. Paste",
+   "Open Notepad",
+   "and paste",
+   "3. Save",
+   "portfolio.html (All",
+   "Files)",
+   "4. Open",
+   "Double-click:",
+   "your website!"
+  ],
+  "notes": "Four steps for every project.\n1. Copy the code: click the Copy button under the code.\n2. Open Notepad and paste.\n3. Save it with a name that ends in .html: portfolio.html, then expenses.html, then album.html. In 'Save as type', choose 'All Files'.\n4. Double-click the file. It opens in your browser. That is your website!\nINTERPRETER: Show the steps on the projector while translating.",
+  "media": []
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "title": "Project 1: Your Portfolio",
+  "text": [
+   "Project 1: Your Portfolio",
+   "Like a business card on the internet.",
+   "Header and menu",
+   "About me",
+   "Skills",
+   "Projects",
+   "Contact (public email)"
+  ],
+  "notes": "Project 1 is a portfolio: a web page that shows who you are, what you can do, and how to contact you.\nIt is like a business card on the internet. It works 24 hours a day.\nLook at the example. It has five parts: a header with a menu, About me, Skills, Projects and Contact.\nIDEA: If you have a small business (tailoring, hair, food, phone repair), you can make the page about your business instead.\nSAFETY: Only a public email address. No phone number, no home address, no ID numbers.\nNote: the example is a real page made for this course; 'Amina' is an invented name.",
+  "media": []
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "title": "Build It: Your Portfolio",
+  "text": [
+   "Build It: Your Portfolio",
+   "YOUR PROMPT · PROJECT 1",
+   "Create a personal portfolio website in one HTML file, with",
+   "the CSS inside. My name is [YOUR NAME].",
+   "Include, in this order:",
+   "1. A header with my name and a menu",
+   "2. About me: [3 FACTS ABOUT YOU]",
+   "3. Skills: 4 cards: [YOUR 4 SKILLS]",
+   "4. Projects: 3 cards with a title, short text and a View button",
+   "5. Contact: [PUBLIC EMAIL]",
+   "Use [2 COLOURS]. Make it modern and friendly, and good",
+   "on a phone.",
+   "C",
+   "A portfolio for you",
+   "L",
+   "One HTML file",
+   "E",
+   "The 5 parts",
+   "A",
+   "Your colours",
+   "R",
+   "Good on a phone",
+   "Public email only. No phone",
+   "number or home address."
+  ],
+  "notes": "Fill in the [brackets] on paper first. Then type the prompt into Claude.\nCheck it with CLEAR: C, a portfolio for you. L, one HTML file. E, the five parts. A, your colours. R, good on a phone.\nSMALL BUSINESS: change 'my name' to the business name, and 'skills' to services with prices.\nSAFETY: public email only.\nINTERPRETER: The prompt can be typed in English or in the participant's language.",
+  "media": []
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "title": "Make It Better: Speak Normally",
+  "text": [
+   "Make It Better: Speak Normally",
+   "“Make the title bigger.”",
+   "“Change the background to light green.”",
+   "“Add a section for photos.”",
+   "“The button does nothing. Make it open",
+   "WhatsApp.”",
+   "One change at a",
+   "time.",
+   "Test after each one."
+  ],
+  "notes": "Now improve your page. Talk to the AI in normal words. You do not need technical words.\nAsk for one change at a time. After each change, copy, save and open again to test it.\nEXAMPLES: 'Make the title bigger.' 'Change the background to light green.' 'Add a section with photos.' 'The button does nothing. Make it open WhatsApp.'",
+  "media": []
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "title": "Project 2: The Expense Tracker",
+  "text": [
+   "Project 2: The Expense Tracker",
+   "Like a money notebook that adds up by itself.",
+   "Add: name, amount, type",
+   "Delete with one click",
+   "Total adds up by itself",
+   "Filter: only Food, only Bills",
+   "Chart: where money goes",
+   "Saves, even after closing"
+  ],
+  "notes": "Project 2 is your first app that DOES things, not only shows things.\nMany families keep a small book of money in and money out. This is the same book on a computer, but it adds up by itself.\nLook at the example. You type a name and an amount, choose a type (Food, Transport, Bills), and press Add. The total updates by itself. The round chart shows where the money goes.\nHow could this help you or your family?\nNote: the example is a real page made for this course.",
+  "media": []
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "title": "Build It: The Expense Tracker",
+  "text": [
+   "Build It: The Expense Tracker",
+   "YOUR PROMPT · PROJECT 2",
+   "Build an expense tracker app in one HTML file, with the",
+   "CSS and JavaScript inside.",
+   "A form: expense name, amount, and a type: Food,",
+   "Transport, Bills or Other.",
+   "When I click Add, show the expense in a list with a red",
+   "Delete button.",
+   "Show the total at the bottom. Update it by itself.",
+   "Show money in [YOUR CURRENCY]. Use [2 COLOURS].",
+   "Test it",
+   "Add 3 expenses",
+   "Is the total right?",
+   "Delete one. Does the",
+   "total go down?",
+   "Refresh the page. What happens"
+  ],
+  "notes": "Start a NEW chat for this project. Save the code as expenses.html.\nFill in your currency and colours, then send the prompt.\nTEST: Add 3 expenses. Is the total right? Check with a calculator. Delete one: does the total go down? Press Add with an empty form: what happens? Refresh the page: where did your expenses go? (They disappear. The next slide fixes that.)",
+  "media": []
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "title": "Make the Tracker Smarter",
+  "text": [
+   "Make the Tracker Smarter",
+   "PROMPT 2",
+   "Filter",
+   "Add buttons: All, Food,",
+   "Transport, Bills, Other.",
+   "Clicking one shows only",
+   "that type and its total.",
+   "PROMPT 3",
+   "Save",
+   "Save my expenses in the",
+   "browser with",
+   "localStorage, so they are",
+   "still there when I open the",
+   "page again.",
+   "PROMPT 4",
+   "Chart",
+   "Add a round chart that",
+   "shows how much I spent",
+   "on each type. Use",
+   "Chart.js. Update it after",
+   "every change."
+  ],
+  "notes": "Now add three more features. Send ONE prompt, test it, then send the next.\nPROMPT 2, filter: shows only one type of spending, and its total.\nPROMPT 3, save: the expenses stay after you close the page. They are saved only on this computer's browser.\nPROMPT 4, chart: a round chart that shows where the money goes.\nTIP: If something breaks, say what you see and ask the AI to fix only that part.",
+  "media": []
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "title": "Project 3: The Photo Album",
+  "text": [
+   "Project 3: The Photo Album",
+   "Like a family photo album, on your computer.",
+   "Photo grid",
+   "Caption under each photo",
+   "Albums: Family, Travel",
+   "Search captions",
+   "Upload your photos",
+   "Click to see it big"
+  ],
+  "notes": "Project 3 is a photo album: like the family albums people pass around, but on the computer.\nLook at the example: a neat grid of photos, a caption under each one, album names (Family, Friends, Travel), a search box and an Upload button. Click a photo to see it big.\nPRIVACY: Only use photos you are allowed to use. Ask people before you put their photo in, and do not put photos of other people's children online.\nNote: the example is a real page made for this course, with free photos from Unsplash.",
+  "media": []
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "title": "Build It: The Photo Album",
+  "text": [
+   "Build It: The Photo Album",
+   "After Prompt 2: click a photo to see it big",
+   "Next: ask for an Upload button and a Search box.",
+   "PROMPT 1 · THE GRID",
+   "Create a photo album web app in one HTML file. Show photos in a grid of 3 columns, with a caption and an album name (Family, Friends or Travel) under each photo. Use sample photos from picsum.photos for now. On a phone, show 1 column.",
+   "PROMPT 2 · CLICK TO SEE IT BIG",
+   "When I click a photo, show it big in the middle of a dark screen, with the caption below. An × button closes it. The Escape key also closes it."
+  ],
+  "notes": "New chat, new file: album.html. Send Prompt 1, test it, then send Prompt 2.\nPrompt 1 makes the grid with sample photos. Prompt 2 adds the 'lightbox': click a photo and it opens big on a dark screen, like the picture on the right.\nMORE (if there is time): 'Add an Upload button so I can add my own photos.' 'Add a search box that shows only photos whose caption has my words.'\nNOTE: Uploaded photos may disappear when you refresh. That is normal for practice.",
+  "media": []
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "title": "When Something Goes Wrong",
+  "text": [
+   "When Something Goes Wrong",
+   "Blank page?",
+   "Tell the AI what you see.",
+   "Not what you",
+   "wanted?",
+   "Describe it again, with",
+   "more detail.",
+   "Same error again?",
+   "Start a new chat. Paste",
+   "your last working code."
+  ],
+  "notes": "Problems are normal. Here is what to do.\nBlank or broken page? Tell the AI what you see: 'The page is blank. What went wrong?'\nNot what you wanted? Describe it again, with more detail.\nThe same error again and again? Start a new chat. Paste your last code that worked, and describe the problem.\nAsk yourself: what information was missing from my prompt?",
+  "media": []
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "title": "Build Your 3 Projects",
+  "text": [
+   "Build Your 3 Projects",
+   "PRACTICAL 7 · 75 MIN · ON YOUR OWN",
+   "1. Portfolio",
+   "portfolio.html · 20 min",
+   "2. Expense tracker",
+   "expenses.html · 25 min",
+   "3. Photo album",
+   "album.html · 25 min",
+   "1. Fill in the prompt",
+   "2. Send",
+   "3. Copy, save, open",
+   "4. Improve"
+  ],
+  "notes": "PRACTICAL 7 · ABOUT 75 MINUTES · ON YOUR OWN\nBuild the three projects, one after another. Start a new chat and a new file for each one.\nPortfolio: about 20 minutes. Expense tracker: about 25 minutes. Photo album: about 25 minutes.\nFor each: fill in the prompt, send it, copy-save-open, then make at least one improvement.\nTRAINER: Walk around and help. When someone is stuck, ask: 'What did you tell the AI? What is missing?' Fast learners can do the extra prompts (filter, save, chart, upload, search).\nSAFETY: public email only; no home address; only photos you are allowed to use.",
+  "media": []
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "title": "Show and Tell",
+  "text": [
+   "Show and Tell",
+   "Swap screens",
+   "Look at your partner’s",
+   "page.",
+   "Two stars",
+   "Say two things you like.",
+   "One wish",
+   "Suggest one change and",
+   "the prompt for it."
+  ],
+  "notes": "Swap seats with a partner. Look at their page.\nTwo stars: tell them two things you like. One wish: suggest one change, and the prompt they could use to make it.\nThen two or three people show their page on the projector.\nTo share your page online for free, ask the trainer after the session.",
+  "media": []
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "title": "REMEMBER",
+  "text": [
+   "REMEMBER",
+   "Four things to take home",
+   "A clear prompt gets a better answer",
+   "Use the 4 parts: task, background, information, style",
+   "Build in small steps: describe, test, improve",
+   "Check everything.",
+   "Keep private things",
+   "private"
+  ],
+  "notes": "Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.\nKeep practising, a little every day. Take questions.\nINTERPRETER: Thank you for your help today.",
+  "media": []
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "title": "Thank you",
+  "text": [
+   "Thank you",
+   "Keep learning. Keep building.",
+   "Questions?"
+  ],
+  "notes": "Thank you for your hard work today. You learned what AI is, how to talk to it, and you built your own web page.\nKeep practising, a little every day. Take questions.\nINTERPRETER: Thank you for your help today.",
+  "media": []
+ }
+]

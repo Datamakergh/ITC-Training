@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ToT Day 1: Programme Introduction | Kenya ITC × datamaker</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --accent:#2461E9; --accent-2:#1a48b8; --dark:#182034;
+  --bg:#ffffff; --bg-soft:#f4f6fb; --surface:#ffffff; --surface-2:#eef1f8;
+  --border:#e2e6ef; --border-strong:#c9d0e0;
+  --text-1:#182034; --text-2:#4b5568; --text-3:#8a92a6;
+  --good:#1aaf6c; --warn:#e0a324; --bad:#e0445a;
+  --radius:14px; --radius-lg:22px;
+  --shadow:0 8px 24px rgba(24,32,52,.08); --shadow-lg:0 20px 48px rgba(24,32,52,.16);
+  --font:'Malgun Gothic','Apple SD Gothic Neo','Inter',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#0b0e16;font-family:var(--font);color:var(--text-1)}
+img{max-width:100%;display:block}
+.deck{position:relative;width:100vw;height:100vh;overflow:hidden;background:var(--dark)}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--bg);
+  opacity:0;pointer-events:none;transform:translateX(24px);transition:opacity .4s ease,transform .4s ease}
+.slide.is-active{opacity:1;pointer-events:auto;transform:translateX(0);z-index:2}
+.slide.is-prev{transform:translateX(-24px)}
+.slide.dark{background:var(--dark);color:#fff}
+.slide.dark .text-2,.slide.dark .lede{color:#c3c9dc}
+body.single .slide{position:relative;width:100vw;height:100vh;opacity:1;transform:none;pointer-events:auto}
+
+.deck-chrome{display:flex;align-items:center;justify-content:space-between;padding:26px 56px 0;font-size:12.5px;
+  letter-spacing:.08em;color:var(--text-3);text-transform:uppercase;flex:0 0 auto}
+.slide.dark .deck-chrome{color:#8b93ad}
+.dc-left{display:flex;align-items:center;gap:10px}
+.dc-logo{font-weight:800;color:var(--accent);letter-spacing:-.01em;text-transform:none;font-size:14px}
+.slide.dark .dc-logo{color:#6f97ff}
+/* ---- 로고 이미지 (텍스트 로고 -> logo.svg 교체) ---- */
+.dc-logo{display:inline-flex;align-items:center}
+.dc-logo img{height:17px;width:auto;display:block}
+.dc-logo .logo-dark{display:none}
+.slide.dark .dc-logo .logo-light{display:none}
+.slide.dark .dc-logo .logo-dark{display:block}
+.title-logo img{height:24px;width:auto;display:block}
+.dc-sep{opacity:.5}
+.slide-num::before{content:attr(data-n) " / " attr(data-total)}
+/* ---- 페이지 번호: 반투명 pill + 살짝 위로 (제본 피드백 반영) ---- */
+.slide-num{display:inline-block;background:rgba(255,255,255,.78);padding:2px 9px;border-radius:8px;
+  position:relative;top:-9px;font-weight:700}
+.slide.dark .slide-num{background:rgba(15,20,32,.55)}
+
+.slide-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:18px 56px 46px;overflow:hidden;position:relative}
+
+/* ---- 실습 중 상시 표시 화면 (흰 배경 / 표지·섹션과 구분되는 전용 양식) ---- */
+.slide.practice{background:#fff}
+.slide.practice .slide-body{padding:0 56px}
+.pr-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;flex:1}
+.pr-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(36,97,233,.09);
+  border:1px solid rgba(36,97,233,.28);border-radius:999px;padding:9px 22px;margin-bottom:24px;
+  font-size:14px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.pr-badge svg{width:17px;height:17px}
+.pr-title{font-size:78px;font-weight:800;color:var(--accent);line-height:1.04;letter-spacing:-.02em;margin:0 0 16px}
+.pr-sub{font-size:22px;color:var(--text-2);margin:0 0 38px;max-width:820px}
+.pr-checks{display:flex;gap:11px;flex-wrap:wrap;justify-content:center;max-width:1000px}
+.pr-checks span{font-size:15px;font-weight:700;color:var(--accent);background:rgba(36,97,233,.07);
+  border:1px solid rgba(36,97,233,.22);border-radius:999px;padding:11px 21px}
+.pr-help{margin-top:34px;font-size:18px;font-weight:700;color:var(--text-1);
+  border-top:1px solid var(--border);padding-top:22px}
+@media print{
+  .slide.practice{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ---- Synapse 툴 가이드 (레퍼런스 원본 슬라이드 이미지 그대로 사용) ---- */
+/* Kenya: guide image sits below the chrome strip so the slide number never covers the original slide */
+.slide.guide .deck-chrome{padding:12px 56px 0}
+.slide.guide .slide-num{top:0}
+.slide.guide .slide-body{padding:8px 56px 14px;align-items:center}
+.guide-img{width:100%;height:100%;min-height:0;object-fit:contain;display:block;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+/* Blurred copy of the same slide fills the gaps around the original (no distortion, no solid fill) */
+.slide.guide::before{content:"";position:absolute;inset:-40px;z-index:0;background:var(--guide-src) center/cover no-repeat;filter:blur(28px) brightness(.9) saturate(1.05);pointer-events:none}
+.slide.guide .deck-chrome,.slide.guide .slide-body{position:relative;z-index:1}
+
+/* ---- typography ---- */
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.slide.dark .eyebrow{color:#7fa2ff}
+.h1{font-size:52px;font-weight:800;line-height:1.12;letter-spacing:-.02em;margin:0 0 12px;word-break:keep-all}
+.h2{font-size:38px;font-weight:800;line-height:1.16;letter-spacing:-.015em;margin:0 0 16px;word-break:keep-all}
+.lede{font-size:19px;line-height:1.55;color:var(--text-2);font-weight:400;max-width:74ch;margin:0 0 18px}
+.bl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.bl li{position:relative;padding-left:24px;font-size:17px;line-height:1.5;color:var(--text-2);word-break:keep-all}
+.bl li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.slide.dark .bl li{color:#d3d8e8}
+
+/* ---- section divider ---- */
+.section-slide .slide-body{justify-content:center;align-items:flex-start}
+.sec-wrap{max-width:900px}
+.sec-num{color:var(--accent);opacity:.9;margin-bottom:18px}
+.sec-title{font-size:64px}
+.section-slide{background:radial-gradient(1100px 700px at 85% 15%, rgba(36,97,233,.35), transparent 60%),
+  radial-gradient(900px 600px at 5% 95%, rgba(36,97,233,.18), transparent 55%), var(--dark)}
+
+/* ---- title slide ---- */
+.title-slide{background:linear-gradient(155deg,#101526 0%,#182034 45%,#1c2c57 100%)}
+.title-slide .slide-body{justify-content:center;align-items:flex-start;position:relative}
+.title-wm{position:absolute;right:24px;top:-30px;color:rgba(111,151,255,.10);font-weight:800;font-size:240px;
+  letter-spacing:-.05em;line-height:1;pointer-events:none;user-select:none}
+.title-deco{position:absolute;right:70px;bottom:60px;color:rgba(111,151,255,.16);pointer-events:none;user-select:none}
+.title-day{font-size:15px;font-weight:700;color:#7fa2ff;letter-spacing:.22em;text-transform:uppercase;margin-bottom:22px}
+.title-h1{font-size:66px;font-weight:800;color:#fff;line-height:1.1;max-width:900px;letter-spacing:-.02em;margin:0 0 14px}
+.title-sub{font-size:22px;color:#aab3cc;font-weight:400;margin:0 0 30px;max-width:760px}
+.title-meta{display:flex;gap:34px;flex-wrap:wrap;margin-top:8px}
+.title-meta div{display:flex;align-items:center;gap:10px;color:#c3c9dc;font-size:15px}
+.title-meta svg{color:#7fa2ff}
+.title-logo{position:absolute;left:56px;bottom:36px;font-weight:800;color:#fff;font-size:16px;letter-spacing:-.01em}
+.title-logo b{color:#7fa2ff}
+
+/* ---- icon cards ---- */
+.icard-grid{display:grid;gap:22px;margin-top:10px}
+.icard-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.icard-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+.icard-grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.icard{background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--accent);
+  border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center}
+.icard-ic{color:var(--accent);margin-bottom:16px}
+.icard-ic svg{width:34px;height:34px}
+.icard-t{font-size:19px;font-weight:700;margin-bottom:9px;letter-spacing:-.01em;word-break:keep-all}
+.icard-d{font-size:15.5px;color:var(--text-2);line-height:1.55;word-break:keep-all}
+.slide.dark .icard{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.slide.dark .icard-t{color:#fff}
+.slide.dark .icard-d{color:#b9c0d6}
+
+/* ---- flow / pipe ---- */
+.pipe{display:flex;align-items:stretch;gap:0;margin-top:10px}
+.pnode{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px 20px;text-align:left;box-shadow:var(--shadow);min-width:0;display:flex;flex-direction:column;justify-content:center}
+.pn-badge{width:38px;height:38px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:15px;margin-bottom:14px}
+.pn-t{font-size:17px;font-weight:700;margin-bottom:6px;word-break:keep-all}
+.pn-d{font-size:14.5px;color:var(--text-2);line-height:1.5;word-break:keep-all}
+.pn-viz{margin-top:14px}
+.pn-viz-lg{margin-top:0;margin-bottom:16px;height:150px}
+
+/* ---- lifecycle infographic ---- */
+.lc-wrap{position:relative;margin-top:22px}
+.lc-track{position:absolute;top:26px;left:0;width:100%;height:40px;z-index:0}
+.lc-row{position:relative;z-index:1;display:flex;gap:14px}
+.lc-node{flex:1;text-align:center;min-width:0}
+.lc-ic{position:relative;width:56px;height:56px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 6px 16px rgba(36,97,233,.25)}
+.lc-ic.ic-collect{background:linear-gradient(140deg,#5b8def,#2461E9)}
+.lc-ic.ic-label{background:linear-gradient(140deg,#4f7de0,#1e50c9)}
+.lc-ic.ic-train{background:linear-gradient(140deg,#456ed1,#1a45b0)}
+.lc-ic.ic-validate{background:linear-gradient(140deg,#3a5fc4,#163c99)}
+.lc-ic.ic-deploy{background:linear-gradient(140deg,#2fae5c,#1f8a47)}
+.lc-ic.ic-repeat{background:linear-gradient(140deg,#f0a831,#d6841a)}
+.lc-num{position:absolute;top:-4px;right:-4px;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid var(--accent);color:var(--accent);font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.lc-node .pn-t{font-size:15.5px}
+.lc-node .pn-d{font-size:12.5px}
+.lc-wrap-lg{margin-top:36px;padding:0 40px}
+.lc-wrap-lg .lc-row{gap:28px}
+.lc-wrap-lg .lc-ic{width:84px;height:84px;margin-bottom:20px}
+.lc-wrap-lg .lc-num{width:26px;height:26px;font-size:13px;border-width:2.5px}
+.lc-wrap-lg .pn-t{font-size:19px;margin-bottom:6px}
+.lc-wrap-lg .pn-d{font-size:15px;max-width:260px;margin:0 auto}
+.loop-back{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:0}
+.loop-back svg{width:100%}
+.loop-label{font-size:14.5px;color:var(--text-1);font-weight:700;text-align:center}
+.pipe-viz-first .pnode{padding:16px 16px 20px}
+.pipe-viz-first .pn-badge{margin-bottom:12px}
+.parrow{display:flex;align-items:center;justify-content:center;color:var(--border-strong);padding:0 6px;flex:0 0 auto}
+.slide.dark .pnode{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+.slide.dark .pn-d{color:#b9c0d6}
+.flow-note{margin-top:18px;padding:14px 20px;border-left:5px solid var(--accent);background:var(--bg-soft);border-radius:0 12px 12px 0;font-size:15.5px;font-weight:600;color:var(--text-1);line-height:1.5;display:flex;align-items:flex-start;gap:10px}
+.flow-note svg{flex:0 0 auto;margin-top:2px}
+
+/* ---- stat band ---- */
+.stat-band{display:flex;gap:0;margin-top:10px}
+.bar-chart{margin-top:16px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+
+/* ---- difficulty ladder ---- */
+.ladder{display:flex;align-items:flex-end;gap:16px;flex:1;min-height:0;margin-top:26px;padding-top:30px}
+.ladder-step{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;min-width:0}
+.ladder-bar{width:100%;height:var(--h);border-radius:9px 9px 0 0;background:linear-gradient(180deg,#5b8def,#2461E9);box-shadow:0 6px 14px rgba(36,97,233,.2)}
+.ladder-step.dim .ladder-bar{background:#dde3f0;box-shadow:none}
+.ladder-t{margin-top:12px;font-size:13.5px;font-weight:700;text-align:center;color:var(--text-1);word-break:keep-all}
+.ladder-step.dim .ladder-t{color:var(--text-3);font-weight:600}
+.ladder-tag{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+
+/* ---- trend bar ---- */
+.trend-bar{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.trend-col{display:flex;align-items:center;gap:14px}
+.trend-cap{flex:0 0 auto;width:120px;font-size:12px;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.04em}
+.trend-track{flex:1;background:var(--surface-2);border-radius:8px;overflow:hidden;height:32px;display:flex;align-items:center}
+.trend-fill{height:100%;display:flex;align-items:center;padding:0 12px;font-size:12.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trend-fill.simple{background:linear-gradient(90deg,#9db3d9,#7590c2)}
+.trend-fill.complex{background:linear-gradient(90deg,#5b8def,#2461E9)}
+
+/* ---- career path ---- */
+.career-path{display:flex;align-items:center;gap:6px;flex:1;min-height:0;margin-top:34px}
+.career-start{flex:0 0 210px;position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:22px 16px;font-size:16px;font-weight:700;text-align:center;color:var(--text-1)}
+.career-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:800;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.career-start small{display:block;margin-top:4px;font-weight:500;color:var(--text-2);font-size:12.5px}
+.career-fan{flex:0 0 100px;height:110px}
+.career-branches{flex:1;display:flex;flex-direction:column;gap:14px}
+.career-node{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:15px 20px;font-weight:700;font-size:15.5px;box-shadow:var(--shadow)}
+.career-node.accent{border-color:var(--accent);background:rgba(36,97,233,.06);color:var(--accent)}
+.donut-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.donut-wrap svg{filter:drop-shadow(0 8px 14px rgba(36,97,233,.18))}
+.reason-list{display:flex;flex-direction:column;justify-content:center;gap:22px}
+.reason-item{display:flex;align-items:flex-start;gap:16px}
+.reason-ic{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:rgba(36,97,233,.1);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.reason-t{font-size:17px;font-weight:800;color:var(--text-1);margin-bottom:4px}
+.reason-d{font-size:14.5px;color:var(--text-2);line-height:1.55}
+.growth-chart{margin-top:18px;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
+.picto{margin-top:14px;display:flex;align-items:center;justify-content:center}
+.qcompare{margin-top:14px}
+.chart-caveat{position:absolute;bottom:2px;right:6px;font-size:10.5px;color:var(--text-3);font-style:italic}
+.stat{flex:1;text-align:center;padding:20px 10px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-big{font-size:56px;font-weight:800;color:var(--accent);letter-spacing:-.02em;line-height:1}
+.stat-small{font-size:14px;color:var(--text-2);margin-top:10px;line-height:1.4}
+.stat-band-ic .stat-ic{color:var(--accent);margin-bottom:10px;display:flex;align-items:center;justify-content:center}
+.platform-frame{position:relative;margin-top:26px;padding:22px 20px 16px;border:2px dashed #c7d3ea;border-radius:18px}
+.platform-tag{position:absolute;top:-13px;left:24px;background:var(--bg);padding:0 10px;font-size:11px;font-weight:800;letter-spacing:.05em;color:var(--accent)}
+
+/* ---- module feature chips ---- */
+.feat-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.feat-chips span{font-size:11.5px;font-weight:700;color:var(--accent);background:rgba(36,97,233,.09);border-radius:999px;padding:4px 10px}
+
+/* ---- platform module grid (4-column, icon+text feature list) ---- */
+.mod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;flex:1;min-height:0}
+.mod-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+.mod-head{background:var(--accent);color:#fff;font-weight:800;font-size:14.5px;padding:11px 14px;letter-spacing:.01em}
+.mod-body{padding:13px 14px;display:flex;flex-direction:column;gap:13px;flex:1;background:var(--bg-soft)}
+.mod-item{display:flex;gap:9px;align-items:flex-start}
+.mod-item .mi-ic{flex:0 0 auto;width:28px;height:28px;border-radius:8px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.mod-item .mi-ic svg{width:16px;height:16px}
+.mod-item .mi-t{font-weight:700;font-size:12.5px;color:var(--text-1);line-height:1.2}
+.mod-item .mi-d{font-size:11px;color:var(--text-2);line-height:1.3;margin-top:2px}
+
+/* ---- solution blocks ---- */
+.sol-block{margin-top:14px}
+.sol-block.solo{margin-top:22px}
+.sol-block.solo .sol-name{font-size:17px;padding:6px 16px}
+.sol-block.solo .sol-desc{font-size:15px}
+.sol-block.solo .sol-grid{gap:20px;margin-top:6px}
+.sol-block.solo .sol-fig img{height:300px}
+.sol-block.solo .sol-fig figcaption{font-size:14px;padding:12px 12px}
+
+.sol-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.sol-name{font-size:14px;font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:4px 12px;white-space:nowrap}
+.sol-desc{font-size:13px;color:var(--text-2);line-height:1.4;flex:1;min-width:0}
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sol-fig{margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface-2)}
+.sol-fig img{width:100%;height:108px;object-fit:cover;display:block}
+.sol-fig figcaption{font-size:12px;font-weight:700;color:var(--text-2);padding:8px 10px;text-align:center}
+
+/* ---- 3-step case study images ---- */
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:16px;flex:1;min-height:0}
+.step-fig{margin:0;position:relative;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface-2);display:flex;flex-direction:column;min-height:0}
+.step-fig img{width:100%;flex:1;min-height:0;object-fit:cover;display:block}
+.step-tag{position:absolute;top:10px;left:10px;z-index:2;background:rgba(10,14,26,.78);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.05em;padding:5px 11px;border-radius:999px}
+.step-fig figcaption{font-size:12.5px;font-weight:700;color:var(--text-2);padding:9px 12px;text-align:center;background:var(--surface)}
+.platform-frame .icard-grid{margin-top:0}
+
+/* ---- client logo wall ---- */
+.client-logo-wrap{margin-top:14px;padding:0;
+  flex:1;min-height:0;min-width:0;display:flex;flex-direction:column;justify-content:space-evenly;overflow:hidden}
+.logo-row{display:flex;align-items:center;gap:18px;min-width:0;padding:6px 0;border-top:1px solid var(--border)}
+.logo-row:first-child{border-top:none}
+.logo-cat{flex:0 0 auto;width:145px;font-size:13.5px;font-weight:800;line-height:1.25;color:var(--text-2)}
+.logo-list{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;min-width:0}
+.logo-list img{height:22px;width:auto;max-width:120px;object-fit:contain;display:block}
+
+/* ---- split / image panel ---- */
+.split{display:grid;gap:34px;align-items:center;flex:1}
+.img-panel{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:16px;height:100%;display:flex;flex-direction:column;justify-content:center}
+.img-panel img{border-radius:10px;box-shadow:var(--shadow)}
+.img-cap{margin-top:10px;font-size:13px;color:var(--text-3);text-align:center}
+.photo-ph{aspect-ratio:4/3;border-radius:12px;background:repeating-linear-gradient(135deg,#e7ebf5,#e7ebf5 10px,#eef1f8 10px,#eef1f8 20px);
+  display:flex;align-items:center;justify-content:center;color:var(--text-3);border:1.5px dashed var(--border-strong);gap:10px;flex-direction:column}
+.photo-ph span{font-size:13px;font-weight:600;letter-spacing:.02em}
+.photo-real{aspect-ratio:4/3;border-radius:12px;overflow:hidden}
+.photo-real img{width:100%;height:100%;object-fit:cover;display:block}
+.team-photos{display:flex;gap:18px;flex:1;min-height:0;margin-top:16px}
+.team-photo{position:relative;flex:1;min-width:0;border-radius:14px;overflow:hidden;background:var(--surface-2)}
+.team-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.team-badge{position:absolute;left:14px;bottom:14px;background:rgba(10,14,26,.72);color:#fff;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px}
+
+/* ---- full image ---- */
+.img-full-wrap{flex:1;display:flex;flex-direction:column;min-height:0}
+.img-full-frame{position:relative;flex:1;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1px solid var(--border);background:#0e1220;display:flex;align-items:center;justify-content:center}
+.img-full-frame img{width:100%;height:100%;object-fit:cover}
+.img-full-cap{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;color:var(--text-3)}
+.callout{position:absolute;background:rgba(24,32,52,.92);color:#fff;font-size:13px;padding:6px 11px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.25);font-weight:600;box-shadow:0 6px 16px rgba(0,0,0,.3)}
+
+/* ---- checklist ---- */
+.checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 26px}
+.checklist li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;color:var(--text-2);line-height:1.45;word-break:keep-all}
+.cl-ic.good{color:var(--good);flex:0 0 auto;margin-top:1px}
+.cl-ic.warn{color:var(--bad);flex:0 0 auto;margin-top:1px}
+
+/* ---- compare2 ---- */
+.compare2{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;margin-top:6px;flex:0 0 auto;max-height:400px}
+.cmp-col{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px}
+.cmp-col.accent{background:linear-gradient(160deg,rgba(36,97,233,.08),rgba(36,97,233,.02));border-color:rgba(36,97,233,.35)}
+.cmp-head{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;margin-bottom:14px;color:var(--text-1)}
+.cmp-head svg{color:var(--accent)}
+.cmp-vs{display:flex;align-items:center;color:var(--text-3)}
+
+/* ---- task card ---- */
+.task-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+.task-card{background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--accent);
+  border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow)}
+.task-top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.task-badge{width:36px;height:36px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+.task-title{font-weight:800;font-size:18px;flex:1;word-break:keep-all}
+.task-min{display:flex;align-items:center;gap:6px;color:var(--accent);font-weight:700;font-size:14px;background:rgba(36,97,233,.1);
+  padding:4px 10px;border-radius:999px}
+.task-desc{margin:0;font-size:15px;line-height:1.55;color:var(--text-2)}
+
+/* ---- note bar ---- */
+.note-bar{margin-top:18px;padding:16px 22px;border-left:5px solid var(--accent);background:var(--bg-soft);
+  border-radius:0 12px 12px 0;font-size:15.5px;line-height:1.55;color:var(--text-1)}
+.note-bar b{color:var(--accent)}
+.slide.dark .note-bar{background:rgba(255,255,255,.06);color:#e8ebf6}
+.award-row{display:flex;flex-wrap:wrap;gap:10px}
+.award-chip{font-size:12.5px;font-weight:700;color:var(--text-2);background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:7px 14px}
+.nest-dia{display:flex;align-items:center;justify-content:center;min-height:0;min-width:0}
+.nest-dia svg{width:100%;height:100%;max-width:400px;max-height:400px}
+.nest-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.nest-item:last-of-type{border-bottom:none}
+.nest-t{font-weight:800;font-size:19px;color:var(--text-1)}
+.nest-d{font-size:15px;color:var(--text-2);margin-top:5px;line-height:1.5}
+.spectrum-hdr{display:flex;align-items:center;gap:14px;margin:16px 0 12px;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-3)}
+.spectrum-track{flex:1;height:4px;border-radius:2px;background:linear-gradient(90deg,#cfd9ec,var(--accent))}
+.dep-meter{margin-top:14px;height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.dep-fill{height:100%;background:linear-gradient(90deg,#9db8f2,var(--accent))}
+.dep-label{margin-top:6px;font-size:11.5px;color:var(--text-3);font-weight:600}
+.lunch-split{display:flex;align-items:center;gap:20px;margin-top:34px;max-width:820px}
+.lunch-half{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 22px;font-size:15px;color:#d3d8e8;line-height:1.4}
+.lunch-half.accent{background:rgba(36,97,233,.22);border-color:rgba(111,151,255,.4);color:#fff}
+.lunch-tag{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7fa2ff;margin-bottom:8px}
+.lunch-arrow{flex:0 0 auto;color:#7fa2ff;font-size:22px}
+
+/* ---- table ---- */
+table.dtbl{width:100%;border-collapse:collapse;margin-top:8px}
+table.dtbl th{text-align:left;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);
+  padding:0 14px 10px;border-bottom:2px solid var(--border-strong)}
+table.dtbl td{padding:14px 14px;font-size:15.5px;border-bottom:1px solid var(--border);color:var(--text-2)}
+table.dtbl tr:last-child td{border-bottom:none}
+table.dtbl td:first-child{font-weight:700;color:var(--text-1)}
+
+/* ---- agenda list ---- */
+.agenda{display:flex;flex-direction:column;gap:0;margin-top:10px;border-top:1px solid var(--border)}
+.agenda .a-row{display:flex;align-items:center;gap:18px;padding:15px 4px;border-bottom:1px solid var(--border)}
+.a-idx{width:30px;height:30px;border-radius:8px;background:var(--surface-2);color:var(--text-3);font-weight:800;font-size:13px;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.a-title{flex:1;font-weight:600;font-size:16.5px}
+.a-time{color:var(--accent);font-weight:700;font-size:14px;background:rgba(36,97,233,.08);padding:4px 12px;border-radius:999px}
+.a-row.lunch{opacity:.68}
+.a-row.lunch .a-title{font-weight:500;font-style:italic}
+.a-row.lunch .a-time{color:var(--text-3);background:var(--surface-2)}
+
+/* ---- certificate ---- */
+.cert-wrap{flex:1;display:flex;align-items:center;justify-content:center}
+.cert{width:100%;max-width:920px;border:2px solid var(--accent);border-radius:20px;padding:52px 60px;text-align:center;
+  background:linear-gradient(180deg,#fff,#f7f9ff);box-shadow:var(--shadow-lg);position:relative}
+.cert-ic{color:var(--accent);margin-bottom:14px}
+.cert-org{font-weight:800;color:var(--accent);letter-spacing:.08em;font-size:13px;text-transform:uppercase;margin-bottom:6px}
+.cert-h{font-size:28px;font-weight:800;margin:0 0 22px}
+.cert-name{font-size:34px;font-weight:800;color:var(--dark);margin:14px 0;border-bottom:2px solid var(--border-strong);
+  display:inline-block;padding:0 40px 10px}
+.cert-body{font-size:15.5px;color:var(--text-2);max-width:640px;margin:16px auto;line-height:1.6}
+.cert-meta{display:flex;justify-content:center;gap:40px;margin-top:24px;font-size:14px;color:var(--text-3)}
+.cert-sign{margin-top:34px;font-size:14px;color:var(--text-3)}
+
+/* ---- deck-footer / progress ---- */
+.progress-bar{position:fixed;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);z-index:30}
+.progress-bar>span{display:block;height:100%;width:0;background:var(--accent);transition:width .25s ease}
+
+/* ---- notes overlay ---- */
+.notes{display:none}
+.notes-overlay{position:fixed;inset:auto 0 3px 0;max-height:34vh;background:rgba(12,14,22,.97);color:#e8ebf4;
+  padding:18px 56px;font-size:15px;line-height:1.6;border-top:1px solid rgba(255,255,255,.12);
+  transform:translateY(100%);transition:transform .25s ease;z-index:40;overflow:auto}
+.notes-overlay.open{transform:translateY(0)}
+.notes-overlay .nl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7fa2ff;font-weight:700;margin-bottom:6px}
+
+/* ---- overview grid ---- */
+.overview{position:fixed;inset:0;background:rgba(8,10,16,.95);z-index:50;display:none;padding:36px 56px;overflow:auto}
+.overview.open{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-content:start}
+.overview .thumb{background:#151a2b;border:1px solid rgba(255,255,255,.12);border-radius:10px;aspect-ratio:16/9;
+  cursor:pointer;color:#fff;padding:10px 12px;font-size:10.5px;position:relative;overflow:hidden}
+.overview .thumb:hover{border-color:var(--accent)}
+.overview .thumb .n{position:absolute;top:6px;left:8px;font-weight:800;font-size:12px;color:#7fa2ff}
+.overview .thumb .t{position:absolute;bottom:8px;left:10px;right:10px;font-weight:700;line-height:1.25}
+
+.hint{position:fixed;left:56px;bottom:14px;font-size:11.5px;color:#5a6padding;color:rgba(255,255,255,.35);z-index:25;letter-spacing:.03em}
+.slide.light ~ .hint{color:rgba(24,32,52,.3)}
+
+/* ---- print / book panel (screen only) ---- */
+.print-panel{position:fixed;right:16px;bottom:16px;z-index:60;background:#fff;border:1px solid var(--border);border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.18);padding:10px 12px;font-size:12.5px;color:var(--text-1);display:flex;flex-direction:column;gap:8px}
+.print-panel-head{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.print-panel-collapse{background:none;border:none;cursor:pointer;color:var(--text-2);font-size:14px;line-height:1;padding:2px 4px;border-radius:6px}
+.print-panel-collapse:hover{background:var(--bg-soft)}
+.print-panel-body{display:flex;flex-direction:column;gap:8px}
+.print-panel.collapsed .print-panel-body{display:none}
+.print-panel.collapsed{padding:8px 10px}
+.print-panel label{display:flex;align-items:center;gap:7px;cursor:pointer;font-weight:600}
+.print-panel button{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:7px 12px;font-weight:700;font-size:12.5px;cursor:pointer}
+body.single .print-panel{display:none}
+/* Kenya: keep the print panel out of the way while presenting */
+.print-panel{opacity:0;transition:opacity .2s}
+.print-panel:hover,.print-panel:focus-within{opacity:1}
+html:fullscreen .print-panel,html:fullscreen .hint{display:none}
+.print-only{display:none}
+
+/* ---- print stylesheet: one slide per page, notes optional via body.print-with-notes ---- */
+@media print{
+  @page{ size: 1280px 720px; margin: 0; }
+  html,body{width:1280px;height:auto;background:#fff}
+  .print-panel,.progress-bar,.notes-overlay,.overview,.hint{display:none!important}
+  .deck{position:static;width:1280px;height:auto;overflow:visible;background:#fff}
+  .slide{position:relative!important;opacity:1!important;transform:none!important;
+    width:1280px;height:720px;page-break-after:always;page-break-inside:avoid;
+    display:flex!important;box-sizing:border-box}
+  .slide:last-child{page-break-after:auto}
+  video{display:none!important}
+  .video-print-note{display:flex!important}
+  .print-only{display:block!important}
+  .notes{display:none}
+  .note-page{display:none}
+  body.print-with-notes .note-page{display:flex!important;flex-direction:column;
+    width:1280px;height:720px;box-sizing:border-box;padding:64px 76px;background:#fbf8ee;
+    page-break-after:always;page-break-inside:avoid;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body.print-with-notes .note-page:last-of-type{page-break-after:auto}
+}
+.video-print-note{display:none;align-items:center;gap:10px;justify-content:center;margin-top:16px;padding:12px 18px;
+  background:#f6f2da;border:1px dashed #c9b978;border-radius:8px;color:#5c4f22;font-size:14px}
+.note-page{display:none}
+.note-page .np-eyebrow{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8a7a3a;margin-bottom:14px}
+.note-page h3{font-size:26px;margin:0 0 26px;color:#3a3320;font-weight:800}
+.note-page p{font-size:19px;line-height:1.8;color:#3a3320;max-width:1000px}
+
+body.embed .print-panel,body.embed .hint,body.embed .notes-overlay{display:none!important}
+
+/* ---- slideshow decks ----
+   Like PowerPoint's slideshow: the slide is scaled to fit the screen at its own shape (--ar, 16:9 unless the
+   deck sets another, e.g. A4), black bars fill the rest.
+   The menu button and slide number float in the corners and fade out when the mouse or finger is idle. */
+.deck{height:100vh;height:100dvh;background:#000;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+html,body{background:#000}
+.slide.fullslide{background:#000;color:#fff;transform:none;
+  opacity:0;z-index:0;transition:opacity 0s linear .45s}  /* the slide being left stays whole under the new one */
+.slide.fullslide.is-prev{transform:none}
+.slide.fullslide.is-active{opacity:1;z-index:2;transition:opacity .45s ease}  /* the new slide fades in on top */
+@media (prefers-reduced-motion:reduce){.slide.fullslide,.slide.fullslide.is-active{transition:none}}
+.fs-area{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;container-type:size;z-index:1}
+.fs-stage{position:relative;width:min(100cqw,calc(100cqh * var(--ar,1.7778)));aspect-ratio:var(--ar,1.7778);flex:0 0 auto}
+.fs-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block;user-select:none;-webkit-user-drag:none}
+.fs-media{position:absolute;overflow:hidden}
+.fs-media>img,.fs-media>video{position:absolute;max-width:none;object-fit:fill;display:block;background:transparent}
+.fs-media>video{cursor:pointer}
+.fs-toast{position:fixed;left:50%;bottom:6%;transform:translateX(-50%);z-index:60;pointer-events:none;
+  padding:.45em 1em;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:600 15px/1.2 system-ui,sans-serif;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .25s}
+.fs-toast.show{opacity:1}
+.fs-top{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:12px;padding:clamp(8px,1.4vh,14px) clamp(8px,1.2vw,16px);pointer-events:none;
+  font-family:Pretendard,'Inter',system-ui,sans-serif;font-size:clamp(12px,1.5vh,15px);color:#fff}
+.fs-menu,.fs-top .slide-num{pointer-events:auto;opacity:0;transition:opacity .35s ease}
+body.ui-on .fs-menu,body.ui-on .fs-top .slide-num,body.nav-open .fs-menu{opacity:1}
+.fs-menu{display:flex;align-items:center;gap:6px;min-width:0;padding:4px;border-radius:12px;background:rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.fs-burger{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:4px;width:38px;height:34px;padding:0 10px;
+  border:0;border-radius:8px;background:transparent;color:inherit;cursor:pointer}
+.fs-burger span{display:block;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
+.fs-burger:hover,.fs-burger:focus-visible{background:rgba(255,255,255,.16);outline:none}
+body.nav-open .fs-burger{background:rgba(255,255,255,.16)}
+body.nav-open .fs-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+body.nav-open .fs-burger span:nth-child(2){opacity:0}
+body.nav-open .fs-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.fs-nav{display:none;align-items:center;gap:4px;min-width:0;overflow-x:auto;scrollbar-width:none}
+body.nav-open .fs-nav{display:flex}
+.fs-nav a{color:inherit;opacity:.7;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:999px;white-space:nowrap}
+.fs-nav a:hover{opacity:1;background:rgba(255,255,255,.16)}
+.fs-nav a.on{opacity:1;font-weight:800;background:rgba(255,255,255,.16)}
+.fs-nav .fs-sep{flex:0 0 1px;align-self:stretch;margin:4px 2px;background:rgba(255,255,255,.3)}
+.fs-top .slide-num{position:static;top:0;display:inline-block;background:rgba(0,0,0,.55);padding:6px 12px;border-radius:999px;
+  box-shadow:none;color:#fff;font-size:inherit;font-weight:700;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.progress-bar{background:transparent;opacity:0;transition:opacity .35s ease}
+body.ui-on .progress-bar{opacity:1}
+.notes-overlay .nl-body,.note-page p{white-space:pre-line}
+.notes-overlay{transform:translateY(calc(100% + 8px))}  /* hidden panel used to peek 3px above the bottom edge */
+.notes-overlay.open{transform:translateY(0)}
+.overview.open{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.overview .thumb{display:flex;align-items:center;justify-content:center;padding:0}
+.overview .thumb .n{position:static;font-size:22px;color:#fff}
+.overview .thumb .t{display:none}
+.overview .thumb.cur{border-color:var(--accent);background:#1e2a4d}
+@media (max-width:600px){.overview.open{padding:16px}}
+@media print{
+  .fs-top,.fs-media,.fs-toast{display:none}
+  .slide.fullslide{background:#fff}
+  .fs-area{position:static;display:block;container-type:normal}
+  .fs-stage{width:1280px;height:calc(1280px / var(--ar,1.7778))}
+}
+</style>
+</head>
+<body class="">
+<div class="deck">
+
+<section class="slide fullslide" id="s1" data-title="Trainer of Trainers"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s01.jpg" alt="Trainer of Trainers / Presented by datamaker Ghana LimitedKakuma-Kenya 18-20th November 2026"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s2" data-title="DAY 1"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s02.jpg" alt="DAY 1 / TRAINING OF TRAINERS  ·  ITC KENYA x datamaker / AI Data Labeling, / SYNAPSE and Trainer / Fundamentals / Kenya18th-20th November 2026 / Day 1 of 3   |   5 contact hours including breaks   |   09:00 – 14:00 / Audience: prospective trainers for AI data-labeling training and project operations"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s3" data-title="01"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s03.jpg" alt="01 / Sylvester K. Sakitey / Head of Projects / Project Management / AI &amp; Digital Technologies / Strategic Planning / Operations Management / Data Labeling &amp; Quality Assurance / Training &amp; Capacity Development / Drone Technology (UAVs) / 02 / Emmanuel Owusu Appiah / IT &amp; Facilities Manager / Data Protection Supervisor / Data Protection &amp; Compliance / IT Infrastructure &amp; Facilities Management / Training &amp; Capacity Development / Workforce Development / Project Management / Quality Assurance / AI Data Annotation &amp; Operations / DATAMAKER GHANA LIMITED / Meet your Facilitators" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s4" data-title="Five contact hours including one hour of breaks. Each block ends with a short check of understanding."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s04.jpg" alt="Five contact hours including one hour of breaks. Each block ends with a short check of understanding. / Time / Activity / Day 1 content / 09:00 – 09:15 / Welcome, objectives and review / Programme introduction, learning outcomes, ground rules / 09:15 – 10:30 / Facilitated lesson / Module 1.1 – AI, machine learning and data labeling / 10:30 – 10:40 / Break /, / 10:40 – 11:00 / Demonstration and guided practice / Module 1.2 – The nine-stage data-labeling workflow / 11:00 – 12:10 / Group exercise / Module 1.3 – SYNAPSE demonstration and guided annotation / 12:30 – 13:30 / Break /, / 13:30 – 13:45 / Application, discussion and feedback / Module 1.4 – The trainer’s role and the training cycle / 13:45 – 14:00 / Knowledge check, reflection and daily review / Paired practical assessment and Day 1 review / TODAY’S PRACTICAL OUTPUT / A demonstrated annotation task on the agreed demonstration dataset, and a short lesson plan each participant can teach from. / How Today Runs" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Walk through the day so participants can plan around breaks.
+Emphasise the two outputs at the bottom: by the end of today each person must have (1) demonstrated an annotation task themselves and (2) drafted a short lesson plan. Both feed into the Day 3 teach-back assessment.
+Confirm platform access now, not at 11:00. Ask who does not yet have SYNAPSE credentials and resolve it during the first break.</div></section>
+<section class="slide fullslide" id="s5" data-title="What You Will Be Able To Do"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s05.jpg" alt="What You Will Be Able To Do / PROGRAMME OUTCOMES / Eight outcomes across three days. Day 1 covers the first three and introduces the fourth. / 1 / Explain the fundamentals of AI data labeling and its role in     developing AI systems. / 2 / Demonstrate core annotation workflows using the SYNAPSE platform, subject to project     configuration and access. / 3 / Interpret annotation guidelines and explain task requirements to    trainees. / 4 / Apply standard quality-control, error-correction and                calibration procedures. / 5 / Plan and monitor a data-labeling assignment, including staffing, allocation, productivity and deadlines. / 6 / Maintain project records,        production trackers, issue logs and progress reports. / 7 / Identify risks, escalate unresolved issues and communicate               operational changes appropriately. / 8 / Design and deliver a structured training session and assess   trainee competency. / DAY 1 FOCUS / Outcomes 1 to 3, with the first exposure to outcome 8 through the trainer’s role and the paired practical." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Do not read all eight aloud. Point out that outcomes 1–3 belong to today, 4–7 to tomorrow and 8 to Day 3.
+Make the standard explicit: competency means performing the task independently to the required standard, not attending the session. Attendance alone is not evidence of trainer readiness.</div></section>
+<section class="slide fullslide" id="s6" data-title="Two Phases, One Career Pipeline"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s06.jpg" alt="AT A GLANCE / Two Phases, One Career Pipeline / ROLE PATHWAY / Project Manager / Plans, staffs and tracks projects / PHASE 1 · 3 DAYS / Training of Trainers / AI foundations and SYNAPSE platform operations / Quality control, project and trainee management / Session design with AI and mock teaching / Trainers, team leads and coordinators ready to support labeler cohorts / Quality Manager / Guidelines, QA and calibration / Labeler / Accurate annotation to the guideline / ToT trainees co-facilitate Phase 2 / PHASE 2 · 5 DAYS / AI Data-Labeling Training / Five annotation techniques on real project guides / Quality assurance with a live client inspection / Generative AI, prompting and a vibe-coding project / Labelers graduate ready for supervised project work / datamaker Ghana / Kenya Beneficiaries" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s7" data-title="Copyright © datamaker."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s07.jpg" alt="Copyright © datamaker. / All rights reserved. / datamaker / Data-specialized AI companyAccelerating the era of AI / 2026 Company Profile" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s8" data-title="Patents"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s08.jpg" alt="Patents / 17 / 25 IP rights in total / Company Overview / datamaker: trustworthy data, AI that works / Company / Datamaker Inc. / CEO / Enoch Lee / Founded / October 19, 2018 / Industry / System application software development &amp; supply / Employees / 55 at HQ / Subsidiary / datamaker Ghana LTD. (107 employees) / Website / www.datamaker.io / Datamaker solves the data problems that AI development projects face. Building on deep experience and technology in AI training data, we deliver optimal solutions and build AI that works in real industrial settings as a data-specialized AI company. / Certifications / 6 / GS Grade 1 and more / Projects joined / / AI models built / Company Overview    |    Business Areas    |    Core Technology / Defense Innovation 100 / Super-Gap 1000+ / Innovation Premier 1000" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">DataMaker was founded in 2018. Today we have about 50~60 full-time employees at our headquarters here in Korea, and more than 100 full-time employees at our subsidiary in Ghana.
+A subsidiary in Ghana might seem a little out of the blue, I'll walk you through the reasoning behind that a bit later.DataMaker runs on two main business models.
+The first is our data business, a service that turns our clients' data into training data for AI.
+The second is our AI business, solutions that help clients build their own AI models or services directly.</div></section>
+<section class="slide fullslide" id="s9" data-title="AI platform &#x27;synapse&#x27; GS certification (Level 1)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s09.jpg" alt="AI platform &#x27;synapse&#x27; GS certification (Level 1) / Management Innovation Main-Biz Certification / Inno-Biz certification for technological innovation / Certified as a small and medium-sized enterprise (Ministry of Employment and Labor) / Selected as a military service designated company (professional institute) / Software copyright certification / Venture company certification / Certified as a company-affiliated research institute / Selected as the 2024 Super Gap Startup 1000+ / 2024 D-Unicorn Project Top 10 Companies / Selected as an excellent example of a 2024 Korea-Africa innovative company / Received the 2023 Minister&#x27;s Award for Meritorious Service in Venture Companies from the Small and Medium Business Administration / 2022 KOICA Public-Private Partnership Excellence and &#x27;Excellent&#x27; Selection / 2021~2022 Korea Excellent Company Awards Data Processing Category / 2021 Data-Global Grand Prize / 2020 Ministry of Science and ICT Young Business Award Ministerial Award / 2019 Initial Startup Package Best Graduation / Major Awards / Key Certifications / Intellectual property performance (13 major patents, 8 additional patents in progress) / AI Solution Development and Dataset Construction Examples / Building LLM Data for LG Exxon Training / Build a dataset / Building LLM data for SKT Adot training / Build a dataset / Hyundai Motor Company - Building a dataset for autonomous driving technology development / Build a dataset / Development of Crowd Concentration Analysis Model for Disaster Safety Management System / AI Solutions / Building Korean-style large-scale vision data for multimodal AI / Build a dataset / Video and image editing technology data construction / Build a dataset / Understanding Video Content Building AI Data / Build a dataset / CCTV Video AI Data Construction / Build a dataset / Establishment of thermal imaging CCTV data for industrial facilities / Build a dataset / Build intelligent smart aquaculture farm integrated data / AI Solutions / Predicting Fish and Shellfish Growth Using ML Automated Pipeline Technology / AI Solutions / Facial CT Data-Driven Nasal and Nasal Cartilage Structure Measurement AI / AI Solutions / Colonoscopy (colonoscopy) polyp detection solution / AI Solutions / Assisted facial diagnosis using AI-based detection and dynamic analysis / AI Solutions / LG Chem - Data processing of particles, polymers, cathode materials, etc. / Build a dataset / POSCO - Development of Vision-based Classification Models for Various Chemicals / AI Solutions / 112 Report Voice Automatic Classification Model Development and Data Construction / AI Solutions / 02 / Company Overview_R&amp;D Technology and infrastructure status / Possess the ability to verify technology and perform artificial intelligence projects through various awards and certifications" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s10" data-title="Many companies and institutions are working with datamaker"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s10.jpg" alt="Many companies and institutions are working with datamaker" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s11" data-title="Business Model"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s11.jpg" alt="Business Model / Business Model - (1) Data / Dataset Construction / Business Model ① Data / Data Collection / Data Curation / Data Labeling / Data Analysis (Audit) / Integrated DatasetManagement / ‘synapse’ is the most advanced data labeling S/W / (developed/improved via more than +1,100 projects) / &quot;Needs fitting&quot; quality datasets for AI training / Category / Specialized data labeling coverage and capability / 3D LiDAR (Autonomous driving) / Prompting (LLM) / DICOM / (Healthcare) / Ultra-large capacity (Defense) / datamaker / ● / ● / ● / ● / &#x27;C&#x27; corporates / X / X / X / X / &#x27;A&#x27; corporate / ▲ / X / X / X / &#x27;S&#x27; corporate / X / X / X / X / Unparalleled data labeling quality and operational expertise / Proven via major corporate clients, datamakers skillful labelers with      acceptance rate of 60:1 and 6 years of experience  deliver high quality      data labeling work / Secondary data quality assurance activity is executed using      an automated defective data verification system / Solve the disadvantages of high labor costs by utilizing overseas data labs / Minimize manual data labeling work by Korea’s highest level      automatic data labeling technology / World-class price competitiveness / &#x27;Zero Security Incident&#x27;: Work is conducted in an offline data lab with       a controlled security environment, completely preventing data leakage / A in-house developed, closed-network server infrastructure has been      established to completely prevent data leakage. / Operates complete security system to prevent data leakage / datamaker has developed the most annotation tools among domestic competitors and its core competitiveness reliesin more than +85 individual features / AI Dataset / High-quality dataset labeling service with 8 years of accumulated R&amp;D expertise / Dataset construction for autonomous driving tech development / Customizable AI ‘A.(A-dot)’dataset construction / Participated in multimodal AI‘EXAONE’ project / Constructed dataset for thehyper-scale AI model ‘Hyper CLOVA X’ / Constructed image datasets for image-based conversational services andconstructed datasets for harmful contentdetection (image/text) technology / Constructed QA datasets for specializeddomain fields, OCR data anddomain-specific training datasets / Advanced traffic light detection in variousdriving environments. Developed an efficientprocessing environment to enhance smallobject recognition performance / Participated in the training datasetconstruction for the three major EXAONE platforms:  Universe, Discovery, and Atelier" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">At our core, we offer a high-quality dataset labeling service, and that's backed by eight years of accumulated R&amp;D expertise.
+We've refined this capability across more than eleven hundred projects, so we know what works. The result is training data that genuinely fits each client's needs, not just generic labels.
+And we are trusted by Korea's largest enterprises such as Hyundai, LG, SK Telecom and Naver.</div></section>
+<section class="slide fullslide" id="s12" data-title="Collect and process various types of datasets directly"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s12.jpg" alt="Collect and process various types of datasets directly / Text / Data collection / Crawl mixed information on websitesOr, crowd manpower is put in to provide high-qualityCollect and generate data directly to deliver it. / Data Processing / Quality Verification / Datamaker Synapse&#x27;s Labeling Core Technologies and / Build data with a variety of workforces. / In the data lab, experts verify the quality of labeling data, train operators, and provide feedback to improve data quality. / Dataset / Video / Sensors / Audio / Image / PCD Lidar Sensor / Self-driving road video / Video of wearing safety equipment / Violence Situation Conversation Text / Harmful conversation text / Dialect conversation voice / Room noise audio / Fish and shellfish images / Vibration sensors for machinery and facilities / CCTV footage / Product Page Text / Vietnamese handwritten text / Product review text / English conversation voice / Abdominal surgery images / Images of patients with skin diseases / CT 3D Sensor / Medical Endoscopy Imaging / Signage text / Address Handwritten Text / Doctor Care Negative / 119 Report Negative / Weapons and equipment images / Gait image of rehabilitation patient" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s13" data-title="‘Ghana Data Lab’ has an overwhelming price competitive advantage"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s13.jpg" alt="‘Ghana Data Lab’ has an overwhelming price competitive advantage / 10% of labor cost compared to competitors (10 in-house workers in Ghana = 1 in-house worker in Korea) / 100 domestic competitors&#x27; full-time employees cost 200 million KRW per month / (&#x27;Ghana Data Lab&#x27; costs 1/10 price only ; 20 million won per month) / Operated by experts capable of high quality data labeling / 366 cumulative projects / 250 Resident Employees / Data Accuracy 99% / Enhancing expertise by training personnels with expert-level education programs. / The deliverables of cultivated experts and their excellence in security, quality, data accuracy, and speed is recognized by the clients across diverse industries / The disadvantage of the high labor cost of the in -house personnel is resolved through &#x27;Ghana Data Lab&#x27; / Competitiveness / Securing price competitiveness in a labor-intensive industrial structure through subsidiary operation &#x27;Ghana Data Lab&#x27; / 1.35 / In-house employees (datamaker) / VS / Crowd employees (Competitors) / Strong Point / Securing Data Quality and security along with capability to process expert level, high computing resource requiring labeling tasks / Processing a large task in a short time, low labor costs via crowdsourcing / Weak Point / High Labor costs / Quality and Security Issue / Devision / Contents / Country / United States / Salary / Crowd sourcing / Major Clients / Google, Facebook / Devision / Contents / Country / India / Salary / USD 2.17 / Major Clients / Google, Facebook / Devision / Contents / Country / Vietnam / Salary / USD 2.99 / Major Clients / Conigital / Devision / Contents / Country / South Korea / Salary / Crowd sourcing / (USD 7.00) / Major Clients / Local Major Cooperate / Devision / Contents / Country / Australia / Salary / Crowd sourcing / Major Clients / Google / Devision / Contents / Country / Kenya / Salary / USD 2.00 / Major Clients / Open AI / Devision / Contents / Country / Argentina / Salary / USD 1.35 / Major Clients / Toyota, Airbnb / Devision / Contents / Country / Ghana / Salary / USD 1.17 / Major Clients / SKT, LG-Chem / datamaker / Business Model" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Now, how do we stay competitive? The answer is our Ghana Data Lab, a subsidiary built to tackle the labor-intensive nature of this work.
+It's operated by trained experts capable of high-quality labeling, and thanks to our expert-level training programs, that quality and accuracy is recognized by clients across a wide range of industries.</div></section>
+<section class="slide fullslide" id="s14" data-title="datamaker Ghana"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s14.jpg" alt="datamaker Ghana" loading="lazy"><div class="fs-media" style="left:11.7898%;top:14.5191%;width:76.4205%;height:76.4187%"><video src="assets/tot1/media/media1.mp4" poster="assets/tot1/media/media1-poster.jpg" preload="metadata" playsinline muted data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s15" data-title="datamaker Ghana DATA LAB A (49 seats)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s15.jpg" alt="datamaker Ghana DATA LAB A (49 seats)" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter</div></section>
+<section class="slide fullslide" id="s16" data-title="datamaker Ghana DATA LAB B (33 seats)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s16.jpg" alt="datamaker Ghana DATA LAB B (33 seats)" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter</div></section>
+<section class="slide fullslide" id="s17" data-title="datamaker Ghana TRAINING CENTRE (20 seats)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s17.jpg" alt="datamaker Ghana TRAINING CENTRE (20 seats)" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Data lab B also manages remote labelers and performs the most labelingFrom trainees to workers, training based on capacity building and practice</div></section>
+<section class="slide fullslide" id="s18" data-title="Text Annotator"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s18.jpg" alt="Text Annotator / DICOM Annotator / Geospatial Annotator / HTML Annotator / EO/IRAnnotator / Annotation Software / Tools that helps humans tag and label data for AI training / Special data type / processing annotators / LiDAR Annotation / Image Annotation / Equipped with Smart Tool(Auto-labeling Technology) / Supports more than 2,000 objects / Easy tracking of review comment / Supports previewfor individual annotation / Real-time notificationfor changes in labeling / Video Annotation / Automated Single/multiple object(s) tracking / Specifies the relationshipamong the multiple objects / Enabled to review and adjustthe thumbnail via track timeline / Capable of video section designationand object tagging / Enabled to label the videowithout converting to the image frame / LLM Annotation / Select specific words and batch labelvia shortcut keys / Intuitive UI, including connections between objects / Capable of multi-tasking without limit / Supports labeling tasksfor NLP development / Removesblanks by dragging paragraphs / Supports not only &#x27;Cuboid’,but also &#x27;PCD-Segmentation&#x27; / Capable of label designationvia dedicated timeline panel / 4 types of labeling view points provides more sophisticated labeling enviroment / Provides sub-view pointsfor precise 3D data review / Labeling Guide is supported at all times / Business Model" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Next, let's talk about the engine behind that data: our annotation software.
+Simply put, these are the tools that help our teams tag and label data for AI training, quickly and accurately.
+We cover the full spectrum here, four key types: image annotation, video annotation, LLM annotation, and LiDAR annotation.
+So whether a client is building computer vision, language models, or autonomous systems, we have the tooling to support it.
+It's a flexible toolkit designed to handle whatever the project demands.</div></section>
+<section class="slide fullslide" id="s19" data-title="Introduction to Artificial Intelligence"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s19.jpg" alt="Introduction to Artificial Intelligence / MODULE 1.2  ·  DEMONSTRATION / Participants should understand the complete workflow, not only the annotation activity. Annotation is stage five of nine." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Set this up by asking participants to describe what happens on an annotation project from first contact to delivery. Collect their answers, then show the nine stages and discuss what they missed, usually readiness, calibration and close-out.</div></section>
+<section class="slide fullslide" id="s20" data-title="Artificial Intelligence, Machine Learning and Data"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s20.jpg" alt="Artificial Intelligence, Machine Learning and Data / FOUNDATIONS / ARTIFICIAL INTELLIGENCE / Systems that do human-like tasks / Computer systems designed to perform tasks that commonly require human-like capabilities: recognizing  patterns, understanding language, classifying               information or interpreting images. / MACHINE LEARNING / Learning from data, not rules / An approach within AI in which systems learn patterns from data rather than relying exclusively on explicitly programmed rules. / LABELED DATA / Examples with correct answers / For many machine-learning applications, examples of data and their correct labels are used to train or.         evaluate models. Those labels come from annotation work. / THE CONNECTION TO OUR WORK / Annotation is not a side activity. For supervised learning the labeled dataset is the teaching material the model learns from, which is why annotation quality sets a ceiling on model quality. / TEACHING NOTE / Keep this section short and concrete. Trainees do not need machine-learning theory; they need to understand why their      labels matter and what happens downstream if they are wrong." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Three definitions, kept deliberately brief. Avoid going deeper into model architectures, it is not needed and it loses non-technical trainees.
+Useful framing: the model does not know anything about cars. It only knows what thousands of people told it a car looks like. If those people disagreed, the model learns the disagreement.
+Ask for a show of hands: who has used a product that relies on this (voice assistants, photo search, translation)? Connect the abstract to something they use.</div></section>
+<section class="slide fullslide" id="s21" data-title="Datamaker and data-labeling"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s21.jpg" alt="Datamaker and data-labeling" loading="lazy"><div class="fs-media" style="left:15.5645%;top:17.715%;width:68.871%;height:68.871%"><video src="assets/tot1/media/media2.mp4" poster="assets/tot1/media/media2-poster.jpg" preload="metadata" playsinline muted data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s22" data-title="What Is Data lbeling?"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s22.jpg" alt="What Is Data lbeling? / DEFINITION / Assigning meaningful labels, categories, annotations or other structured information to raw data so it can be used for AI development, evaluation or related analysis. / Data type / labeling task / Example output / Images / Image classification / Identify whether an image contains a vehicle / Images / Object detection / Draw a bounding box around each vehicle / Audio / Transcription / Convert spoken words into written text / Audio / Audio classification / Identify a speaker, sound event or noise category where required / Text / Text classification / Classify a message into an agreed category / Video / Frame or object annotation / Identify and track specified objects across frames / THE RULE THAT GOVERNS EVERY TASK / The correct annotation depends on the task specification. A label that is appropriate for one project may be incorrect for    another  so there is no such thing as a universally &quot;right&quot; label." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Work down the table and ask participants which of these they expect to encounter on their projects.
+The callout is the single most important sentence in this module. Say it twice. Trainees frequently carry rules from one project into another and create inconsistency that is expensive to fix.
+Anticipated question: 'What if I think the guideline is wrong?' Answer: you record it as a clarification request and escalate it; you do not quietly apply your own interpretation. This is covered fully on Day 2.</div></section>
+<section class="slide fullslide" id="s23" data-title="80% of the AI development time is spent building training data."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s23.jpg" alt="80% of the AI development time is spent building training data. / img / img / img / img / img / img / Classification / Bounding Box / Polygon / Keypoint / 3D Bounding Box / 3D Segmentation / 90% / 97% / 99% / 99.9% / Artificial IntelligencePerformance (accuracy) / 1만장 / 10만장 / 100만장 / Human intervention is essential to build high-quality learning data / To improve the performance of artificial intelligence / Need for more difficult labeling / The exponentially increasing amount of training data is required / Learning
+Data Volume / 1000만장 / How long will you need labeled data?" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s24" data-title="Artificial intelligence development requires the process of building data for training (data labeling), developing AI algorithms, and training models."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s24.jpg" alt="Artificial intelligence development requires the process of building data for training (data labeling), developing AI algorithms, and training models. / Recognize, the boundaries and classification of things you want to distinguish
+Human-Led Labeling / Able to recognize and distinguish objects / Bounding Boxes / PCD / 3D Bounding Box / 3D Segmentation / GPU
+Servers / Model / YOLO (X, v7), / Faster-R-CNN) / GPU
+Servers / Model / Voxel R-CNN, E-SDD, VoxelNet, PointRCNN / Labeled data 
+Using GPU Server
+Train the model / + / + / Is &#x27;data labeling&#x27; sustainable?" loading="lazy"><div class="fs-media" style="left:63.6687%;top:65.1832%;width:20.9148%;height:20.9475%"><img src="assets/tot1/media/image74.gif" alt="" style="left:0%;top:0%;width:100%;height:100%"></div><div class="fs-media" style="left:63.6238%;top:36.3336%;width:20.9148%;height:20.9475%"><img src="assets/tot1/media/image75.gif" alt="" style="left:0%;top:0%;width:100%;height:100%"></div><div class="fs-media" style="left:22.7175%;top:37.3455%;width:20.2282%;height:20.2282%"><img src="assets/tot1/media/image76.gif" alt="" style="left:0%;top:0%;width:100%;height:100%"></div><div class="fs-media" style="left:22.7386%;top:65.6864%;width:20.2282%;height:20.2282%"><img src="assets/tot1/media/image77.gif" alt="" style="left:0%;top:0%;width:100%;height:100%"></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s25" data-title="Our Backbone: Datamaker Synapse supports all the features required for model training. (All-In-One)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s25.jpg" alt="Our Backbone: Datamaker Synapse supports all the features required for model training. (All-In-One) / Annotator / PCD / 3D sensor data labeling / Image / Image data labeling / Video / Video data labeling / Text / Text data labeling / Machine Learning / Model lookup / Model learning that can be verified in real time / Model training / Web UI that is easy to learn even for non-developers / Model utilization / Apply the trained model to the dataset / Workspace / Dataset Management / Import &amp; export dataset management / Worker Management / Work Assignment &amp; Monitoring &amp; Payroll / Communication and schedule management among team members / Project Management / Quality Control / Efficient and convenient inspection system / Integration and Linkage / Plugin / Base or extend with your own plugins / Agent / Freely set the GPU resources you have" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">리디자인 필요 ( 간격조정)</div></section>
+<section class="slide fullslide" id="s26" data-title="Datamaker supports the entire process, from data construction to AI service development"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s26.jpg" alt="Datamaker supports the entire process, from data construction to AI service development / SYNAPSE-MEDI / SYNAPSE-MEDI is Datamaker&#x27;s exclusive AI-based diagnostic assistance solution, designed for immediate implementation in hospitals and immediately utilized by medical professionalsSYNAPSE-MEDI uses AI to rapidly automate the process of analyzing patient visual information and deriving insights necessary for diagnosis and treatment. / Colonoscopy / Polyp Identification / CT septal cartilage identification / Crowd detection in CCTV / Tracking specific objects in a video / Similar image clustering / Identifying key areas of the face / SYNAPSE-VISION / SYNAPSE-VISION can detect objects within video and image data, or provide classification and clustering of objects within video through image analysis. It is particularly actively being deployed in CCTV control centers in public facilities, particularly for anomalous object recognition and tracking, and is steadily being adopted for automated analysis and classification of large-scale image data." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Colonoscopy Polyp Identification: An image showing a convex area in a colonoscopy image as a square.
+CT Septal Cartilage Identification: An image showing how the nose is captured in a 3D human face, or an image showing the nasal cartilage border in a 2D image.
+Facial Key Feature Identification: An image showing the eyes (pupil, sclera, iris), eyebrows, nose, upper lip, and lower lip areas of a human face.
+CCTV Crowd Identification: An image showing people within a specific CCTV footage (images with large crowds are preferred).
+Tracking Specific Objects in Footage: An image showing the location and movement path of objects such as people or vehicles.
+Similar Image Clustering: An image that distinguishes similar product images.</div></section>
+<section class="slide fullslide" id="s27" data-title="Automatic detection of polyp areas in colonoscopy images/images"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s27.jpg" alt="Automatic detection of polyp areas in colonoscopy images/images / AI Solution promotional video / Proceeding with labeling of colonoscopy imaging data / Building a dataset in Ghana (data collection and labeling) / Datamaker’s AI solution in GHANA / The data was collected in Ghana, and the labeling was done by labelers from Ghana. The dataset was built and developed as an AI solution by a datamaker H.Q. The solution was delivered to a local customer in Ghana (University of Ghana Hospital, Claron)." loading="lazy"><div class="fs-media" style="left:51.3134%;top:30.7332%;width:41.1233%;height:41.1233%"><video src="assets/tot1/media/media3.mp4" poster="assets/tot1/media/media3-poster.jpg" preload="metadata" playsinline muted data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s28" data-title="Why Data Quality Matters"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s28.jpg" alt="Why Data Quality Matters / QUALITY / Poor-quality annotations introduce errors into training data and undermine the reliability of downstream AI systems. / COMMON CAUSES – INSTRUCTION AND TRAINING / Unclear or contradictory instructions. / Inconsistent interpretation of labels. / Inadequate training. / Insufficient quality checks. / COMMON CAUSES – EXECUTION AND WORKLOAD / Incorrect use of annotation tools. / Fatigue, rushed work or poorly managed workloads. / Failure to communicate guideline updates. / GARBAGE IN, GARBAGE OUT / A model trained on inconsistent labels learns the inconsistency. Volume does not compensate for error: a large dataset                   annotated badly is less useful than a small dataset annotated correctly and consistently. / THE TRAINER’S RESPONSIBILITY / Ensure learners understand both the procedure and the reasoning behind the annotation rules. A trainee who knows only the rule cannot handle a case the rule does not cover." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Run the GIGO point as a short discussion rather than a statement. Ask: if you had to choose between 10,000 images labeled by untrained people and 1,000 labeled by a calibrated team, which would you take, and why?
+Note that most causes in the left-hand card are management failures, not annotator failures. That matters for tomorrow: blaming annotators for a guideline problem does not fix anything.
+Second callout is the core trainer message of Day 1: teach the reason, not just the rule.</div></section>
+<section class="slide fullslide" id="s29" data-title="When Two Annotators Disagree"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s29.jpg" alt="When Two Annotators Disagree / WORKED EXAMPLE / THE SITUATION / A project requires annotators to identify cars in images. One annotator labels only passenger cars. Another labels cars, buses       and trucks under the same category. Both complete their tasks quickly, but the results are inconsistent because they interpreted   the category differently. / THE CORRECT RESPONSE ,  FIVE STEPS, IN ORDER / 1 / Review the guideline.  Establish what the approved specification actually says about the category. / 2 / Clarify the category definition.  Resolve the ambiguity with the authorized project or client contact. / 3 / Provide examples.  Show positive and negative cases, including the edge cases that caused the split. / 4 / Conduct a calibration exercise.  Have both annotators re-label the same samples and compare. / 5 / Assess completed work.  Decide whether previously completed work needs correction, and how much." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">This example recurs throughout the programme, use it as the standard reference case.
+Key teaching point: neither annotator was lazy and neither was careless. Both worked fast and both followed what they believed the instruction said. The failure is in the specification and in the absence of calibration.
+Ask the room what most teams do instead (tell the annotators to be more careful) and why that fails, because it leaves the ambiguity in place and the same split recurs next week.
+Step 5 is the one people forget. Work already submitted under the wrong interpretation does not correct itself.</div></section>
+<section class="slide fullslide" id="s30" data-title="Questions for the Group"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s30.jpg" alt="Questions for the Group / DISCUSSION / Work in pairs for five minutes, then report back. There is no single correct wording, look for reasoning. / QUESTION 1 / How would you explain AI to a 10-year-old?Do you think AI is making life easier or more complicated? / QUESTION 2 / Why is data important in AI development?What is the difference between classifying an image and.  identifying objects within it? / QUESTION 3 / Why must annotators follow the same approved                 guidelines? / QUESTION 4 / Can you name one AI tool you have heard of?" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Expected answers, for your own reference:
+1. Size does not guarantee quality. Inconsistent, incorrect or unrepresentative labels teach the model the wrong pattern regardless of volume.
+2. Classification assigns a label to the whole image ('this image contains a vehicle'). Object detection locates and bounds each instance within the image.
+3. Because consistency is what makes the dataset usable. Individually reasonable but differing interpretations produce contradictory training signals.
+4. Record it as a clarification request, escalate to the authorised contact, wait for a decision, then communicate the approved interpretation to everyone, not just the person who asked. Do not invent a rule.
+Note for participants: question 4 is exactly what they will be assessed on when they teach.</div></section>
+<section class="slide fullslide" id="s31" data-title="The AI Solution Development Lifecycle"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s31.jpg" alt="The AI Solution Development Lifecycle / AI SOLUTION DEVELOPMENT / Six stages from problem to deployment. Data labeling is stage three, and the quality of its output sets the ceiling for every stage after it. / 1 / Problem Definition / Agree what the system must do, who it  is for and what success looks like. / 2 / Data Collection / Gather representative data of the right  type, volume and quality. / 3 / Data labeling / Apply the approved specification to       produce accurate, consistent labels. / 4 / Model Training / The model learns patterns from the         labeled examples it is given. / 5 / Testing &amp; Validation / Measure performance against held-out data and the agreed acceptance criteria. / 6 / Deployment &amp; Improvement / Release, monitor in use, and feed findings back into the cycle. / WHY STAGE THREE MATTERS / Stages four to six can only be as good as the labeled data they inherit. Inconsistent labels do not average out with volume ; they are learned, measured as success, and deployed." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Use this as the orientation slide for where annotation work sits.
+Walk the cycle once, briefly, then stop at stage three. The point of the slide is not the six boxes; it is that everything downstream inherits whatever stage three produces.
+Ask the group what happens at stage five if stage three was inconsistent. The answer people miss: the model is validated against test data labeled by the same team, with the same misunderstanding, so it passes validation and fails in use.
+Note the loop back from stage six. Deployment is not the end, findings in use generate new data requirements, guideline changes and further labeling, which is why guideline version control and effective dates matter.</div></section>
+<section class="slide fullslide" id="s32" data-title="The Data-Labeling Workflow"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s32.jpg" alt="The Data-Labeling Workflow / MODULE 1.2 / MODULE 1.2  ·  DEMONSTRATION / Participants should understand the complete workflow, not only the annotation activity. Annotation is stage five of nine." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Set this up by asking participants to describe what happens on an annotation project from first contact to delivery. Collect their answers, then show the nine stages and discuss what they missed, usually readiness, calibration and close-out.</div></section>
+<section class="slide fullslide" id="s33" data-title="Nine Stages, From Intake to Close-Out"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s33.jpg" alt="Nine Stages, From Intake to Close-Out / END-TO-END WORKFLOW / # / Stage / Main activities / Responsibility / 1 / Project intake / Confirm task, data, volume, deadline and requirements / Project manager or designated lead / 2 / Guideline review / Interpret instructions and identify ambiguities / PM, QA lead and client contact / 3 / Platform preparation / Configure tasks and verify access / Authorised project or platform personnel / 4 / Training and calibration / Teach annotation rules and compare pilot results / Trainer and QA lead / 5 / Production / Allocate tasks and complete annotations / Annotators / 6 / Quality control / Inspect output, identify errors, initiate corrections / QA reviewers and designated leads / 7 / Rework and verification / Correct rejected work and confirm compliance / Annotators and QA reviewers / 8 / Delivery / Validate, reconcile and submit accepted output / PM or designated delivery owner / 9 / Close-out / Document results, outstanding issues and lessons learned / Project team / NON-NEGOTIABLE / The sequence may be adapted to the project, but readiness, quality control and accountability must not be omitted." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Stress that annotation (stage 5) is the only stage most annotators ever see, and that trainers must understand the stages around it to answer trainee questions sensibly.
+Stage 3, platform preparation, is where avoidable delay concentrates: access not provisioned, tasks not configured, wrong project assigned. Trainers should verify readiness before a session, not during it.
+Stage 9 is almost always skipped in practice. Ask participants what is lost when it is, the lessons that would have prevented the same problems on the next project.
+Make clear the 'Responsibility' column is illustrative; actual accountability follows the agreed project structure.</div></section>
+<section class="slide fullslide" id="s34" data-title="Our Main Service Areas"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s34.jpg" alt="Our Main Service Areas / WHAT DATAMAKER DELIVERS / Three service areas across image, text and audio data. Each uses a different annotation technique, but the same quality          discipline applies to all three. / SERVICE AREA 1 / Image Processing / Semantic Segmentation / Polyline / Polygon / Bounding Box / Key Point / SERVICE AREA 2 / Text Annotation (NLP) / Named Entity Recognition / Sentiment and Intent Analysis / Utterance Collection / Text Classification / OCR Transcription / SERVICE AREA 3 / Audio Transcription (SR) / Audio Segmentation / Audio Transcription / Audio Categorization / THE COMMON REQUIREMENT / Whatever the data type, the correct output is defined by the approved task specification ; not by the technique.                   The same guideline review, calibration and quality control apply across all three areas." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Use this to place the trainee's own work within the wider service offering. Most will work in one area; they should know the other two exist.
+Image processing is where this programme concentrates, because it is where the demonstration dataset and the SYNAPSE tools sit. The five techniques listed are the ones taught in the annotation week.
+If participants ask which area they will be assigned to, that comes from the project, not from the training. Note that text and audio work use different tools and different acceptance criteria.
+The callout is the bridge back to the quality module: the technique changes, the discipline does not.</div></section>
+<section class="slide fullslide" id="s35" data-title="Our Main Service Areas"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s35.jpg" alt="Our Main Service Areas / WHAT DATAMAKER DELIVERS / Three service areas across image, text and audio data. Each uses a different annotation technique, but the same quality discipline applies to all three. / SERVICE AREA 1 / Image Processing / Semantic Segmentation / Polyline / Polygon / Bounding Box / Key Point / SERVICE AREA 2 / Text Annotation (NLP) / Named Entity Recognition / Sentiment and Intent Analysis / Utterance Collection / Text Classification / OCR Transcription / SERVICE AREA 3 / Audio Transcription (SR) / Audio Segmentation / Audio Transcription / Audio Categorization / THE COMMON REQUIREMENT / Whatever the data type, the correct output is defined by the approved task specification, not by the technique.                 The same guideline review, calibration and quality control apply across all three areas." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Use this to place the trainee's own work within the wider service offering. Most will work in one area; they should know the other two exist.
+Image processing is where this programme concentrates, because it is where the demonstration dataset and the SYNAPSE tools sit. The five techniques listed are the ones taught in the annotation week.
+If participants ask which area they will be assigned to, that comes from the project, not from the training. Note that text and audio work use different tools and different acceptance criteria.
+The callout is the bridge back to the quality module: the technique changes, the discipline does not.</div></section>
+<section class="slide fullslide" id="s36" data-title="Semantic Segmentation"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s36.jpg" alt="TECHNIQUE 1 OF 5 / Semantic Segmentation / Every pixel in the image is given a class label, turning the whole scene into a colour-coded map. / HOW IT’S DONE / Fill each region with its class colour / Leave no pixel unlabeled / Keep borders tight where classes meet / USED FOR / Self-driving cars / Medical scans / Satellite land use / Road / Sidewalk / Car / Person / Building / Tree / Sky / IMAGE PROCESSING" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Semantic segmentation labels every pixel. Point out that each colour is a class, not an individual object: all cars share one colour. Emphasise that no pixel may be left unlabeled.</div></section>
+<section class="slide fullslide" id="s37" data-title="Polyline"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s37.jpg" alt="TECHNIQUE 2 OF 5 / Polyline / Connected line segments trace thin, continuous structures that have length but no real area. / HOW IT’S DONE / Place points along the line, end to end / Add more points wherever the line curves / Keep each line one continuous object / USED FOR / Lane detection / Roads and pipelines / Power lines / Example: both road edges and the centre line traced point by point / IMAGE PROCESSING" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Polylines are for things that are long and thin, such as lane markings, kerbs, cables and rivers. The annotator clicks points along the line; more points are needed on curves.</div></section>
+<section class="slide fullslide" id="s38" data-title="Polygon"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s38.jpg" alt="IMAGE PROCESSING / TECHNIQUE 3 OF 5 / Polygon / Points placed around an object’s edge form a closed shape that follows its exact outline. / HOW IT’S DONE / Click vertices along the object’s edge / Add points wherever the outline bends / Close the shape back at the first point / USED FOR / Irregular objects / Aerial imagery / Retail products / Example: a person, a car and a tree outlined vertex by vertex" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Polygons give a much tighter fit than a box, which matters for irregular shapes like people and trees. Compare the tree outline here with the bounding box on the next slide.</div></section>
+<section class="slide fullslide" id="s39" data-title="Bounding Box"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s39.jpg" alt="IMAGE PROCESSING / TECHNIQUE 4 OF 5 / Bounding Box / A rectangle drawn tightly around each object shows where it is and what it is. / HOW IT’S DONE / Touch the object’s outermost edges / Draw one box per object, then label it / Flag objects that are hidden or cut off / USED FOR / Object detection / Traffic monitoring / Shelf audits / Example: three cars, a person and a traffic light, each in its own box" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Bounding boxes are the fastest and most common technique. The key quality rule is tightness: the box touches the object’s edges with no gap and nothing cut off. Even small, distant cars get their own box.</div></section>
+<section class="slide fullslide" id="s40" data-title="Key Point"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s40.jpg" alt="IMAGE PROCESSING / TECHNIQUE 5 OF 5 / Key Point / Single points mark specific landmarks, such as body joints, so shape and movement can be measured. / HOW IT’S DONE / Place each point on its exact landmark / Follow the point order in the guideline / Mark hidden points as occluded / USED FOR / Pose estimation / Facial landmarks / Sports and health / Example: 17 body keypoints joined into a skeleton" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Key points are about precise position and consistent order: left shoulder is always point 6, for example. When a joint is hidden, annotators still mark it but flag it as occluded, as the guideline specifies.</div></section>
+<section class="slide fullslide" id="s41" data-title="LiDAR and Big Data"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s41.jpg" alt="LiDAR and Big Data / SERVICE AREAS / SERVICE AREAS 4 AND 5 / Two further areas. One is annotation in three dimensions; the other is the data engineering that surrounds every annotation project. / SERVICE AREA 4 / LiDAR / Annotation of three-dimensional point-cloud data, where depth and orientation matter. / 3D Segmentation / Label every point in a scan according to its approved class. / 3D Bounding Box / Enclose objects in three dimensions, with position and orientation. / SERVICE AREA 5 / Big Data / The engineering around the labeling: where data comes from, how it is prepared, stored, reported and built on. / Database   Structure, store and maintain project datasets. / Data Visualization   Turn production and quality data into readable reporting. / Data Crawling   Collect source data at scale from agreed origins. / Data Preparation   Clean, format and organise raw data before annotation. / Software Development   Build the tooling and integrations the work depends on. / WHY THESE TWO SIT TOGETHER / LiDAR is annotation work with its own tools and acceptance criteria. Big Data is what makes any annotation project possible, without prepared data and reliable reporting, the labeling cannot start or be measured." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Two areas with very different character, which is why they are presented differently.
+LiDAR is annotation in three dimensions. It needs suitable data, suitable tools and more practice than the 2D techniques, navigating a point cloud is the hardest part for new annotators, not the labeling rule.
+Big Data is not annotation at all. It is the surrounding engineering: where the data comes from, how it is cleaned and stored, and how production and quality figures are reported back. Annotators rarely see it, but every delay in data preparation shows up later as idle annotation capacity.
+If asked how these relate to the training: LiDAR techniques appear in the annotation week as 3D bounding box and 3D semantic segmentation; Big Data does not, and is a separate service line.</div></section>
+<section class="slide fullslide" id="s42" data-title="3D Segmentation"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s42.jpg" alt="LIDAR / LIDAR TECHNIQUE 1 OF 2 / 3D Segmentation / Every point in a LiDAR scan is labeled with its class, so the       whole 3D scene is understood. / HOW IT’S DONE / Label every point with its approved class / Rotate the scan to check from all angles / Keep clean edges where classes touch / USED FOR / Self-driving cars / 3D mapping / Robotics / Road / Sidewalk / Car / Pedestrian / Building / Tree / Pole" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">A LiDAR scan is a cloud of 3D points measured by laser. 3D segmentation gives every point a class, the 3D version of semantic segmentation. Point out the rings on the ground (each is one laser beam) and the dark gaps behind cars and people, where the laser cannot see.</div></section>
+<section class="slide fullslide" id="s43" data-title="3D Bounding Box"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s43.jpg" alt="LIDAR / LIDAR TECHNIQUE 2 OF 2 / 3D Bounding Box / A 3D box (cuboid) encloses each object, recording its position, size and the direction it faces. / HOW IT’S DONE / Fit length, width and height to the points / Turn the box to face the direction of travel / Keep box sizes steady across frames / USED FOR / Vehicle detection / Pedestrian tracking / Warehouse robots / Example: points coloured by height; the white line on each box shows which way the object faces" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Unlike a 2D box, a cuboid has depth and a heading. The white line on top of each box shows which way the object faces; the oncoming car’s box points the other way. Boxes should hug the points and keep the same size for the same object across frames.</div></section>
+<section class="slide fullslide" id="s44" data-title="Where We Make an Impact"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s44.jpg" alt="Where We Make an Impact / IMPACT / WHERE THE WORK IS USED / Ten sectors that rely on labeled data. The technique changes with the sector; the quality requirement does not. / E-commerce / Product images classified and catalogued for search. / Manufacturing / Defect detection and component inspection on production lines. / Entertainment / Content tagging, scene segmentation and subtitle transcription. / Education / Learning content classification and speech transcription. / Agriculture / Crop, pest and yield identification from field and drone imagery. / Automobile / Lane, object and pedestrian detection for driver assistance. / Healthcare / Medical image annotation supporting diagnostic tools. / Banking and Finance / Document extraction, OCR and transaction text classification. / Surveillance / Defense / Object and activity detection in video and sensor data. / Social Media / Content moderation, sentiment and intent classification. / WHAT THIS MEANS FOR AN ANNOTATOR / You will rarely be told which product your labels end up in. Treat every task as if the output were going into use tomorrow, because in most of these sectors it is." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">The two original slides have been combined. Splitting ten sectors across two identical layouts made the list look like two different things when it is one.
+Do not read the list. Pick three sectors the group will recognise and describe what the annotation work actually looks like in each, the right-hand column gives you the line for every one.
+Useful question for the room: which of these sectors would be most affected by a labeling error, and why? Healthcare, automobile and defense usually come up, which opens the point about critical criteria that cannot be compensated for by a good overall score.
+The callout is the behavioural point. Annotators who assume their work is a training exercise treat it differently from those who assume it is going into production.</div></section>
+<section class="slide fullslide" id="s45" data-title="An AI-Powered Society by 2035"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s45.jpg" alt="An AI-Powered Society by 2035 / GHANA AI STRATEGY / GHANA NATIONAL AI STRATEGY 2025–2035 / A ten-year roadmap to use AI for inclusive development, global competitiveness and ethical innovation - positioning Ghana as Africa’s leading AI hub. / VISION  ·  2035 / An AI-powered society with improved quality of life, inclusive social and economic transformation, and global digital competitiveness. / MISSION / Harness AI and artificial general intelligence across all sectors to improve lives, drive national growth, and make Ghana a trailblazer for AI in Africa. / WHAT SUCCESS LOOKS LIKE / 1M+ / Young people trained in AI / Through curricula and skills programmes / GH₵500bn / AI contribution to GDP by 2035 / GH₵200bn by 2030 / GH₵200bn / Investment attracted by 2035 / Mobilised through the National AI Fund / 10 / AI unicorns by 2035 / Plus at least one private AGI lab / THE FRAMING / Ghana is planning for artificial general intelligence as well as today’s AI, the mission names AGI explicitly, and the targets assume a domestic industry rather than an imported one." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Lead with the vision, then go straight to the numbers. This strategy is unusually specific about targets, and that specificity is what makes it credible or not.
+Note the mission wording: it names artificial general intelligence, not just AI. Few national strategies do. Whether that is ambition or overreach is a fair discussion to have with the room.
+The 1 million youth figure is the one closest to this audience, it is a commitment to exactly the kind of training programme they are part of.
+All figures are in Ghanaian cedis as stated in the strategy; do not convert them on the fly.</div></section>
+<section class="slide fullslide" id="s46" data-title="Where the Strategy Acts"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s46.jpg" alt="Where the Strategy Acts / GHANA AI STRATEGY / EIGHT CORE PILLARS / Eight action areas, from classroom to cabinet;  covering skills, jobs, infrastructure, data, community, sector adoption, research and the state itself. / 1 / Expand AI Education &amp; Training / Integrate AI into curricula, train over 1 million youth, strengthen teacher skills and close gender gaps. / 2 / Empower Youth for AI Jobs / Upskill youth, back internships and entrepreneurship, enable remote work, attract the diaspora home. / 3 / Deepen Digital Infrastructure &amp; Inclusion / Affordable internet, data centres, hubs, cloud, local-language datasets, compute and energy. / 4 / Facilitate Data Access &amp; Governance / Strengthen data protection and privacy, enable open data, clarify sharing agreements and improve compliance. / 5 / Coordinate a Robust AI Community / Build online and offline communities and hubs, bridge the urban–rural divide, connect stakeholders. / 6 / Accelerate Adoption Across Sectors / Pilots in health, agriculture and finance; incentives and clearer IP law for start-ups. / 7 / Invest in Applied AI Research / An NLP Centre of Excellence, digitalised oral histories and a National Deep Science Institute. / 8 / Promote AI in the Public Sector / Procurement reform, civil-servant training, government use cases, and GhanaChat. / READ THE SEQUENCE / Pillars 1 and 2 build people. Pillars 3 to 5 build the conditions. Pillars 6 to 8 put AI to work and the state is last, holding itself to the same standard it asks of industry." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Do not read all eight. Group them: people (1–2), conditions (3–5), application (6–8).
+Pillar 3 contains the line most relevant to annotation work ; local-language datasets  and pillar 7 names an NLP Centre of Excellence and the digitalisation of oral histories. Both are language-data commitments that need people who can collect, transcribe and label Ghanaian languages.
+Pillar 8 and GhanaChat usually draw the most interest in a room. It is worth asking what training data a Ghana-specific government language model would need, and who would produce it.
+Pillar 4 is the governance counterweight: open data and sharing agreements on one side, data protection and privacy on the other. Link it to Act 843 obligations the audience already works under.</div></section>
+<section class="slide fullslide" id="s47" data-title="Kenya AI Strategy 2025–2030"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s47.jpg" alt="Kenya AI Strategy 2025–2030 / KENYA AI STRATEGY / Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant. / VISION / To become a regional leader in AI research, development, innovation and commercialisation for inclusive socioeconomic development. / CORE PURPOSE / Use local talent, data and innovation to improve economic growth and public services across priority sectors. / PRIORITY SECTORS / Agriculture / Health / Education / Finance / Security / Government services / GUIDING PRINCIPLES / Inclusion / Public participation / Transparency and accountability / Cultural relevance / Environmental sustainability / Local-first approach / THE DEFINING CHOICE / Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts  rather than imported wholesale and adapted afterwards. / Privacy and safety" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.
+The seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.
+The Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.
+Good framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?</div></section>
+<section class="slide fullslide" id="s48" data-title="Three Pillars, Four Enablers"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s48.jpg" alt="Three Pillars, Four Enablers / KENYA AI STRATEGY / SEVEN PRIORITIES / The strategy rests on three delivery pillars, supported by four cross-cutting enablers that make the pillars usable, safe, funded and fair. / 1 / PILLAR / AI Digital Infrastructure / Broadband, 5G, cloud and edge computing. / High-performance computing; three AI-       capable data centres in five years. / Stronger cybersecurity, powered by green  energy. / 2 / PILLAR / Data / Data governance, secure sharing and interoperability standards. / Data-residency safeguards. / High-quality local datasets for training AI models. / 3 / PILLAR / AI R&amp;D and Innovation / Research centres and innovation hubs. / Funding for localised models and startup  scaling. / Markets created for Kenyan AI products. / SUPPORTED BY FOUR CROSS-CUTTING ENABLERS / 4 / Talent Development / AI foundations in schools, specialised tertiary and industry training, placements and apprenticeships. / 5 / Governance / National AI policy, risk and safety standards, regulatory sandboxes, and AI-specific legislation in time. / 6 / Investment / Grants, funds, public-private partnerships, special economic zones and investment incentives. / 7 / Ethics, Equity and Inclusion / Ethical impact assessments, complaint and redress mechanisms, bias and representation, public AI literacy. / HOW TO READ THE STRUCTURE / The pillars build capability. The enablers decide whether that capability is trusted, affordable, staffed and fairly distributed, which is why all four run across all three." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">The structure is the message: three pillars that build capability, four enablers that determine whether it is usable.
+Pillar 2 is the one closest to this audience. 'High-quality local datasets for training AI models' is a policy commitment to exactly the work annotators and QA reviewers do, and it is the line to point at when someone asks whether annotation is a long-term career.
+Pillar 1 carries the only hard, dated commitment on the slide: three AI-capable data centres within five years. Expect that to be the number people remember.
+Enabler 7 pairs with the training's ethics content: ethical impact assessments in public-sector AI and citizen redress mechanisms are the governance equivalent of the quality-assurance discipline taught here.</div></section>
+<section class="slide fullslide" id="s49" data-title="Strengths, Gaps and Risks"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s49.jpg" alt="Strengths, Gaps and Risks / KENYA AI STRATEGY / WHERE KENYA STANDS / An honest reading of the starting position, and the first applications the strategy intends to deliver. / Strengths / WHAT KENYA ALREADY HAS / Young, digital-ready population. / Active startup ecosystem. / Mobile and fibre infrastructure, plus data  centres. / Renewable geothermal energy. / Government support; growing AI use in.    key sectors. / Gaps / WHAT IS MISSING TODAY / Limited advanced AI skills. / Fragmented, non-AI-specific regulation. / Insufficient quality and digitzed data. / Limited computing capacity and uneven   access. / Low public trust; underfunded local research and startups. / Risks / WHAT COULD GO WRONG / Job displacement. / Wider urban–rural and social digital divide. / Data exploitation and privacy breaches. / Bias, surveillance, misinformation and       cyberattacks. / Dependence on foreign infrastructure and technology. / PRIORITY APPLICATIONS  ·  FIRST HIGH-IMPACT USES / Local-language maternal-health and disease chatbots / Intelligent tutoring and multilingual teacher tools / Farmer agronomy and fertiliser recommendations / Multilingual public-service assistants / AI platform for the creative industries / THE AIM / Not only an AI user, but a producer of trusted, locally designed AI solutions." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">The strengths and gaps columns should be read against each other: Kenya has the energy, the connectivity and the entrepreneurs, and lacks the skills, the data and the computing capacity. Two of those three gaps are addressable by training and by annotation work.
+'Insufficient quality and digitised data' is the gap this audience closes. Say so directly.
+On risks, resist treating the list as a disclaimer. Job displacement and the urban–rural divide are live concerns for trainees, and the honest answer is that the strategy creates one kind of work while automating another, which is the argument for moving up from annotation into QA, project management and training.
+The five priority applications are all language- and context-dependent, which is the practical case for local data and local annotators. Close on the dark band.</div></section>
+<section class="slide fullslide" id="s50" data-title="Why Africa’s Participation in AI Matters"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s50.jpg" alt="Why Africa’s Participation in AI Matters / GLOBAL CONTEXT / AFRICA AND AI · ALTERNATIVE LAYOUT / The same six reasons, laid out without the map, use this version where the slide has to carry the argument on its own. / 1 / Data Diversity &amp; Fairness / Africa’s languages, cultures and contexts    reduce global AI bias and improve model    accuracy for everyone. / 2 / Population Scale &amp; Growth / Home to more than 1.4 billion people and    the world’s youngest, fastest-growing        population. / 3 / Local Problem Solving / AI built in Africa addresses challenges in     healthcare, agriculture, climate adaptation, financial inclusion and education. / 4 / Economic Opportunity &amp; Jobs / High-value digital jobs, startups and exportable tech services that accelerate economic growth. / 5 / Ethical &amp; Inclusive Governance / African voices ensure global AI rules reflect developing-world realities, not only Global North priorities. / 6 / Innovation from Constraints / Resource-efficient solutions drive frugal,    scalable AI innovations that are valuable    worldwide. / BOTTOM LINE / Without Africa, AI risks being biased, incomplete and globally ineffective." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Alternative to the previous slide, without the map. Keep one and delete the other ;do not present both.
+Use this version when the slide has to stand on its own, for example in a printed pack or when it is sent ahead of a session without a facilitator to talk over it.
+Use the map version when you are presenting live and want something to point at while you make the data-diversity argument.
+The content is identical, so the speaker notes for the previous slide apply here as well.</div></section>
+<section class="slide fullslide" id="s51" data-title="datamaker Ghana data labeling tool - SYNAPSE"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s51.jpg" alt="datamaker Ghana data labeling tool - SYNAPSE" loading="lazy"><div class="fs-media" style="left:11.9792%;top:15.5556%;width:76.6667%;height:78.1481%"><video src="assets/tot1/media/media4.mp4" poster="assets/tot1/media/media4-poster.jpg" preload="metadata" playsinline muted data-mute="1" data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s52" data-title="."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s52.jpg" alt=". / Validation / Certificate / datamaker.io/certification / datamaker Ghana Certificate of Completion" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s53" data-title="SYNAPSE Platform and Practice"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s53.jpg" alt="SYNAPSE Platform and Practice / MODULE 1.3 / MODULE 1.3  ·  GROUP EXERCISE / Participants should be able to demonstrate the basic workflow required for the project and explain it to future trainees." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Before this module: confirm the training environment is live, credentials work and the demonstration dataset is loaded. If the platform is unavailable, run the demonstration sequence on a projected walkthrough and reschedule the guided practice rather than skipping it.</div></section>
+<section class="slide fullslide" id="s54" data-title="Table of Content"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s54.jpg" alt="Table of Content / Platform Intro / User Environment / Main Dashboard / Project Page / Labeling Tools / Shortcuts/settings / Preferences / Shortcuts" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s55" data-title="SYNAPSE INTRO"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s55.jpg" alt="SYNAPSE INTRO" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s56" data-title="SYNAPSE ENVIROMENT"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s56.jpg" alt="SYNAPSE ENVIROMENT / To use synapse platform for data labeling, one must log into the web app at / http://platform.datamaker.io / The required browser for using the synapse web application is the Chrome Browser" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s57" data-title="WEB-APP (https://platform.datamaker.io/auth/login)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s57.jpg" alt="WEB-APP (https://platform.datamaker.io/auth/login)" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s58" data-title="LANGUAGE SETTINGS"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s58.jpg" alt="LANGUAGE SETTINGS / Default Language is in Korean. If you prefer English, you change the settings to switch to English." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s59" data-title="DASHBOARD(Labeling)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s59.jpg" alt="DASHBOARD(Labeling) / The labeling dashboard is a user interface or platform designed for the purpose of managing data labeling projects. / Choose from a selected list of projects" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s60" data-title="DASHBOARD(Labeling &gt; Project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s60.jpg" alt="DASHBOARD(Labeling &gt; Project page) / Start or continue labeling tasks by clicking this button. / 1 / 1" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s61" data-title="DASHBOARD(Labeling &gt; Project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s61.jpg" alt="DASHBOARD(Labeling &gt; Project page) / 2 / Use the search bar here find specific                          to modify. / 2" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s62" data-title="DASHBOARD(Labeling &gt; Project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s62.jpg" alt="DASHBOARD(Labeling &gt; Project page) / 3 / Increase or decrease the number of number of tasks per page. / 10, 20, 30, 50, 100, or 500. / 3" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s63" data-title="DASHBOARD(Labeling &gt; Project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s63.jpg" alt="DASHBOARD(Labeling &gt; Project page) / This filter allows you to view a range of tasks by providing a specific range of criteria. / These criteria include / Work status / By Last labeled date. / 4 / 4" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s64" data-title="DASHBOARD(Labeling &gt; Project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s64.jpg" alt="DASHBOARD(Labeling &gt; Project page) / Frequently check this page for updated guidelines on project / 5 / 5" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s65" data-title="DASHBOARD (Review dashboard)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s65.jpg" alt="DASHBOARD (Review dashboard) / Choose from a selected list of projects to start Data Review / The Review dashboard is a user interface or platform designed for the purpose of Inspecting data labeled projects." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s66" data-title="DASHBOARD (Review dashboard &gt; project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s66.jpg" alt="DASHBOARD (Review dashboard &gt; project page) / The name of the worker you are inspecting. / 1 / 1" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s67" data-title="DASHBOARD (Review dashboard &gt; project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s67.jpg" alt="DASHBOARD (Review dashboard &gt; project page) / You will see the work status and your status of the task. / 2 / 2" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s68" data-title="DASHBOARD (Review dashboard &gt; project page)"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s68.jpg" alt="DASHBOARD (Review dashboard &gt; project page) / You can filter / Worker / Review status / Last Reviewed / 3 / 3" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s69" data-title="LABELING TOOLS"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s69.jpg" alt="LABELING TOOLS" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s70" data-title="BOUNDING -BOX"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s70.jpg" alt="BOUNDING -BOX" loading="lazy"><div class="fs-media" style="left:11.9303%;top:15.5556%;width:76.6635%;height:78.2114%"><video src="assets/tot1/media/media5.mp4" poster="assets/tot1/media/media5-poster.jpg" preload="metadata" playsinline muted loop data-auto="1" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s71" data-title="POLYGON SEGMENTATION"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s71.jpg" alt="POLYGON SEGMENTATION" loading="lazy"><div class="fs-media" style="left:11.694%;top:15.5556%;width:76.612%;height:78.2114%"><video src="assets/tot1/media/media6.mp4" poster="assets/tot1/media/media6-poster.jpg" preload="metadata" playsinline muted loop data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s72" data-title="POLYLINE"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s72.jpg" alt="POLYLINE" loading="lazy"><div class="fs-media" style="left:11.6533%;top:15.5556%;width:76.6933%;height:78.7012%"><video src="assets/tot1/media/media7.mp4" poster="assets/tot1/media/media7-poster.jpg" preload="metadata" playsinline muted loop data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s73" data-title="KEYPOINTS"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s73.jpg" alt="KEYPOINTS" loading="lazy"><div class="fs-media" style="left:11.6768%;top:15.5556%;width:76.6463%;height:78.6877%"><video src="assets/tot1/media/media8.mp4" poster="assets/tot1/media/media8-poster.jpg" preload="metadata" playsinline muted loop data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s74" data-title="3D- BOUNDING BOX"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s74.jpg" alt="3D- BOUNDING BOX" loading="lazy"><div class="fs-media" style="left:11.7835%;top:15.5556%;width:76.4329%;height:78.6877%"><video src="assets/tot1/media/media9.mp4" poster="assets/tot1/media/media9-poster.jpg" preload="metadata" playsinline muted loop data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s75" data-title="3D- SEMANTIC SEGMENTATION"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s75.jpg" alt="3D- SEMANTIC SEGMENTATION" loading="lazy"><div class="fs-media" style="left:11.7693%;top:15.5556%;width:76.4615%;height:78.6877%"><video src="assets/tot1/media/media10.mp4" poster="assets/tot1/media/media10-poster.jpg" preload="metadata" playsinline muted data-auto="0" style="left:0%;top:0%;width:100%;height:100%"></video></div></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s76" data-title="SHORTCUTS"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s76.jpg" alt="SHORTCUTS" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s77" data-title="Create/Delete"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s77.jpg" alt="Create/Delete" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s78" data-title="Select/Move"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s78.jpg" alt="Select/Move" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s79" data-title="Cancel/Revert"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s79.jpg" alt="Cancel/Revert" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s80" data-title="Image Size"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s80.jpg" alt="Image Size" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s81" data-title="Show/Lock"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s81.jpg" alt="Show/Lock" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s82" data-title="Display Mode"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s82.jpg" alt="Display Mode" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s83" data-title="Etc."><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s83.jpg" alt="Etc." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide=""></div></section>
+<section class="slide fullslide" id="s84" data-title="Job Pathways After Mastering Project Management"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s84.jpg" alt="CAREER PATHWAYS / Job Pathways After Mastering Project Management / SKILLS THE ToT BUILDS / Planning &amp; staffing / Quality &amp; calibration / Performance tracking / Project reporting / Trainee management / Client communication / Project &amp; Operations / AI Project Manager / Project Assistant / Data Operations Coordinator / Builds on: planning, staffing, deadlines and reporting / Quality &amp; Training / Quality Manager / QA Lead / Annotation Team Lead / AI Data-Labeling Trainer / Builds on: guidelines, calibration, assessment and mock teaching / Reporting &amp; Insights / Project Reporting Officer / Junior Data Analyst / Dashboard / MIS Assistant / Builds on: trackers, issue logs, progress reports and Excel / Product &amp; Design / User Interface Tester / User Interface Designer / AI Prompt &amp; Content Lead / Builds on: a quality eye, design tools and Generative AI / Grow up the ladder (Labeler → Quality Manager → Project Manager → Head Project Manager) or move across into any track above." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Mastering project management in the ToT opens two kinds of progression. Up the ladder within a labeling operation: Labeler, Quality Manager, Project Manager, Head Project Manager. Or across into related roles that use the same skills: project and operations, quality and training, reporting and insights (building on the project-reporting session), and product and design. These are possible pathways, not guaranteed placements.</div></section>
+<section class="slide fullslide" id="s85" data-title="Know SYNAPSE, Learn the Rest Faster"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s85.jpg" alt="REPORTING &amp; SOFTWARE SKILLS / Know SYNAPSE, Learn the Rest Faster / PROJECT REPORTING · COVERED IN THE ToT / Four reports every project needs / 1 / Daily report: output, issues and next steps / 2 / Production tracker: volume, speed and accuracy per labeler / 3 / Issue log: problems raised, escalated and resolved / 4 / Progress report: status for the client and management / Built from SYNAPSE project data in Excel and          PowerPoint / SYNAPSE / Know it first / IMAGE EDITING / Photoshop · GIMP / Zoom, layers and selection work like the labeling canvas / DESIGN / Figma · Canva / Shapes, layers and toolbars follow the same logic / MAPPING &amp; GIS / ArcGIS / Polygons on map layers, just like polygon labeling / OFFICE &amp; REPORTING / Excel · PowerPoint · Word / Turn SYNAPSE exports and stats into reports / AI TOOLS / Generative AI · Prompting / You know how training data shapes AI answers / OTHER LABELING TOOLS / CVAT · Label Studio / Same tasks and QA, just a   new interface" loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Project reporting is treated in the ToT on Day 2: the daily report, production tracker, issue log and progress report, built from SYNAPSE project data. On the right, SYNAPSE sits at the centre because once you know it, the other tools feel familiar. Image editors and design tools use the same zoom, layers, selection and shape logic as the labeling canvas. ArcGIS works with polygons on map layers, just like polygon labeling. Excel, PowerPoint and Word turn SYNAPSE exports into reports. Knowing how training data is made helps you use Generative AI well. And other labeling platforms such as CVAT or Label Studio run the same tasks and QA with a different interface. Photoshop, Figma, Canva, ArcGIS and other labeling platforms are suggested next steps rather than part of the programme.</div></section>
+<section class="slide fullslide" id="s86" data-title="Thank You"><div class="fs-area"><div class="fs-stage"><img class="fs-img" src="assets/tot1/slides/s86.jpg" alt="Thank You / END OF DAY / END OF SESSION / Training of Trainers  ·  AI Data labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker." loading="lazy"></div></div><div class="fs-top"><div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false"><span></span><span></span><span></span></button><nav class="fs-nav"><a class="fs-home" href="ToT.html">Home</a><span class="fs-sep" aria-hidden="true"></span><a href="ToT-Day1.html" class="on">ToT Day 1</a><a href="ToT-Day2.html">ToT Day 2</a><a href="ToT-Day3.html">ToT Day 3</a></nav></div><span class="slide-num" data-n=""></span></div><div class="notes" data-slide="">Final slide. Keep the close short.
+Confirm three practical things before people leave: that assessment records and action plans have been collected, who to contact with follow-up questions, and the date of any planned follow-up or reassessment session.</div></section>
+</div>
+<div class="progress-bar"><span></span></div>
+<div class="notes-overlay" id="notesOverlay"><div class="nl">Speaker Notes (press N to hide)</div><div class="nl-body"></div></div>
+<div class="print-panel collapsed" id="printPanel">
+  <div class="print-panel-head">
+    <button class="print-panel-collapse" id="printPanelCollapse" title="Collapse/expand" aria-label="Expand print panel">&#9652; Print</button>
+  </div>
+  <div class="print-panel-body">
+    <label><input type="checkbox" id="printNotesToggle"> Include speaker notes when printing</label>
+    <button id="printBtn">Print / Save as PDF&hellip;</button>
+  </div>
+</div>
+<div class="overview" id="overviewGrid"></div>
+
+<script>
+(function(){
+  if(location.search.indexOf('embed')>-1){document.body.classList.add('embed');}
+
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  const NUM_OFFSET = 0;          // slides in the deck(s) before this one on the same day
+  const OTHER_DECK_SLIDES = 0;     // slides in the deck(s) after this one on the same day
+  const GRAND_TOTAL = NUM_OFFSET + total + OTHER_DECK_SLIDES;
+  slides.forEach((s,i)=>{ const el=s.querySelector('.slide-num'); if(el){ el.setAttribute('data-n', i+1+NUM_OFFSET); el.setAttribute('data-total', GRAND_TOTAL); } });
+  const overviewGrid = document.getElementById('overviewGrid');
+  if(overviewGrid){
+    slides.forEach((s,i)=>{
+      const thumb = document.createElement('div');
+      thumb.className = 'thumb';
+      thumb.dataset.i = i;
+      const n = document.createElement('span'); n.className = 'n'; n.textContent = String(i+1).padStart(2,'0');
+      const t = document.createElement('span'); t.className = 't'; t.textContent = s.getAttribute('data-title') || '';
+      thumb.append(n,t);
+      overviewGrid.appendChild(thumb);
+    });
+  }
+  let cur = 0;
+  const bar = document.querySelector('.progress-bar > span');
+  function render(){
+    slides.forEach((s,i)=>{
+      s.classList.remove('is-active','is-prev');
+      if(i===cur) s.classList.add('is-active');
+      else if(i<cur) s.classList.add('is-prev');
+    });
+    if(bar) bar.style.width = ((cur+1)/total*100)+'%';
+    history.replaceState(null,'','#'+(cur+1));
+  }
+  function go(n){ cur = Math.max(0, Math.min(total-1, n)); render(); }
+  const hash = parseInt((location.hash||'').replace('#',''),10);
+  cur = (hash>=1 && hash<=total) ? hash-1 : 0;
+  render();
+
+  const notesOverlay = document.getElementById('notesOverlay');
+  let notesOn = false;
+  function updateNotes(){
+    if(!notesOn) return;
+    const n = slides[cur].querySelector('.notes');
+    notesOverlay.querySelector('.nl-body').textContent = n ? n.textContent : '';
+  }
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='ArrowRight' || e.key===' ' || e.key==='PageDown'){ go(cur+1); updateNotes(); }
+    else if(e.key==='ArrowLeft' || e.key==='PageUp'){ go(cur-1); updateNotes(); }
+    else if(e.key==='Home'){ go(0); updateNotes(); }
+    else if(e.key==='End'){ go(total-1); updateNotes(); }
+    else if(e.key.toLowerCase()==='n'){ notesOn=!notesOn; notesOverlay.classList.toggle('open',notesOn); updateNotes(); }
+    else if(e.key.toLowerCase()==='o' || e.key==='Escape'){
+      const ov = document.getElementById('overviewGrid');
+      if(e.key==='Escape'){ ov.classList.remove('open'); return; }
+      ov.classList.toggle('open');
+    }
+    else if(e.key.toLowerCase()==='f'){ document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+  });
+  document.querySelectorAll('.overview .thumb').forEach(t=>{
+    t.addEventListener('click', ()=>{ go(parseInt(t.dataset.i,10)); document.getElementById('overviewGrid').classList.remove('open'); updateNotes(); });
+  });
+  let touchX=null;
+  document.addEventListener('touchstart', e=>touchX=e.touches[0].clientX);
+  document.addEventListener('touchend', e=>{
+    if(touchX===null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(dx<-40) go(cur+1); else if(dx>40) go(cur-1);
+    touchX=null;
+  });
+
+  function buildNotePages(){
+    document.querySelectorAll('.deck > .slide').forEach(slide=>{
+      if(slide.nextElementSibling && slide.nextElementSibling.classList && slide.nextElementSibling.classList.contains('note-page')) return;
+      const notesEl = slide.querySelector('.notes');
+      const text = notesEl ? notesEl.textContent.trim() : '';
+      if(!text) return;
+      const title = slide.getAttribute('data-title') || '';
+      const numEl = slide.querySelector('.slide-num');
+      const num = numEl ? numEl.getAttribute('data-n') : '';
+      const np = document.createElement('div');
+      np.className = 'note-page';
+      const eyebrow = document.createElement('div'); eyebrow.className = 'np-eyebrow'; eyebrow.textContent = 'Speaker Notes: Slide ' + num;
+      const h3 = document.createElement('h3'); h3.textContent = title;
+      const p = document.createElement('p'); p.textContent = text;
+      np.append(eyebrow, h3, p);
+      slide.insertAdjacentElement('afterend', np);
+    });
+  }
+  buildNotePages();
+
+  const printToggle = document.getElementById('printNotesToggle');
+  const printBtn = document.getElementById('printBtn');
+  if(printToggle) printToggle.addEventListener('change', ()=>{ document.body.classList.toggle('print-with-notes', printToggle.checked); });
+  if(printBtn) printBtn.addEventListener('click', ()=>window.print());
+  const printPanel = document.getElementById('printPanel');
+  const printPanelCollapse = document.getElementById('printPanelCollapse');
+  if(printPanelCollapse) printPanelCollapse.addEventListener('click', ()=>{
+    const collapsed = printPanel.classList.toggle('collapsed');
+    printPanelCollapse.innerHTML = collapsed ? '&#9652; Print' : '&#9662;';
+  });
+})();
+</script>
+<script>
+(function(){
+  const deck = document.querySelector('.deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const active = () => document.querySelector('.slide.is-active');
+  // sound: on by default; M toggles it for every video (a video muted in the PowerPoint stays muted)
+  let soundOn = true;
+  const sound = v => { v.muted = !soundOn || v.dataset.mute === '1'; };
+  function play(v){ v.dataset.started = '1'; sound(v); const p = v.play(); if(p) p.catch(()=>{ v.muted = true; v.play(); }); }
+  const toast = document.createElement('div');
+  toast.className = 'fs-toast'; toast.setAttribute('role', 'status');
+  document.body.appendChild(toast);
+  let toastT = null;
+  function setSound(on){
+    soundOn = on;
+    document.querySelectorAll('.fs-media video').forEach(sound);
+    toast.textContent = on ? 'Sound on' : 'Sound off (press M)';
+    toast.classList.add('show'); clearTimeout(toastT);
+    toastT = setTimeout(() => toast.classList.remove('show'), 1400);
+  }
+  function setNav(open){
+    document.body.classList.toggle('nav-open', open);
+    document.querySelectorAll('.fs-burger').forEach(b => b.setAttribute('aria-expanded', open ? 'true' : 'false'));
+    if(!open) poke();
+  }
+  // controls: visible while the pointer moves, hidden after 2.5 s idle (kept while the menu is open or hovered)
+  let idle = null, overMenu = false;
+  function poke(){
+    document.body.classList.add('ui-on');
+    clearTimeout(idle);
+    idle = setTimeout(() => { if(!overMenu && !document.body.classList.contains('nav-open')) document.body.classList.remove('ui-on'); }, 2500);
+  }
+  ['mousemove','pointerdown','wheel'].forEach(t => window.addEventListener(t, poke, {passive:true}));
+  document.querySelectorAll('.fs-menu,.slide-num').forEach(m => {
+    m.addEventListener('mouseenter', () => { overMenu = true; poke(); });
+    m.addEventListener('mouseleave', () => { overMenu = false; poke(); });
+  });
+  document.querySelectorAll('.fs-burger').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation(); setNav(!document.body.classList.contains('nav-open'));
+  }));
+  document.addEventListener('click', e => { if(!e.target.closest('.fs-menu') && document.body.classList.contains('nav-open')) setNav(false); });
+  document.querySelectorAll('.fs-nav a:not(.fs-home)').forEach(a => a.addEventListener('click', () => {
+    if(!/[?]/.test(a.getAttribute('href'))) a.setAttribute('href', a.getAttribute('href') + '?menu');
+  }));
+  // load and decode the slides around the current one so a change never fades in a blank slide
+  function warm(i){
+    for(let j = i - 1; j <= i + 2; j++){
+      const s = slides[j]; if(!s) continue;
+      s.querySelectorAll('img').forEach(img => {
+        if(img.loading === 'lazy') img.loading = 'eager';
+        if(img.decode) img.decode().catch(() => {});
+      });
+    }
+  }
+  let last = null;
+  function sync(){
+    const s = active();
+    if(s === last) return;
+    last = s;
+    slides.forEach(o => { if(o !== s) o.querySelectorAll('video').forEach(v => {
+      if(!v.paused) v.pause(); if(v.dataset.started){ v.currentTime = 0; v.dataset.started = ''; } }); });
+    if(s) s.querySelectorAll('video[data-auto="1"]').forEach(play);
+    if(document.body.classList.contains('nav-open')) setNav(false);  // the day menu hides itself when the slide changes
+    const i = slides.indexOf(s);
+    warm(i);
+    document.querySelectorAll('.overview .thumb').forEach(t => t.classList.toggle('cur', +t.dataset.i === i));
+  }
+  new MutationObserver(sync).observe(deck, {subtree:true, attributes:true, attributeFilter:['class']});
+  window.addEventListener('keydown', e => {
+    if(e.key === 'Escape'){
+      if(document.body.classList.contains('nav-open')){ e.preventDefault(); e.stopImmediatePropagation(); setNav(false); return; }
+      const ov = document.getElementById('overviewGrid');
+      if(ov && ov.classList.contains('open')) return;
+      e.preventDefault(); e.stopImmediatePropagation(); location.href = 'ToT.html'; return;
+    }
+    if((e.key === 'm' || e.key === 'M') && !e.ctrlKey && !e.metaKey && !e.altKey && !e.target.closest('input,textarea')){
+      e.preventDefault(); setSound(!soundOn); return;
+    }
+    if(!(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown')) return;
+    const s = active();
+    const v = s && Array.from(s.querySelectorAll('video[data-auto="0"]')).find(v => !v.dataset.started);
+    if(v){ e.preventDefault(); e.stopImmediatePropagation(); play(v); }
+  }, true);
+  document.querySelectorAll('.fs-media video').forEach(v => {
+    v.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); if(v.paused) play(v); else v.pause(); });
+  });
+  // tap to move: left third = previous slide, anywhere else = next (touch and pen only; swipes still work)
+  let tap = null;
+  deck.addEventListener('pointerdown', e => {
+    tap = (e.pointerType === 'touch' || e.pointerType === 'pen') && e.isPrimary ? {x: e.clientX, y: e.clientY, t: Date.now()} : null;
+  });
+  deck.addEventListener('pointercancel', () => { tap = null; });
+  deck.addEventListener('pointerup', e => {
+    const t = tap; tap = null;
+    if(!t || Math.hypot(e.clientX - t.x, e.clientY - t.y) > 12 || Date.now() - t.t > 600) return;
+    if(e.target.closest('.fs-menu,.slide-num,video,a,button,input,label,.overview,.notes-overlay,.print-panel')) return;
+    if(document.body.classList.contains('nav-open')){ setNav(false); return; }
+    const key = e.clientX < window.innerWidth / 3 ? 'ArrowLeft' : 'ArrowRight';
+    document.dispatchEvent(new KeyboardEvent('keydown', {key, bubbles:true, cancelable:true}));
+  });
+  sync();
+  poke();
+  // Arriving from a day link (?menu): keep the day menu open on the new day
+  if(/[?&]menu\b/.test(location.search)){
+    setNav(true);
+    history.replaceState(null, '', location.pathname + location.hash);
+  }
+})();
+</script>
+</body>
+</html>

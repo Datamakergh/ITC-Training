@@ -1,0 +1,1924 @@
+[
+ {
+  "n": 1,
+  "hidden": false,
+  "title": "Data Labeling Training",
+  "text": [
+   "Data Labeling Training",
+   "Presented by datamaker Ghana LimitedKenya 18-20th November 2026"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 2,
+  "hidden": false,
+  "title": "data Labeling Training   ·  ITC KENYA x datamaker",
+  "text": [
+   "data Labeling Training   ·  ITC KENYA x datamaker",
+   "Day 1: Introduction",
+   "Kenya18th-20th November 2026",
+   "Day 1 of 5   |   5 contact hours including breaks   |   09:00 – 14:00",
+   "Audience: prospective trainers for AI data-Labeling training"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 3,
+  "hidden": false,
+  "title": "Five Days at a Glance",
+  "text": [
+   "SS Sylvester Sakitey · EOA Emmanuel Owusu Appiah · Both SS and EOA · ToT ToT trainees · GH GH Overseas team",
+   "Daily 09:00–14:00",
+   "TIME",
+   "DAY 1",
+   "Foundations & Bounding Box",
+   "DAY 2",
+   "Polyline & Polygon",
+   "DAY 3",
+   "Segmentation & PCD",
+   "DAY 4",
+   "QA & Generative AI",
+   "DAY 5",
+   "Applied Project & Graduation",
+   "09:00",
+   "to 10:45",
+   "Programme intro, AI & SYNAPSE, MS Office basics",
+   "SS",
+   "EOA",
+   "Polyline: traffic-flow guide, demo & practice",
+   "Both",
+   "Recap, segmentation tools & Photobooth guide",
+   "EOA",
+   "Recap, feedback & live client inspection",
+   "SS",
+   "ToT",
+   "GH",
+   "Vibe coding: website, portfolio or expense tracker",
+   "EOA",
+   "Break · 10:45–11:00",
+   "11:00",
+   "to 12:15",
+   "Bounding-box guideline & CCTV Labeling demo",
+   "EOA",
+   "Polygon intro & Rail and Catenary practice",
+   "Both",
+   "Photobooth demo, practice & inspection",
+   "SS",
+   "ToT",
+   "GH",
+   "Introduction to Generative AI",
+   "EOA",
+   "Project showcase, Q&A, testimonials & surveys",
+   "Both",
+   "ToT",
+   "Lunch break · 12:30–13:30",
+   "13:30",
+   "to 14:00",
+   "Practice, quality feedback & daily review",
+   "ToT",
+   "Rail and Catenary inspection & daily review",
+   "ToT",
+   "GH",
+   "Introduction to PCD (point clouds)",
+   "SS",
+   "Introduction to prompt engineering",
+   "EOA",
+   "Graduation, photos, next steps & close",
+   "Both",
+   "PROGRAMME SCHEDULE",
+   "AI Data-Labeling Training",
+   "Five Days at a Glance"
+  ],
+  "notes": "Each day runs 09:00 to 14:00 in three blocks, with a short break at 10:45 and lunch at 12:15. Days 1 to 3 cover the Labeling techniques (bounding box, polyline, polygon, segmentation and an introduction to point clouds). Day 4 covers quality assurance with a live client-style inspection, then Generative AI and prompt engineering. Day 5 is the applied vibe-coding project, showcase and graduation.",
+  "media": []
+ },
+ {
+  "n": 4,
+  "hidden": false,
+  "title": "Foundations & Bounding Box",
+  "text": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "09:00–09:15",
+   "Introduction to programme",
+   "Sylvester Sakitey",
+   "09:15–10:00",
+   "Introduction to AI and the SYNAPSE platform",
+   "Sylvester Sakitey",
+   "10:00–10:45",
+   "Synapse Platform",
+   "10:45–11:00",
+   "Break",
+   "11:00–11:45",
+   "Guideline comprehension and introduction to bounding box",
+   "Emmanuel Owusu Appiah",
+   "11:45–12:15",
+   "CCTV bounding-box guideline and Labeling demonstration",
+   "Emmanuel Owusu Appiah",
+   "12:30–13:30",
+   "Lunch break",
+   "13:30–14:00",
+   "Bounding-box practice and quality feedback",
+   "ToT Trainees & GH Facilitators",
+   "14:00–14:15",
+   "Report gathering, reflection and daily review",
+   "ToT Trainees",
+   "Sylvester Sakitey",
+   "DAILY SCHEDULE",
+   "DAY 1 OF 5",
+   "Foundations & Bounding Box"
+  ],
+  "notes": "Day 1 opens the programme, introduces AI and the SYNAPSE platform and covers Office basics, then moves into the first Labeling technique: bounding boxes on CCTV footage. The afternoon is hands-on practice with quality feedback.",
+  "media": []
+ },
+ {
+  "n": 5,
+  "hidden": false,
+  "title": "Meet your Facilitators",
+  "text": [
+   "Meet your Facilitators",
+   "01",
+   "Sylvester K. Sakitey",
+   "Head of Projects",
+   "Project Management",
+   "AI & Digital Technologies",
+   "Strategic Planning",
+   "Operations Management",
+   "Data Labeling & Quality Assurance",
+   "Training & Capacity Development",
+   "Drone Technology (UAVs)",
+   "02",
+   "Emmanuel Owusu Appiah",
+   "IT & Facilities Manager",
+   "Data Protection Supervisor",
+   "Data Protection & Compliance",
+   "IT Infrastructure & Facilities Management",
+   "Training & Capacity Development",
+   "Workforce Development",
+   "Project Management",
+   "Quality Assurance",
+   "AI Data Annotation & Operations",
+   "DATAMAKER GHANA LIMITED"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 6,
+  "hidden": false,
+  "title": "Copyright © datamaker.",
+  "text": [
+   "Copyright © datamaker.",
+   "All rights reserved.",
+   "datamaker",
+   "Data-specialized AI companyAccelerating the era of AI",
+   "2026 Company Profile"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 7,
+  "hidden": false,
+  "title": "Patents",
+  "text": [
+   "Patents",
+   "17",
+   "25 IP rights in total",
+   "Company Overview",
+   "datamaker: trustworthy data, AI that works",
+   "Company",
+   "Datamaker Inc.",
+   "CEO",
+   "Enoch Lee",
+   "Founded",
+   "October 19, 2018",
+   "Industry",
+   "System application software development & supply",
+   "Employees",
+   "55 at HQ",
+   "Subsidiary",
+   "datamaker Ghana LTD. (107 employees)",
+   "Website",
+   "www.datamaker.io",
+   "Datamaker solves the data problems that AI development projects face. Building on deep experience and technology in AI training data, we deliver optimal solutions and build AI that works in real industrial settings as a data-specialized AI company.",
+   "Certifications",
+   "6",
+   "GS Grade 1 and more",
+   "Projects joined /",
+   "AI models built",
+   "Company Overview    |    Business Areas    |    Core Technology",
+   "Defense Innovation 100",
+   "Super-Gap 1000+",
+   "Innovation Premier 1000"
+  ],
+  "notes": "DataMaker was founded in 2018. Today we have about 50~60 full-time employees at our headquarters here in Korea, and more than 100 full-time employees at our subsidiary in Ghana.\nA subsidiary in Ghana might seem a little out of the blue — I'll walk you through the reasoning behind that a bit later.DataMaker runs on two main business models.\nThe first is our data business — a service that turns our clients' data into training data for AI.\nThe second is our AI business — solutions that help clients build their own AI models or services directly.",
+  "media": []
+ },
+ {
+  "n": 8,
+  "hidden": false,
+  "title": "AI platform 'synapse' GS certification (Level 1)",
+  "text": [
+   "AI platform 'synapse' GS certification (Level 1)",
+   "Management Innovation Main-Biz Certification",
+   "Inno-Biz certification for technological innovation",
+   "Certified as a small and medium-sized enterprise (Ministry of Employment and Labor)",
+   "Selected as a military service designated company (professional institute)",
+   "Software copyright certification",
+   "Venture company certification",
+   "Certified as a company-affiliated research institute",
+   "Selected as the 2024 Super Gap Startup 1000+",
+   "2024 D-Unicorn Project Top 10 Companies",
+   "Selected as an excellent example of a 2024 Korea-Africa innovative company",
+   "Received the 2023 Minister's Award for Meritorious Service in Venture Companies from the Small and Medium Business Administration",
+   "2022 KOICA Public-Private Partnership Excellence and 'Excellent' Selection",
+   "2021~2022 Korea Excellent Company Awards Data Processing Category",
+   "2021 Data-Global Grand Prize",
+   "2020 Ministry of Science and ICT Young Business Award Ministerial Award",
+   "2019 Initial Startup Package Best Graduation",
+   "Major Awards",
+   "Key Certifications",
+   "Intellectual property performance (13 major patents, 8 additional patents in progress)",
+   "AI Solution Development and Dataset Construction Examples",
+   "Building LLM Data for LG Exxon Training",
+   "Build a dataset",
+   "Building LLM data for SKT Adot training",
+   "Build a dataset",
+   "Hyundai Motor Company - Building a dataset for autonomous driving technology development",
+   "Build a dataset",
+   "Development of Crowd Concentration Analysis Model for Disaster Safety Management System",
+   "AI Solutions",
+   "Building Korean-style large-scale vision data for multimodal AI",
+   "Build a dataset",
+   "Video and image editing technology data construction",
+   "Build a dataset",
+   "Understanding Video Content Building AI Data",
+   "Build a dataset",
+   "CCTV Video AI Data Construction",
+   "Build a dataset",
+   "Establishment of thermal imaging CCTV data for industrial facilities",
+   "Build a dataset",
+   "Build intelligent smart aquaculture farm integrated data",
+   "AI Solutions",
+   "Predicting Fish and Shellfish Growth Using ML Automated Pipeline Technology",
+   "AI Solutions",
+   "Facial CT Data-Driven Nasal and Nasal Cartilage Structure Measurement AI",
+   "AI Solutions",
+   "Colonoscopy (colonoscopy) polyp detection solution",
+   "AI Solutions",
+   "Assisted facial diagnosis using AI-based detection and dynamic analysis",
+   "AI Solutions",
+   "LG Chem - Data processing of particles, polymers, cathode materials, etc.",
+   "Build a dataset",
+   "POSCO - Development of Vision-based Classification Models for Various Chemicals",
+   "AI Solutions",
+   "112 Report Voice Automatic Classification Model Development and Data Construction",
+   "AI Solutions",
+   "02",
+   "Company Overview_R&D Technology and infrastructure status",
+   "Possess the ability to verify technology and perform artificial intelligence projects through various awards and certifications"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 9,
+  "hidden": false,
+  "title": "Business Model",
+  "text": [
+   "Business Model",
+   "Business Model - (1) Data",
+   "Dataset Construction",
+   "Business Model ① Data",
+   "Data Collection",
+   "Data Curation",
+   "Data Labeling",
+   "Data Analysis (Audit)",
+   "Integrated DatasetManagement",
+   "‘synapse’ is the most advanced data labeling S/W",
+   "(developed/improved via more than +1,100 projects)",
+   "\"Needs fitting\" quality datasets for AI training",
+   "Category",
+   "Specialized data labeling coverage and capability",
+   "3D LiDAR (Autonomous driving)",
+   "Prompting (LLM)",
+   "DICOM",
+   "(Healthcare)",
+   "Ultra-large capacity (Defense)",
+   "datamaker",
+   "●",
+   "●",
+   "●",
+   "●",
+   "'C' corporates",
+   "X",
+   "X",
+   "X",
+   "X",
+   "'A' corporate",
+   "▲",
+   "X",
+   "X",
+   "X",
+   "'S' corporate",
+   "X",
+   "X",
+   "X",
+   "X",
+   "Unparalleled data labelling quality and operational expertise",
+   "Proven via major corporate clients, datamaker’s skillful labelers with      acceptance rate of 60:1 and 6 years of experience  deliver high quality      data labeling work",
+   "Secondary data quality assurance activity is executed using      an automated defective data verification system",
+   "Solve the disadvantages of high labor costs by utilizing overseas data labs",
+   "Minimize manual data labeling work by Korea’s highest level      automatic data labeling technology",
+   "World-class price competitiveness",
+   "'Zero Security Incident': Work is conducted in an offline data lab with       a controlled security environment, completely preventing data leakage",
+   "A in-house developed, closed-network server infrastructure has been      established to completely prevent data leakage.",
+   "Operates complete security system to prevent data leakage",
+   "datamaker has developed the most annotation tools among domestic competitors and its core competitiveness reliesin more than +85 individual features",
+   "AI Dataset",
+   "High-quality dataset labeling service with 8 years of accumulated R&D expertise",
+   "Dataset construction for autonomous driving tech development",
+   "Customizable AI ‘A.(A-dot)’dataset construction",
+   "Participated in multimodal AI‘EXAONE’ project",
+   "Constructed dataset for thehyper-scale AI model ‘Hyper CLOVA X’",
+   "Constructed image datasets for image-based conversational services andconstructed datasets for harmful contentdetection (image/text) technology",
+   "Constructed QA datasets for specializeddomain fields, OCR data anddomain-specific training datasets",
+   "Advanced traffic light detection in variousdriving environments. Developed an efficientprocessing environment to enhance smallobject recognition performance",
+   "Participated in the training datasetconstruction for the three major EXAONE platforms:  Universe, Discovery, and Atelier"
+  ],
+  "notes": "At our core, we offer a high-quality dataset labeling service, and that's backed by eight years of accumulated R&D expertise.\nWe've refined this capability across more than eleven hundred projects, so we know what works. The result is training data that genuinely fits each client's needs, not just generic labels.\nAnd we are trusted by Korea's largest enterprises such as Hyundai, LG, SK Telecom and Naver.",
+  "media": []
+ },
+ {
+  "n": 10,
+  "hidden": false,
+  "title": "‘Ghana Data Lab’ has an overwhelming price competitive advantage",
+  "text": [
+   "‘Ghana Data Lab’ has an overwhelming price competitive advantage",
+   "10% of labor cost compared to competitors (10 in-house workers in Ghana = 1 in-house worker in Korea)",
+   "100 domestic competitors' full-time employees cost 200 million KRW per month",
+   "('Ghana Data Lab' costs 1/10 price only ; 20 million won per month)",
+   "Operated by experts capable of high quality data labeling",
+   "366 cumulative projects",
+   "250 Resident Employees",
+   "Data Accuracy 99%",
+   "Enhancing expertise by training personnels with expert-level education programs.",
+   "The deliverables of cultivated experts and their excellence in security, quality, data accuracy, and speed is recognized by the clients across diverse industries",
+   "The disadvantage of the high labor cost of the in -house personnel is resolved through 'Ghana Data Lab'",
+   "Competitiveness",
+   "Securing price competitiveness in a labor-intensive industrial structure through subsidiary operation 'Ghana Data Lab'",
+   "1.35",
+   "In-house employees (datamaker)",
+   "VS",
+   "Crowd employees (Competitors)",
+   "Strong Point",
+   "Securing Data Quality and security along with capability to process expert level, high computing resource requiring labelling tasks",
+   "Processing a large task in a short time, low labor costs via crowdsourcing",
+   "Weak Point",
+   "High Labor costs",
+   "Quality and Security Issue",
+   "Devision",
+   "Contents",
+   "Country",
+   "United States",
+   "Salary",
+   "Crowd sourcing",
+   "Major Clients",
+   "Google, Facebook",
+   "Devision",
+   "Contents",
+   "Country",
+   "India",
+   "Salary",
+   "USD 2.17",
+   "Major Clients",
+   "Google, Facebook",
+   "Devision",
+   "Contents",
+   "Country",
+   "Vietnam",
+   "Salary",
+   "USD 2.99",
+   "Major Clients",
+   "Conigital",
+   "Devision",
+   "Contents",
+   "Country",
+   "South Korea",
+   "Salary",
+   "Crowd sourcing",
+   "(USD 7.00)",
+   "Major Clients",
+   "Local Major Cooperate",
+   "Devision",
+   "Contents",
+   "Country",
+   "Australia",
+   "Salary",
+   "Crowd sourcing",
+   "Major Clients",
+   "Google",
+   "Devision",
+   "Contents",
+   "Country",
+   "Kenya",
+   "Salary",
+   "USD 2.00",
+   "Major Clients",
+   "Open AI",
+   "Devision",
+   "Contents",
+   "Country",
+   "Argentina",
+   "Salary",
+   "USD 1.35",
+   "Major Clients",
+   "Toyota, Airbnb",
+   "Devision",
+   "Contents",
+   "Country",
+   "Ghana",
+   "Salary",
+   "USD 1.17",
+   "Major Clients",
+   "SKT, LG-Chem",
+   "datamaker",
+   "Business Model"
+  ],
+  "notes": "Now, how do we stay competitive? The answer is our Ghana Data Lab, a subsidiary built to tackle the labor-intensive nature of this work.\nIt's operated by trained experts capable of high-quality labeling, and thanks to our expert-level training programs, that quality and accuracy is recognized by clients across a wide range of industries.",
+  "media": []
+ },
+ {
+  "n": 11,
+  "hidden": false,
+  "title": "Many companies and institutions are working with datamaker",
+  "text": [
+   "Many companies and institutions are working with datamaker",
+   "Overview l 고객사 및 파트너사"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 12,
+  "hidden": false,
+  "title": "datamaker Ghana",
+  "text": [
+   "datamaker Ghana"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789771981627297,
+     15.148250218722659,
+     76.4204560367454,
+     76.41872265966754
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media1.mp4",
+    "poster": "assets/day1/media/p1-media1-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "hidden": false,
+  "title": "13",
+  "text": [
+   "13",
+   "datamaker Ghana DATA LAB A (49 seats)"
+  ],
+  "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
+  "media": []
+ },
+ {
+  "n": 14,
+  "hidden": false,
+  "title": "14",
+  "text": [
+   "14",
+   "datamaker Ghana DATA LAB B (33 seats)"
+  ],
+  "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
+  "media": []
+ },
+ {
+  "n": 15,
+  "hidden": false,
+  "title": "15",
+  "text": [
+   "15",
+   "datamaker Ghana TRAINING CENTRE (20 seats)"
+  ],
+  "notes": "Data lab B also manages remote labelers and performs the most LabelingFrom trainees to workers, training based on capacity building and practice",
+  "media": []
+ },
+ {
+  "n": 16,
+  "hidden": false,
+  "title": "Colonoscopy (colonoscopy) polyp detection solution demonstrationIn collaboration with the University of Ghana Medical Center\nApplying and Demonstrating Solutions to Local Endoscopy Equipment",
+  "text": [
+   "Colonoscopy (colonoscopy) polyp detection solution demonstrationIn collaboration with the University of Ghana Medical Center\nApplying and Demonstrating Solutions to Local Endoscopy Equipment",
+   "On-device AI solution demonstration",
+   "Areas of Expertise QA Data\nBuild OCR data and discipline-specific training datasets\n(STEM data, benchmark data, etc.)",
+   "'HyperClover X' data construction",
+   "Advancement of traffic light detection in various driving environments. \nFor advanced small object recognition performance \nDeveloping an efficient processing environment",
+   "Building data for autonomous driving technology development",
+   "'Exxon's three major platform universes, Discovery, \nBuild data for learning to be used in the atelier\nPerforming Red Teaming Tasks",
+   "Building data for 'Exawon’ learning",
+   "Ghana Data Lab's competitiveness proven by cooperation with global conglomerates"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 17,
+  "hidden": false,
+  "title": "Introduction to Artificial Intelligence",
+  "text": [
+   "Introduction to Artificial Intelligence",
+   "MODULE 1.2  ·  DEMONSTRATION",
+   "Participants should understand the complete workflow, not only the annotation activity. Annotation is stage five of nine."
+  ],
+  "notes": "Set this up by asking participants to describe what happens on an annotation project from first contact to delivery. Collect their answers, then show the nine stages and discuss what they missed  usually readiness, calibration and close-out.",
+  "media": []
+ },
+ {
+  "n": 18,
+  "hidden": false,
+  "title": "Text",
+  "text": [
+   "Text",
+   "Data collection",
+   "Crawl mixed information on websitesOr, crowd manpower is put in to provide high-qualityCollect and generate data directly to deliver it.",
+   "Data Processing",
+   "Quality Verification",
+   "Datamaker Synapse's Labeling Core Technologies and",
+   "Build data with a variety of workforces.",
+   "In the data lab, experts verify the quality of Labeling data, train operators, and provide feedback to improve data quality.",
+   "Dataset",
+   "Video",
+   "Sensors",
+   "Audio",
+   "Image",
+   "PCD Lidar Sensor",
+   "Self-driving road video",
+   "Video of wearing safety equipment",
+   "Violence Situation Conversation Text",
+   "Harmful conversation text",
+   "Dialect conversation voice",
+   "Room noise audio",
+   "Fish and shellfish images",
+   "Vibration sensors for machinery and facilities",
+   "CCTV footage",
+   "Product Page Text",
+   "Vietnamese handwritten text",
+   "Product review text",
+   "English conversation voice",
+   "Abdominal surgery images",
+   "Images of patients with skin diseases",
+   "CT 3D Sensor",
+   "Medical Endoscopy Imaging",
+   "Signage text",
+   "Address Handwritten Text",
+   "Doctor Care Negative",
+   "119 Report Negative",
+   "Weapons and equipment images",
+   "Gait image of rehabilitation patient",
+   "Project Types",
+   "Key Concepts"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 19,
+  "hidden": false,
+  "title": "Artificial Intelligence, Machine Learning and Data",
+  "text": [
+   "ARTIFICIAL INTELLIGENCE",
+   "Systems that do human-like tasks",
+   "Computer systems designed to perform tasks that       commonly require human-like capabilities: recognizing patterns, understanding language, classifying information or interpreting images.",
+   "MACHINE LEARNING",
+   "Learning from data, not rules",
+   "An approach within AI in which systems learn patterns from data rather than relying exclusively on explicitly programmed rules.",
+   "LABELLED DATA",
+   "Examples with correct answers",
+   "For many machine-learning applications, examples of data and their correct labels are used to train or          evaluate models. Those labels come from annotation work.",
+   "THE CONNECTION TO OUR WORK",
+   "Annotation is not a side activity. For supervised learning the labelled dataset is the teaching material the model learns from, which is why annotation quality sets a ceiling on model quality.",
+   "TEACHING NOTE",
+   "Keep this section short and concrete. Trainees do not need machine-learning theory; they need to understand why their labels matter and what happens downstream if they are wrong.",
+   "Artificial Intelligence, Machine Learning and Data",
+   "MODULE 1.1",
+   "FOUNDATIONS"
+  ],
+  "notes": "Three definitions, kept deliberately brief. Avoid going deeper into model architectures — it is not needed and it loses non-technical trainees.\nUseful framing: the model does not know anything about cars. It only knows what thousands of people told it a car looks like. If those people disagreed, the model learns the disagreement.\nAsk for a show of hands: who has used a product that relies on this (voice assistants, photo search, translation)? Connect the abstract to something they use.",
+  "media": []
+ },
+ {
+  "n": 20,
+  "hidden": false,
+  "title": "",
+  "text": [],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     11.512962962962963,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media3.mp4",
+    "poster": "assets/day1/media/p1-media3-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": [
+     0.0,
+     35349.0695
+    ]
+   }
+  ]
+ },
+ {
+  "n": 21,
+  "hidden": false,
+  "title": "From Baby to Genius: How AI Learns",
+  "text": [
+   "Kofi",
+   "AI",
+   "Born",
+   "Collect data",
+   "1",
+   "ABC",
+   "Clean data",
+   "2",
+   "First words",
+   "Tokens",
+   "3",
+   "More words",
+   "Build a brain",
+   "4",
+   "Sentences",
+   "Training",
+   "5",
+   "Corrections",
+   "Feedback",
+   "6",
+   "Grown up",
+   "Ready to help",
+   "7",
+   "C",
+   "A",
+   "B",
+   "A",
+   "N",
+   "I",
+   "S",
+   "C",
+   "A",
+   "T",
+   "The cat is sleeping",
+   "K",
+   "A",
+   "T",
+   "C",
+   "A",
+   "T",
+   "C",
+   "A",
+   "T",
+   "3",
+   "1",
+   "20",
+   "K",
+   "A",
+   "T",
+   "C",
+   "A",
+   "T",
+   "From Baby to Genius: How AI Learns"
+  ],
+  "notes": "Talk track. Top row is Kofi, bottom row is AI; follow the numbers left to right. 1 Born / Collect data: Kofi soaks up sounds, faces and pictures. AI developers gather huge amounts of text, images, video and audio. 2 ABC / Clean data: Kofi learns letters. AI data is cleaned, organised and broken into small pieces called tokens. 3 First words / Tokens: Kofi joins letters into AN and IS. AI turns each token into numbers (embeddings) so it can see how they relate. 4 More words / Build a brain: Kofi links CAT to a real cat. Developers build the neural network, the model's brain. 5 Sentences / Training: Kofi says 'The cat is sleeping'. AI trains like going to the gym, adjusting billions of settings to predict the next word. 6 Corrections / Feedback: teachers correct KAT to CAT. AI errors are measured and fixed; human feedback fine-tunes its answers. 7 Grown up / Ready to help: Kofi holds conversations and solves problems. The AI is deployed: you ask it something and it responds.",
+  "media": []
+ },
+ {
+  "n": 22,
+  "hidden": false,
+  "title": "Datamaker and data-Labeling",
+  "text": [
+   "Datamaker and data-Labeling"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     15.148366870807816,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media4.mp4",
+    "poster": "assets/day1/media/p1-media4-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 23,
+  "hidden": false,
+  "title": "SYNAPSE-MEDI",
+  "text": [
+   "SYNAPSE-MEDI",
+   "SYNAPSE-MEDI is Datamaker's exclusive AI-based diagnostic assistance solution, designed for immediate implementation in hospitals and immediately utilized by medical professionalsSYNAPSE-MEDI uses AI to rapidly automate the process of analyzing patient visual information and deriving insights necessary for diagnosis and treatment.",
+   "Colonoscopy",
+   "Polyp Identification",
+   "CT septal cartilage identification",
+   "Crowd detection in CCTV",
+   "Tracking specific objects in a video",
+   "Similar image clustering",
+   "Identifying key areas of the face",
+   "SYNAPSE-VISION",
+   "SYNAPSE-VISION can detect objects within video and image data, or provide classification and clustering of objects within video through image analysis. It is particularly actively being deployed in CCTV control centers in public facilities, particularly for anomalous object recognition and tracking, and is steadily being adopted for automated analysis and classification of large-scale image data.",
+   "Datamaker supports the entire process, from data construction to AI service development"
+  ],
+  "notes": "Colonoscopy Polyp Identification: An image showing a convex area in a colonoscopy image as a square.\nCT Septal Cartilage Identification: An image showing how the nose is captured in a 3D human face, or an image showing the nasal cartilage border in a 2D image.\nFacial Key Feature Identification: An image showing the eyes (pupil, sclera, iris), eyebrows, nose, upper lip, and lower lip areas of a human face.\nCCTV Crowd Identification: An image showing people within a specific CCTV footage (images with large crowds are preferred).\nTracking Specific Objects in Footage: An image showing the location and movement path of objects such as people or vehicles.\nSimilar Image Clustering: An image that distinguishes similar product images.",
+  "media": []
+ },
+ {
+  "n": 24,
+  "hidden": false,
+  "title": "Automatic detection of polyp areas in colonoscopy images/images",
+  "text": [
+   "Automatic detection of polyp areas in colonoscopy images/images",
+   "AI Solution promotional video",
+   "Proceeding with Labeling of colonoscopy imaging data",
+   "Building a dataset in Ghana (data collection and Labeling)",
+   "The data was collected in Ghana, and the Labeling was done by labelers from Ghana. The dataset was built and developed as an AI solution by a datamaker H.Q. The solution was delivered to a local customer in Ghana (University of Ghana Hospital, Claron).",
+   "datamaker’s AI solution in GHANA"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     52.647408136482944,
+     32.766127150772824,
+     41.12329396325459,
+     41.12328667249927
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media5.mp4",
+    "poster": "assets/day1/media/p1-media5-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 25,
+  "hidden": false,
+  "title": "Our Main Service Areas",
+  "text": [
+   "Three service areas across image, text and audio data. Each uses a different annotation technique, but the same quality discipline applies to all three.",
+   "SERVICE AREA 1",
+   "Image Processing",
+   "Semantic Segmentation",
+   "Polyline",
+   "Polygon",
+   "Bounding Box",
+   "Key Point",
+   "SERVICE AREA 2",
+   "Text Annotation (NLP)",
+   "Named Entity Recognition",
+   "Sentiment and Intent Analysis",
+   "Utterance Collection",
+   "Text Classification",
+   "OCR Transcription",
+   "SERVICE AREA 3",
+   "Audio Transcription (SR)",
+   "Audio Segmentation",
+   "Audio Transcription",
+   "Audio Categorization",
+   "THE COMMON REQUIREMENT",
+   "Whatever the data type, the correct output is defined by the approved task specification — not by the technique. The same guideline review, calibration and quality control apply across all three areas.",
+   "Our Main Service Areas",
+   "SERVICE AREAS",
+   "WHAT DATAMAKER DELIVERS"
+  ],
+  "notes": "Use this to place the trainee's own work within the wider service offering. Most will work in one area; they should know the other two exist.\nImage processing is where this programme concentrates, because it is where the demonstration dataset and the SYNAPSE tools sit. The five techniques listed are the ones taught in the annotation week.\nIf participants ask which area they will be assigned to, that comes from the project, not from the training. Note that text and audio work use different tools and different acceptance criteria.\nThe callout is the bridge back to the quality module: the technique changes, the discipline does not.",
+  "media": []
+ },
+ {
+  "n": 26,
+  "hidden": false,
+  "title": "Semantic Segmentation",
+  "text": [
+   "Semantic Segmentation",
+   "Every pixel in the image is given a class label, turning the whole scene into a colour-coded map.",
+   "HOW IT’S DONE",
+   "Fill each region with its class colour",
+   "Leave no pixel unlabelled",
+   "Keep borders tight where classes meet",
+   "USED FOR",
+   "Self-driving cars",
+   "Medical scans",
+   "Satellite land use",
+   "Road",
+   "Sidewalk",
+   "Car",
+   "Person",
+   "Building",
+   "Tree",
+   "Sky",
+   "https://datamakergh.github.io/GIGO/",
+   "IMAGE PROCESSING",
+   "TECHNIQUE 1 OF 5"
+  ],
+  "notes": "Semantic segmentation labels every pixel. Point out that each colour is a class, not an individual object: all cars share one colour. Emphasise that no pixel may be left unlabelled.",
+  "media": []
+ },
+ {
+  "n": 27,
+  "hidden": false,
+  "title": "Polyline",
+  "text": [
+   "Polyline",
+   "Connected line segments trace thin, continuous structures that have length but no real area.",
+   "HOW IT’S DONE",
+   "Place points along the line, end to end",
+   "Add more points wherever the line curves",
+   "Keep each line one continuous object",
+   "USED FOR",
+   "Lane detection",
+   "Roads and pipelines",
+   "Power lines",
+   "Example: both road edges and the centre line traced point by point",
+   "IMAGE PROCESSING",
+   "TECHNIQUE 2 OF 5"
+  ],
+  "notes": "Polylines are for things that are long and thin, such as lane markings, kerbs, cables and rivers. The annotator clicks points along the line; more points are needed on curves.",
+  "media": []
+ },
+ {
+  "n": 28,
+  "hidden": false,
+  "title": "Polygon",
+  "text": [
+   "Polygon",
+   "Points placed around an object’s edge form a closed shape that follows its exact outline.",
+   "HOW IT’S DONE",
+   "Click vertices along the object’s edge",
+   "Add points wherever the outline bends",
+   "Close the shape back at the first point",
+   "USED FOR",
+   "Irregular objects",
+   "Aerial imagery",
+   "Retail products",
+   "Example: a person, a car and a tree outlined vertex by vertex",
+   "IMAGE PROCESSING",
+   "TECHNIQUE 3 OF 5"
+  ],
+  "notes": "Polygons give a much tighter fit than a box, which matters for irregular shapes like people and trees. Compare the tree outline here with the bounding box on the next slide.",
+  "media": []
+ },
+ {
+  "n": 29,
+  "hidden": false,
+  "title": "Bounding Box",
+  "text": [
+   "IMAGE PROCESSING",
+   "TECHNIQUE 4 OF 5",
+   "Bounding Box",
+   "A rectangle drawn tightly around each object shows where it is and what it is.",
+   "HOW IT’S DONE",
+   "Touch the object’s outermost edges",
+   "Draw one box per object, then label it",
+   "Flag objects that are hidden or cut off",
+   "USED FOR",
+   "Object detection",
+   "Traffic monitoring",
+   "Shelf audits",
+   "Example: three cars, a person and a traffic light, each in its own box"
+  ],
+  "notes": "Bounding boxes are the fastest and most common technique. The key quality rule is tightness: the box touches the object’s edges with no gap and nothing cut off. Even small, distant cars get their own box.",
+  "media": []
+ },
+ {
+  "n": 30,
+  "hidden": false,
+  "title": "Key Point",
+  "text": [
+   "Key Point",
+   "Single points mark specific landmarks, such as body joints, so shape and movement can be measured.",
+   "HOW IT’S DONE",
+   "Place each point on its exact landmark",
+   "Follow the point order in the guideline",
+   "Mark hidden points as occluded",
+   "USED FOR",
+   "Pose estimation",
+   "Facial landmarks",
+   "Sports and health",
+   "Example: 17 body keypoints joined into a skeleton",
+   "IMAGE PROCESSING",
+   "TECHNIQUE 5 OF 5"
+  ],
+  "notes": "Key points are about precise position and consistent order: left shoulder is always point 6, for example. When a joint is hidden, annotators still mark it but flag it as occluded, as the guideline specifies.",
+  "media": []
+ },
+ {
+  "n": 31,
+  "hidden": false,
+  "title": "LiDAR and Big Data",
+  "text": [
+   "Two further areas. One is annotation in three dimensions; the other is the data engineering that surrounds every annotation project.",
+   "SERVICE AREA 4",
+   "LiDAR",
+   "Annotation of three-dimensional point-cloud data, where depth and orientation matter.",
+   "3D Segmentation",
+   "Label every point in a scan according to its approved class.",
+   "3D Bounding Box",
+   "Enclose objects in three dimensions, with position and orientation.",
+   "SERVICE AREA 5",
+   "Big Data",
+   "The engineering around the Labeling: where data comes from, how it is prepared, stored, reported and built on.",
+   "Database   Structure, store and maintain project datasets.",
+   "Data Visualization   Turn production and quality data into readable reporting.",
+   "Data Crawling   Collect source data at scale from agreed origins.",
+   "Data Preparation   Clean, format and organise raw data before annotation.",
+   "Software Development   Build the tooling and integrations the work depends on.",
+   "WHY THESE TWO SIT TOGETHER",
+   "LiDAR is annotation work with its own tools and acceptance criteria. Big Data is what makes any annotation project possible without prepared data and reliable reporting, the Labeling cannot start or be measured.",
+   "LiDAR and Big Data",
+   "SERVICE AREAS",
+   "SERVICE AREAS 4 AND 5"
+  ],
+  "notes": "Two areas with very different character, which is why they are presented differently.\nLiDAR is annotation in three dimensions. It needs suitable data, suitable tools and more practice than the 2D techniques — navigating a point cloud is the hardest part for new annotators, not the Labeling rule.\nBig Data is not annotation at all. It is the surrounding engineering: where the data comes from, how it is cleaned and stored, and how production and quality figures are reported back. Annotators rarely see it, but every delay in data preparation shows up later as idle annotation capacity.\nIf asked how these relate to the training: LiDAR techniques appear in the annotation week as 3D bounding box and 3D semantic segmentation; Big Data does not, and is a separate service line.",
+  "media": []
+ },
+ {
+  "n": 32,
+  "hidden": false,
+  "title": "3D Segmentation",
+  "text": [
+   "3D Segmentation",
+   "Every point in a LiDAR scan is labelled with its class, so the whole 3D scene is understood.",
+   "HOW IT’S DONE",
+   "Label every point with its approved class",
+   "Rotate the scan to check from all angles",
+   "Keep clean edges where classes touch",
+   "USED FOR",
+   "Self-driving cars",
+   "3D mapping",
+   "Robotics",
+   "Road",
+   "Sidewalk",
+   "Car",
+   "Pedestrian",
+   "Building",
+   "Tree",
+   "Pole",
+   "LIDAR",
+   "LIDAR TECHNIQUE 1 OF 2"
+  ],
+  "notes": "A LiDAR scan is a cloud of 3D points measured by laser. 3D segmentation gives every point a class, the 3D version of semantic segmentation. Point out the rings on the ground (each is one laser beam) and the dark gaps behind cars and people, where the laser cannot see.",
+  "media": []
+ },
+ {
+  "n": 33,
+  "hidden": false,
+  "title": "3D Bounding Box",
+  "text": [
+   "3D Bounding Box",
+   "A 3D box (cuboid) encloses each object, recording its position, size and the direction it faces.",
+   "HOW IT’S DONE",
+   "Fit length, width and height to the points",
+   "Turn the box to face the direction of travel",
+   "Keep box sizes steady across frames",
+   "USED FOR",
+   "Vehicle detection",
+   "Pedestrian tracking",
+   "Warehouse robots",
+   "Example: points coloured by height; the white line on each box shows which way the object faces",
+   "LIDAR",
+   "LIDAR TECHNIQUE 2 OF 2"
+  ],
+  "notes": "Unlike a 2D box, a cuboid has depth and a heading. The white line on top of each box shows which way the object faces; the oncoming car’s box points the other way. Boxes should hug the points and keep the same size for the same object across frames.",
+  "media": []
+ },
+ {
+  "n": 34,
+  "hidden": false,
+  "title": "Where We Make an Impact",
+  "text": [
+   "Ten sectors that rely on labelled data. The technique changes with the sector; the quality requirement does not.",
+   "E-commerce",
+   "Product images classified and catalogued for search.",
+   "Manufacturing",
+   "Defect detection and component inspection on production lines.",
+   "Entertainment",
+   "Content tagging, scene segmentation and subtitle transcription.",
+   "Education",
+   "Learning content classification and speech transcription.",
+   "Agriculture",
+   "Crop, pest and yield identification from field and drone imagery.",
+   "Automobile",
+   "Lane, object and pedestrian detection for driver assistance.",
+   "Healthcare",
+   "Medical image annotation supporting diagnostic tools.",
+   "Banking and Finance",
+   "Document extraction, OCR and transaction text classification.",
+   "Surveillance / Defense",
+   "Object and activity detection in video and sensor data.",
+   "Social Media",
+   "Content moderation, sentiment and intent classification.",
+   "WHAT THIS MEANS FOR AN ANNOTATOR",
+   "You will rarely be told which product your labels end up in. Treat every task as if the output were going into use tomorrow, because in most of these sectors it is.",
+   "Where We Make an Impact",
+   "IMPACT",
+   "WHERE THE WORK IS USED"
+  ],
+  "notes": "The two original slides have been combined. Splitting ten sectors across two identical layouts made the list look like two different things when it is one.\nDo not read the list. Pick three sectors the group will recognise and describe what the annotation work actually looks like in each — the right-hand column gives you the line for every one.\nUseful question for the room: which of these sectors would be most affected by a Labeling error, and why? Healthcare, automobile and defense usually come up, which opens the point about critical criteria that cannot be compensated for by a good overall score.\nThe callout is the behavioural point. Annotators who assume their work is a training exercise treat it differently from those who assume it is going into production.",
+  "media": []
+ },
+ {
+  "n": 35,
+  "hidden": false,
+  "title": "An AI-Powered Society by 2035",
+  "text": [
+   "1 / 4",
+   "A ten-year roadmap to use AI for inclusive development, global competitiveness and ethical innovation : positioning Ghana as Africa’s leading AI hub.",
+   "VISION  ·  2035",
+   "An AI-powered society with improved quality of life, inclusive social and economic transformation, and global digital competitiveness.",
+   "MISSION",
+   "Harness AI and artificial general intelligence across all sectors to improve lives, drive national growth, and make Ghana a trailblazer for AI in Africa.",
+   "WHAT SUCCESS LOOKS LIKE",
+   "1M+",
+   "Young people trained in AI",
+   "Through curricula and skills programmes",
+   "GH₵500bn",
+   "AI contribution to GDP by 2035",
+   "GH₵200bn by 2030",
+   "GH₵200bn",
+   "Investment attracted by 2035",
+   "Mobilised through the National AI Fund",
+   "10",
+   "AI unicorns by 2035",
+   "Plus at least one private AGI lab",
+   "THE FRAMING",
+   "Ghana is planning for artificial general intelligence as well as today’s AI , the mission names AGI explicitly, and the targets assume a domestic industry rather than an imported one.",
+   "An AI-Powered Society by 2035",
+   "GHANA AI STRATEGY",
+   "GHANA NATIONAL AI STRATEGY 2025–2035"
+  ],
+  "notes": "Lead with the vision, then go straight to the numbers. This strategy is unusually specific about targets, and that specificity is what makes it credible or not.\nNote the mission wording: it names artificial general intelligence, not just AI. Few national strategies do. Whether that is ambition or overreach is a fair discussion to have with the room.\nThe 1 million youth figure is the one closest to this audience — it is a commitment to exactly the kind of training programme they are part of.\nAll figures are in Ghanaian cedis as stated in the strategy; do not convert them on the fly.",
+  "media": []
+ },
+ {
+  "n": 36,
+  "hidden": false,
+  "title": "KENYA AI STRATEGY 2025–2030",
+  "text": [
+   "1 / 3",
+   "Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant.",
+   "VISION",
+   "To become a regional leader in AI research, development, innovation and commercialization for inclusive socioeconomic development.",
+   "CORE PURPOSE",
+   "Use local talent, data and innovation to improve economic      growth and public services across priority sectors.",
+   "PRIORITY SECTORS",
+   "Agriculture",
+   "Health",
+   "Education",
+   "Finance",
+   "Security",
+   "Government services",
+   "GUIDING PRINCIPLES",
+   "Inclusion",
+   "Public participation",
+   "Transparency and accountability",
+   "Privacy and safety",
+   "Cultural relevance",
+   "Environmental sustainability",
+   "Local-first approach",
+   "THE DEFINING CHOICE",
+   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts , rather than.           imported wholesale and adapted afterwards.",
+   "KENYA AI STRATEGY 2025–2030",
+   "KENYA AI STRATEGY"
+  ],
+  "notes": "Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.\nThe seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.\nThe Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.\nGood framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?",
+  "media": []
+ },
+ {
+  "n": 37,
+  "hidden": false,
+  "title": "KENYA AI STRATEGY 2025–2030",
+  "text": [
+   "1 / 3",
+   "Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant.",
+   "VISION",
+   "To become a regional leader in AI research, development, innovation and commercialization for inclusive socioeconomic development.",
+   "CORE PURPOSE",
+   "Use local talent, data and innovation to improve economic      growth and public services across priority sectors.",
+   "PRIORITY SECTORS",
+   "Agriculture",
+   "Health",
+   "Education",
+   "Finance",
+   "Security",
+   "Government services",
+   "GUIDING PRINCIPLES",
+   "Inclusion",
+   "Public participation",
+   "Transparency and accountability",
+   "Privacy and safety",
+   "Cultural relevance",
+   "Environmental sustainability",
+   "Local-first approach",
+   "THE DEFINING CHOICE",
+   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts , rather than.           imported wholesale and adapted afterwards.",
+   "KENYA AI STRATEGY 2025–2030",
+   "KENYA AI STRATEGY"
+  ],
+  "notes": "Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.\nThe seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.\nThe Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.\nGood framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?",
+  "media": []
+ },
+ {
+  "n": 38,
+  "hidden": false,
+  "title": "Three Pillars, Four Enablers",
+  "text": [
+   "The strategy rests on three delivery pillars, supported by four cross-cutting enablers that make the pillars usable, safe, funded and fair.",
+   "1",
+   "PILLAR",
+   "AI Digital Infrastructure",
+   "Broadband, 5G, cloud and edge computing.",
+   "High-performance computing; three             AI-capable data centres in five years.",
+   "Stronger cybersecurity, powered by green  energy.",
+   "2",
+   "PILLAR",
+   "Data",
+   "Data governance, secure sharing and         interoperability standards.",
+   "Data-residency safeguards.",
+   "High-quality local datasets for training AI models.",
+   "3",
+   "PILLAR",
+   "AI R&D and Innovation",
+   "Research centres and innovation hubs.",
+   "Funding for localized models and startup  scaling.",
+   "Markets created for Kenyan AI products.",
+   "SUPPORTED BY FOUR CROSS-CUTTING ENABLERS",
+   "4",
+   "Talent Development",
+   "AI foundations in schools, specialised tertiary and industry training,                placements and apprenticeships.",
+   "5",
+   "Governance",
+   "National AI policy, risk and safety standards, regulatory sandboxes, and AI-specific legislation in time.",
+   "6",
+   "Investment",
+   "Grants, funds, public-private         partnerships, special economic     zones.  and investment incentives.",
+   "7",
+   "Ethics, Equity and         Inclusion",
+   "Ethical impact assessments, complaint and redress mechanisms, bias and      representation, public AI literacy.",
+   "HOW TO READ THE STRUCTURE",
+   "The pillars build capability. The enablers decide whether that capability is trusted, affordable, staffed and fairly            distributed , which is why all four run across all three.",
+   "Three Pillars, Four Enablers",
+   "KENYA AI STRATEGY",
+   "SEVEN PRIORITIES"
+  ],
+  "notes": "The structure is the message: three pillars that build capability, four enablers that determine whether it is usable.\nPillar 2 is the one closest to this audience. 'High-quality local datasets for training AI models' is a policy commitment to exactly the work annotators and QA reviewers do, and it is the line to point at when someone asks whether annotation is a long-term career.\nPillar 1 carries the only hard, dated commitment on the slide: three AI-capable data centres within five years. Expect that to be the number people remember.\nEnabler 7 pairs with the training's ethics content: ethical impact assessments in public-sector AI and citizen redress mechanisms are the governance equivalent of the quality-assurance discipline taught here.",
+  "media": []
+ },
+ {
+  "n": 39,
+  "hidden": false,
+  "title": "Why Africa’s Participation in AI Matters",
+  "text": [
+   "The same six reasons, laid out without the map — use this version where the slide has to carry the argument on its own.",
+   "1",
+   "Data Diversity & Fairness",
+   "Africa’s languages, cultures and contexts    reduce global AI bias and improve model        accuracy for everyone.",
+   "2",
+   "Population Scale & Growth",
+   "Home to more than 1.4 billion people and    the world’s youngest, fastest-growing            population.",
+   "3",
+   "Local Problem Solving",
+   "AI built in Africa addresses challenges in     healthcare, agriculture, climate adaptation,     financial inclusion and education.",
+   "4",
+   "Economic Opportunity & Jobs",
+   "High-value digital jobs, startups and exportable tech services that accelerate                economic growth.",
+   "5",
+   "Ethical & Inclusive Governance",
+   "African voices ensure global AI rules reflect developing-world realities, not only Global North priorities.",
+   "6",
+   "Innovation from Constraints",
+   "Resource-efficient solutions drive frugal,    scalable AI innovations that are valuable    worldwide.",
+   "BOTTOM LINE",
+   "Without Africa, AI risks being biased, incomplete and globally ineffective.",
+   "Why Africa’s Participation in AI Matters",
+   "GLOBAL CONTEXT",
+   "AFRICA AND AI · ALTERNATIVE LAYOUT"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 40,
+  "hidden": false,
+  "title": "datamaker Ghana data Labeling tool - SYNAPSE",
+  "text": [
+   "datamaker Ghana data Labeling tool - SYNAPSE"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.205540974044911,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media6.mp4",
+    "poster": "assets/day1/media/p1-media6-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": true,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 41,
+  "hidden": false,
+  "title": ".",
+  "text": [
+   ".",
+   "Validation",
+   "Certificate",
+   "datamaker.io/certification",
+   "datamaker Ghana Certificate of Completion"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 42,
+  "hidden": false,
+  "title": "SYNAPSE Platform and Practice",
+  "text": [
+   "SYNAPSE Platform and Practice",
+   "MODULE 1.3",
+   "MODULE 1.3  ·  GROUP EXERCISE",
+   "Participants should be able to demonstrate the basic workflow required for the project and explain it to future trainees."
+  ],
+  "notes": "Before this module: confirm the training environment is live, credentials work and the demonstration dataset is loaded. If the platform is unavailable, run the demonstration sequence on a projected walkthrough and reschedule the guided practice rather than skipping it.",
+  "media": []
+ },
+ {
+  "n": 43,
+  "hidden": false,
+  "title": "Table of Content",
+  "text": [
+   "Table of Content",
+   "03",
+   "Platform Intro",
+   "User Environment",
+   "Main Dashboard",
+   "Project Page",
+   "Labeling Tools",
+   "Shortcuts/settings",
+   "Preferences",
+   "Shortcuts"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 44,
+  "hidden": false,
+  "title": "SYNAPSE INTRO",
+  "text": [
+   "SYNAPSE INTRO"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 45,
+  "hidden": false,
+  "title": "SYNAPSE ENVIROMENT",
+  "text": [
+   "SYNAPSE ENVIROMENT",
+   "03",
+   "To use synapse platform for data labelling, one must log into the web app at",
+   "http://platform.datamaker.io",
+   "The required browser for using the synapse web application is the Chrome Browser"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 46,
+  "hidden": false,
+  "title": "WEB-APP (https://platform.datamaker.io/auth/login)",
+  "text": [
+   "WEB-APP (https://platform.datamaker.io/auth/login)",
+   "04"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 47,
+  "hidden": false,
+  "title": "LANGUAGE SETTINGS",
+  "text": [
+   "LANGUAGE SETTINGS",
+   "05",
+   "Default Language is in Korean. If you prefer English, you change the settings to switch to English."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 48,
+  "hidden": false,
+  "title": "DASHBOARD(Labeling)",
+  "text": [
+   "DASHBOARD(Labeling)",
+   "06",
+   "The labeling dashboard is a user interface or platform designed for the purpose of managing data labeling projects.",
+   "Choose from a selected list of projects"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 49,
+  "hidden": false,
+  "title": "DASHBOARD(Labeling > Project page)",
+  "text": [
+   "DASHBOARD(Labeling > Project page)",
+   "07",
+   "Start or continue labeling tasks by clicking this button.",
+   "1",
+   "1"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 50,
+  "hidden": false,
+  "title": "DASHBOARD(Labelling > Project page)",
+  "text": [
+   "DASHBOARD(Labelling > Project page)",
+   "08",
+   "2",
+   "Use the search bar here find specific                        to modify.",
+   "2"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 51,
+  "hidden": false,
+  "title": "DASHBOARD(Labelling > Project page)",
+  "text": [
+   "DASHBOARD(Labelling > Project page)",
+   "09",
+   "3",
+   "Increase or decrease the number of number of tasks per page.",
+   "10, 20, 30, 50, 100, or 500.",
+   "3"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 52,
+  "hidden": false,
+  "title": "DASHBOARD(Labelling > Project page)",
+  "text": [
+   "DASHBOARD(Labelling > Project page)",
+   "10",
+   "This filter allows you to view a range of tasks by providing a specific range of criteria.",
+   "These criteria include",
+   "Work status",
+   "By Last labeled date.",
+   "4",
+   "4"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 53,
+  "hidden": false,
+  "title": "DASHBOARD(Labelling > Project page)",
+  "text": [
+   "DASHBOARD(Labelling > Project page)",
+   "12",
+   "Frequently check this page for updated guidelines on project",
+   "5",
+   "5"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 54,
+  "hidden": false,
+  "title": "DASHBOARD (Review dashboard)",
+  "text": [
+   "DASHBOARD (Review dashboard)",
+   "13",
+   "Choose from a selected list of projects to start Data Review",
+   "The Review dashboard is a user interface or platform designed for the purpose of Inspecting data labeled projects."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 55,
+  "hidden": false,
+  "title": "DASHBOARD (Review dashboard > project page)",
+  "text": [
+   "DASHBOARD (Review dashboard > project page)",
+   "13",
+   "The name of the worker you are inspecting.",
+   "1",
+   "1"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 56,
+  "hidden": false,
+  "title": "DASHBOARD (Review dashboard > project page)",
+  "text": [
+   "DASHBOARD (Review dashboard > project page)",
+   "13",
+   "You will see the work status and your status of the task.",
+   "2",
+   "2"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 57,
+  "hidden": false,
+  "title": "DASHBOARD (Review dashboard > project page)",
+  "text": [
+   "DASHBOARD (Review dashboard > project page)",
+   "13",
+   "You can filter",
+   "Worker",
+   "Review status",
+   "Last Reviewed",
+   "3",
+   "3"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 58,
+  "hidden": false,
+  "title": "LABELING TOOLS",
+  "text": [
+   "LABELING TOOLS"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 59,
+  "hidden": false,
+  "title": "BOUNDING -BOX",
+  "text": [
+   "BOUNDING -BOX"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media7.mp4",
+    "poster": "assets/day1/media/p1-media7-poster.jpg",
+    "autoplay": true,
+    "loop": true,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 60,
+  "hidden": false,
+  "title": "POLYGON SEGMENTATION",
+  "text": [
+   "POLYGON SEGMENTATION"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media8.mp4",
+    "poster": "assets/day1/media/p1-media8-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 61,
+  "hidden": false,
+  "title": "POLYLINE",
+  "text": [
+   "POLYLINE"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media9.mp4",
+    "poster": "assets/day1/media/p1-media9-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 62,
+  "hidden": false,
+  "title": "KEYPOINTS",
+  "text": [
+   "KEYPOINTS"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media10.mp4",
+    "poster": "assets/day1/media/p1-media10-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 63,
+  "hidden": false,
+  "title": "3D- BOUNDING BOX",
+  "text": [
+   "3D- BOUNDING BOX"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media11.mp4",
+    "poster": "assets/day1/media/p1-media11-poster.jpg",
+    "autoplay": false,
+    "loop": true,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 64,
+  "hidden": false,
+  "title": "3D- SEMANTIC SEGMENTATION",
+  "text": [
+   "3D- SEMANTIC SEGMENTATION"
+  ],
+  "notes": "",
+  "media": [
+   {
+    "kind": "video",
+    "box": [
+     11.789583333333335,
+     14.722018081073198,
+     76.42083333333333,
+     76.41851851851852
+    ],
+    "crop": {
+     "l": 0,
+     "t": 0,
+     "r": 0,
+     "b": 0
+    },
+    "rot": 0.0,
+    "src": "assets/day1/media/p1-media12.mp4",
+    "poster": "assets/day1/media/p1-media12-poster.jpg",
+    "autoplay": false,
+    "loop": false,
+    "muted": false,
+    "trim": null
+   }
+  ]
+ },
+ {
+  "n": 65,
+  "hidden": false,
+  "title": "SHORTCUTS",
+  "text": [
+   "SHORTCUTS"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 66,
+  "hidden": false,
+  "title": "Create/Delete",
+  "text": [
+   "Create/Delete"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 67,
+  "hidden": false,
+  "title": "Select/Move",
+  "text": [
+   "Select/Move"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 68,
+  "hidden": false,
+  "title": "Cancel/Revert",
+  "text": [
+   "Cancel/Revert"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 69,
+  "hidden": false,
+  "title": "Image Size",
+  "text": [
+   "Image Size"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 70,
+  "hidden": false,
+  "title": "Show/Lock",
+  "text": [
+   "Show/Lock"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 71,
+  "hidden": false,
+  "title": "Display Mode",
+  "text": [
+   "Display Mode"
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 72,
+  "hidden": false,
+  "title": "Etc.",
+  "text": [
+   "Etc."
+  ],
+  "notes": "",
+  "media": []
+ },
+ {
+  "n": 73,
+  "hidden": false,
+  "title": "Job Pathways After the Data Labeling Training",
+  "text": [
+   "CAREER PATHWAYS",
+   "Job Pathways After the Data Labeling Training",
+   "SKILLS THE TRAINING BUILDS",
+   "Box & polygon labeling",
+   "Polyline & segmentation",
+   "Point-cloud basics",
+   "Quality checking",
+   "MS Office basics",
+   "AI & prompting",
+   "Labeling & Annotation",
+   "Data Labeler / Annotator",
+   "LiDAR / 3D Annotator",
+   "Image & Video Tagger",
+   "Builds on: five techniques practised on real project guides",
+   "Quality & Review",
+   "Quality Reviewer",
+   "QA Inspector",
+   "Senior Labeler",
+   "Builds on: inspections, feedback, correction and the client review",
+   "Digital Office Support",
+   "Data Entry Clerk",
+   "Office Assistant",
+   "Content Moderator",
+   "Builds on: Word, PowerPoint, Excel and an eye for detail",
+   "AI & Digital Creation",
+   "AI Prompt Writer",
+   "Junior Website Builder",
+   "AI Tools Assistant",
+   "Builds on: Generative AI, prompting and the vibe-coding project",
+   "Grow up the ladder from Labeler to Quality Manager, Project Manager and Head Project Manager with further training such as the ToT, or move across into any track above."
+  ],
+  "notes": "After the five-day data labeling training, graduates can start as labelers and grow up the ladder to Quality Manager, Project Manager and Head Project Manager, with further training such as the ToT. They can also move across into related roles that use the same skills: labeling and annotation roles (including 3D and LiDAR work after the point-cloud introduction), quality and review roles, digital office support roles that use the Office basics from Day 1, and AI and digital creation roles that build on Generative AI, prompting and the vibe-coding project. These are possible pathways, not guaranteed placements.",
+  "media": []
+ },
+ {
+  "n": 74,
+  "hidden": false,
+  "title": "Know SYNAPSE, Learn the Rest Faster",
+  "text": [
+   "DAILY ROUTINE & SOFTWARE SKILLS",
+   "Know SYNAPSE, Learn the Rest Faster",
+   "PRACTISED EVERY DAY OF THE TRAINING",
+   "How a labeler works on a project",
+   "1",
+   "Read the guideline: rules and examples first",
+   "2",
+   "Label in SYNAPSE: boxes, lines, polygons, masks",
+   "3",
+   "Check and fix: act on inspection feedback",
+   "4",
+   "Report: daily output, issues and reflection",
+   "Practised on CCTV, Traffic Flow, Rail & Catenary and Photobooth projects",
+   "SYNAPSE",
+   "Know it first",
+   "IMAGE EDITING",
+   "Photoshop · GIMP",
+   "Zoom, layers and selection work like the labeling canvas",
+   "DESIGN",
+   "Figma · Canva",
+   "Shapes and layers, just like boxes and polygons",
+   "MAPPING & GIS",
+   "ArcGIS",
+   "Polygons on map layers, like polygon labeling",
+   "OFFICE",
+   "Excel · PowerPoint · Word",
+   "Learned on Day 1; track and report your output",
+   "AI TOOLS",
+   "Generative AI · Prompting",
+   "You know how labeled data trains AI",
+   "OTHER LABELING TOOLS",
+   "CVAT · Label Studio",
+   "Same box, polygon and segmentation tasks"
+  ],
+  "notes": "On the left is the routine labelers practise every day of the training: read the guideline, label in SYNAPSE, check and fix work after inspection, then report daily output, issues and reflection. On the right, SYNAPSE sits at the centre because once you know it, other tools feel familiar. Image editors and design tools use the same zoom, layers, selection and shape logic as the labeling canvas. ArcGIS works with polygons on map layers, like polygon labeling. Excel, PowerPoint and Word are taught on Day 1 and are used to track and report output. Knowing how labeled data trains AI helps you use Generative AI well. Other labeling platforms such as CVAT or Label Studio run the same tasks with a different interface. Photoshop, GIMP, Figma, Canva, ArcGIS, CVAT and Label Studio are suggested next steps, not part of the training.",
+  "media": []
+ },
+ {
+  "n": 75,
+  "hidden": false,
+  "title": "Thank You",
+  "text": [
+   "Thank You",
+   "END OF DAY",
+   "END OF SESSION",
+   "Training of Trainers  ·  AI Data Labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker."
+  ],
+  "notes": "Final slide. Keep the close short.\nConfirm three practical things before people leave: that assessment records and action plans have been collected, who to contact with follow-up questions, and the date of any planned follow-up or reassessment session.",
+  "media": []
+ }
+]
