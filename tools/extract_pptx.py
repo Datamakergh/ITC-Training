@@ -1,6 +1,7 @@
 """Extract slide metadata and animated media (GIF / video) from a PPTX.
 
-usage: python3 tools/extract_pptx.py <day> <deck.pptx> [--start N --part NAME]
+usage: python3 tools/extract_pptx.py <day|key> <deck.pptx> [--start N --part NAME]
+  <day|key>    an ITC day number (2 -> assets/day2) or a deck name such as tot1 (-> assets/tot1)
   --start N    number the slides from N (a day built from several PowerPoints)
   --part NAME  write tools/meta/d<day>-NAME.json and prefix media files with NAME-
 
@@ -21,6 +22,8 @@ import subprocess
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
+
+from deck import deck_dirs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NS = {
@@ -157,9 +160,11 @@ def main(day, pptx, start=1, part=None):
     pres = ET.fromstring(z.read('ppt/presentation.xml'))
     prel = rels(z, 'ppt/presentation.xml')
     order = [prel[s.get(R + 'id')][0] for s in pres.find('p:sldIdLst', NS)]
-    mdir = os.path.join(ROOT, 'assets', f'day{day}', 'media')
+    adir, mpre = deck_dirs(day)
+    day = int(day) if str(day).isdigit() else day  # NO_AUDIO_DAYS / KEEP_AUDIO use ITC day numbers
+    mdir = os.path.join(ROOT, 'assets', adir, 'media')
     os.makedirs(mdir, exist_ok=True)
-    tmp = os.path.join(os.environ.get('TMPDIR', '/tmp'), f'kenya-d{day}{part or ""}-media')
+    tmp = os.path.join(os.environ.get('TMPDIR', '/tmp'), f'kenya-{mpre}{part or ""}-media')
     shutil.rmtree(tmp, ignore_errors=True)  # never reuse videos from an older copy of the deck
     os.makedirs(tmp)
     pre = f'{part}-' if part else ''
@@ -221,7 +226,7 @@ def main(day, pptx, start=1, part=None):
                 name = f'{base}.gif'
                 with open(os.path.join(mdir, name), 'wb') as f:
                     f.write(z.read(target))
-                item['src'] = f'assets/day{day}/media/{name}'
+                item['src'] = f'assets/{adir}/media/{name}'
             else:
                 trim_el = p14.find('p14:trim', NS) if p14 is not None else None
                 trim = None
@@ -238,14 +243,14 @@ def main(day, pptx, start=1, part=None):
                     f.write(z.read(embed))
                 subprocess.run(['ffmpeg', '-y', '-v', 'error', '-i', f.name, '-q:v', '3', os.path.join(mdir, poster)], check=True)
                 autoplay, loop, muted = media_timing(root, spid)
-                item.update(src=f'assets/day{day}/media/{base}.mp4', poster=f'assets/day{day}/media/{poster}',
+                item.update(src=f'assets/{adir}/media/{base}.mp4', poster=f'assets/{adir}/media/{poster}',
                             autoplay=autoplay, loop=loop, muted=muted, trim=trim)
             media.append(item)
         slides.append({'n': n, 'hidden': hidden, 'title': title, 'text': text, 'notes': notes, 'media': media})
         if media:
             print(f's{n:02d}', [(m['kind'], m['src'].rsplit('/', 1)[1], m.get('autoplay'), m.get('loop')) for m in media])
 
-    out = os.path.join(ROOT, 'tools', 'meta', f'd{day}-{part or "slides"}.json')
+    out = os.path.join(ROOT, 'tools', 'meta', f'{mpre}-{part or "slides"}.json')
     with open(out, 'w', encoding='utf-8') as f:
         json.dump(slides, f, ensure_ascii=False, indent=1)
     print(f'{out}: {len(slides)} slides, {sum(s["hidden"] for s in slides)} hidden')
@@ -254,7 +259,7 @@ def main(day, pptx, start=1, part=None):
 if __name__ == '__main__':
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument('day', type=int)
+    ap.add_argument('day')
     ap.add_argument('pptx')
     ap.add_argument('--start', type=int, default=1)
     ap.add_argument('--part')

@@ -13,7 +13,7 @@ import html
 import json
 import os
 
-from deck import ROOT, SHELL, META, plain_dashes
+from deck import ROOT, SHELL, META, plain_dashes, deck_dirs
 
 CSS = """
 /* ---- slideshow decks ----
@@ -163,7 +163,7 @@ JS = r"""
       if(document.body.classList.contains('nav-open')){ e.preventDefault(); e.stopImmediatePropagation(); setNav(false); return; }
       const ov = document.getElementById('overviewGrid');
       if(ov && ov.classList.contains('open')) return;
-      e.preventDefault(); e.stopImmediatePropagation(); location.href = 'index.html'; return;
+      e.preventDefault(); e.stopImmediatePropagation(); location.href = '__HOME__'; return;
     }
     if((e.key === 'm' || e.key === 'M') && !e.ctrlKey && !e.metaKey && !e.altKey && !e.target.closest('input,textarea')){
       e.preventDefault(); setSound(!soundOn); return;
@@ -200,7 +200,10 @@ JS = r"""
 })();
 """
 
-DAY_LINKS = [(d, f'Day{d}.html') for d in range(1, 6)]
+DAY_LINKS = [(f'Day {d}', f'Day{d}.html') for d in range(1, 6)]
+# Training of Trainers: a separate programme with its own home page and day menu.
+TOT_LINKS = [(f'ToT Day {d}', f'ToT-Day{d}.html') for d in range(1, 4)]
+TOT_HOME = 'ToT.html'
 
 
 def attr(s):
@@ -229,22 +232,26 @@ def media_html(m):
     return f'<div class="fs-media" style="{box}">{el}</div>'
 
 
-def build(day, filename, page_title, parts=('slides',)):
-    """parts: meta files tools/meta/d<day>-<part>.json, shown one after another (a day may join decks)."""
+def build(day, filename, page_title, parts=('slides',), links=DAY_LINKS, home='index.html', skip=()):
+    """day: ITC day number or deck key (see deck.deck_dirs).
+    parts: meta files tools/meta/d<day>-<part>.json, shown one after another (a day may join decks).
+    links: the (label, file) pairs in the menu; home: where Esc goes.
+    skip: source slide numbers to leave out (e.g. an empty placeholder slide)."""
+    adir, mpre = deck_dirs(day)
     slides = []
     for part in parts:
-        with open(os.path.join(META, f'd{day}-{part}.json'), encoding='utf-8') as f:
+        with open(os.path.join(META, f'{mpre}-{part}.json'), encoding='utf-8') as f:
             slides += json.load(f)
     nav = ('<div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false">'
            '<span></span><span></span><span></span></button><nav class="fs-nav">' + ''.join(
-               '<a href="%s"%s>Day %d</a>' % (href, ' class="on"' if d == day else '', d) for d, href in DAY_LINKS)
+               '<a href="%s"%s>%s</a>' % (href, ' class="on"' if href == filename else '', label) for label, href in links)
            + '</nav></div>')
     out = []
     for s in slides:
         n = s['n']
-        if s['hidden']:
+        if s['hidden'] or n in skip:
             continue
-        img = f'assets/day{day}/slides/s{n:02d}.jpg'
+        img = f'assets/{adir}/slides/s{n:02d}.jpg'
         if not os.path.exists(os.path.join(ROOT, img)):
             raise SystemExit(f'missing {img}')
         for m in s['media']:
@@ -284,7 +291,7 @@ def build(day, filename, page_title, parts=('slides',)):
 {overlays}
 <script>
 {js}</script>
-<script>{JS}</script>
+<script>{JS.replace('__HOME__', home)}</script>
 </body>
 </html>
 '''

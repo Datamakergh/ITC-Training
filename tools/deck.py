@@ -12,6 +12,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHELL = os.path.join(ROOT, 'tools', 'shell')
 META = os.path.join(ROOT, 'tools', 'meta')
 
+
+def deck_dirs(key):
+    """A deck key is an ITC day number (2 -> assets/day2, tools/meta/d2-*.json)
+    or a name such as 'tot1' (assets/tot1, tools/meta/tot1-*.json)."""
+    key = str(key)
+    return (f'day{key}', f'd{key}') if key.isdigit() else (key, key)
+
 PROGRAM = 'Data Labelling Training for AI'
 PARTNERS = 'Kenya ITC &times; datamaker'
 N_DAYS = 5

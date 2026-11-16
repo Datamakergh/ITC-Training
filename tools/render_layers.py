@@ -1,6 +1,6 @@
 """Render a day's PowerPoint PDF export into slide images.
 
-usage: python3 tools/render_layers.py <day> <pdf-prefix> [--start N]   (--start: number slides from N)
+usage: python3 tools/render_layers.py <day|key> <pdf-prefix> [--start N]   (--start: number slides from N)
   reads  <prefix>.pdf (the deck exported by PowerPoint, see export_pdf.sh)
   writes assets/day<day>/slides/sNN.jpg   the whole slide, exactly as PowerPoint draws it
 
@@ -11,6 +11,8 @@ import os
 import subprocess
 import sys
 import tempfile
+
+from deck import deck_dirs
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WIDTH = 2400
@@ -24,7 +26,7 @@ def pages(pdf):
 def main(day, prefix, start=1):
     pdf = f'{prefix}.pdf'
     n = pages(pdf)
-    out_dir = os.path.join(ROOT, 'assets', f'day{day}', 'slides')
+    out_dir = os.path.join(ROOT, 'assets', deck_dirs(day)[0], 'slides')
     os.makedirs(out_dir, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run(['pdftoppm', '-jpeg', '-jpegopt', 'quality=88', '-scale-to-x', str(WIDTH), '-scale-to-y', '-1',
@@ -37,4 +39,4 @@ def main(day, prefix, start=1):
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]), sys.argv[2], int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[3] == '--start' else 1)
+    main(sys.argv[1], sys.argv[2], int(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[3] == '--start' else 1)

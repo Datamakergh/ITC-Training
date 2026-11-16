@@ -18,6 +18,18 @@ Same format as the HQ Vietnam IAC package: open in a browser, nothing to install
 
 Day 1 joins its two PowerPoints into one deck; slide numbers continue from the first into the second.
 
+### Training of Trainers (ToT)
+
+A separate three-day programme with its own home page, `ToT.html` (linked once from `index.html`).
+The menu in a ToT deck lists only the ToT days, and `Esc` returns to `ToT.html`.
+Sources (revamped 2026-11-13) are in `~/Documents/`, same file names.
+
+| File | Day | Source PowerPoint | Slides |
+|---|---|---|---|
+| `ToT-Day1.html` | ToT 1 | `TOT Program Introduction Day 1.pptx` | 86 (slide 86, an empty "Succes Video" title, is left out) |
+| `ToT-Day2.html` | ToT 2 | `ToTDay 2 AnnotationQualityProject Management_and_Operational_Control.pptx` | 27 |
+| `ToT-Day3.html` | ToT 3 | `ToT Day 3 Participant Manual.pptx` | 32 |
+
 ## Presenting
 
 Open any `DayN.html` in Chrome (or Safari / Chrome on a phone or tablet).
@@ -104,6 +116,15 @@ python3 tools/render_layers.py 1 $D/d1b --start 76
 python3 tools/extract_pptx.py 1 $D/d1a.pptx --part p1
 python3 tools/extract_pptx.py 1 $D/d1b.pptx --start 76 --part p2
 python3 tools/day1.py
+```
+
+ToT decks use a name instead of a day number (`tot1`, `tot2`, `tot3`; assets in `assets/totN/`):
+
+```
+tools/export_pdf.sh tot1
+python3 tools/render_layers.py tot1 $D/tot1
+python3 tools/extract_pptx.py tot1 $D/tot1.pptx
+python3 tools/tot1.py
 ```
 
 - `tools/fullslide.py` builds every deck; `export_pdf.sh` and `render_layers.py` make the slide images; `tools/extract_pptx.py` reads the PPTX.
