@@ -225,7 +225,6 @@
   "title": "Build It: The Expense Tracker",
   "text": [
    "Build It: The Expense Tracker",
-   "Refresh the page. What",
    "YOUR PROMPT · PROJECT 2",
    "Build an expense tracker app in one HTML file, with the",
    "CSS and JavaScript inside.",
@@ -240,7 +239,7 @@
    "Is the total right?",
    "Delete one. Does the",
    "total go down?",
-   "happens?"
+   "Refresh the page. What happens"
   ],
   "notes": "Start a NEW chat for this project. Save the code as expenses.html.\nFill in your currency and colours, then send the prompt.\nTEST: Add 3 expenses. Is the total right? Check with a calculator. Delete one: does the total go down? Press Add with an empty form: what happens? Refresh the page: where did your expenses go? (They disappear. The next slide fixes that.)",
   "media": []
@@ -298,18 +297,12 @@
   "title": "Build It: The Photo Album",
   "text": [
    "Build It: The Photo Album",
-   "After Prompt 2: click a photo to see it",
-   "PROMPT 1 · THE GRID",
-   "Create a photo album web app in one HTML file. Show photos in a",
-   "grid of 3 columns, with a caption and an album name (Family, Friends",
-   "or Travel) under each photo. Use sample photos from picsum.photos",
-   "for now. On a phone, show 1 column.",
-   "PROMPT 2 · CLICK TO SEE IT BIG",
-   "When I click a photo, show it big in the middle of a dark screen, with",
-   "the caption below. An × button closes it. The Escape key also closes",
-   "it.",
+   "After Prompt 2: click a photo to see it big",
    "Next: ask for an Upload button and a Search box.",
-   "big"
+   "PROMPT 1 · THE GRID",
+   "Create a photo album web app in one HTML file. Show photos in a grid of 3 columns, with a caption and an album name (Family, Friends or Travel) under each photo. Use sample photos from picsum.photos for now. On a phone, show 1 column.",
+   "PROMPT 2 · CLICK TO SEE IT BIG",
+   "When I click a photo, show it big in the middle of a dark screen, with the caption below. An × button closes it. The Escape key also closes it."
   ],
   "notes": "New chat, new file: album.html. Send Prompt 1, test it, then send Prompt 2.\nPrompt 1 makes the grid with sample photos. Prompt 2 adds the 'lightbox': click a photo and it opens big on a dark screen, like the picture on the right.\nMORE (if there is time): 'Add an Upload button so I can add my own photos.' 'Add a search box that shows only photos whose caption has my words.'\nNOTE: Uploaded photos may disappear when you refresh. That is normal for practice.",
   "media": []

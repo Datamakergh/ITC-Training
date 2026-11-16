@@ -21,8 +21,6 @@
   "title": "Reading This Document",
   "text": [
    "Reading This Document",
-   "ABOUT THIS MANUAL",
-   "2 / 35",
    "HOW TO USE THIS MANUAL",
    "Each page stands on its own. You can read it during the session, and return to it when you prepare your own training.",
    "STRUCTURE",
@@ -58,8 +56,6 @@
   "title": "How Today Runs",
   "text": [
    "How Today Runs",
-   "DAY 3",
-   "3 / 35",
    "DAY 3 AT A GLANCE",
    "Five hours including breaks. The afternoon is assessed delivery, evaluation and action planning.",
    "Time",
@@ -114,8 +110,6 @@
   "title": "What You Should Already Know",
   "text": [
    "What You Should Already Know",
-   "SECTION 1",
-   "4 / 35",
    "SECTION 1  ·  09:00 – 09:15",
    "Everything below was covered on Days 1 and 2. If any of it is unclear, raise it now — today builds directly on it.",
    "From",
@@ -129,10 +123,10 @@
    "Intake → guideline review → platform preparation → training and calibration → production → quality control → rework → delivery → close-out.",
    "Day 1",
    "The training cycle",
-   "Prepare → explain → demonstrate → practise → assess → give feedback → confirm competency. Stopping after \"demonstrate\" produces a presentation, not training.",
+   "Prepare → explain → demonstrate → practice → assess → give feedback → confirm competency. Stopping after \"demonstrate\" produces a presentation, not training.",
    "Day 2",
    "Clarification request",
-   "A written record of an item the guideline does not cover, escalated to the authorised contact. It is never resolved by individual interpretation.",
+   "A written record of an item the guideline does not cover, escalated to the authorized contact. It is never resolved by individual interpretation.",
    "Day 2",
    "Calibration",
    "Several annotators label the same samples independently; the differences are compared and diagnosed before production continues.",
@@ -154,8 +148,6 @@
   "title": "Introduction to Generative AI",
   "text": [
    "Introduction to Generative AI",
-   "SECTION 2",
-   "5 / 35",
    "SECTION 2  ·  09:15 – 10:00",
    "Delivered from the separate Generative AI deck. This page records the slot and the reason it sits here.",
    "WHAT THE SESSION COVERS",
@@ -181,9 +173,9 @@
   "title": "Designing a Training Session",
   "text": [
    "Designing a Training Session",
-   "SECTION 3",
    "SECTION 3  ·  10:00 – 10:45",
-   "How to build a short session that someone else could pick up and deliver: objectives, teaching steps, sample tasks, practice activities and an assessment method."
+   "How to build a short session that someone else could pick up and deliver: objectives, teaching steps, sample tasks, practice activities and an assessment method.",
+   "SECTION 3"
   ],
   "notes": "Both facilitators from here. Agree who leads the explanation and who circulates.\nThe output of this section is what participants deliver at 13:00, so it must be finished rather than sketched.",
   "media": []
@@ -194,8 +186,6 @@
   "title": "The Five Parts of a Complete Session",
   "text": [
    "The Five Parts of a Complete Session",
-   "SECTION 3.1",
-   "7 / 35",
    "SECTION 3.1",
    "Every training session you design must contain all five. A session missing any one of them cannot be delivered or assessed.",
    "Part",
@@ -229,8 +219,6 @@
   "text": [
    "Writing an Objective You Can Assess",
    "SECTION 3.2",
-   "8 / 35",
-   "SECTION 3.2",
    "A learning objective describes what the trainee will do, not what they will know. If you cannot see it, you cannot assess it.",
    "THE TWO-ASSESSOR TEST",
    "Could two different assessors watch the same trainee and reach the same judgement? If not, the objective is not yet observable and must be rewritten before the session is built.",
@@ -260,8 +248,6 @@
   "text": [
    "Structuring the Teaching Steps",
    "SECTION 3.3",
-   "9 / 35",
-   "SECTION 3.3",
    "A reliable shape for a short session. Adjust the timings to your slot, but keep the order.",
    "1",
    "State the objective.  One sentence, in the trainee’s words. They should know what they will be able to do.",
@@ -289,8 +275,6 @@
   "title": "Sample Tasks and Practice Activities",
   "text": [
    "Sample Tasks and Practice Activities",
-   "SECTION 3.4",
-   "10 / 35",
    "SECTION 3.4",
    "The tasks a trainee attempts decide what they actually learn. Prepare them before the session, not during it.",
    "A GOOD SAMPLE SET CONTAINS",
@@ -322,8 +306,6 @@
   "title": "Using AI to Draft a Session",
   "text": [
    "Using AI to Draft a Session",
-   "SECTION 3.5",
-   "11 / 35",
    "SECTION 3.5",
    "Generative AI can produce a usable first draft in minutes. What it cannot do is know your project, your guideline or your trainees.",
    "GOOD USES",
@@ -362,8 +344,6 @@
   "text": [
    "A Prompt You Can Reuse",
    "SECTION 3.6",
-   "12 / 35",
-   "SECTION 3.6",
    "Copy this, replace the bracketed parts, and check everything it returns against your approved guideline.",
    "You are helping me design a short training session for data annotators.",
    "TASK:        [e.g. drawing bounding boxes around vehicles in street images]",
@@ -395,8 +375,6 @@
   "text": [
    "Worked Example: A 15-Minute Session",
    "SECTION 3.7",
-   "13 / 35",
-   "SECTION 3.7",
    "Part",
    "Worked content",
    "Topic",
@@ -414,7 +392,7 @@
    "Check of understanding",
    "\"What would you do if an object appeared that the guideline did not cover?\" Expected answer: record a clarification request and escalate it, without guessing.",
    "KEY POINT",
-   "Notice that the hardest item in the sample set is deliberate, and that the assessment and the check of understanding both target the same behaviour: stopping and asking rather than guessing."
+   "Notice that the hardest item in the sample set is deliberate, and that the assessment and the check of understanding both target the same behavior: stopping and asking rather than guessing."
   ],
   "notes": "Walk this page end to end. It is the model participants will copy for their own session.\nDraw attention to the time allocations: four minutes of demonstration, six of practice, in a fifteen-minute session. Most participants will plan the reverse.\nThe motorcycle item ties the sample set, the rubric and the closing question together. Point that out — a well-designed session targets one behaviour from three directions.",
   "media": []
@@ -425,8 +403,6 @@
   "title": "Build Your Session Now",
   "text": [
    "Build Your Session Now",
-   "SECTION 3.8",
-   "14 / 35",
    "SECTION 3.8  ·  EXERCISE",
    "Thirty minutes of supervised build.",
    "STEP 1  ·  10 MINUTES",
@@ -458,9 +434,9 @@
   "title": "Assessment and Feedback",
   "text": [
    "Assessment and Feedback",
-   "SECTION 4",
    "SECTION 4  ·  11:00 – 11:45",
-   "How to establish whether a trainee can work independently, and how to give feedback that changes their next attempt rather than just describing the last one."
+   "How to establish whether a trainee can work independently, and how to give feedback that changes their next attempt rather than just describing the last one.",
+   "SECTION 4"
   ],
   "notes": "Open by asking how participants currently decide that someone is ready to work on live data. The answers usually involve time served, which sets up the three stages.",
   "media": []
@@ -471,8 +447,6 @@
   "title": "The Three Stages of Assessment",
   "text": [
    "The Three Stages of Assessment",
-   "SECTION 4.1",
-   "16 / 35",
    "SECTION 4.1",
    "Assessment measures performance against the learning objective and the task requirements — not attendance, and not confidence.",
    "Stage",
@@ -506,8 +480,6 @@
   "text": [
    "Running a Practical Assessment",
    "SECTION 4.2",
-   "17 / 35",
-   "SECTION 4.2",
    "Give the trainee a sample dataset and the approved guidelines, then observe without prompting.",
    "THE TRAINEE MUST",
    "1",
@@ -536,8 +508,6 @@
   "title": "The Criteria, and How to Score It",
   "text": [
    "The Criteria, and How to Score It",
-   "SECTION 4.3",
-   "18 / 35",
    "SECTION 4.3",
    "Five criteria, each scored 0 to 20, giving a total out of 100. Agree the interpretation with your fellow assessors before you use it.",
    "Criterion",
@@ -581,8 +551,6 @@
   "text": [
    "Feedback That Changes the Next Attempt",
    "SECTION 4.4",
-   "19 / 35",
-   "SECTION 4.4",
    "Feedback is not a verdict on the work. It is an instruction for what to do differently, delivered close enough to the work to be useful.",
    "THE STRUCTURE",
    "Three parts, in order",
@@ -618,19 +586,17 @@
   "text": [
    "Weak and Strong Feedback Compared",
    "SECTION 4.5",
-   "20 / 35",
-   "SECTION 4.5",
    "The same trainee, the same piece of work, two different pieces of feedback.",
    "WEAK",
    "“That was pretty good. The boxes were mostly fine. Maybe just be a bit more careful next time and watch the edges. Well done.”",
-   "No specific example of what was correct. No specific error. No practisable instruction. The trainee cannot tell what to change.",
+   "No specific example of what was correct. No specific error. No practicable instruction. The trainee cannot tell what to change.",
    "STRONG",
    "“Your category decisions were correct throughout, including the van that was partly hidden — that is the hard one. On image 3 the box cut off the rear bumper, so part of the object is outside the annotation. Before you place an edge, zoom in to at least 200% and check each side touches the object. Try that on the next three images and I will look again.”",
    "Names what was correct and why it was difficult. Names one error with the image. Gives a concrete action and a point at which it will be checked.",
    "THE SAME STRUCTURE, APPLIED TO A TRAINEE WHO GUESSED",
    "Correct:  you worked steadily and your submissions all went through the right route.",
    "Improve:  on image 4 you labelled the motorcycle as a vehicle. The guideline does not say whether motorcycles are included, so that was a guess rather than a decision.",
-   "How:  when the guideline does not cover an item, stop, record a clarification request and escalate it. Leave the item unlabelled until you have an answer. That is the correct action even though it feels slower.",
+   "How:  when the guideline does not cover an item, stop, record a clarification request and escalate it. Leave the item unlabeled until you have an answer. That is the correct action even though it feels slower.",
    "KEY POINT",
    "Specific beats kind. A trainee given a vague compliment repeats the same error next week; a trainee given one concrete instruction can act on it immediately."
   ],
@@ -644,8 +610,6 @@
   "text": [
    "When a Trainee Is Not Yet Ready",
    "SECTION 4.6",
-   "21 / 35",
-   "SECTION 4.6",
    "The hardest conversation in training, and the one most often avoided.",
    "WHY IT MATTERS",
    "Passing someone who is not ready creates a problem on a live project.",
@@ -654,12 +618,12 @@
    "And it makes every other assessment you give less credible.",
    "HOW TO SAY IT",
    "What to avoid: softening it until the message disappears, or delivering it as a personal judgement.",
-   "A usable form: “You are not yet at the standard for independent work on this task. What I need you to practise is X. We will reassess on Y, and here is what I will be looking for.”",
+   "A usable form: “You are not yet at the standard for independent work on this task. What I need you to practice is X. We will reassess on Y, and here is what I will be looking for.”",
    "Then record it on the assessment template with the date for reassessment.",
    "CRITICAL CRITERIA",
    "Some criteria are passed or they are not. A high overall score does not compensate for failure on a mandatory safety, security or critical annotation requirement — including, on most projects, guessing rather than escalating on an item the guideline does not cover.",
    "KEY POINT",
-   "Not ready is a statement about this attempt, not about the person. Say what to practise, and when you will look again."
+   "Not ready is a statement about this attempt, not about the person. Say what to practice, and when you will look again."
   ],
   "notes": "Rehearse the wording with the room. Most participants have never had to say this and will soften it into meaninglessness the first time.\nThe critical-criteria definition is worth reading aloud. It is the reason a 9 out of 10 can still be a fail.\nStress the final point: the judgement is about the attempt, with a route back. That is what makes it deliverable without damaging the relationship.",
   "media": []
@@ -670,9 +634,9 @@
   "title": "Preparation and Peer Coaching",
   "text": [
    "Preparation and Peer Coaching",
-   "SECTION 5",
    "SECTION 5  ·  11:45 – 12:15",
-   "Finish the session you built this morning, rehearse it once, and coach a partner through theirs."
+   "Finish the session you built this morning, rehearse it once, and coach a partner through theirs.",
+   "SECTION 5"
   ],
   "notes": "Protected preparation time. Resist filling it with more content — the value is in the rehearsal and the peer coaching.\nConfirm the 13:00 running order before this block ends.",
   "media": []
@@ -683,8 +647,6 @@
   "title": "The Peer Coaching Protocol",
   "text": [
    "The Peer Coaching Protocol",
-   "SECTION 5.2",
-   "24 / 35",
    "SECTION 5.2",
    "Fifteen minutes, both partners. Short, structured and specific — this is not a general discussion.",
    "1",
@@ -713,9 +675,9 @@
   "title": "Delivering Your Lesson",
   "text": [
    "Delivering Your Lesson",
-   "SECTION 6",
    "SECTION 6  ·  13:00 – 13:30",
-   "Each participant demonstrates a labelling task and responds to simulated learner questions. This is the assessed delivery."
+   "Each participant demonstrates a labelling task and responds to simulated learner questions. This is the assessed delivery.",
+   "SECTION 6"
   ],
   "notes": "Set the tone before the first delivery: a professional rehearsal, not a performance. Observers are an audience of learners and should behave as trainees would.\nConfirm the running order and hold the time.",
   "media": []
@@ -726,8 +688,6 @@
   "title": "What Happens in Your Slot",
   "text": [
    "What Happens in Your Slot",
-   "SECTION 6.1",
-   "26 / 35",
    "SECTION 6.1",
    "YOU DELIVER",
    "State your objective in one observable sentence.",
@@ -759,8 +719,6 @@
   "title": "Simulated Learner Questions and Model Answers",
   "text": [
    "Simulated Learner Questions and Model Answers",
-   "SECTION 6.2",
-   "27 / 35",
    "SECTION 6.2",
    "These are the questions real trainees ask. Prepare an answer to each before you deliver.",
    "The question",
@@ -794,8 +752,6 @@
   "text": [
    "The Teach-Back Rubric",
    "SECTION 6.3",
-   "28 / 35",
-   "SECTION 6.3",
    "How your delivery is scored. Five criteria, each 0 to 2, giving a total out of 10.",
    "Criterion",
    "What the assessor is looking for",
@@ -813,7 +769,7 @@
    "The learner attempts the task, not just watches it. Guided practice precedes independent practice.",
    "0 – 2",
    "Understanding is assessed and feedback is constructive",
-   "A specific check of understanding, and feedback in three parts with a practisable instruction.",
+   "A specific check of understanding, and feedback in three parts with a practicable instruction.",
    "0 – 2",
    "Total",
    "10",
@@ -829,10 +785,10 @@
   "title": "Evaluation and Action Planning",
   "text": [
    "Evaluation and Action Planning",
-   "Evaluate the programme against capability rather than enjoyment, agree what each trainer practises next, and complete the daily report.",
+   "Evaluate the programme against capability rather than enjoyment, agree what each trainer practices next, and complete the daily report.",
    ".",
-   "SECTION 7",
-   "SECTION 7  ·  13:30 – 14:00"
+   "SECTION 7  ·  13:30 – 14:00",
+   "SECTION 7"
   ],
   "notes": "Define the distinction up front: a risk might happen, an issue has happened, and a change alters the agreed basis of the work. Participants mix these constantly, and the response to each is different.",
   "media": []
@@ -843,8 +799,6 @@
   "title": "Evaluating Against Capability",
   "text": [
    "Evaluating Against Capability",
-   "SECTION 7.1",
-   "30 / 35",
    "SECTION 7.1",
    "A satisfaction score is not an evaluation. Participants can enjoy a session and leave unable to perform the task.",
    "EVIDENCE THE PROGRAMME COLLECTS",
@@ -873,8 +827,6 @@
   "title": "The Daily Report",
   "text": [
    "The Daily Report",
-   "SECTION 7.3",
-   "32 / 35",
    "SECTION 7.3  ·  TEMPLATE",
    "Completed jointly by the facilitators at the end of each training day.",
    "Field",
@@ -908,8 +860,6 @@
    "KEY POINT",
    "You are accountable for what you deliver, whoever drafted it.",
    "Day 3 on One Page",
-   "REFERENCE",
-   "33 / 35",
    "QUICK REFERENCE",
    "The whole day, condensed. If you remember nothing else, remember this.",
    "DESIGNING A SESSION",
@@ -945,7 +895,6 @@
   "title": "Thank You",
   "text": [
    "END OF DAY",
-   "21 / 21",
    "Training of Trainers  ·  AI Data Labelling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker.",
    "Thank You",
    "END OF SESSION"

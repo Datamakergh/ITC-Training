@@ -30,9 +30,8 @@
  {
   "n": 3,
   "hidden": false,
-  "title": "Meet your Facilitators",
+  "title": "01",
   "text": [
-   "Meet your Facilitators",
    "01",
    "Sylvester K. Sakitey",
    "Head of Projects",
@@ -54,7 +53,8 @@
    "Project Management",
    "Quality Assurance",
    "AI Data Annotation & Operations",
-   "DATAMAKER GHANA LIMITED"
+   "DATAMAKER GHANA LIMITED",
+   "Meet your Facilitators"
   ],
   "notes": "",
   "media": []
@@ -62,11 +62,8 @@
  {
   "n": 4,
   "hidden": false,
-  "title": "How Today Runs",
+  "title": "Five contact hours including one hour of breaks. Each block ends with a short check of understanding.",
   "text": [
-   "How Today Runs",
-   "DAY 1",
-   "DAY 1 SCHEDULE",
    "Five contact hours including one hour of breaks. Each block ends with a short check of understanding.",
    "Time",
    "Activity",
@@ -96,7 +93,8 @@
    "Knowledge check, reflection and daily review",
    "Paired practical assessment and Day 1 review",
    "TODAY’S PRACTICAL OUTPUT",
-   "A demonstrated annotation task on the agreed demonstration dataset, and a short lesson plan each participant can teach from."
+   "A demonstrated annotation task on the agreed demonstration dataset, and a short lesson plan each participant can teach from.",
+   "How Today Runs"
   ],
   "notes": "Walk through the day so participants can plan around breaks.\nEmphasise the two outputs at the bottom: by the end of today each person must have (1) demonstrated an annotation task themselves and (2) drafted a short lesson plan. Both feed into the Day 3 teach-back assessment.\nConfirm platform access now, not at 11:00. Ask who does not yet have SYNAPSE credentials and resolve it during the first break.",
   "media": []
@@ -107,8 +105,6 @@
   "title": "What You Will Be Able To Do",
   "text": [
    "What You Will Be Able To Do",
-   "DAY 1",
-   "3 / 42",
    "PROGRAMME OUTCOMES",
    "Eight outcomes across three days. Day 1 covers the first three and introduces the fourth.",
    "1",
@@ -290,8 +286,7 @@
   "hidden": false,
   "title": "Many companies and institutions are working with datamaker",
   "text": [
-   "Many companies and institutions are working with datamaker",
-   "Overview l 고객사 및 파트너사"
+   "Many companies and institutions are working with datamaker"
   ],
   "notes": "",
   "media": []
@@ -307,7 +302,7 @@
    "Business Model ① Data",
    "Data Collection",
    "Data Curation",
-   "Data Labelling",
+   "Data Labeling",
    "Data Analysis (Audit)",
    "Integrated DatasetManagement",
    "‘synapse’ is the most advanced data labeling S/W",
@@ -340,7 +335,7 @@
    "X",
    "X",
    "X",
-   "Unparalleled data labelling quality and operational expertise",
+   "Unparalleled data labeling quality and operational expertise",
    "Proven via major corporate clients, datamakers skillful labelers with      acceptance rate of 60:1 and 6 years of experience  deliver high quality      data labeling work",
    "Secondary data quality assurance activity is executed using      an automated defective data verification system",
    "Solve the disadvantages of high labor costs by utilizing overseas data labs",
@@ -434,7 +429,7 @@
    "VS",
    "Crowd employees (Competitors)",
    "Strong Point",
-   "Securing Data Quality and security along with capability to process expert level, high computing resource requiring labelling tasks",
+   "Securing Data Quality and security along with capability to process expert level, high computing resource requiring labeling tasks",
    "Processing a large task in a short time, low labor costs via crowdsourcing",
    "Weak Point",
    "High Labor costs",
@@ -546,10 +541,9 @@
  {
   "n": 15,
   "hidden": false,
-  "title": "15",
+  "title": "datamaker Ghana DATA LAB A (49 seats)",
   "text": [
-   "15",
-   "datamaker Ghana DATA LAB A 49seats"
+   "datamaker Ghana DATA LAB A (49 seats)"
   ],
   "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
   "media": []
@@ -557,9 +551,8 @@
  {
   "n": 16,
   "hidden": false,
-  "title": "16",
+  "title": "datamaker Ghana DATA LAB B (33 seats)",
   "text": [
-   "16",
    "datamaker Ghana DATA LAB B (33 seats)"
   ],
   "notes": "Data Lab A for security-critical or sensitive dataFill out a security pledge and only select labelers can enter",
@@ -568,10 +561,9 @@
  {
   "n": 17,
   "hidden": false,
-  "title": "17",
+  "title": "datamaker Ghana TRAINING CENTRE (20 seats)",
   "text": [
-   "17",
-   "datamaker Ghana TRAINING CENTRE(20seats)"
+   "datamaker Ghana TRAINING CENTRE (20 seats)"
   ],
   "notes": "Data lab B also manages remote labelers and performs the most labelingFrom trainees to workers, training based on capacity building and practice",
   "media": []
@@ -587,7 +579,7 @@
    "HTML Annotator",
    "EO/IRAnnotator",
    "Annotation Software",
-   "Tools that helps humans tag and label data for AI training.",
+   "Tools that helps humans tag and label data for AI training",
    "Special data type",
    "processing annotators",
    "LiDAR Annotation",
@@ -596,7 +588,7 @@
    "Supports more than 2,000 objects",
    "Easy tracking of review comment",
    "Supports previewfor individual annotation",
-   "Real-time notificationfor changes in labelling",
+   "Real-time notificationfor changes in labeling",
    "Video Annotation",
    "Automated Single/multiple object(s) tracking",
    "Specifies the relationshipamong the multiple objects",
@@ -607,13 +599,13 @@
    "Select specific words and batch labelvia shortcut keys",
    "Intuitive UI, including connections between objects",
    "Capable of multi-tasking without limit",
-   "Supports labelling tasksfor NLP development",
+   "Supports labeling tasksfor NLP development",
    "Removesblanks by dragging paragraphs",
    "Supports not only 'Cuboid’,but also 'PCD-Segmentation'",
    "Capable of label designationvia dedicated timeline panel",
    "4 types of labeling view points provides more sophisticated labeling enviroment",
    "Provides sub-view pointsfor precise 3D data review",
-   "Labelling Guide is supported at all times",
+   "Labeling Guide is supported at all times",
    "Business Model"
   ],
   "notes": "Next, let's talk about the engine behind that data: our annotation software.\nSimply put, these are the tools that help our teams tag and label data for AI training, quickly and accurately.\nWe cover the full spectrum here, four key types: image annotation, video annotation, LLM annotation, and LiDAR annotation.\nSo whether a client is building computer vision, language models, or autonomous systems, we have the tooling to support it.\nIt's a flexible toolkit designed to handle whatever the project demands.",
@@ -625,8 +617,6 @@
   "title": "Introduction to Artificial Intelligence",
   "text": [
    "Introduction to Artificial Intelligence",
-   "MODULE 1.2",
-   "10 / 16",
    "MODULE 1.2  ·  DEMONSTRATION",
    "Participants should understand the complete workflow, not only the annotation activity. Annotation is stage five of nine."
   ],
@@ -639,8 +629,6 @@
   "title": "Artificial Intelligence, Machine Learning and Data",
   "text": [
    "Artificial Intelligence, Machine Learning and Data",
-   "MODULE 1.1",
-   "5 / 16",
    "FOUNDATIONS",
    "ARTIFICIAL INTELLIGENCE",
    "Systems that do human-like tasks",
@@ -698,8 +686,6 @@
   "title": "What Is Data lbeling?",
   "text": [
    "What Is Data lbeling?",
-   "MODULE 1.1",
-   "6 / 16",
    "DEFINITION",
    "Assigning meaningful labels, categories, annotations or other structured information to raw data so it can be used for AI development, evaluation or related analysis.",
    "Data type",
@@ -807,7 +793,7 @@
      "b": 0
     },
     "rot": 0.0,
-    "src": "assets/tot1/media/image77.gif"
+    "src": "assets/tot1/media/image74.gif"
    },
    {
     "kind": "gif",
@@ -824,7 +810,7 @@
      "b": 0
     },
     "rot": 0.0,
-    "src": "assets/tot1/media/image78.gif"
+    "src": "assets/tot1/media/image75.gif"
    },
    {
     "kind": "gif",
@@ -841,7 +827,7 @@
      "b": 0
     },
     "rot": 0.0,
-    "src": "assets/tot1/media/image79.gif"
+    "src": "assets/tot1/media/image76.gif"
    },
    {
     "kind": "gif",
@@ -858,7 +844,7 @@
      "b": 0
     },
     "rot": 0.0,
-    "src": "assets/tot1/media/image80.gif"
+    "src": "assets/tot1/media/image77.gif"
    }
   ]
  },
@@ -967,8 +953,6 @@
   "title": "Why Data Quality Matters",
   "text": [
    "Why Data Quality Matters",
-   "MODULE 1.1",
-   "7 / 16",
    "QUALITY",
    "Poor-quality annotations introduce errors into training data and undermine the reliability of downstream AI systems.",
    "COMMON CAUSES – INSTRUCTION AND TRAINING",
@@ -985,7 +969,7 @@
    "THE TRAINER’S RESPONSIBILITY",
    "Ensure learners understand both the procedure and the reasoning behind the annotation rules. A trainee who knows only the rule cannot handle a case the rule does not cover."
   ],
-  "notes": "Run the GIGO point as a short discussion rather than a statement. Ask: if you had to choose between 10,000 images labelled by untrained people and 1,000 labelled by a calibrated team, which would you take, and why?\nNote that most causes in the left-hand card are management failures, not annotator failures. That matters for tomorrow: blaming annotators for a guideline problem does not fix anything.\nSecond callout is the core trainer message of Day 1: teach the reason, not just the rule.",
+  "notes": "Run the GIGO point as a short discussion rather than a statement. Ask: if you had to choose between 10,000 images labeled by untrained people and 1,000 labeled by a calibrated team, which would you take, and why?\nNote that most causes in the left-hand card are management failures, not annotator failures. That matters for tomorrow: blaming annotators for a guideline problem does not fix anything.\nSecond callout is the core trainer message of Day 1: teach the reason, not just the rule.",
   "media": []
  },
  {
@@ -994,8 +978,6 @@
   "title": "When Two Annotators Disagree",
   "text": [
    "When Two Annotators Disagree",
-   "MODULE 1.1",
-   "8 / 16",
    "WORKED EXAMPLE",
    "THE SITUATION",
    "A project requires annotators to identify cars in images. One annotator labels only passenger cars. Another labels cars, buses       and trucks under the same category. Both complete their tasks quickly, but the results are inconsistent because they interpreted   the category differently.",
@@ -1020,8 +1002,6 @@
   "title": "Questions for the Group",
   "text": [
    "Questions for the Group",
-   "MODULE 1.1",
-   "9 / 16",
    "DISCUSSION",
    "Work in pairs for five minutes, then report back. There is no single correct wording — look for reasoning.",
    "QUESTION 1",
@@ -1042,8 +1022,6 @@
   "title": "The AI Solution Development Lifecycle",
   "text": [
    "The AI Solution Development Lifecycle",
-   "AI PIPELINE",
-   "1 / 1",
    "AI SOLUTION DEVELOPMENT",
    "Six stages from problem to deployment. Data labeling is stage three, and the quality of its output sets the ceiling for every stage after it.",
    "1",
@@ -1065,9 +1043,9 @@
    "Deployment & Improvement",
    "Release, monitor in use, and feed findings back into the cycle.",
    "WHY STAGE THREE MATTERS",
-   "Stages four to six can only be as good as the labelled data they inherit. Inconsistent labels do not average out with volume ; they are learned, measured as success, and deployed."
+   "Stages four to six can only be as good as the labeled data they inherit. Inconsistent labels do not average out with volume ; they are learned, measured as success, and deployed."
   ],
-  "notes": "Use this as the orientation slide for where annotation work sits.\nWalk the cycle once, briefly, then stop at stage three. The point of the slide is not the six boxes; it is that everything downstream inherits whatever stage three produces.\nAsk the group what happens at stage five if stage three was inconsistent. The answer people miss: the model is validated against test data labelled by the same team, with the same misunderstanding, so it passes validation and fails in use.\nNote the loop back from stage six. Deployment is not the end — findings in use generate new data requirements, guideline changes and further labeling, which is why guideline version control and effective dates matter.",
+  "notes": "Use this as the orientation slide for where annotation work sits.\nWalk the cycle once, briefly, then stop at stage three. The point of the slide is not the six boxes; it is that everything downstream inherits whatever stage three produces.\nAsk the group what happens at stage five if stage three was inconsistent. The answer people miss: the model is validated against test data labeled by the same team, with the same misunderstanding, so it passes validation and fails in use.\nNote the loop back from stage six. Deployment is not the end — findings in use generate new data requirements, guideline changes and further labeling, which is why guideline version control and effective dates matter.",
   "media": []
  },
  {
@@ -1077,7 +1055,6 @@
   "text": [
    "The Data-Labeling Workflow",
    "MODULE 1.2",
-   "10 / 16",
    "MODULE 1.2  ·  DEMONSTRATION",
    "Participants should understand the complete workflow, not only the annotation activity. Annotation is stage five of nine."
   ],
@@ -1090,8 +1067,6 @@
   "title": "Nine Stages, From Intake to Close-Out",
   "text": [
    "Nine Stages, From Intake to Close-Out",
-   "MODULE 1.2",
-   "11 / 16",
    "END-TO-END WORKFLOW",
    "#",
    "Stage",
@@ -1145,8 +1120,6 @@
   "title": "Our Main Service Areas",
   "text": [
    "Our Main Service Areas",
-   "SERVICE AREAS",
-   "2 / 2",
    "WHAT DATAMAKER DELIVERS",
    "Three service areas across image, text and audio data. Each uses a different annotation technique, but the same quality          discipline applies to all three.",
    "SERVICE AREA 1",
@@ -1180,8 +1153,6 @@
   "title": "Our Main Service Areas",
   "text": [
    "Our Main Service Areas",
-   "SERVICE AREAS",
-   "2 / 4",
    "WHAT DATAMAKER DELIVERS",
    "Three service areas across image, text and audio data. Each uses a different annotation technique, but the same quality discipline applies to all three.",
    "SERVICE AREA 1",
@@ -1214,13 +1185,12 @@
   "hidden": false,
   "title": "Semantic Segmentation",
   "text": [
-   "IMAGE PROCESSING",
    "TECHNIQUE 1 OF 5",
    "Semantic Segmentation",
    "Every pixel in the image is given a class label, turning the whole scene into a colour-coded map.",
    "HOW IT’S DONE",
    "Fill each region with its class colour",
-   "Leave no pixel unlabelled",
+   "Leave no pixel unlabeled",
    "Keep borders tight where classes meet",
    "USED FOR",
    "Self-driving cars",
@@ -1232,9 +1202,10 @@
    "Person",
    "Building",
    "Tree",
-   "Sky"
+   "Sky",
+   "IMAGE PROCESSING"
   ],
-  "notes": "Semantic segmentation labels every pixel. Point out that each colour is a class, not an individual object: all cars share one colour. Emphasise that no pixel may be left unlabelled.",
+  "notes": "Semantic segmentation labels every pixel. Point out that each colour is a class, not an individual object: all cars share one colour. Emphasise that no pixel may be left unlabeled.",
   "media": []
  },
  {
@@ -1242,7 +1213,6 @@
   "hidden": false,
   "title": "Polyline",
   "text": [
-   "IMAGE PROCESSING",
    "TECHNIQUE 2 OF 5",
    "Polyline",
    "Connected line segments trace thin, continuous structures that have length but no real area.",
@@ -1254,7 +1224,8 @@
    "Lane detection",
    "Roads and pipelines",
    "Power lines",
-   "Example: both road edges and the centre line traced point by point"
+   "Example: both road edges and the centre line traced point by point",
+   "IMAGE PROCESSING"
   ],
   "notes": "Polylines are for things that are long and thin, such as lane markings, kerbs, cables and rivers. The annotator clicks points along the line; more points are needed on curves.",
   "media": []
@@ -1332,7 +1303,6 @@
   "text": [
    "LiDAR and Big Data",
    "SERVICE AREAS",
-   "3 / 4",
    "SERVICE AREAS 4 AND 5",
    "Two further areas. One is annotation in three dimensions; the other is the data engineering that surrounds every annotation project.",
    "SERVICE AREA 4",
@@ -1364,7 +1334,7 @@
    "LIDAR",
    "LIDAR TECHNIQUE 1 OF 2",
    "3D Segmentation",
-   "Every point in a LiDAR scan is labelled with its class, so the       whole 3D scene is understood.",
+   "Every point in a LiDAR scan is labeled with its class, so the       whole 3D scene is understood.",
    "HOW IT’S DONE",
    "Label every point with its approved class",
    "Rotate the scan to check from all angles",
@@ -1413,9 +1383,8 @@
   "text": [
    "Where We Make an Impact",
    "IMPACT",
-   "4 / 4",
    "WHERE THE WORK IS USED",
-   "Ten sectors that rely on labelled data. The technique changes with the sector; the quality requirement does not.",
+   "Ten sectors that rely on labeled data. The technique changes with the sector; the quality requirement does not.",
    "E-commerce",
    "Product images classified and catalogued for search.",
    "Manufacturing",
@@ -1449,7 +1418,6 @@
   "text": [
    "An AI-Powered Society by 2035",
    "GHANA AI STRATEGY",
-   "1 / 4",
    "GHANA NATIONAL AI STRATEGY 2025–2035",
    "A ten-year roadmap to use AI for inclusive development, global competitiveness and ethical innovation - positioning Ghana as Africa’s leading AI hub.",
    "VISION  ·  2035",
@@ -1482,7 +1450,6 @@
   "text": [
    "Where the Strategy Acts",
    "GHANA AI STRATEGY",
-   "2 / 4",
    "EIGHT CORE PILLARS",
    "Eight action areas, from classroom to cabinet;  covering skills, jobs, infrastructure, data, community, sector adoption, research and the state itself.",
    "1",
@@ -1518,11 +1485,10 @@
  {
   "n": 47,
   "hidden": false,
-  "title": "KENYA AI STRATEGY 2025–2030",
+  "title": "Kenya AI Strategy 2025–2030",
   "text": [
-   "KENYA AI STRATEGY 2025–2030",
+   "Kenya AI Strategy 2025–2030",
    "KENYA AI STRATEGY",
-   "1 / 3",
    "Kenya’s national strategy to become Africa’s hub for AI research, innovation and commercialization ethical, inclusive, secure and locally relevant.",
    "VISION",
    "To become a regional leader in AI research, development, innovation and commercialisation for inclusive socioeconomic development.",
@@ -1539,12 +1505,12 @@
    "Inclusion",
    "Public participation",
    "Transparency and accountability",
-   "Privacy and safety",
    "Cultural relevance",
    "Environmental sustainability",
    "Local-first approach",
    "THE DEFINING CHOICE",
-   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts  rather than imported wholesale and adapted afterwards."
+   "Local-first. AI designed in Kenya, trained on Kenyan data and serving Kenyan languages and contexts  rather than imported wholesale and adapted afterwards.",
+   "Privacy and safety"
   ],
   "notes": "Open with the vision statement and let it sit for a moment. The phrase that matters is 'research, development, innovation and commercialisation’ ; Kenya is not positioning itself as a consumer market for AI but as a place where AI is built and sold.\nThe seven guiding principles are not decoration. Several of them 1. inclusion, cultural relevance and a local-first approach 2. translate directly into demand for locally produced, locally understood training data, which is the work this audience does.\nThe Kenyan flag colours are used deliberately on the vision band; keep that restraint if you adapt the deck.\nGood framing question: what does 'locally relevant' mean in practice for a model that has to work in Kiswahili, Sheng and several regional languages?",
   "media": []
@@ -1556,7 +1522,6 @@
   "text": [
    "Three Pillars, Four Enablers",
    "KENYA AI STRATEGY",
-   "2 / 3",
    "SEVEN PRIORITIES",
    "The strategy rests on three delivery pillars, supported by four cross-cutting enablers that make the pillars usable, safe, funded and fair.",
    "1",
@@ -1603,7 +1568,6 @@
   "text": [
    "Strengths, Gaps and Risks",
    "KENYA AI STRATEGY",
-   "3 / 3",
    "WHERE KENYA STANDS",
    "An honest reading of the starting position, and the first applications the strategy intends to deliver.",
    "Strengths",
@@ -1646,7 +1610,6 @@
   "text": [
    "Why Africa’s Participation in AI Matters",
    "GLOBAL CONTEXT",
-   "7 / 7",
    "AFRICA AND AI · ALTERNATIVE LAYOUT",
    "The same six reasons, laid out without the map — use this version where the slide has to carry the argument on its own.",
    "1",
@@ -1676,9 +1639,8 @@
  {
   "n": 51,
   "hidden": false,
-  "title": ".",
+  "title": "datamaker Ghana data labeling tool - SYNAPSE",
   "text": [
-   ".",
    "datamaker Ghana data labeling tool - SYNAPSE"
   ],
   "notes": "",
@@ -1686,10 +1648,10 @@
    {
     "kind": "video",
     "box": [
-     14.916666666666668,
-     17.074074074074076,
-     72.66666666666667,
-     72.66666666666667
+     11.979166666666668,
+     15.555555555555555,
+     76.66666666666667,
+     78.14814814814814
     ],
     "crop": {
      "l": 0,
@@ -1740,7 +1702,6 @@
   "title": "Table of Content",
   "text": [
    "Table of Content",
-   "03",
    "Platform Intro",
    "User Environment",
    "Main Dashboard",
@@ -1769,8 +1730,7 @@
   "title": "SYNAPSE ENVIROMENT",
   "text": [
    "SYNAPSE ENVIROMENT",
-   "03",
-   "To use synapse platform for data labelling, one must log into the web app at",
+   "To use synapse platform for data labeling, one must log into the web app at",
    "http://platform.datamaker.io",
    "The required browser for using the synapse web application is the Chrome Browser"
   ],
@@ -1782,8 +1742,7 @@
   "hidden": false,
   "title": "WEB-APP (https://platform.datamaker.io/auth/login)",
   "text": [
-   "WEB-APP (https://platform.datamaker.io/auth/login)",
-   "04"
+   "WEB-APP (https://platform.datamaker.io/auth/login)"
   ],
   "notes": "",
   "media": []
@@ -1794,7 +1753,6 @@
   "title": "LANGUAGE SETTINGS",
   "text": [
    "LANGUAGE SETTINGS",
-   "05",
    "Default Language is in Korean. If you prefer English, you change the settings to switch to English."
   ],
   "notes": "",
@@ -1806,7 +1764,6 @@
   "title": "DASHBOARD(Labeling)",
   "text": [
    "DASHBOARD(Labeling)",
-   "06",
    "The labeling dashboard is a user interface or platform designed for the purpose of managing data labeling projects.",
    "Choose from a selected list of projects"
   ],
@@ -1819,7 +1776,6 @@
   "title": "DASHBOARD(Labeling > Project page)",
   "text": [
    "DASHBOARD(Labeling > Project page)",
-   "07",
    "Start or continue labeling tasks by clicking this button.",
    "1",
    "1"
@@ -1830,10 +1786,9 @@
  {
   "n": 61,
   "hidden": false,
-  "title": "DASHBOARD(Labelling > Project page)",
+  "title": "DASHBOARD(Labeling > Project page)",
   "text": [
-   "DASHBOARD(Labelling > Project page)",
-   "08",
+   "DASHBOARD(Labeling > Project page)",
    "2",
    "Use the search bar here find specific                          to modify.",
    "2"
@@ -1844,10 +1799,9 @@
  {
   "n": 62,
   "hidden": false,
-  "title": "DASHBOARD(Labelling > Project page)",
+  "title": "DASHBOARD(Labeling > Project page)",
   "text": [
-   "DASHBOARD(Labelling > Project page)",
-   "09",
+   "DASHBOARD(Labeling > Project page)",
    "3",
    "Increase or decrease the number of number of tasks per page.",
    "10, 20, 30, 50, 100, or 500.",
@@ -1859,10 +1813,9 @@
  {
   "n": 63,
   "hidden": false,
-  "title": "DASHBOARD(Labelling > Project page)",
+  "title": "DASHBOARD(Labeling > Project page)",
   "text": [
-   "DASHBOARD(Labelling > Project page)",
-   "10",
+   "DASHBOARD(Labeling > Project page)",
    "This filter allows you to view a range of tasks by providing a specific range of criteria.",
    "These criteria include",
    "Work status",
@@ -1876,10 +1829,9 @@
  {
   "n": 64,
   "hidden": false,
-  "title": "DASHBOARD(Labelling > Project page)",
+  "title": "DASHBOARD(Labeling > Project page)",
   "text": [
-   "DASHBOARD(Labelling > Project page)",
-   "12",
+   "DASHBOARD(Labeling > Project page)",
    "Frequently check this page for updated guidelines on project",
    "5",
    "5"
@@ -1893,7 +1845,6 @@
   "title": "DASHBOARD (Review dashboard)",
   "text": [
    "DASHBOARD (Review dashboard)",
-   "13",
    "Choose from a selected list of projects to start Data Review",
    "The Review dashboard is a user interface or platform designed for the purpose of Inspecting data labeled projects."
   ],
@@ -1906,7 +1857,6 @@
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
    "DASHBOARD (Review dashboard > project page)",
-   "13",
    "The name of the worker you are inspecting.",
    "1",
    "1"
@@ -1920,7 +1870,6 @@
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
    "DASHBOARD (Review dashboard > project page)",
-   "13",
    "You will see the work status and your status of the task.",
    "2",
    "2"
@@ -1934,7 +1883,6 @@
   "title": "DASHBOARD (Review dashboard > project page)",
   "text": [
    "DASHBOARD (Review dashboard > project page)",
-   "13",
    "You can filter",
    "Worker",
    "Review status",
@@ -1968,7 +1916,7 @@
     "kind": "video",
     "box": [
      11.930298556430447,
-     10.894298629338,
+     15.555555555555555,
      76.66345144356956,
      78.21138815981335
     ],
@@ -2001,7 +1949,7 @@
     "kind": "video",
     "box": [
      11.693979658792651,
-     11.160673665791776,
+     15.555555555555555,
      76.6120406824147,
      78.21138815981335
     ],
@@ -2034,7 +1982,7 @@
     "kind": "video",
     "box": [
      11.6533218503937,
-     11.24498396033829,
+     15.555555555555555,
      76.69334809711286,
      78.70122484689414
     ],
@@ -2067,7 +2015,7 @@
     "kind": "video",
     "box": [
      11.67682906824147,
-     11.405628463108778,
+     15.555555555555555,
      76.64634186351707,
      78.68766404199475
     ],
@@ -2100,7 +2048,7 @@
     "kind": "video",
     "box": [
      11.783546587926509,
-     11.850087489063867,
+     15.555555555555555,
      76.43289862204725,
      78.68766404199475
     ],
@@ -2133,7 +2081,7 @@
     "kind": "video",
     "box": [
      11.76925032808399,
-     11.796529600466608,
+     15.555555555555555,
      76.46149934383202,
      78.68766404199475
     ],
@@ -2316,16 +2264,6 @@
  },
  {
   "n": 86,
-  "hidden": false,
-  "title": "Succes Video",
-  "text": [
-   "Succes Video"
-  ],
-  "notes": "",
-  "media": []
- },
- {
-  "n": 87,
   "hidden": false,
   "title": "Thank You",
   "text": [

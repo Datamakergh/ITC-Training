@@ -1,6 +1,6 @@
 """Day 5: Applied Project & Graduation.
 
-Source (KENYA ITC/GUIDES/DAY 5): AI-Essentials Vibe Coding[11112026].pptx
+Source (KENYA ITC/GUIDES/DAY 5): AI-Essentials Vibe Coding[14112026].pptx
 Every slide of the PowerPoint, in order, shown exactly as designed (see fullslide.py).
 """
 from fullslide import build

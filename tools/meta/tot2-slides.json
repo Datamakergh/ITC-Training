@@ -22,8 +22,6 @@
   "title": "How Today Runs",
   "text": [
    "How Today Runs",
-   "DAY 2",
-   "2 / 26",
    "DAY 2 SCHEDULE",
    "Five contact hours including one hour of breaks. Six modules, one group case study and a written escalation exercise.",
    "Time",
@@ -65,8 +63,6 @@
   "title": "From Doing the Work to Managing the Work",
   "text": [
    "From Doing the Work to Managing the Work",
-   "DAY 2",
-   "3 / 26",
    "DAY 2 OBJECTIVES",
    "Day 1 covered what annotation is and how to teach it. Today covers how it is controlled, planned, monitored and communicated.",
    "MODULE 2.1 – 2.2",
@@ -112,8 +108,6 @@
   "title": "Reviewing Guidelines Before Production Starts",
   "text": [
    "Reviewing Guidelines Before Production Starts",
-   "MODULE 2.1",
-   "5 / 26",
    "ANNOTATION GUIDELINES",
    "Guidelines should specify the labels, definitions, inclusion and exclusion rules, examples, edge cases and required output format.",
    "STANDARD PROCEDURE FOR REVIEWING GUIDELINES",
@@ -143,8 +137,6 @@
   "title": "The Calibration Exercise –Using the GIGO",
   "text": [
    "The Calibration Exercise –Using the GIGO",
-   "MODULE 2.1",
-   "6 / 26",
    "CALIBRATION",
    "DIAGNOSE THE CAUSE",
    "Five reasons results differ",
@@ -174,8 +166,6 @@
   "title": "Two Different Activities, Both Necessary",
   "text": [
    "Two Different Activities, Both Necessary",
-   "MODULE 2.2",
-   "7 / 26",
    "QUALITY ASSURANCE AND CONTROL",
    "Quality is shared: trainers prevent errors through clear instruction, managers establish controls, annotators follow the specification, reviewers assess output.",
    "Quality assurance",
@@ -206,8 +196,6 @@
   "title": "Six Errors You Will See Repeatedly",
   "text": [
    "Six Errors You Will See Repeatedly",
-   "MODULE 2.2",
-   "8 / 26",
    "ERROR PATTERNS",
    "Error",
    "Example",
@@ -242,8 +230,6 @@
   "title": "The Basic Quality-Control Process",
   "text": [
    "The Basic Quality-Control Process",
-   "MODULE 2.2",
-   "9 / 26",
    "QUALITY CONTROL",
    "1",
    "Confirm the approved guidelines and acceptance criteria.",
@@ -273,8 +259,6 @@
   "title": "Understanding Quality Metrics",
   "text": [
    "Understanding Quality Metrics",
-   "MODULE 2.2",
-   "10 / 26",
    "MEASUREMENT",
    "The appropriate metrics depend on the annotation task. They are not interchangeable.",
    "ACCURACY",
@@ -314,13 +298,11 @@
   "title": "Define the Deliverable, Then Break Down the Work",
   "text": [
    "Define the Deliverable, Then Break Down the Work",
-   "MODULE 2.3",
-   "12 / 26",
    "PLANNING",
    "Standard practice: define the intended outcome, plan the work, assign responsibility, monitor performance and respond to change.",
    "1. DEFINE THE DELIVERABLE",
    "Confirm before anything else",
-   "The type and volume of data to be labelled.",
+   "The type and volume of data to be labeled.",
    "The annotation specification.",
    "The required quality level and acceptance criteria.",
    "The delivery format and deadline.",
@@ -346,8 +328,6 @@
   "title": "Estimating What the Team Can Actually Produce",
   "text": [
    "Estimating What the Team Can Actually Produce",
-   "MODULE 2.3",
-   "13 / 26",
    "RESOURCES AND CAPACITY",
    "AVAILABLE PRODUCTIVE HOURS",
    "trained workers  ×  productive hours per worker per day  ×  planned production days",
@@ -376,8 +356,6 @@
   "title": "Checkpoints and Who Does What",
   "text": [
    "Checkpoints and Who Does What",
-   "MODULE 2.3",
-   "14 / 26",
    "MILESTONES AND ACCOUNTABILITY",
    "SEVEN MILESTONES THAT REVEAL DELAY EARLY",
    "Requirements approved",
@@ -429,8 +407,6 @@
   "title": "Reading a Daily Production Report",
   "text": [
    "Reading a Daily Production Report",
-   "MODULE 2.4",
-   "15 / 26",
    "PRODUCTION MONITORING",
    "A daily report should show planned output, actual output, quality, available capacity and unresolved issues. The figures below are illustrative.",
    "Indicator",
@@ -467,8 +443,6 @@
   "title": "Seven Steps, and a Note on Productivity Rules",
   "text": [
    "Seven Steps, and a Note on Productivity Rules",
-   "MODULE 2.4",
-   "16 / 26",
    "MANAGEMENT RESPONSE",
    "RECOMMENDED MANAGEMENT RESPONSE TO A VARIANCE",
    "1",
@@ -510,8 +484,6 @@
   "title": "Most Project Failures Are Communication Failures",
   "text": [
    "Most Project Failures Are Communication Failures",
-   "MODULE 2.5",
-   "18 / 26",
    "WHY IT MATTERS",
    "The information usually exists somewhere in the team. The failure is that it did not reach the person who could act on it, in time, in a form they could use.",
    "WHAT GOES WRONG",
@@ -542,8 +514,6 @@
   "title": "Who Is Told What, When and How",
   "text": [
    "Who Is Told What, When and How",
-   "MODULE 2.5",
-   "19 / 26",
    "COMMUNICATION PLAN",
    "Audience",
    "What they need",
@@ -585,8 +555,6 @@
   "title": "Writing an Update People Can Act On",
   "text": [
    "Writing an Update People Can Act On",
-   "MODULE 2.5",
-   "20 / 26",
    "WRITTEN COMMUNICATION",
    "STRUCTURE",
    "Five parts, in this order",
@@ -616,8 +584,6 @@
   "title": "Changes, Meetings and Handover",
   "text": [
    "Changes, Meetings and Handover",
-   "MODULE 2.5",
-   "21 / 26",
    "COMMUNICATION IN PRACTICE",
    "COMMUNICATING A GUIDELINE CHANGE",
    "Confirm the decision is approved and authorised.",
@@ -664,8 +630,6 @@
   "title": "Risk, Issue, Change or Incident?",
   "text": [
    "Risk, Issue, Change or Incident?",
-   "MODULE 2.6",
-   "23 / 26",
    "CLASSIFICATION",
    "Situation",
    "Type",
@@ -701,8 +665,6 @@
   "title": "Seven Parts of a Useful Escalation Message",
   "text": [
    "Seven Parts of a Useful Escalation Message",
-   "MODULE 2.6",
-   "24 / 26",
    "ESCALATION",
    "1",
    "Problem: what has happened, or what may happen.",
@@ -730,8 +692,6 @@
   "title": "The Case Study",
   "text": [
    "The Case Study",
-   "DAY 2",
-   "25 / 26",
    "GROUP EXERCISE",
    "Production is below plan, quality errors are increasing and several workers are waiting for clarification. Work in groups of three to four.",
    "EACH GROUP PRODUCES",
@@ -769,8 +729,6 @@
   "title": "Review and Look Ahead",
   "text": [
    "Review and Look Ahead",
-   "DAY 2",
-   "26 / 26",
    "DAY 2 CLOSE",
    "DAY 2 OUTPUTS",
    "A clarification log from the calibration exercise.",
@@ -798,8 +756,7 @@
   "title": "Thank You",
   "text": [
    "END OF DAY",
-   "21 / 21",
-   "Training of Trainers  ·  AI Data Labelling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker.",
+   "Training of Trainers  ·  AI Data Labeling, Quality Assurance and Project Operations  ·  International Trade Centre–Kenya × datamaker.",
    "Thank You",
    "END OF SESSION"
   ],

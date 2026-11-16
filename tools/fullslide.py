@@ -2,7 +2,7 @@
 
 Each slide is the whole slide image exported by PowerPoint (export_pdf.sh + render_layers.py):
   assets/day<day>/slides/sNN.jpg
-scaled to fit the screen at its exact 16:9 shape, with black bars where the screen shape differs,
+scaled to fit the screen at its exact shape (16:9, or the deck's own, e.g. A4), with black bars where the screen shape differs,
 plus the slide's GIFs and videos placed on top at their PowerPoint position and crop
 (assets/day<day>/media/*, positions in tools/meta/d<day>-*.json from extract_pptx.py).
 Media positions are percentages of the slide, so they scale with it.
@@ -17,7 +17,8 @@ from deck import ROOT, SHELL, META, plain_dashes, deck_dirs
 
 CSS = """
 /* ---- slideshow decks ----
-   Like PowerPoint's slideshow: the slide is scaled to fit the screen at 16:9, black bars fill the rest.
+   Like PowerPoint's slideshow: the slide is scaled to fit the screen at its own shape (--ar, 16:9 unless the
+   deck sets another, e.g. A4), black bars fill the rest.
    The menu button and slide number float in the corners and fade out when the mouse or finger is idle. */
 .deck{height:100vh;height:100dvh;background:#000;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 html,body{background:#000}
@@ -27,7 +28,7 @@ html,body{background:#000}
 .slide.fullslide.is-active{opacity:1;z-index:2;transition:opacity .45s ease}  /* the new slide fades in on top */
 @media (prefers-reduced-motion:reduce){.slide.fullslide,.slide.fullslide.is-active{transition:none}}
 .fs-area{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;container-type:size;z-index:1}
-.fs-stage{position:relative;width:min(100cqw,calc(100cqh * 16 / 9));aspect-ratio:16/9;flex:0 0 auto}
+.fs-stage{position:relative;width:min(100cqw,calc(100cqh * var(--ar,1.7778)));aspect-ratio:var(--ar,1.7778);flex:0 0 auto}
 .fs-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;display:block;user-select:none;-webkit-user-drag:none}
 .fs-media{position:absolute;overflow:hidden}
 .fs-media>img,.fs-media>video{position:absolute;max-width:none;object-fit:fill;display:block;background:transparent}
@@ -56,6 +57,7 @@ body.nav-open .fs-nav{display:flex}
 .fs-nav a{color:inherit;opacity:.7;text-decoration:none;font-weight:600;padding:6px 10px;border-radius:999px;white-space:nowrap}
 .fs-nav a:hover{opacity:1;background:rgba(255,255,255,.16)}
 .fs-nav a.on{opacity:1;font-weight:800;background:rgba(255,255,255,.16)}
+.fs-nav .fs-sep{flex:0 0 1px;align-self:stretch;margin:4px 2px;background:rgba(255,255,255,.3)}
 .fs-top .slide-num{position:static;top:0;display:inline-block;background:rgba(0,0,0,.55);padding:6px 12px;border-radius:999px;
   box-shadow:none;color:#fff;font-size:inherit;font-weight:700;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
@@ -74,7 +76,7 @@ body.ui-on .progress-bar{opacity:1}
   .fs-top,.fs-media,.fs-toast{display:none}
   .slide.fullslide{background:#fff}
   .fs-area{position:static;display:block;container-type:normal}
-  .fs-stage{width:1280px;height:720px}
+  .fs-stage{width:1280px;height:calc(1280px / var(--ar,1.7778))}
 }
 """
 
@@ -131,7 +133,7 @@ JS = r"""
     e.stopPropagation(); setNav(!document.body.classList.contains('nav-open'));
   }));
   document.addEventListener('click', e => { if(!e.target.closest('.fs-menu') && document.body.classList.contains('nav-open')) setNav(false); });
-  document.querySelectorAll('.fs-nav a').forEach(a => a.addEventListener('click', () => {
+  document.querySelectorAll('.fs-nav a:not(.fs-home)').forEach(a => a.addEventListener('click', () => {
     if(!/[?]/.test(a.getAttribute('href'))) a.setAttribute('href', a.getAttribute('href') + '?menu');
   }));
   // load and decode the slides around the current one so a change never fades in a blank slide
@@ -232,6 +234,19 @@ def media_html(m):
     return f'<div class="fs-media" style="{box}">{el}</div>'
 
 
+def jpeg_size(path):
+    """(width, height) of a JPEG, read from its SOF marker."""
+    with open(path, 'rb') as f:
+        data = f.read()
+    i = 2
+    while i < len(data):
+        marker, seg = data[i + 1], int.from_bytes(data[i + 2:i + 4], 'big')
+        if marker in (0xC0, 0xC1, 0xC2):
+            return int.from_bytes(data[i + 7:i + 9], 'big'), int.from_bytes(data[i + 5:i + 7], 'big')
+        i += 2 + seg
+    raise SystemExit(f'no size in {path}')
+
+
 def build(day, filename, page_title, parts=('slides',), links=DAY_LINKS, home='index.html', skip=()):
     """day: ITC day number or deck key (see deck.deck_dirs).
     parts: meta files tools/meta/d<day>-<part>.json, shown one after another (a day may join decks).
@@ -243,7 +258,8 @@ def build(day, filename, page_title, parts=('slides',), links=DAY_LINKS, home='i
         with open(os.path.join(META, f'{mpre}-{part}.json'), encoding='utf-8') as f:
             slides += json.load(f)
     nav = ('<div class="fs-menu"><button class="fs-burger" type="button" aria-label="Show days" aria-expanded="false">'
-           '<span></span><span></span><span></span></button><nav class="fs-nav">' + ''.join(
+           '<span></span><span></span><span></span></button><nav class="fs-nav">'
+           f'<a class="fs-home" href="{home}">Home</a><span class="fs-sep" aria-hidden="true"></span>' + ''.join(
                '<a href="%s"%s>%s</a>' % (href, ' class="on"' if href == filename else '', label) for label, href in links)
            + '</nav></div>')
     out = []
@@ -269,6 +285,10 @@ def build(day, filename, page_title, parts=('slides',), links=DAY_LINKS, home='i
                    f'<div class="fs-top">{nav}<span class="slide-num" data-n=""></span></div>'
                    f'<div class="notes" data-slide="">{html.escape(plain_dashes(s["notes"]), quote=False)}</div></section>')
 
+    # slide shape from the exported images: 16:9 decks keep the default, others (e.g. A4) set --ar
+    w, h = jpeg_size(os.path.join(ROOT, f'assets/{adir}/slides/s{slides[0]["n"]:02d}.jpg'))
+    ar_style = '' if abs(w / h - 16 / 9) < 0.01 else f' style="--ar:{w / h:.4f}"'
+
     with open(os.path.join(SHELL, 'base.css'), encoding='utf-8') as f:
         css = f.read()
     with open(os.path.join(SHELL, 'overlays.html'), encoding='utf-8') as f:
@@ -285,7 +305,7 @@ def build(day, filename, page_title, parts=('slides',), links=DAY_LINKS, home='i
 {css}{CSS}</style>
 </head>
 <body class="">
-<div class="deck">
+<div class="deck"{ar_style}>
 
 {chr(10).join(out)}
 {overlays}
